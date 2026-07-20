@@ -1,0 +1,80 @@
+{
+  "generations": [
+    {
+      "name": "v1",
+      "path": "./v1",
+      "era_label": "thesis_legacy",
+      "included_versions": [
+        "v1", "v2", "v3", "v4", "v5", "v6", "v6.1 tez sonu",
+        "v7", "v8", "v9", "v9.1", "v10", "v11", "v12", "v13", "v14", "v15", "v16"
+      ],
+      "purpose": "Thesis-era classic Kocaeli model archive",
+      "best_checkpoint": "manual_review_required_v15_v16",
+      "outputs_path": "./v1/outputs",
+      "scripts_path": "./v1/scripts",
+      "source_versions_path": "./v1/source_versions",
+      "known_issues": ["basiskele_low_r2", "variance_compression"],
+      "status": "archived"
+    },
+    {
+      "name": "v2",
+      "path": "./v2",
+      "era_label": "location_basiskele",
+      "included_versions": ["v17", "v18_basiskele"],
+      "purpose": "Location feature era and Başiskele-only sandbox",
+      "best_checkpoint": "v18_basiskele_geo_control_comparable_none",
+      "outputs_path": "./v2/outputs",
+      "scripts_path": "./v2/scripts",
+      "source_versions_path": "./v2/source_versions",
+      "best_basiskele_only_metrics": {
+        "comparable_mode": "none",
+        "r2": 0.4731,
+        "mape": 0.1093,
+        "variance_ratio": 0.4264
+      },
+      "rejected": [
+        "nearest_comparable",
+        "similar_comparable",
+        "weighted_comparable",
+        "large_home_comparable",
+        "full_comparable"
+      ],
+      "known_issues": ["basiskele_mean_pulling", "comparable_predictor_rejected"],
+      "status": "archived_for_reference"
+    },
+    {
+      "name": "v3",
+      "path": "./v3",
+      "era_label": "next_experiments",
+      "included_versions": [],
+      "purpose": "V19+ calibration and anti-shrink experiments",
+      "best_checkpoint": null,
+      "outputs_path": "./v3/outputs",
+      "scripts_path": "./v3/scripts",
+      "shared_scripts_path": "./v3/shared_scripts",
+      "source_versions_path": "./v3/source_versions",
+      "known_issues": [],
+      "status": "active_scaffold",
+      "planned_experiments": [
+        "oof_safe_calibration",
+        "isotonic_calibration",
+        "spline_bin_calibration",
+        "quantile_mapping",
+        "no_ridge_tree_heavy_ensemble",
+        "direct_price_vs_residual_log_vs_hybrid_target"
+      ]
+    }
+  ],
+  "root_env": "./.env",
+  "root_shared_scripts": "./shared_scripts",
+  "root_analysis_outputs": "./analysis_outputs",
+  "root_outputs": null,
+  "root_scripts": null,
+  "created_at": "2026-07-20",
+  "policy": {
+    "single_root_env": true,
+    "training_feature_logic_unchanged": true,
+    "root_outputs_scripts_removed": true,
+    "inventory_analysis_script": "./shared_scripts/analyze_listing_inventory.py"
+  }
+}

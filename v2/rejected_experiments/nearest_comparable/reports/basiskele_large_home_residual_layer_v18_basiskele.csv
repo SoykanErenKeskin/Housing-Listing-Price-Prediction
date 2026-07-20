@@ -1,0 +1,2 @@
+﻿status,selected_model,selected_lambda,note
+disabled,,0.0,mode=none (residual layer only runs for residual)

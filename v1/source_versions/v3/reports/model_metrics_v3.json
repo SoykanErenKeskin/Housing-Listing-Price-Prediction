@@ -1,0 +1,159 @@
+{
+  "target": "unit_price_gross",
+  "rows_raw": 1018,
+  "rows_used_after_strict_standard_flat_filter": 934,
+  "rows_removed_by_strict_filter": 84,
+  "filter_counts": {
+    "title_special_segment": 53,
+    "gross_m2_above_220": 20,
+    "room_count_not_standard_1to4_plus_1": 16,
+    "gross_m2_below_45": 5
+  },
+  "strict_filters": {
+    "title_exclude_patterns": [
+      "dublex",
+      "dubleks",
+      "düblex",
+      "dübleks",
+      "duplex",
+      "tripleks",
+      "triplex",
+      "lüks",
+      "lux",
+      "luxury",
+      "villa",
+      "müstakil",
+      "mustakil",
+      "bahçe",
+      "bahceli",
+      "bahçeli",
+      "bahce"
+    ],
+    "allowed_room_counts": [
+      "1+1",
+      "2+1",
+      "3+1",
+      "4+1"
+    ],
+    "min_gross_m2": 45,
+    "max_gross_m2": 220
+  },
+  "catboost_status": "available",
+  "features": {
+    "numeric_used": [
+      "gross_m2",
+      "net_m2",
+      "building_age",
+      "floor_num",
+      "total_floors",
+      "bathroom_count",
+      "net_gross_ratio",
+      "floor_ratio",
+      "remaining_floors",
+      "is_ground_floor",
+      "is_basement",
+      "is_top_floor",
+      "is_middle_floor",
+      "rooms",
+      "total_room_score",
+      "is_new_building",
+      "is_old_building",
+      "is_small_flat",
+      "is_large_flat",
+      "quality_score",
+      "district_target_encoded",
+      "district_baseline_unit_price"
+    ],
+    "categorical_used": [
+      "room_count",
+      "floor_segment",
+      "heating",
+      "kitchen",
+      "balcony",
+      "elevator",
+      "parking",
+      "furnished",
+      "usage_status",
+      "site_inside",
+      "credit_eligible",
+      "energy_certificate",
+      "deed_status",
+      "seller_type",
+      "barter",
+      "district",
+      "building_age_group",
+      "m2_group",
+      "district_age_group",
+      "district_m2_group",
+      "district_room_count"
+    ],
+    "removed_features": {
+      "living_rooms": "constant",
+      "real_estate_type": "constant"
+    }
+  },
+  "models": {
+    "ridge_v3_strict": {
+      "mape": 0.14696224860398188,
+      "mae_tl_per_m2": 5619.983449279146,
+      "median_ae_tl_per_m2": 4422.534121817378,
+      "r2": 0.5455429045216371,
+      "log_r2": 0.5641026310462729
+    },
+    "elasticnet_v3_strict": {
+      "mape": 0.16095751107480935,
+      "mae_tl_per_m2": 6201.121736609704,
+      "median_ae_tl_per_m2": 4916.828803321341,
+      "r2": 0.45456021904276855,
+      "log_r2": 0.4913489529241418
+    },
+    "gradient_boosting_v3_strict": {
+      "mape": 0.14447821979386577,
+      "mae_tl_per_m2": 5527.957313300154,
+      "median_ae_tl_per_m2": 4386.116482765947,
+      "r2": 0.5578418307905018,
+      "log_r2": 0.5760612413131554
+    },
+    "hist_gradient_boosting_v3_strict": {
+      "mape": 0.14348737659746627,
+      "mae_tl_per_m2": 5469.170514714857,
+      "median_ae_tl_per_m2": 4260.018564438258,
+      "r2": 0.554295600986076,
+      "log_r2": 0.5700506823678566
+    },
+    "extra_trees_v3_strict": {
+      "mape": 0.1399242410098743,
+      "mae_tl_per_m2": 5320.3939665126,
+      "median_ae_tl_per_m2": 4171.142034208782,
+      "r2": 0.5740082573186773,
+      "log_r2": 0.5854224186824988
+    },
+    "random_forest_v3_strict": {
+      "mape": 0.14130169275017382,
+      "mae_tl_per_m2": 5405.316833385127,
+      "median_ae_tl_per_m2": 4240.419838027741,
+      "r2": 0.5685330518961094,
+      "log_r2": 0.5879492246553737
+    },
+    "catboost_native_v3_strict": {
+      "error": "Cannot clone object CatBoostRegressor(allow_writing_files=False, cat_features=['room_count', 'floor_segment', 'heating', 'kitchen', 'balcony', 'elevator', 'parking', 'furnished', 'usage_status', 'site_inside', 'credit_eligible', 'energy_certificate', 'deed_status', 'seller_type', 'barter', 'district', 'building_age_group', 'm2_group', 'district_age_group', 'district_m2_group', 'district_room_count'], depth=6, eval_metric='R2', iterations=1400, l2_leaf_reg=8, learning_rate=0.03, loss_function='RMSE', random_seed=42, verbose=False), as the constructor either does not set or modifies parameter cat_features"
+    },
+    "gradient_boosting_tuned_r2_v3_strict": {
+      "mape": 0.1403518318194848,
+      "mae_tl_per_m2": 5373.068594285825,
+      "median_ae_tl_per_m2": 4253.866017751006,
+      "r2": 0.5784071000527351,
+      "log_r2": 0.5947904825116277,
+      "best_params": {
+        "regressor__model__subsample": 0.75,
+        "regressor__model__n_estimators": 900,
+        "regressor__model__min_samples_leaf": 5,
+        "regressor__model__max_depth": 3,
+        "regressor__model__learning_rate": 0.025
+      }
+    }
+  },
+  "best_model_by_r2": "gradient_boosting_tuned_r2_v3_strict",
+  "best_model_by_mape": "extra_trees_v3_strict",
+  "note": "V3 uses strict standard-flat filtering, district interaction features, leakage-safe target/baseline encoding, rare category grouping, and optional native CatBoost."
+}

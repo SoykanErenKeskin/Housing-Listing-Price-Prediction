@@ -1,0 +1,18 @@
+{
+  "ensemble_weights": {
+    "ensemble_grid_best_r2_v6_rental": {
+      "gradient_boosting_tuned_r2_v6_rental": 0.30000000000000004,
+      "gradient_boosting_v6_rental": 0.30000000000000004,
+      "hist_gradient_boosting_v6_rental": 0.3999999999999999
+    }
+  },
+  "tuned_params": {
+    "gradient_boosting_tuned_r2_v6_rental": {
+      "regressor__model__subsample": 0.75,
+      "regressor__model__n_estimators": 700,
+      "regressor__model__min_samples_leaf": 20,
+      "regressor__model__max_depth": 3,
+      "regressor__model__learning_rate": 0.04
+    }
+  }
+}

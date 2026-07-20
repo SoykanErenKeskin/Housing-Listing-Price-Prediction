@@ -1,0 +1,2 @@
+﻿rental_rows_raw,rental_rows_used,rental_districts,sales_rows_with_estimated_rent,rent_feature_level_counts,note
+1177,1177,56,1343,"{'district_room': 1276, 'district_m2_group': 33, 'district': 33, 'county': 1}",Rental features are external market aggregates. The sales target is not used to create them.

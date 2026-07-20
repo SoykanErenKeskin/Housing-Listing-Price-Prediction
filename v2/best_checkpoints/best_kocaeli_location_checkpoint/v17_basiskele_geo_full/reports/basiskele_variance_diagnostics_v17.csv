@@ -1,0 +1,2 @@
+﻿rows,actual_variance,prediction_variance,variance_explained_ratio,mape,r2,attribute_sensitivity_avg_abs_diff,note
+919,69253281.46726415,30099249.99490952,0.43462561422648777,0.10936049990506336,0.483426974660913,3029.3803287996243,Başiskele predictions are compressed toward mean

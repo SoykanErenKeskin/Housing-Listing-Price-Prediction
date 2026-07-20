@@ -1,0 +1,140 @@
+# =============================================================================
+# Secrets / credentials — never commit
+# =============================================================================
+.env
+**/.env
+.env.*
+**/.env.*
+# Allow templates (must come after the ignore patterns above)
+!.env.example
+!.env.example.*
+!**/.env.example
+!**/.env.example.*
+**/_preserved_env/
+**/preserved_env/
+**/credentials.json
+**/secrets.json
+**/service-account*.json
+**/*credentials*.json
+*.pem
+*.p12
+*.pfx
+*.key
+id_rsa
+id_rsa.*
+# =============================================================================
+# Python / virtualenvs
+# =============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# =============================================================================
+# OS / IDE / editor
+# =============================================================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+.cursor/
+
+# =============================================================================
+# Training outputs & model artifacts
+# =============================================================================
+# Keep interpretable report packs (metrics JSON/CSV, plots, best_checkpoints).
+# Drop heavy binaries and full historical run dumps (multi-hundred MB each).
+
+**/artifacts/
+**/_offline_cache/
+**/offline_cache/
+analysis_outputs/
+analysis_outputs/**
+
+# Full historical run trees under archived version packages (too large for GitHub)
+**/source_versions/**/outputs/
+
+# Serialized models / binaries
+*.joblib
+*.pkl
+*.pickle
+*.pt
+*.pth
+*.onnx
+*.h5
+*.hdf5
+*.cbm
+*.model
+*.bin
+*.zip
+
+# Large prediction / matrix dumps inside otherwise-tracked output folders
+**/oof_predictions*.csv
+**/training_matrix*.csv
+**/feature_matrix*.csv
+**/sales_with_outlier_flags*.csv
+**/rental_with_outlier_flags*.csv
+**/sales_cleaned*.csv
+**/rental_cleaned*.csv
+**/sales_removed*.csv
+**/rental_removed*.csv
+# Listing-level / row-level dumps (never share; keep aggregate metrics instead)
+**/anomaly_training_filter*.csv
+**/top_listing_anomalies*.csv
+**/suspicious_rows*.csv
+**/duplicates_report*.csv
+**/samples/**
+**/input_a_features.csv
+**/input_b_features.csv
+**/new_house_features.csv
+**/old_house_features.csv
+**/feature_diff.csv
+**/prediction_diff.json
+**/v13_debug_pair_smoke/
+
+# =============================================================================
+# Local data dumps (DB exports / cleaner I/O — not source)
+# =============================================================================
+outlier_cleaning/data/input/
+outlier_cleaning/data/output/
+**/data/input/
+**/data/raw/
+**/data/output/
+!**/.gitkeep
+
+# Vendor-branded dump filenames (never commit if they reappear locally)
+**/*sahibinden*
+**/*Sahibinden*
+**/*endeksa*
+**/*Endeksa*
+
+# Optional: very large raw dumps if dropped at repo root
+*.sqlite
+*.db
+*.dump
+*.sql.gz
+_scrub_brands.py
+
+# =============================================================================
+# Logs / temp
+# =============================================================================
+*.log
+logs/
+tmp/
+temp/
+.cache/

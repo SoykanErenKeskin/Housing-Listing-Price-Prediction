@@ -1,0 +1,9 @@
+{
+  "pass": true,
+  "outer_validation_targets_used_in_calibrator": false,
+  "inner_oof_used": true,
+  "calibration_mode": "linear",
+  "correction_cap": 0.1,
+  "n_folds": 5,
+  "notes": []
+}

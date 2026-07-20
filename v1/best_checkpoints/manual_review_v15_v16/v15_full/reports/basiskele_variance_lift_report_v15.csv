@@ -1,0 +1,2 @@
+﻿mode,status,lambda,basiskele_r2_before,basiskele_r2_after,global_mape_before,global_mape_after,note
+conservative,rejected_no_lift,0.1,0.4534310549577666,0.45315404940106585,0.12897452096852122,0.1290458704179936,disabled: no Başiskele R2 lift or global MAPE worsened

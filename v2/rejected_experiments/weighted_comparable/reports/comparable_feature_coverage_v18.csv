@@ -1,0 +1,8 @@
+﻿feature,present,non_null_rate,mean,std,min,max,mode
+bsk_weighted_comp_mean,True,1.0,41334.08686924682,2990.6585228274707,34167.87033095588,53365.48021086713,34167.87033095588
+bsk_weighted_comp_median,True,1.0,40406.71459194776,3435.313333839518,31764.71,58900.0,42500.0
+bsk_weighted_comp_std,True,1.0,7522.574983633903,1447.2322579657764,4212.6522670827735,16430.12309439215,4212.6522670827735
+bsk_weighted_comp_count,True,1.0,40.0,0.0,40.0,40.0,40.0
+bsk_weighted_comp_confidence,True,1.0,1.0,0.0,1.0,1.0,1.0
+bsk_comparable_missing,True,1.0,0.0,0.0,0.0,0.0,0.0
+bsk_fallback_level,True,1.0,0.0,0.0,0.0,0.0,0.0

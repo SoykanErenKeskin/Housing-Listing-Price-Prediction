@@ -1,0 +1,70 @@
+{
+  "rows_raw": 1082,
+  "rows_cleaned": 1018,
+  "rows_removed": 64,
+  "removed_ratio": 0.059149722735674676,
+  "reason_counts": {
+    "district_iqr_outlier": 34,
+    "global_quantile_outlier_0.01_0.99": 22,
+    "county_iqr_outlier": 8
+  },
+  "unit_price_stats_before": {
+    "count": 1082.0,
+    "mean": 41064.684195933456,
+    "std": 13826.89602894198,
+    "min": 10101.01,
+    "25%": 32162.795,
+    "50%": 39607.69,
+    "75%": 47718.53,
+    "max": 176785.71
+  },
+  "unit_price_stats_after": {
+    "count": 1018.0,
+    "mean": 39889.40019646366,
+    "std": 10770.351006927332,
+    "min": 17181.82,
+    "25%": 32222.22,
+    "50%": 39309.520000000004,
+    "75%": 46447.567500000005,
+    "max": 71710.53
+  },
+  "config": {
+    "target_unit_price_col": "unit_price_gross",
+    "price_col": "price",
+    "gross_m2_col": "gross_m2",
+    "location_cols": [
+      "city",
+      "county",
+      "district"
+    ],
+    "soft_numeric_limits": {
+      "gross_m2_min": 25,
+      "gross_m2_max": 500,
+      "unit_price_gross_min": 5000,
+      "unit_price_gross_max": 300000,
+      "price_min": 250000,
+      "price_max": 100000000
+    },
+    "global_quantile_filter": {
+      "enabled": true,
+      "lower_quantile": 0.01,
+      "upper_quantile": 0.99
+    },
+    "district_iqr_filter": {
+      "enabled": true,
+      "min_group_size": 8,
+      "iqr_multiplier": 1.5
+    },
+    "county_iqr_filter": {
+      "enabled": true,
+      "min_group_size": 20,
+      "iqr_multiplier": 1.75
+    },
+    "duplicate_filter": {
+      "enabled": true,
+      "subset": [
+        "classified_id"
+      ]
+    }
+  }
+}

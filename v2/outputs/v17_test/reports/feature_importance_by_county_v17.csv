@@ -1,0 +1,565 @@
+﻿county,model,feature,importance
+Gölcük,extra_trees,num__district_m2_group_target_median,0.16077077627448783
+Gölcük,extra_trees,num__district_room_count_target_median,0.11395891491183946
+Gölcük,extra_trees,num__is_old_building,0.03641235531698842
+Gölcük,extra_trees,num__building_age,0.03247833287765994
+Gölcük,extra_trees,num__net_m2,0.026503394017533814
+Gölcük,extra_trees,num__attr_building_age_score,0.025493786257135984
+Gölcük,extra_trees,num__attr_compact_home_x_quality,0.023927355515663943
+Gölcük,extra_trees,num__gross_m2,0.020875925143665583
+Gölcük,extra_trees,num__attr_effect_building_age_bucket,0.018176140196285644
+Gölcük,extra_trees,cat__m2_group_0-75,0.017429538791020136
+Gölcük,extra_trees,num__demo_divorced_ratio,0.013991657310861926
+Gölcük,extra_trees,num__total_floors,0.012824842028297749
+Gölcük,extra_trees,num__is_small_flat,0.012595390860095429
+Gölcük,extra_trees,num__trend_yield,0.012386764278851312
+Gölcük,extra_trees,num__attr_m2_per_room,0.012070962734718967
+Gölcük,extra_trees,num__estimated_monthly_rent_gross,0.01058185490943634
+Gölcük,extra_trees,num__attr_building_age_inverse,0.009910869815048738
+Gölcük,extra_trees,cat__m2_group_76-100,0.008807524731995057
+Gölcük,extra_trees,num__location_baseline_log,0.00855536875550525
+Gölcük,extra_trees,num__detail_effect_total_mean,0.007852801684151861
+Gölcük,extra_trees,num__attr_quality_x_county_income,0.006904477815270836
+Gölcük,extra_trees,cat__usage_status_Mülk Sahibi,0.006748453628389468
+Gölcük,extra_trees,num__trend_sale_m2,0.006612075058998586
+Gölcük,extra_trees,num__detail_effect_front_mean,0.006289144466639447
+Gölcük,extra_trees,num__attr_compactness_score,0.006150077518844407
+Gölcük,extra_trees,num__attr_is_old_building,0.005666830210030928
+Gölcük,extra_trees,num__detail_effect_front_sum,0.005540250519009489
+Gölcük,extra_trees,num__demo_married_ratio,0.005249265637625946
+Gölcük,extra_trees,num__attr_effect_total_quality_bucket,0.005058525525184963
+Gölcük,extra_trees,num__demo_male_ratio,0.004912302209328708
+Gölcük,extra_trees,num__detail_effect_total_x_attr_quality,0.004848587990510505
+Gölcük,extra_trees,cat__building_age_group_11-15 arası,0.004801821871143667
+Gölcük,extra_trees,num__attr_total_quality_score,0.0047651452390163685
+Gölcük,extra_trees,num__distance_to_coast_x_large_home,0.004618520164332657
+Gölcük,extra_trees,num__detail_effect_inside_mean,0.004484139054757991
+Gölcük,extra_trees,num__detail_effect_total_sum,0.00417739258823257
+Gölcük,extra_trees,num__demo_female_ratio,0.004066586251475486
+Gölcük,extra_trees,num__demo_household_size,0.004030337800686247
+Gölcük,extra_trees,num__location_baseline_m2,0.004021624911914187
+Gölcük,extra_trees,cat__kitchen_Kapalı,0.003930192306405186
+Gölcük,extra_trees,cat__kitchen_Açık (Amerikan),0.003916374876452036
+Gölcük,extra_trees,num__detail_effect_inside_x_attr_quality,0.003887471864428593
+Gölcük,extra_trees,num__district_m2_group_rent_m2_median,0.003869448472606149
+Gölcük,extra_trees,num__attr_quality_x_location_baseline,0.003627165323026619
+Gölcük,extra_trees,num__distance_to_coast_x_near_sea_zero,0.0035737599464244936
+Gölcük,extra_trees,num__detail_effect_total_abs_sum,0.0033620766889598465
+Gölcük,extra_trees,num__detail_effect_negative_count,0.00335033945383904
+Gölcük,extra_trees,num__floor_num,0.003314378808376713
+Gölcük,extra_trees,num__district_target_mean,0.0032972651628593126
+Gölcük,extra_trees,num__district_target_median,0.003226762563516692
+Gölcük,extra_trees,num__attr_quality_x_district_median,0.0032011228234087646
+Gölcük,extra_trees,num__district_m2_group_rent_m2_count,0.0031578092819796156
+Gölcük,extra_trees,num__detail_effect_view_mean,0.003150017513623376
+Gölcük,extra_trees,num__detail_effect_subtype_sum,0.0030626341218455253
+Gölcük,extra_trees,num__demo_age_45_54,0.003037614807505114
+Gölcük,extra_trees,cat__floor_segment_Ara Kat,0.0029991402716670564
+Gölcük,extra_trees,cat__detail_konut_tipi_Ara Kat,0.0029011336181027397
+Gölcük,extra_trees,cat__m2_group_151-200,0.0028921877524320082
+Gölcük,extra_trees,num__net_gross_ratio,0.002853542955333033
+Gölcük,extra_trees,num__detail_effect_county_total_sum,0.002843572464604554
+Gölcük,extra_trees,num__attr_amenity_score,0.002837569069421297
+Gölcük,extra_trees,cat__usage_status_Boş,0.002820539205712981
+Gölcük,extra_trees,num__detail_effect_inside_sum,0.002818401707945123
+Gölcük,extra_trees,cat__detail_manzara_Deniz|Doğa|Park & Yeşil Alan|Şehir,0.002807571285849803
+Gölcük,extra_trees,num__attr_quality_x_demo_income,0.002728668889294933
+Gölcük,extra_trees,num__detail_effect_subtype_mean,0.0026382101144131454
+Gölcük,extra_trees,cat__m2_group_126-150,0.0026274408012943993
+Gölcük,extra_trees,num__detail_effect_view_sum,0.002573129262780246
+Gölcük,extra_trees,num__demo_age_0_14,0.0025728067808028546
+Gölcük,extra_trees,num__attr_net_gross_ratio,0.002563561227027983
+Gölcük,extra_trees,num__detail_effect_level_code,0.002328118004953757
+Gölcük,extra_trees,num__trend_count_sale,0.0022813044535907484
+Gölcük,extra_trees,num__detail_effect_outside_mean,0.002279279410350012
+Gölcük,extra_trees,num__location_baseline_count,0.0022498517921194033
+Gölcük,extra_trees,num__detail_effect_view_x_location_baseline,0.0022390428179819796
+Gölcük,extra_trees,num__attr_is_new_building,0.002215332809802195
+Gölcük,extra_trees,cat__building_age_group_26-30 arası,0.0022072338686798024
+Gölcük,extra_trees,num__is_middle_floor,0.0021883639400731188
+Gölcük,extra_trees,cat__m2_group_101-125,0.002183910817019603
+Gölcük,extra_trees,cat__balcony_Yok,0.00218203208982415
+Gölcük,extra_trees,cat__detail_konut_tipi_missing,0.00214666437837579
+Gölcük,extra_trees,cat__geo_cluster_x_room_count_missing||3+1,0.002123167328372456
+Gölcük,extra_trees,num__remaining_floors,0.002111556188485832
+Gölcük,extra_trees,cat__balcony_Var,0.002091792087219101
+Gölcük,extra_trees,num__demo_education_primary_school_count,0.002040345492374834
+Gölcük,extra_trees,num__attr_floor_ratio,0.0020144486184915313
+Gölcük,extra_trees,num__detail_effect_district_total_sum,0.0019804442625093407
+Gölcük,extra_trees,num__dues,0.0019326517903813277
+Gölcük,extra_trees,num__detail_transport_count,0.0019017735175139527
+Gölcük,extra_trees,num__bathroom_count,0.0018855732602654158
+Gölcük,extra_trees,num__trend_sale_annual_change,0.0018457752173630026
+Gölcük,extra_trees,num__detail_quality_score,0.001835058088045431
+Gölcük,extra_trees,num__attr_floor_quality_score,0.001808636132356242
+Gölcük,extra_trees,num__large_home_m2_excess,0.0017762511946216092
+Gölcük,extra_trees,num__demo_workplace_density,0.0017400985196012004
+Gölcük,extra_trees,cat__detail_manzara_Park & Yeşil Alan|Şehir,0.0017148814130679719
+Gölcük,extra_trees,num__demo_young_ratio,0.0017137945446224212
+Gölcük,extra_trees,num__demo_age_55_64,0.0016878699035502039
+Gölcük,extra_trees,num__floor_ratio,0.0016801238997498462
+Gölcük,extra_trees,cat__building_age_group_0 (Oturuma Hazır),0.001670803358905399
+Gölcük,extra_trees,cat__heating_Kombi (Doğalgaz),0.0016665877688097522
+Gölcük,extra_trees,cat__detail_manzara_missing,0.001656500493679742
+Gölcük,extra_trees,num__nearby_score,0.001651292176176723
+Gölcük,extra_trees,num__site_security_score,0.0016407862607296184
+Gölcük,extra_trees,cat__floor_segment_Zemin/Giriş,0.0016184347992476613
+Gölcük,extra_trees,num__detail_near_count,0.0016154654409007848
+Gölcük,extra_trees,num__detail_effect_positive_count,0.0016086818691934768
+Gölcük,extra_trees,cat__detail_cephe_Doğu|Güney,0.0015724062176088382
+Gölcük,extra_trees,cat__room_count_2+1,0.001565311440313173
+Gölcük,extra_trees,num__view_score,0.0015513648084405488
+Gölcük,extra_trees,num__detail_inside_count,0.0015345785715019803
+Gölcük,extra_trees,cat__usage_status_Kiracılı,0.0015337170739767201
+Gölcük,extra_trees,num__district_room_rent_m2_median,0.001528559345437944
+Gölcük,extra_trees,num__detail_effect_used_count,0.0014680235188632776
+Gölcük,extra_trees,num__distance_to_coast_x_view_sea,0.001447084552416677
+Gölcük,extra_trees,cat__detail_cephe_Batı|Doğu|Güney,0.0014102632985715654
+Gölcük,extra_trees,num__detail_effect_transport_mean,0.0013867332313871352
+Gölcük,extra_trees,cat__parking_Açık Otopark,0.0013845487963617244
+Gölcük,extra_trees,num__attr_has_balcony,0.0013746521729709853
+Gölcük,extra_trees,num__demo_old_count,0.0013645888320306795
+Gölcük,extra_trees,num__detail_front_count,0.00135102354733374
+Gölcük,extra_trees,cat__building_age_group_16-20 arası,0.001330335441304198
+Gölcük,extra_trees,num__attr_is_middle_floor,0.0013225498745907535
+Gölcük,extra_trees,num__detail_view_count,0.001312013470869102
+Gölcük,extra_trees,num__front_score,0.0012858478858271745
+Gölcük,extra_trees,num__is_top_floor,0.0012800878843083562
+Gölcük,extra_trees,num__demo_income_vs_county,0.0012762339039727043
+Gölcük,extra_trees,num__demo_ses_c_count,0.0012558973932592927
+Gölcük,extra_trees,num__large_home_net_gross_quality,0.0012516336609219095
+Gölcük,extra_trees,num__attr_large_home_x_quality,0.0012312590450944234
+Gölcük,extra_trees,num__accessibility_score,0.0012283833993031515
+Gölcük,extra_trees,num__outside_quality_score,0.0012262647371343504
+Gölcük,extra_trees,num__demo_age_55_64_count,0.0012184281638092812
+Gölcük,extra_trees,num__demo_residential_density,0.0012170935430189371
+Gölcük,extra_trees,num__trend_price_change_sale,0.0011751948681378442
+Gölcük,extra_trees,cat__elevator_Yok,0.0011576844893704768
+Gölcük,extra_trees,num__transport_score,0.0011390283588357793
+Gölcük,extra_trees,num__rooms,0.0011318901238408815
+Gölcük,extra_trees,num__demo_atm_per_10k,0.0011122184695379273
+Gölcük,extra_trees,cat__detail_cephe_missing,0.0010994513269862137
+Gölcük,extra_trees,num__demo_education_unknown_ratio,0.0010990609056099466
+Gölcük,extra_trees,cat__district_Şehitler Mh.,0.001095997763120924
+Gölcük,extra_trees,num__demo_education_middle_school_count,0.0010900875962328036
+Gölcük,extra_trees,num__demo_age_25_34,0.0010845098780813156
+Gölcük,extra_trees,num__attr_effect_site_inside,0.001067698275256158
+Gölcük,extra_trees,num__demo_household_income_vs_county,0.0010670226994207567
+Gölcük,extra_trees,cat__building_age_group_31 ve üzeri,0.0010630588849585955
+Gölcük,extra_trees,num__demo_per_capita_income_try,0.0010620795768297522
+Gölcük,extra_trees,num__detail_effect_nearby_mean,0.001056674101806188
+Gölcük,extra_trees,num__attr_is_site_inside,0.0010509048743768837
+Gölcük,extra_trees,num__demo_car_per_capita,0.0010502175655009744
+Gölcük,extra_trees,num__detail_selected_count,0.0010356577429034193
+Gölcük,extra_trees,num__attr_is_mid_age_building,0.0010353996115319156
+Gölcük,extra_trees,num__trend_listing_period_sale,0.0010167613138581388
+Gölcük,extra_trees,num__demo_university_diff_county,0.0010108853879432997
+Gölcük,extra_trees,cat__detail_cephe_Batı|Doğu,0.0010106872332891056
+Gölcük,extra_trees,num__large_home_log_m2,0.001006345489434422
+Gölcük,extra_trees,cat__district_Ulaşlı Yalı Mh.,0.00100512385366541
+Gölcük,extra_trees,num__attr_is_top_floor,0.001002871807049979
+Gölcük,extra_trees,num__demo_age_15_24_count,0.0010011730468738134
+Gölcük,extra_trees,cat__geo_cluster_x_room_count_missing||2+1,0.0009981976769999265
+Gölcük,extra_trees,num__demo_density_vs_county,0.0009891328344131577
+Gölcük,extra_trees,num__estimated_rent_m2_gross,0.0009858507562555876
+Gölcük,extra_trees,num__attr_has_elevator,0.0009788794007593382
+Gölcük,extra_trees,num__district_room_rent_m2_count,0.0009694913352369818
+Gölcük,extra_trees,num__attr_effect_parking,0.0009692430460882433
+Gölcük,extra_trees,num__attr_old_building_x_no_elevator,0.0009532275860163152
+Gölcük,extra_trees,num__attr_effect_elevator,0.0009528675327513818
+Gölcük,extra_trees,num__attr_is_ground_or_below,0.0009473351345333902
+Gölcük,extra_trees,num__detail_effect_transport_sum,0.0009455556824894242
+Gölcük,extra_trees,num__is_ground_floor,0.0009306221334997511
+Gölcük,extra_trees,num__demo_high_school_diff_county,0.0009292393494072932
+Gölcük,extra_trees,cat__parking_Yok,0.0009224844249071273
+Gölcük,extra_trees,num__demo_education_high_school_count,0.0009204621025281652
+Gölcük,extra_trees,num__demo_young_ratio_diff_county,0.00091809028988669
+Gölcük,extra_trees,num__inside_quality_score,0.0009092885406362739
+Gölcük,extra_trees,num__demo_population_density,0.0008824905452762437
+Gölcük,extra_trees,num__demo_vehicle_per_capita,0.0008810302711247725
+Gölcük,extra_trees,num__demo_single_ratio,0.0008676656763184693
+Gölcük,extra_trees,cat__detail_konut_tipi_En Üst Kat,0.0008667188436799421
+Gölcük,extra_trees,num__demo_education_graduate_count,0.0008460856628787518
+Gölcük,extra_trees,num__trend_rent_m2,0.0008333988785388395
+Gölcük,extra_trees,num__detail_effect_nearby_sum,0.0008297760444705447
+Gölcük,extra_trees,num__location_baseline_vs_trend,0.0008292922980826064
+Gölcük,extra_trees,num__attr_heating_quality_score,0.0008158659432655235
+Gölcük,extra_trees,num__demo_widow_count,0.0008088970385033765
+Gölcük,extra_trees,num__demo_ses_a_plus_ratio,0.0008024672596062015
+Gölcük,extra_trees,num__demo_ses_ab_ratio,0.0008023050869470876
+Gölcük,extra_trees,num__detail_effect_outside_sum,0.0008001798593562521
+Gölcük,extra_trees,num__demo_population_total,0.0007989012625892872
+Gölcük,extra_trees,num__demo_age_65_plus_count,0.0007940325456939008
+Gölcük,extra_trees,num__detail_effect_outside_x_attr_quality,0.0007894646483487317
+Gölcük,extra_trees,cat__detail_cephe_Batı|Kuzey,0.0007870556512287103
+Gölcük,extra_trees,num__distance_to_coast_x_site_inside,0.0007832907279361791
+Gölcük,extra_trees,cat__building_age_group_6-10 arası,0.0007823381824815779
+Gölcük,extra_trees,num__demo_age_65_plus,0.0007766893171494307
+Gölcük,extra_trees,num__demo_education_middle_school_ratio,0.0007670544394344787
+Gölcük,extra_trees,num__demo_population_female,0.0007441742445480471
+Gölcük,extra_trees,cat__room_count_3+1,0.0007436111695166207
+Gölcük,extra_trees,num__attr_has_premium_heating,0.0007288150904580237
+Gölcük,extra_trees,cat__detail_cephe_Batı|Güney|Kuzey,0.0007187884714755528
+Gölcük,extra_trees,num__demo_ses_d_count,0.000713152969598493
+Gölcük,extra_trees,num__demo_pharmacy_per_10k,0.0007084485424009376
+Gölcük,extra_trees,cat__floor_segment_En Üst Kat,0.0007076310613077288
+Gölcük,extra_trees,num__district_rent_m2_median,0.0007004780468407571
+Gölcük,extra_trees,num__large_home_quality_x_m2,0.0006974083473032739
+Gölcük,extra_trees,num__demo_ses_cd_diff_county,0.0006882886240287616
+Gölcük,extra_trees,num__location_baseline_level_code,0.0006785720630077409
+Gölcük,extra_trees,num__demo_widow_ratio,0.0006775953745690889
+Gölcük,extra_trees,num__district_rent_m2_cv,0.0006750597874355006
+Gölcük,extra_trees,num__demo_pharmacy_count,0.0006735995440596444
+Gölcük,extra_trees,num__detail_outside_count,0.0006696809526173474
+Gölcük,extra_trees,num__demo_ses_cd_ratio,0.0006653695936937643
+Gölcük,extra_trees,num__attr_effect_heating_quality_bucket,0.0006630122858420917
+Gölcük,extra_trees,num__demo_household_count,0.0006560828784685623
+Gölcük,extra_trees,cat__site_inside_Evet,0.0006549168276960105
+Gölcük,extra_trees,num__demo_middle_count,0.0006532160137877663
+Gölcük,extra_trees,num__demo_education_total,0.0006524119629817684
+Gölcük,extra_trees,cat__site_inside_Hayır,0.000652362781108983
+Gölcük,extra_trees,num__demo_married_count,0.0006502937883568969
+Gölcük,extra_trees,num__demo_atm_count,0.0006500989168164089
+Gölcük,extra_trees,cat__district_Kavaklı Mh.,0.0006446289105203693
+Gölcük,extra_trees,num__demo_old_ratio,0.0006343508841584215
+Gölcük,extra_trees,cat__furnished_Hayır,0.0006326468694977938
+Gölcük,extra_trees,num__demo_old_ratio_diff_county,0.000626083870724505
+Gölcük,extra_trees,num__demo_residential_count,0.0006246773564415493
+Gölcük,extra_trees,num__demo_ses_d_ratio,0.0006231301816859576
+Gölcük,extra_trees,num__demo_age_45_54_count,0.0006215696049530241
+Gölcük,extra_trees,num__district_rent_m2_mean,0.0006157386388245624
+Gölcük,extra_trees,num__demo_education_primary_education_ratio,0.0006135178018877033
+Gölcük,extra_trees,num__demo_household_income_try,0.0006122843096460804
+Gölcük,extra_trees,num__demo_ses_c_ratio,0.0006011548649706353
+Gölcük,extra_trees,num__demo_ses_a_ratio,0.0005996639655371105
+Gölcük,extra_trees,num__demo_vehicle_count,0.000583795616144494
+Gölcük,extra_trees,num__large_home_detail_premium_x_m2,0.0005741961140652905
+Gölcük,extra_trees,num__demo_education_graduate_ratio,0.0005739044918422033
+Gölcük,extra_trees,num__trend_count_rent,0.0005733133382391019
+Gölcük,extra_trees,num__attr_has_parking,0.0005725695652190481
+Gölcük,extra_trees,num__demo_age_35_44_count,0.0005626757749876559
+Gölcük,extra_trees,cat__detail_manzara_Deniz|Doğa|Park & Yeşil Alan,0.0005614505899187392
+Gölcük,extra_trees,num__demo_age_25_34_count,0.0005322936292242878
+Gölcük,extra_trees,num__is_new_building,0.0005290396162865422
+Gölcük,extra_trees,num__demo_middle_ratio,0.0005242455444050919
+Gölcük,extra_trees,cat__building_age_group_21-25 arası,0.0005207393418230015
+Gölcük,extra_trees,num__demo_ses_b_ratio,0.0005116063656134291
+Gölcük,extra_trees,cat__elevator_Var,0.0005050905988879396
+Gölcük,extra_trees,num__is_large_flat,0.0005046929100034072
+Gölcük,extra_trees,cat__district_Donanma Mah.,0.0004973820293838308
+Gölcük,extra_trees,num__attr_is_young_building,0.0004959980906156466
+Gölcük,extra_trees,cat__detail_manzara_Deniz,0.0004924589575312912
+Gölcük,extra_trees,num__demo_education_university_count,0.00048534102612914326
+Gölcük,extra_trees,num__district_rent_m2_count,0.0004716394174176502
+Gölcük,extra_trees,num__demo_education_high_school_ratio,0.0004697912202907761
+Gölcük,extra_trees,num__total_room_score,0.00046328212816176356
+Gölcük,extra_trees,cat__detail_manzara_Doğa|Park & Yeşil Alan,0.00045792445167556003
+Gölcük,extra_trees,num__demo_age_0_14_count,0.0004398657682127803
+Gölcük,extra_trees,num__demo_divorced_count,0.0004391653635624986
+Gölcük,extra_trees,num__county_room_count_target_median,0.00042867869088910167
+Gölcük,extra_trees,cat__demo_dominant_age_group_65+,0.0004209276808963447
+Gölcük,extra_trees,cat__heating_Yerden Isıtma,0.0004186614724851663
+Gölcük,extra_trees,num__demo_young_count,0.0004122679857190295
+Gölcük,extra_trees,num__location_backfill_listing_removed,0.0004104526603030436
+Gölcük,extra_trees,num__demo_population_male,0.0003908678141831959
+Gölcük,extra_trees,num__demo_car_count,0.00039071174032351497
+Gölcük,extra_trees,num__district_rent_m2_iqr,0.00038981374847495164
+Gölcük,extra_trees,num__demo_never_married_count,0.00037754139363353035
+Gölcük,extra_trees,cat__building_age_group_1,0.0003760720651432619
+Gölcük,extra_trees,num__demo_ses_b_count,0.0003599051070254025
+Gölcük,extra_trees,num__demo_workplace_count,0.00035064932771339627
+Gölcük,extra_trees,num__demo_education_primary_school_ratio,0.000349347024079786
+Gölcük,extra_trees,num__large_home_room_density,0.00034658604410040287
+Gölcük,extra_trees,num__demo_ses_a_plus_count,0.0003429884330578184
+Gölcük,extra_trees,cat__parking_Açık & Kapalı Otopark,0.0003400428477562192
+Gölcük,extra_trees,num__demo_ses_ab_diff_county,0.0003291447798061351
+Gölcük,extra_trees,cat__demo_dominant_age_group_40-44,0.0003265600648305085
+Gölcük,extra_trees,num__demo_age_35_44,0.00031837132504880305
+Gölcük,extra_trees,num__attr_new_building_x_site_inside,0.00030597949032492027
+Gölcük,extra_trees,num__demo_education_university_ratio,0.0003020970663568176
+Gölcük,extra_trees,cat__detail_cephe_Güney,0.0002768395267955735
+Gölcük,extra_trees,num__demo_ses_a_count,0.00027510546702535815
+Gölcük,extra_trees,num__demo_education_doctorate_count,0.00026638632087353707
+Gölcük,extra_trees,cat__detail_cephe_Doğu|Kuzey,0.00026394473665489264
+Gölcük,extra_trees,num__attr_net_gross_good,0.00026342173385351415
+Gölcük,extra_trees,cat__detail_konut_tipi_Çatı Dubleksi,0.0002514993656537158
+Gölcük,extra_trees,cat__district_Dumlupınar Mh.,0.00024203536315608207
+Gölcük,extra_trees,cat__building_age_group_5,0.00023801998332764564
+Gölcük,extra_trees,cat__detail_manzara_Doğa|Park & Yeşil Alan|Şehir,0.00022580698971512135
+Gölcük,extra_trees,cat__heating_Doğalgaz Sobası,0.00022313599355049989
+Gölcük,extra_trees,num__demo_age_15_24,0.00021576659993657106
+Gölcük,extra_trees,cat__district_Şirinköy Mh.,0.000199462983818936
+Gölcük,extra_trees,cat__demo_dominant_age_group_30-34,0.00018870227460751447
+Gölcük,extra_trees,cat__detail_cephe_Batı|Doğu|Güney|Kuzey,0.00018565491741604178
+Gölcük,extra_trees,cat__parking_Kapalı Otopark,0.00017231472284859185
+Gölcük,extra_trees,num__large_home_site_x_m2,0.00016231960058717834
+Gölcük,extra_trees,cat__building_age_group_4,0.00014133849811884952
+Gölcük,extra_trees,cat__district_Körfez Mh.,0.00014093470681855575
+Gölcük,extra_trees,cat__detail_cephe_Doğu|Güney|Kuzey,0.00014004688569298763
+Gölcük,extra_trees,cat__district_Hisareyn Merkez Mah.,0.000137500382054678
+Gölcük,extra_trees,cat__district_İpek Yolu Mh.,0.00013087740838312137
+Gölcük,extra_trees,cat__furnished_Evet,0.00012580691781775315
+Gölcük,extra_trees,num__detail_subtype_count,0.00012411615497792116
+Gölcük,extra_trees,cat__district_Çiftlik Mh.,0.00012367553847962806
+Gölcük,extra_trees,cat__floor_segment_Çatı,0.0001148316541739762
+Gölcük,extra_trees,cat__detail_manzara_Doğa,0.0001147777656870217
+Gölcük,extra_trees,cat__demo_ses_group_C Grubu,0.00010906308854575348
+Gölcük,extra_trees,cat__detail_manzara_Deniz|Doğa,9.712822907470314e-05
+Gölcük,extra_trees,cat__detail_manzara_Park & Yeşil Alan,9.695512557835018e-05
+Gölcük,extra_trees,cat__district_Piyalepaşa Mh.,9.262449287165178e-05
+Gölcük,extra_trees,num__attr_is_furnished,8.856176809357542e-05
+Gölcük,extra_trees,cat__detail_cephe_Batı|Doğu|Kuzey,8.56031568058768e-05
+Gölcük,extra_trees,cat__district_Karaköprü Mh.,8.55799563542854e-05
+Gölcük,extra_trees,cat__geo_cluster_x_room_count_missing||4+1,6.768521888978337e-05
+Gölcük,extra_trees,cat__detail_manzara_Deniz|Şehir,6.022524305511208e-05
+Gölcük,extra_trees,num__attr_has_natural_gas_heating,5.935361539264437e-05
+Gölcük,extra_trees,cat__district_Yüzbaşılar Mh.,5.5437910063409145e-05
+Gölcük,extra_trees,cat__detail_manzara_Deniz|Park & Yeşil Alan|Şehir,4.872964195771568e-05
+Gölcük,extra_trees,cat__district_Yazlık Yeni Mh.,4.8158528256982674e-05
+Gölcük,extra_trees,cat__demo_dominant_education_Lise,4.787074502722513e-05
+Gölcük,extra_trees,cat__detail_cephe_Kuzey,4.653130967540913e-05
+Gölcük,extra_trees,cat__room_count_4+1,4.3009174557234364e-05
+Gölcük,extra_trees,cat__district_İhsaniye Merkez Mh.,4.262495573532455e-05
+Gölcük,extra_trees,num__demo_bank_per_10k,4.202736559246651e-05
+Gölcük,extra_trees,cat__rent_feature_level_district_room,4.094169009360378e-05
+Gölcük,extra_trees,cat__district_Cumhuriyet Mah.,4.0727704445863335e-05
+Gölcük,extra_trees,cat__detail_manzara_Doğa|Şehir,3.5006743118681326e-05
+Gölcük,extra_trees,cat__geo_cluster_x_room_count_missing||1+1,3.270585616977012e-05
+Gölcük,extra_trees,num__demo_education_non_literate_ratio,3.252139400387676e-05
+Gölcük,extra_trees,cat__detail_cephe_Doğu,2.8366792147506104e-05
+Gölcük,extra_trees,cat__district_Düzağaç Mh.,2.756435045345444e-05
+Gölcük,extra_trees,cat__detail_cephe_Güney|Kuzey,2.6533087423549084e-05
+Gölcük,extra_trees,cat__building_age_group_2,2.464927298336093e-05
+Gölcük,extra_trees,cat__demo_dominant_age_group_20-24,2.1922201917800867e-05
+Gölcük,extra_trees,cat__detail_manzara_Şehir,2.160512197791161e-05
+Gölcük,extra_trees,num__demo_bank_count,1.9433917828972433e-05
+Gölcük,extra_trees,cat__heating_Merkezi (Pay Ölçer),1.8851432996708305e-05
+Gölcük,extra_trees,cat__district_Ulaşlı Yavuz Sultan Selim Mh.,1.7497212305924894e-05
+Gölcük,extra_trees,cat__district_Değirmendere Merkez Mh.,1.449797849994219e-05
+Gölcük,extra_trees,cat__rent_feature_level_district,1.1934961179463086e-05
+Gölcük,extra_trees,cat__district_Yazlık Merkez Mh.,6.870689833844298e-06
+Gölcük,extra_trees,cat__district_Yunus Emre Mah.,5.410792575834236e-06
+Gölcük,extra_trees,cat__district_Halıdere Yalı Mh.,1.3321059490897379e-06
+Gölcük,extra_trees,num__open_area_m2,0.0
+Gölcük,extra_trees,num__has_open_area,0.0
+Gölcük,extra_trees,num__is_basement,0.0
+Gölcük,extra_trees,num__living_rooms,0.0
+Gölcük,extra_trees,num__county_rent_m2_median,0.0
+Gölcük,extra_trees,num__county_rent_m2_mean,0.0
+Gölcük,extra_trees,num__county_rent_m2_count,0.0
+Gölcük,extra_trees,num__rent_feature_confidence,0.0
+Gölcük,extra_trees,num__county_target_median,0.0
+Gölcük,extra_trees,num__county_target_mean,0.0
+Gölcük,extra_trees,num__demo_education_doctorate_ratio,0.0
+Gölcük,extra_trees,num__demo_summer_house_count,0.0
+Gölcük,extra_trees,num__county_demo_population_total_sum,0.0
+Gölcük,extra_trees,num__county_demo_population_density_median,0.0
+Gölcük,extra_trees,num__county_demo_population_density_mean,0.0
+Gölcük,extra_trees,num__county_demo_per_capita_income_median,0.0
+Gölcük,extra_trees,num__county_demo_household_income_median,0.0
+Gölcük,extra_trees,num__county_demo_household_size_mean,0.0
+Gölcük,extra_trees,num__county_demo_education_university_ratio_mean,0.0
+Gölcük,extra_trees,num__county_demo_education_high_school_ratio_mean,0.0
+Gölcük,extra_trees,num__county_demo_ses_ab_ratio_mean,0.0
+Gölcük,extra_trees,num__county_demo_ses_cd_ratio_mean,0.0
+Gölcük,extra_trees,num__county_demo_old_ratio_mean,0.0
+Gölcük,extra_trees,num__county_demo_young_ratio_mean,0.0
+Gölcük,extra_trees,num__county_demo_married_ratio_mean,0.0
+Gölcük,extra_trees,num__county_demo_single_ratio_mean,0.0
+Gölcük,extra_trees,num__county_demo_residential_count_sum,0.0
+Gölcük,extra_trees,num__county_demo_workplace_count_sum,0.0
+Gölcük,extra_trees,num__county_demo_vehicle_count_sum,0.0
+Gölcük,extra_trees,num__county_demo_car_count_sum,0.0
+Gölcük,extra_trees,num__county_demo_atm_count_sum,0.0
+Gölcük,extra_trees,num__county_demo_pharmacy_count_sum,0.0
+Gölcük,extra_trees,num__county_demo_bank_count_sum,0.0
+Gölcük,extra_trees,num__demo_has_demographics,0.0
+Gölcük,extra_trees,num__demo_has_county_demographics,0.0
+Gölcük,extra_trees,num__demo_age_coverage,0.0
+Gölcük,extra_trees,num__demo_education_coverage,0.0
+Gölcük,extra_trees,num__demo_income_available,0.0
+Gölcük,extra_trees,num__demo_ses_available,0.0
+Gölcük,extra_trees,num__demo_market_activity_available,0.0
+Gölcük,extra_trees,num__demo_infrastructure_available,0.0
+Gölcük,extra_trees,num__demo_coverage_score,0.0
+Gölcük,extra_trees,num__demo_real_estate_agent_count,0.0
+Gölcük,extra_trees,num__demo_agent_listing_count,0.0
+Gölcük,extra_trees,num__demo_owner_listing_count,0.0
+Gölcük,extra_trees,num__demo_sale_count,0.0
+Gölcük,extra_trees,num__demo_mortgage_count,0.0
+Gölcük,extra_trees,num__demo_turnover_ratio,0.0
+Gölcük,extra_trees,num__demo_computed_turnover_ratio,0.0
+Gölcük,extra_trees,num__demo_listing_count_2024,0.0
+Gölcük,extra_trees,num__demo_bb_sale_count_2024,0.0
+Gölcük,extra_trees,num__demo_bb_mortgaged_sale_count_2024,0.0
+Gölcük,extra_trees,num__county_demo_sale_count_sum,0.0
+Gölcük,extra_trees,num__county_demo_turnover_ratio_median,0.0
+Gölcük,extra_trees,num__demo_turnover_vs_county,0.0
+Gölcük,extra_trees,num__demo_saving_total,0.0
+Gölcük,extra_trees,num__demo_expense_total,0.0
+Gölcük,extra_trees,num__demo_expense_food,0.0
+Gölcük,extra_trees,num__demo_expense_shelter,0.0
+Gölcük,extra_trees,num__demo_expense_transportation,0.0
+Gölcük,extra_trees,num__demo_expense_education,0.0
+Gölcük,extra_trees,num__demo_ecommerce_count,0.0
+Gölcük,extra_trees,num__demo_ecommerce_density,0.0
+Gölcük,extra_trees,num__demo_online_retail,0.0
+Gölcük,extra_trees,num__attr_net_gross_bad,0.0
+Gölcük,extra_trees,num__attr_credit_eligible,0.0
+Gölcük,extra_trees,num__attr_has_poor_heating,0.0
+Gölcük,extra_trees,num__attr_county_new_building_premium,0.0
+Gölcük,extra_trees,num__attr_county_old_building_discount,0.0
+Gölcük,extra_trees,num__attr_county_elevator_premium,0.0
+Gölcük,extra_trees,num__attr_county_site_inside_premium,0.0
+Gölcük,extra_trees,num__attr_county_parking_premium,0.0
+Gölcük,extra_trees,num__attr_county_good_heating_premium,0.0
+Gölcük,extra_trees,num__attr_county_high_quality_premium,0.0
+Gölcük,extra_trees,num__large_home_basiskele_premium,0.0
+Gölcük,extra_trees,num__basiskele_detail_outside_premium_signal,0.0
+Gölcük,extra_trees,num__basiskele_detail_view_premium_signal,0.0
+Gölcük,extra_trees,num__basiskele_detail_inside_premium_signal,0.0
+Gölcük,extra_trees,num__basiskele_detail_subtype_premium_signal,0.0
+Gölcük,extra_trees,num__basiskele_detail_total_premium_signal,0.0
+Gölcük,extra_trees,num__basiskele_has_pool_signal,0.0
+Gölcük,extra_trees,num__basiskele_has_security_signal,0.0
+Gölcük,extra_trees,num__basiskele_has_social_luxury_signal,0.0
+Gölcük,extra_trees,num__basiskele_has_view_signal,0.0
+Gölcük,extra_trees,num__basiskele_has_inside_luxury_signal,0.0
+Gölcük,extra_trees,num__basiskele_site_premium_signal,0.0
+Gölcük,extra_trees,num__basiskele_premium_score,0.0
+Gölcük,extra_trees,num__basiskele_premium_bucket_low,0.0
+Gölcük,extra_trees,num__basiskele_premium_bucket_mid,0.0
+Gölcük,extra_trees,num__basiskele_premium_bucket_high,0.0
+Gölcük,extra_trees,num__basiskele_premium_x_location_baseline,0.0
+Gölcük,extra_trees,num__basiskele_premium_x_gross_m2,0.0
+Gölcük,extra_trees,num__basiskele_premium_x_large_home,0.0
+Gölcük,extra_trees,num__basiskele_premium_x_new_building,0.0
+Gölcük,extra_trees,num__basiskele_premium_x_site_inside,0.0
+Gölcük,extra_trees,num__basiskele_premium_x_district_target_median,0.0
+Gölcük,extra_trees,num__basiskele_premium_x_detail_outside,0.0
+Gölcük,extra_trees,num__basiskele_premium_x_detail_view,0.0
+Gölcük,extra_trees,num__basiskele_district_premium_bucket_median,0.0
+Gölcük,extra_trees,num__basiskele_district_premium_bucket_mean,0.0
+Gölcük,extra_trees,num__basiskele_district_premium_bucket_count,0.0
+Gölcük,extra_trees,num__basiskele_premium_bucket_county_median,0.0
+Gölcük,extra_trees,num__basiskele_premium_bucket_county_mean,0.0
+Gölcük,extra_trees,num__basiskele_detail_group_bucket_median,0.0
+Gölcük,extra_trees,num__basiskele_large_home_premium_bucket_median,0.0
+Gölcük,extra_trees,num__has_lat_lon,0.0
+Gölcük,extra_trees,num__lat,0.0
+Gölcük,extra_trees,num__lon,0.0
+Gölcük,extra_trees,num__lat_centered_city,0.0
+Gölcük,extra_trees,num__lon_centered_city,0.0
+Gölcük,extra_trees,num__lat_centered_county,0.0
+Gölcük,extra_trees,num__lon_centered_county,0.0
+Gölcük,extra_trees,num__location_precision_exact,0.0
+Gölcük,extra_trees,num__location_precision_approx,0.0
+Gölcük,extra_trees,num__location_precision_district_only,0.0
+Gölcük,extra_trees,num__location_precision_missing,0.0
+Gölcük,extra_trees,num__location_source_data_attr_map,0.0
+Gölcük,extra_trees,num__location_backfill_ok,0.0
+Gölcük,extra_trees,num__location_quality_score,0.0
+Gölcük,extra_trees,num__distance_to_county_centroid_m,0.0
+Gölcük,extra_trees,num__bearing_from_county_centroid_sin,0.0
+Gölcük,extra_trees,num__bearing_from_county_centroid_cos,0.0
+Gölcük,extra_trees,num__distance_to_district_centroid_m,0.0
+Gölcük,extra_trees,num__bearing_from_district_centroid_sin,0.0
+Gölcük,extra_trees,num__bearing_from_district_centroid_cos,0.0
+Gölcük,extra_trees,num__distance_to_izmit_center_m,0.0
+Gölcük,extra_trees,num__distance_to_basiskele_coast_m,0.0
+Gölcük,extra_trees,num__distance_to_yuvacik_m,0.0
+Gölcük,extra_trees,num__distance_to_bahcecik_m,0.0
+Gölcük,extra_trees,num__distance_to_kullar_m,0.0
+Gölcük,extra_trees,num__distance_to_sahil_m,0.0
+Gölcük,extra_trees,num__distance_to_golcuk_center_m,0.0
+Gölcük,extra_trees,num__distance_to_karamursel_center_m,0.0
+Gölcük,extra_trees,num__distance_to_coastline_m,0.0
+Gölcük,extra_trees,num__is_coastal_500m,0.0
+Gölcük,extra_trees,num__is_coastal_1000m,0.0
+Gölcük,extra_trees,num__is_coastal_2000m,0.0
+Gölcük,extra_trees,num__distance_to_geo_cluster_center_m,0.0
+Gölcük,extra_trees,num__location_quality_x_detail_effect_total,0.0
+Gölcük,extra_trees,num__basiskele_lat_lon_interaction,0.0
+Gölcük,extra_trees,num__basiskele_distance_to_coast_x_large_home,0.0
+Gölcük,extra_trees,num__basiskele_distance_to_coast_x_quality,0.0
+Gölcük,extra_trees,num__geo_context_missing,0.0
+Gölcük,extra_trees,num__geo_context_has_exact_location,0.0
+Gölcük,extra_trees,num__geo_context_has_approx_location,0.0
+Gölcük,extra_trees,num__distance_to_sea_m,0.0
+Gölcük,extra_trees,num__log_distance_to_sea,0.0
+Gölcük,extra_trees,num__is_coastal_250m,0.0
+Gölcük,extra_trees,num__coast_distance_bucket_code,0.0
+Gölcük,extra_trees,num__coastal_access_score,0.0
+Gölcük,extra_trees,num__bsk_distance_to_sea_x_view_sea,0.0
+Gölcük,extra_trees,num__bsk_distance_to_sea_x_near_sea_zero,0.0
+Gölcük,extra_trees,num__bsk_distance_to_sea_x_large_home,0.0
+Gölcük,extra_trees,num__bsk_distance_to_sea_x_site_inside,0.0
+Gölcük,extra_trees,num__bsk_distance_to_sea_x_quality,0.0
+Gölcük,extra_trees,num__bsk_coastal_x_large_home,0.0
+Gölcük,extra_trees,num__bsk_coastal_x_geo_cluster,0.0
+Gölcük,extra_trees,num__bsk_coastal_x_room_4p1,0.0
+Gölcük,extra_trees,cat__real_estate_type_Satılık Daire,0.0
+Gölcük,extra_trees,cat__room_count_1+1,0.0
+Gölcük,extra_trees,cat__room_count_4+2,0.0
+Gölcük,extra_trees,cat__room_count_4.5+1,0.0
+Gölcük,extra_trees,cat__room_count_5+1,0.0
+Gölcük,extra_trees,cat__room_count_Stüdyo (1+0),0.0
+Gölcük,extra_trees,cat__floor_segment_Bahçe,0.0
+Gölcük,extra_trees,cat__heating_Kat Kaloriferi,0.0
+Gölcük,extra_trees,cat__heating_Klima,0.0
+Gölcük,extra_trees,cat__heating_Kombi (Elektrik),0.0
+Gölcük,extra_trees,cat__heating_Merkezi,0.0
+Gölcük,extra_trees,cat__heating_Yok,0.0
+Gölcük,extra_trees,cat__furnished_Belirtilmemiş,0.0
+Gölcük,extra_trees,cat__credit_eligible_missing,0.0
+Gölcük,extra_trees,cat__energy_certificate_missing,0.0
+Gölcük,extra_trees,cat__deed_status_missing,0.0
+Gölcük,extra_trees,cat__seller_type_missing,0.0
+Gölcük,extra_trees,cat__barter_missing,0.0
+Gölcük,extra_trees,cat__city_Kocaeli,0.0
+Gölcük,extra_trees,cat__county_Gölcük,0.0
+Gölcük,extra_trees,cat__district_Değirmendere Yalı Mh.,0.0
+Gölcük,extra_trees,cat__district_Halıdere Yeni Mh.,0.0
+Gölcük,extra_trees,cat__district_Merkez Mah.,0.0
+Gölcük,extra_trees,cat__district_Topçular Mh.,0.0
+Gölcük,extra_trees,cat__district_Yeni Mah.,0.0
+Gölcük,extra_trees,cat__district_Yukarı Mh.,0.0
+Gölcük,extra_trees,cat__district_Örcün Mh.,0.0
+Gölcük,extra_trees,cat__building_age_group_3,0.0
+Gölcük,extra_trees,cat__m2_group_200+,0.0
+Gölcük,extra_trees,cat__detail_cephe_Batı,0.0
+Gölcük,extra_trees,cat__detail_cephe_Batı|Güney,0.0
+Gölcük,extra_trees,cat__detail_manzara_Boğaz|Deniz|Doğa|Park & Yeşil Alan,0.0
+Gölcük,extra_trees,cat__detail_manzara_Boğaz|Deniz|Doğa|Şehir,0.0
+Gölcük,extra_trees,cat__detail_manzara_Deniz|Doğa|Şehir,0.0
+Gölcük,extra_trees,cat__detail_manzara_Deniz|Park & Yeşil Alan,0.0
+Gölcük,extra_trees,cat__detail_manzara_Doğa|Göl|Park & Yeşil Alan|Şehir,0.0
+Gölcük,extra_trees,cat__detail_manzara_Doğa|Havuz|Park & Yeşil Alan|Şehir,0.0
+Gölcük,extra_trees,cat__detail_manzara_Havuz|Park & Yeşil Alan|Şehir,0.0
+Gölcük,extra_trees,cat__detail_konut_tipi_Ara Kat Dubleks,0.0
+Gölcük,extra_trees,cat__detail_konut_tipi_Ara Kat|Tripleks,0.0
+Gölcük,extra_trees,cat__detail_konut_tipi_Ara Kat|Çatı Dubleksi,0.0
+Gölcük,extra_trees,cat__detail_konut_tipi_Bahçe Dubleksi,0.0
+Gölcük,extra_trees,cat__detail_konut_tipi_Dubleks,0.0
+Gölcük,extra_trees,cat__detail_konut_tipi_Dubleks|En Üst Kat|Ara Kat|Bahçe Dubleksi,0.0
+Gölcük,extra_trees,cat__detail_konut_tipi_Dubleks|En Üst Kat|Çatı Dubleksi,0.0
+Gölcük,extra_trees,cat__detail_konut_tipi_Dubleks|Çatı Dubleksi,0.0
+Gölcük,extra_trees,cat__detail_konut_tipi_En Üst Kat|Çatı Dubleksi,0.0
+Gölcük,extra_trees,cat__detail_konut_tipi_Tripleks,0.0
+Gölcük,extra_trees,cat__rent_feature_level_district_m2_group,0.0
+Gölcük,extra_trees,cat__demo_dominant_age_group_25-29,0.0
+Gölcük,extra_trees,cat__demo_dominant_marital_status_Evli,0.0
+Gölcük,extra_trees,cat__demo_dominant_education_Lisans,0.0
+Gölcük,extra_trees,cat__demo_ses_group_A Grubu,0.0
+Gölcük,extra_trees,cat__demo_ses_group_B Grubu,0.0
+Gölcük,extra_trees,cat__location_precision_missing,0.0
+Gölcük,extra_trees,cat__location_source_missing,0.0
+Gölcük,extra_trees,cat__geo_cluster_city_missing,0.0
+Gölcük,extra_trees,cat__geo_cluster_county_other,0.0
+Gölcük,extra_trees,cat__basiskele_geo_cluster_other,0.0
+Gölcük,extra_trees,cat__coast_distance_bucket_missing,0.0
+Gölcük,extra_trees,cat__basiskele_geo_cluster_x_m2_group_other,0.0
+Gölcük,extra_trees,cat__geo_cluster_x_room_count_missing||4+2,0.0
+Gölcük,extra_trees,cat__geo_cluster_x_room_count_missing||4.5+1,0.0
+Gölcük,extra_trees,cat__geo_cluster_x_room_count_missing||5+1,0.0
+Gölcük,extra_trees,cat__geo_cluster_x_room_count_missing||Stüdyo (1+0),0.0

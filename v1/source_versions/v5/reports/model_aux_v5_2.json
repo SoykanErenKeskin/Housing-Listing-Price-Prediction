@@ -1,0 +1,18 @@
+{
+  "ensemble_weights": {
+    "ensemble_grid_best_r2_v5": {
+      "gradient_boosting_tuned_r2_v5": 0.4,
+      "hist_gradient_boosting_v5": 0.5,
+      "gradient_boosting_v5": 0.09999999999999998
+    }
+  },
+  "tuned_params": {
+    "gradient_boosting_tuned_r2_v5": {
+      "regressor__model__subsample": 0.75,
+      "regressor__model__n_estimators": 1100,
+      "regressor__model__min_samples_leaf": 8,
+      "regressor__model__max_depth": 3,
+      "regressor__model__learning_rate": 0.02
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "kind": "sales",
+  "rows_raw_or_prepared": 1385,
+  "rows_removed": 42,
+  "rows_cleaned": 1343,
+  "rows_needing_review": 657,
+  "target": "unit_price_gross",
+  "target_summary_all": {
+    "count": 1385.0,
+    "mean": 40056.66749458484,
+    "std": 14128.830387743592,
+    "min": 10101.01,
+    "1%": 16147.0116,
+    "5%": 21067.104,
+    "25%": 30000.0,
+    "50%": 38722.22,
+    "75%": 47619.05,
+    "95%": 64201.87199999999,
+    "99%": 83714.12600000006,
+    "max": 132500.0
+  },
+  "target_summary_cleaned": {
+    "count": 1343.0,
+    "mean": 39199.34322412509,
+    "std": 12646.959887681305,
+    "min": 10101.01,
+    "1%": 16129.060800000001,
+    "5%": 20961.007999999998,
+    "25%": 29800.0,
+    "50%": 38489.21,
+    "75%": 46666.67,
+    "95%": 62080.354,
+    "99%": 75126.44399999996,
+    "max": 84545.45
+  },
+  "remove_flag_counts": {
+    "flag_price_hard_limit": 0,
+    "flag_unit_price_hard_limit": 0,
+    "flag_gross_m2_hard_limit": 5,
+    "flag_net_m2_hard_limit": 2,
+    "flag_net_gross_suspicious": 0,
+    "flag_net_gt_gross": 0,
+    "flag_global_iqr_outlier": 10,
+    "flag_global_mad_outlier": 12,
+    "flag_group_iqr_outlier": 33
+  },
+  "review_flag_counts": {
+    "flag_large_property_review": 30,
+    "flag_old_building_review": 219,
+    "flag_high_dues_review": 0,
+    "flag_low_detail_review": 309,
+    "flag_special_title_review": 180
+  }
+}
