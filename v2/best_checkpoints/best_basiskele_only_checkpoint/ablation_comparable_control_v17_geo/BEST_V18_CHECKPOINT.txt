@@ -1,0 +1,4 @@
+BEST V18 ablation arm = control_v17_geo (comparable_mode=none)
+This arm is the selected comparable ablation winner; final ensemble matches outputs/v18_basiskele_full (comparable=none).
+Comparable as predictor: REJECTED
+See: ../../../V18_BEST_CHECKPOINT.json

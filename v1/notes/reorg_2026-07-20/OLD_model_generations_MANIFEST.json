@@ -1,0 +1,102 @@
+{
+  "generations": [
+    {
+      "name": "v1_thesis_legacy",
+      "path": "model_generations/v1_thesis_legacy",
+      "included_versions": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5",
+        "v6",
+        "v6.1 tez sonu",
+        "v7",
+        "v8",
+        "v9",
+        "v9.1",
+        "v10",
+        "v11",
+        "v12",
+        "v13",
+        "v14",
+        "v15",
+        "v16"
+      ],
+      "purpose": "Thesis-era classic Kocaeli model archive",
+      "best_checkpoint": "manual_review_required_v15_v16",
+      "best_checkpoint_paths": [
+        "model_generations/v1_thesis_legacy/best_checkpoints/manual_review_v15_v16/v15_full",
+        "model_generations/v1_thesis_legacy/best_checkpoints/manual_review_v15_v16/v16_full"
+      ],
+      "known_issues": [
+        "basiskele_low_r2",
+        "variance_compression",
+        "ship_gate_all_counties_r2_ge_0_65_not_met"
+      ],
+      "status": "archived",
+      "copy_notes": "Source code copied without outputs/.env/*.joblib; selected reports copied; large artifacts path-referenced only."
+    },
+    {
+      "name": "v2_location_basiskele",
+      "path": "model_generations/v2_location_basiskele",
+      "included_versions": [
+        "v17",
+        "v18_basiskele"
+      ],
+      "purpose": "Location feature era and Başiskele-only sandbox",
+      "best_checkpoint": "v18_basiskele_geo_control_comparable_none",
+      "best_checkpoint_paths": {
+        "kocaeli_location": "model_generations/v2_location_basiskele/best_checkpoints/best_kocaeli_location_checkpoint/v17_basiskele_geo_full",
+        "basiskele_only": "model_generations/v2_location_basiskele/best_checkpoints/best_basiskele_only_checkpoint/v18_basiskele_full",
+        "basiskele_only_ablation_arm": "model_generations/v2_location_basiskele/best_checkpoints/best_basiskele_only_checkpoint/ablation_comparable_control_v17_geo"
+      },
+      "best_basiskele_only_metrics": {
+        "comparable_mode": "none",
+        "location_feature_mode": "geo",
+        "geo_context_mode": "geo_with_coast",
+        "r2": 0.4731,
+        "mape": 0.1093,
+        "variance_ratio": 0.4264
+      },
+      "rejected": [
+        "nearest_comparable",
+        "similar_comparable",
+        "weighted_comparable",
+        "large_home_comparable",
+        "full_comparable"
+      ],
+      "known_issues": [
+        "basiskele_mean_pulling",
+        "comparable_predictor_rejected",
+        "expensive_underprediction"
+      ],
+      "status": "archived_for_reference",
+      "copy_notes": "Source code copied without outputs/.env/*.joblib; reports and rejected ablation reports copied; joblibs path-referenced."
+    },
+    {
+      "name": "v3_next_experiments",
+      "path": "model_generations/v3_next_experiments",
+      "included_versions": [],
+      "purpose": "V19+ calibration and anti-shrink experiments",
+      "best_checkpoint": null,
+      "known_issues": [],
+      "status": "active_scaffold",
+      "planned_experiments": [
+        "oof_safe_calibration",
+        "isotonic_calibration",
+        "spline_bin_calibration",
+        "quantile_mapping",
+        "no_ridge_tree_heavy_ensemble",
+        "direct_price_vs_residual_log_vs_hybrid_target"
+      ]
+    }
+  ],
+  "created_at": "2026-07-20",
+  "policy": {
+    "root_versions_deleted": false,
+    "training_scripts_modified": false,
+    "large_joblib_copied": false,
+    "method": "copy_plus_path_reference"
+  }
+}

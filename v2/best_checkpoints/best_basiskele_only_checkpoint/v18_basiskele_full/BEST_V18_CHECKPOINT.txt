@@ -1,0 +1,9 @@
+BEST V18 Başiskele-only checkpoint
+status: CLOSED (2026-07-20)
+experiment: control_v17_geo
+comparable_mode: none
+location_feature_mode: geo
+geo_context_mode: geo_with_coast
+R2: 0.4731 | MAPE: 0.1093 | variance_ratio: 0.4264
+Comparable as predictor: REJECTED (nearest/similar/weighted/large_home/full not used in final model)
+See: ../../V18_BEST_CHECKPOINT.json and ../../README_v18_basiskele_run.md

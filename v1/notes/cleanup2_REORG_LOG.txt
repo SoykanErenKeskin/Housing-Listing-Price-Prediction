@@ -1,0 +1,32 @@
+﻿22:17:25 OUTPUT v13_debug_pair_smoke -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\v1\outputs\v13_debug_pair_smoke
+22:17:25 OUTPUT v16_diagnostics -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\v1\outputs\v16_diagnostics
+22:17:25 OUTPUT v17_test -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\v2\outputs\v17_test
+22:17:25 Moved path ref md -> v1/notes
+22:17:25 Removed empty root outputs/
+22:17:25 Moved __pycache__ -> v2/scripts
+22:17:25 SCRIPT analyze_county_error_clusters_v16.py -> v1/scripts
+22:17:25 SCRIPT audit_basiskele_location_coverage_v18.py -> v2/scripts
+22:17:25 SCRIPT audit_location_coverage_v17.py -> v2/scripts
+22:17:25 SCRIPT build_geo_context_cache_v17.py -> v2/scripts
+22:17:25 SCRIPT debug_single_prediction_features.py -> v1/scripts
+22:17:25 SCRIPT debug_single_prediction_features_v14.py -> v1/scripts
+22:17:25 SCRIPT debug_single_prediction_features_v15.py -> v1/scripts
+22:17:25 SCRIPT debug_single_prediction_features_v16.py -> v1/scripts
+22:17:25 SCRIPT debug_single_prediction_features_v17.py -> v2/scripts
+22:17:26 SCRIPT debug_single_prediction_features_v18_basiskele.py -> v2/scripts
+22:17:26 Removed empty root scripts/
+22:17:26 Moved v17.env -> root .env (all variants identical SHA256)
+22:17:26 Removed duplicate identical env v10.env after root consolidation
+22:17:26 Removed duplicate identical env v11.env after root consolidation
+22:17:26 Removed duplicate identical env v12.env after root consolidation
+22:17:26 Removed duplicate identical env v13.env after root consolidation
+22:17:26 Removed duplicate identical env v14.env after root consolidation
+22:17:26 Removed duplicate identical env v15.env after root consolidation
+22:17:26 Removed duplicate identical env v16.env after root consolidation
+22:17:26 Removed duplicate identical env v18_basiskele.env after root consolidation
+22:17:26 Removed duplicate identical env v7.env after root consolidation
+22:17:26 Removed duplicate identical env v8.env after root consolidation
+22:17:26 Removed duplicate identical env v9.1.env after root consolidation
+22:17:26 Removed duplicate identical env v9.env after root consolidation
+22:17:26 Removed empty _preserved_env/
+22:17:26 PHASE moves done

@@ -1,0 +1,9 @@
+﻿model,mape,mae_tl_per_m2,median_ae_tl_per_m2,r2,log_r2,error
+gradient_boosting_tuned_r2_v3_strict,0.1403518318194848,5373.068594285825,4253.866017751006,0.5784071000527351,0.5947904825116277,
+extra_trees_v3_strict,0.1399242410098743,5320.3939665126,4171.142034208782,0.5740082573186773,0.5854224186824988,
+random_forest_v3_strict,0.14130169275017382,5405.316833385127,4240.419838027741,0.5685330518961094,0.5879492246553737,
+gradient_boosting_v3_strict,0.14447821979386577,5527.957313300154,4386.116482765947,0.5578418307905018,0.5760612413131554,
+hist_gradient_boosting_v3_strict,0.14348737659746627,5469.170514714857,4260.018564438258,0.554295600986076,0.5700506823678566,
+ridge_v3_strict,0.14696224860398188,5619.983449279146,4422.534121817378,0.5455429045216371,0.5641026310462729,
+elasticnet_v3_strict,0.16095751107480935,6201.121736609704,4916.828803321341,0.45456021904276855,0.4913489529241418,
+catboost_native_v3_strict,,,,,,"Cannot clone object CatBoostRegressor(allow_writing_files=False, cat_features=['room_count', 'floor_segment', 'heating', 'kitchen', 'balcony', 'elevator', 'parking', 'furnished', 'usage_status', 'site_inside', 'credit_eligible', 'energy_certificate', 'deed_status', 'seller_type', 'barter', 'district', 'building_age_group', 'm2_group', 'district_age_group', 'district_m2_group', 'district_room_count'], depth=6, eval_metric='R2', iterations=1400, l2_leaf_reg=8, learning_rate=0.03, loss_function='RMSE', random_seed=42, verbose=False), as the constructor either does not set or modifies parameter cat_features"

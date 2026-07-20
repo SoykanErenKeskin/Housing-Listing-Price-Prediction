@@ -1,0 +1,7 @@
+﻿county,group,mean_abs_effect,positive_feature_count,negative_feature_count,top_positive_features,top_negative_features
+Başiskele,front,0.0,0,0,front_east|front_north|front_score,front_east|front_north|front_score
+Başiskele,inside,0.0,0,0,in_air_conditioner|in_builtin_kitchen|in_dressing_room,in_air_conditioner|in_builtin_kitchen|in_dressing_room
+Başiskele,nearby,0.0,0,0,near_city_center|near_hospital|near_lake_zero,near_city_center|near_hospital|near_lake_zero
+Başiskele,outside,0.0,0,0,out_camera|out_children_playground|out_closed_pool,out_camera|out_children_playground|out_closed_pool
+Başiskele,transport,0.0,0,0,transport_airport|transport_bus_stop|transport_e5,transport_airport|transport_bus_stop|transport_e5
+Başiskele,view,0.0,0,0,view_bosphorus|view_city|view_lake,view_bosphorus|view_city|view_lake

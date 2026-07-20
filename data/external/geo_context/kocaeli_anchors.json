@@ -1,0 +1,101 @@
+{
+  "crs": "EPSG:4326",
+  "metric_crs": "EPSG:32635",
+  "note": "Approx static anchors for Kocaeli / Başiskele — not survey-grade.",
+  "anchors": {
+    "izmit_center": {
+      "lat": 40.7656,
+      "lon": 29.9406
+    },
+    "basiskele_coast_center": {
+      "lat": 40.712,
+      "lon": 29.92
+    },
+    "basiskele_yuvacik": {
+      "lat": 40.678,
+      "lon": 29.975
+    },
+    "basiskele_bahcecik": {
+      "lat": 40.695,
+      "lon": 29.955
+    },
+    "basiskele_kullar": {
+      "lat": 40.735,
+      "lon": 29.98
+    },
+    "basiskele_sahil": {
+      "lat": 40.72,
+      "lon": 29.905
+    },
+    "golcuk_center": {
+      "lat": 40.7167,
+      "lon": 29.8167
+    },
+    "karamursel_center": {
+      "lat": 40.6914,
+      "lon": 29.6153
+    }
+  },
+  "fallback_coastline": [
+    {
+      "lat": 40.6914,
+      "lon": 29.6153,
+      "name": "karamursel",
+      "seq": 0
+    },
+    {
+      "lat": 40.7,
+      "lon": 29.7,
+      "name": "karamursel_east",
+      "seq": 1
+    },
+    {
+      "lat": 40.71,
+      "lon": 29.78,
+      "name": "golcuk_west",
+      "seq": 2
+    },
+    {
+      "lat": 40.7167,
+      "lon": 29.8167,
+      "name": "golcuk",
+      "seq": 3
+    },
+    {
+      "lat": 40.74,
+      "lon": 29.88,
+      "name": "izmit_west",
+      "seq": 4
+    },
+    {
+      "lat": 40.7656,
+      "lon": 29.9406,
+      "name": "izmit",
+      "seq": 5
+    },
+    {
+      "lat": 40.745,
+      "lon": 29.93,
+      "name": "basiskele_north",
+      "seq": 6
+    },
+    {
+      "lat": 40.72,
+      "lon": 29.905,
+      "name": "basiskele_sahil",
+      "seq": 7
+    },
+    {
+      "lat": 40.712,
+      "lon": 29.92,
+      "name": "basiskele_coast",
+      "seq": 8
+    },
+    {
+      "lat": 40.7,
+      "lon": 29.94,
+      "name": "basiskele_east",
+      "seq": 9
+    }
+  ]
+}

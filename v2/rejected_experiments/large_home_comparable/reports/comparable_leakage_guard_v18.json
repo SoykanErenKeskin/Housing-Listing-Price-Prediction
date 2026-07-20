@@ -1,0 +1,19 @@
+{
+  "fit_called": true,
+  "uses_train_pool_only": true,
+  "self_match_exclude": true,
+  "validation_targets_unused": true,
+  "model_scope": "basiskele_only",
+  "county": "Başiskele",
+  "comparable_mode": "large_home",
+  "pass": true,
+  "notes": [
+    "pool prices from __comp_unit_price__ (unit_price_gross)",
+    "fit pool = train fold only"
+  ],
+  "fit_n": 919,
+  "price_source": "__comp_unit_price__",
+  "feature_count": 8,
+  "pool_with_coords": 699,
+  "mode": "large_home"
+}

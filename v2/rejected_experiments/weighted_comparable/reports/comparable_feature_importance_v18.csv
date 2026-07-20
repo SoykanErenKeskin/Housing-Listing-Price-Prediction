@@ -1,0 +1,15 @@
+﻿model,feature,importance
+gradient_boosting,num__bsk_weighted_comp_std,0.0165528252669106
+gradient_boosting,num__bsk_weighted_comp_mean,0.0087973968315984
+extra_trees,num__bsk_weighted_comp_mean,0.0047653125804786
+gradient_boosting,num__bsk_weighted_comp_median,0.0040634310086301
+extra_trees,num__bsk_weighted_comp_median,0.0038683997442626
+extra_trees,num__bsk_weighted_comp_std,0.0035931387621763
+extra_trees,num__bsk_comparable_missing,0.0
+extra_trees,num__bsk_weighted_comp_confidence,0.0
+extra_trees,num__bsk_weighted_comp_count,0.0
+extra_trees,num__bsk_fallback_level,0.0
+gradient_boosting,num__bsk_weighted_comp_count,0.0
+gradient_boosting,num__bsk_weighted_comp_confidence,0.0
+gradient_boosting,num__bsk_comparable_missing,0.0
+gradient_boosting,num__bsk_fallback_level,0.0

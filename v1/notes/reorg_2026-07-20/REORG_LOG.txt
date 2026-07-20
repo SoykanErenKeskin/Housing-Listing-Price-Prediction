@@ -1,0 +1,72 @@
+﻿REORG START
+
+22:11:55 Scaffolded staging workspaces
+22:11:55 Parked mg v1 light source_versions
+22:11:55 Moved artifacts -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v1
+22:11:55 Moved best_checkpoints -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v1
+22:11:55 Moved notes -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v1
+22:11:55 Moved reports -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v1
+22:11:55 Moved unclassified -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v1
+22:11:55 Moved README.md -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v1
+22:11:55 Parked mg v2 light source_versions
+22:11:55 Moved artifacts -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v2
+22:11:55 Moved best_checkpoints -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v2
+22:11:55 Moved diagnostics -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v2
+22:11:55 Moved notes -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v2
+22:11:55 Moved reports -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v2
+22:11:55 Moved README.md -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v2
+22:11:56 Moved artifacts -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v3
+22:11:56 Moved diagnostics -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v3
+22:11:56 Moved outputs -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v3
+22:11:56 Moved prompts -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v3
+22:11:56 Moved reports -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v3
+22:11:56 Moved source_versions -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v3
+22:11:56 Moved README.md -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v3
+22:11:56 model_generations content merged into staging (light sources parked)
+22:12:11 Elevated rejected full_comparable
+22:12:11 Elevated rejected large_home_comparable
+22:12:11 Elevated rejected nearest_comparable
+22:12:11 Elevated rejected similar_comparable
+22:12:11 Elevated rejected weighted_comparable
+22:12:11 MOVED original v1 -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v1\source_versions\v1
+22:12:11 MOVED original v2 -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v1\source_versions\v2
+22:12:11 MOVED original v3 -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v1\source_versions\v3
+22:12:11 MOVED original v4 -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v1\source_versions\v4
+22:12:11 MOVED original v5 -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v1\source_versions\v5
+22:12:11 MOVED original v6 -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v1\source_versions\v6
+22:12:11 MOVED original v6.1 tez sonu -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v1\source_versions\v6.1 tez sonu
+22:12:11 Preserved .env -> _preserved_env/v7.env (not inside version tree)
+22:12:11 MOVED original v7 -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v1\source_versions\v7
+22:12:11 Preserved .env -> _preserved_env/v8.env (not inside version tree)
+22:12:11 MOVED original v8 -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v1\source_versions\v8
+22:12:11 Preserved .env -> _preserved_env/v9.env (not inside version tree)
+22:12:11 MOVED original v9 -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v1\source_versions\v9
+22:12:11 Preserved .env -> _preserved_env/v9.1.env (not inside version tree)
+22:12:11 MOVED original v9.1 -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v1\source_versions\v9.1
+22:12:11 Preserved .env -> _preserved_env/v10.env (not inside version tree)
+22:12:11 MOVED original v10 -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v1\source_versions\v10
+22:12:11 Preserved .env -> _preserved_env/v11.env (not inside version tree)
+22:12:11 MOVED original v11 -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v1\source_versions\v11
+22:12:11 Preserved .env -> _preserved_env/v12.env (not inside version tree)
+22:12:11 MOVED original v12 -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v1\source_versions\v12
+22:12:11 Preserved .env -> _preserved_env/v13.env (not inside version tree)
+22:12:11 MOVED original v13 -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v1\source_versions\v13
+22:12:11 Preserved .env -> _preserved_env/v14.env (not inside version tree)
+22:12:11 MOVED original v14 -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v1\source_versions\v14
+22:12:11 Preserved .env -> _preserved_env/v15.env (not inside version tree)
+22:12:11 MOVED original v15 -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v1\source_versions\v15
+22:12:11 Preserved .env -> _preserved_env/v16.env (not inside version tree)
+22:12:11 MOVED original v16 -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v1\source_versions\v16
+22:12:11 Preserved .env -> _preserved_env/v17.env (not inside version tree)
+22:12:11 MOVED original v17 -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v2\source_versions\v17
+22:12:11 Preserved .env -> _preserved_env/v18_basiskele.env (not inside version tree)
+22:12:11 MOVED original v18_basiskele -> c:\Users\soyka\OneDrive\Desktop\pure_listing_model_v0_izmit_thesis\_reorg_staging\workspace_v2\source_versions\v18_basiskele
+22:12:12 Parked v1 light copies under v1/notes
+22:12:12 Parked v2 light copies under v2/notes
+22:12:12 Remaining root version-like dirs: 
+22:12:33 Root v1 placed
+22:12:33 Root v2 placed
+22:12:33 Root v3 placed
+22:12:33 model_generations remaining items: 3
+22:12:33 Moved empty model_generations shell to staging
+22:12:33 PHASE3 swap done

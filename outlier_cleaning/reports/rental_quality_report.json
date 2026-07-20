@@ -1,0 +1,55 @@
+{
+  "kind": "rental",
+  "rows_raw_or_prepared": 1222,
+  "rows_removed": 45,
+  "rows_cleaned": 1177,
+  "rows_needing_review": 667,
+  "target": "rent_per_m2_gross",
+  "target_summary_all": {
+    "count": 1222.0,
+    "mean": 254.46099018003275,
+    "std": 83.49901873170708,
+    "min": 56.25,
+    "1%": 123.4832,
+    "5%": 150.0865,
+    "25%": 200.0,
+    "50%": 240.0,
+    "75%": 294.12,
+    "95%": 400.0,
+    "99%": 540.9958999999999,
+    "max": 714.29
+  },
+  "target_summary_cleaned": {
+    "count": 1177.0,
+    "mean": 246.8863466440102,
+    "std": 69.17306185431944,
+    "min": 56.25,
+    "1%": 127.7132,
+    "5%": 150.0,
+    "25%": 200.0,
+    "50%": 236.84,
+    "75%": 290.54,
+    "95%": 373.66400000000004,
+    "99%": 445.8364,
+    "max": 485.71
+  },
+  "remove_flag_counts": {
+    "flag_rent_hard_limit": 0,
+    "flag_rent_m2_hard_limit": 0,
+    "flag_gross_m2_hard_limit": 1,
+    "flag_net_m2_hard_limit": 1,
+    "flag_net_gross_suspicious": 1,
+    "flag_net_gt_gross": 0,
+    "flag_global_iqr_outlier": 21,
+    "flag_global_mad_outlier": 24,
+    "flag_group_iqr_outlier": 29
+  },
+  "review_flag_counts": {
+    "flag_deposit_too_high_review": 0,
+    "flag_large_property_review": 9,
+    "flag_old_building_review": 207,
+    "flag_high_dues_review": 1,
+    "flag_low_detail_review": 282,
+    "flag_special_title_review": 299
+  }
+}

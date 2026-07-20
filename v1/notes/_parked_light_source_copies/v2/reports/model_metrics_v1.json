@@ -1,0 +1,106 @@
+{
+  "target": "unit_price_gross",
+  "rows_raw": 1018,
+  "rows_used": 1018,
+  "features": {
+    "numeric_used": [
+      "gross_m2",
+      "net_m2",
+      "building_age",
+      "floor_num",
+      "total_floors",
+      "bathroom_count",
+      "net_gross_ratio",
+      "floor_ratio",
+      "remaining_floors",
+      "is_ground_floor",
+      "is_basement",
+      "is_top_floor",
+      "is_middle_floor",
+      "rooms",
+      "living_rooms",
+      "total_room_score",
+      "is_new_building",
+      "is_old_building",
+      "is_small_flat",
+      "is_large_flat",
+      "quality_score",
+      "district_target_encoded"
+    ],
+    "categorical_used": [
+      "room_count",
+      "floor_segment",
+      "heating",
+      "kitchen",
+      "balcony",
+      "elevator",
+      "parking",
+      "furnished",
+      "usage_status",
+      "site_inside",
+      "credit_eligible",
+      "energy_certificate",
+      "deed_status",
+      "seller_type",
+      "barter",
+      "district",
+      "building_age_group",
+      "m2_group"
+    ],
+    "removed_features": {
+      "open_area_m2": "all_missing",
+      "has_open_area": "constant",
+      "county_target_encoded": "constant",
+      "real_estate_type": "constant",
+      "city": "constant",
+      "county": "constant"
+    }
+  },
+  "models": {
+    "ridge_fe": {
+      "mape": 0.15374494877089856,
+      "mae_tl_per_m2": 5883.486641952061,
+      "median_ae_tl_per_m2": 4952.232601419017,
+      "r2": 0.5222850725762023
+    },
+    "elasticnet_fe": {
+      "mape": 0.16218257196091287,
+      "mae_tl_per_m2": 6223.436552247556,
+      "median_ae_tl_per_m2": 5068.764567075865,
+      "r2": 0.46908732712075696
+    },
+    "gradient_boosting_fe": {
+      "mape": 0.14588214627299073,
+      "mae_tl_per_m2": 5576.696449334256,
+      "median_ae_tl_per_m2": 4727.2390242515285,
+      "r2": 0.5660460927039888
+    },
+    "hist_gradient_boosting_fe": {
+      "mape": 0.14228351158864838,
+      "mae_tl_per_m2": 5425.194282217983,
+      "median_ae_tl_per_m2": 4330.344846185239,
+      "r2": 0.5698108649048013
+    },
+    "extra_trees_fe": {
+      "mape": 0.13843364737201042,
+      "mae_tl_per_m2": 5280.519484180367,
+      "median_ae_tl_per_m2": 4155.34658199725,
+      "r2": 0.5871272021736931
+    },
+    "gradient_boosting_tuned_fe": {
+      "mape": 0.14193523307884448,
+      "mae_tl_per_m2": 5429.922205975689,
+      "median_ae_tl_per_m2": 4433.928975604553,
+      "r2": 0.581358202783673,
+      "best_params": {
+        "regressor__model__subsample": 0.75,
+        "regressor__model__n_estimators": 700,
+        "regressor__model__min_samples_leaf": 3,
+        "regressor__model__max_depth": 3,
+        "regressor__model__learning_rate": 0.03
+      }
+    }
+  },
+  "best_model": "extra_trees_fe",
+  "note": "V1 includes feature engineering, KFold-safe target encoding, useless-column removal, model comparison, light tuning, and error analysis."
+}

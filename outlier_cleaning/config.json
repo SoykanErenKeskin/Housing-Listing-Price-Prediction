@@ -1,0 +1,98 @@
+{
+  "general": {
+    "min_group_n_for_group_outlier": 8,
+    "mad_z_threshold": 3.5,
+    "iqr_multiplier": 2.2,
+    "district_iqr_multiplier": 2.5,
+    "mark_low_detail_not_remove": true
+  },
+  "sales": {
+    "target_col": "unit_price_gross",
+    "price_col": "price",
+    "m2_col": "gross_m2",
+    "hard_limits": {
+      "price_min": 250000,
+      "price_max": 100000000,
+      "gross_m2_min": 30,
+      "gross_m2_max": 350,
+      "net_m2_min": 20,
+      "net_m2_max": 330,
+      "unit_price_gross_min": 5000,
+      "unit_price_gross_max": 250000,
+      "net_gross_ratio_min": 0.45,
+      "net_gross_ratio_max": 1.15
+    },
+    "review_flags_only": {
+      "large_property_m2": 220,
+      "very_old_age": 35,
+      "very_high_dues": 15000,
+      "low_detail_selected_count": 5
+    },
+    "title_special_keywords": [
+      "villa",
+      "müstakil",
+      "mustakil",
+      "dubleks",
+      "dublex",
+      "duplex",
+      "tripleks",
+      "triplex",
+      "bahçe dubleksi",
+      "bahce dubleksi",
+      "çatı dubleksi",
+      "cati dubleksi",
+      "lüks",
+      "lux",
+      "ultra",
+      "acil",
+      "fırsat",
+      "firsat",
+      "kelepir",
+      "yatırımlık",
+      "yatirimlik"
+    ]
+  },
+  "rental": {
+    "target_col": "rent_per_m2_gross",
+    "price_col": "monthly_rent",
+    "m2_col": "gross_m2",
+    "hard_limits": {
+      "monthly_rent_min": 3000,
+      "monthly_rent_max": 250000,
+      "gross_m2_min": 25,
+      "gross_m2_max": 350,
+      "net_m2_min": 20,
+      "net_m2_max": 330,
+      "rent_per_m2_gross_min": 30,
+      "rent_per_m2_gross_max": 2500,
+      "net_gross_ratio_min": 0.45,
+      "net_gross_ratio_max": 1.2
+    },
+    "review_flags_only": {
+      "large_property_m2": 220,
+      "very_old_age": 35,
+      "very_high_dues": 15000,
+      "very_high_deposit_months": 4,
+      "low_detail_selected_count": 5
+    },
+    "title_special_keywords": [
+      "villa",
+      "müstakil",
+      "mustakil",
+      "dubleks",
+      "dublex",
+      "duplex",
+      "tripleks",
+      "triplex",
+      "bahçe",
+      "bahce",
+      "eşyalı",
+      "esyali",
+      "lüks",
+      "lux",
+      "ultra",
+      "günlük",
+      "gunluk"
+    ]
+  }
+}

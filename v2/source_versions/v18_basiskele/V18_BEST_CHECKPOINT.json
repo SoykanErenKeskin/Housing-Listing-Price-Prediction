@@ -1,0 +1,34 @@
+{
+  "status": "CLOSED",
+  "closed_at": "2026-07-20",
+  "model_scope": "basiskele_only",
+  "note": "Bu model Kocaeli geneli modelin yerine geçmez. Başiskele-only research checkpoint'tir.",
+  "decision": {
+    "comparable_as_predictor": "rejected",
+    "selected_comparable_mode": "none",
+    "selected_experiment": "control_v17_geo",
+    "location_feature_mode": "geo",
+    "geo_context_mode": "geo_with_coast"
+  },
+  "metrics": {
+    "r2": 0.4731,
+    "mape": 0.1093,
+    "variance_ratio": 0.4264,
+    "rows": 919
+  },
+  "best_artifact": {
+    "run_dir": "outputs/v18_basiskele_full",
+    "ablation_arm_dir": "outputs/v18_basiskele_full/ablation_comparable_control_v17_geo",
+    "bundle": "outputs/v18_basiskele_full/artifacts/model_bundle_v18_basiskele.joblib",
+    "metrics_summary": "outputs/v18_basiskele_full/reports/metrics_summary_v18_basiskele.json",
+    "comparable_ablation": "outputs/v18_basiskele_full/reports/metrics_comparable_ablation_v18_basiskele.csv"
+  },
+  "rejected_comparable_modes": [
+    "nearest",
+    "similar",
+    "weighted",
+    "large_home",
+    "full"
+  ],
+  "comparable_features_role": "diagnostic_confidence_only_not_model_input"
+}

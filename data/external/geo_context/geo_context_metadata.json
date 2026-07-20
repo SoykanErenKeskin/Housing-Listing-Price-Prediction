@@ -1,0 +1,37 @@
+{
+  "city": "Kocaeli",
+  "created_at": "2026-07-18T09:49:15.039414+00:00",
+  "source": "osm",
+  "bbox": {
+    "south": 40.55,
+    "west": 29.4,
+    "north": 41.0,
+    "east": 30.25
+  },
+  "metric_crs": "EPSG:32635",
+  "files": {
+    "pois": "C:\\Users\\soyka\\OneDrive\\Desktop\\pure_listing_model_v0_izmit_thesis\\data\\external\\geo_context\\kocaeli_pois.parquet",
+    "roads": "C:\\Users\\soyka\\OneDrive\\Desktop\\pure_listing_model_v0_izmit_thesis\\data\\external\\geo_context\\kocaeli_roads.parquet",
+    "coastline": {
+      "table": "C:\\Users\\soyka\\OneDrive\\Desktop\\pure_listing_model_v0_izmit_thesis\\data\\external\\geo_context\\kocaeli_coastline.parquet",
+      "geojson": "C:\\Users\\soyka\\OneDrive\\Desktop\\pure_listing_model_v0_izmit_thesis\\data\\external\\geo_context\\kocaeli_coastline.geojson"
+    },
+    "anchors": "C:\\Users\\soyka\\OneDrive\\Desktop\\pure_listing_model_v0_izmit_thesis\\data\\external\\geo_context\\kocaeli_anchors.json"
+  },
+  "counts": {
+    "pois": 3381,
+    "road_vertices": 80202,
+    "coast_points": 10
+  },
+  "feature_groups": [
+    "sea_coast",
+    "roads",
+    "education",
+    "health",
+    "daily_life",
+    "public_transport",
+    "composite_scores",
+    "basiskele_interactions"
+  ],
+  "training_note": "Training pipeline must load these files offline; no internet during train."
+}

@@ -1,0 +1,641 @@
+{
+  "source_metrics_global": {
+    "r2": 0.6799014234780145,
+    "mape": 0.12897452096852122,
+    "overall": "PASS",
+    "ship_ready": false
+  },
+  "basiskele": {
+    "rows": 856,
+    "r2": 0.4534310549577666,
+    "mape": 0.11097972611521924,
+    "variance_ratio": 0.4515820347522278,
+    "actual_std": 8222.666123726538,
+    "pred_std": 5525.619611636896
+  },
+  "karamursel": {
+    "rows": 202,
+    "r2": 0.5680658123826178,
+    "mape": 0.16917333790561834,
+    "variance_ratio": 0.6075580273388912,
+    "actual_std": 12885.203019008275,
+    "pred_std": 10043.501467141557
+  },
+  "basiskele_mean_pulling_confirmed": true,
+  "karamursel_data_sparsity_confirmed": true,
+  "top_basiskele_error_segments": [
+    {
+      "segment_col": "m2_group",
+      "segment_value": "200+",
+      "rows": 39,
+      "actual_mean": 38448.00692307693,
+      "pred_mean": 36647.9715385178,
+      "mean_bias": -1800.0353845591255,
+      "abs_bias": 6788.058884645727,
+      "mape": 0.1694056111984377,
+      "r2": -0.030620808870506666,
+      "pred_variance": 14551604.042688195,
+      "actual_variance": 80560888.11900608,
+      "variance_ratio": 0.18062864477353188
+    },
+    {
+      "segment_col": "building_age_group",
+      "segment_value": "3",
+      "rows": 24,
+      "actual_mean": 43513.017499999994,
+      "pred_mean": 41503.14331886426,
+      "mean_bias": -2009.8741811357431,
+      "abs_bias": 5241.159436504418,
+      "mape": 0.11993832368690689,
+      "r2": 0.007751414736896223,
+      "pred_variance": 18523333.10894358,
+      "actual_variance": 47676327.21555871,
+      "variance_ratio": 0.3885226524516903
+    },
+    {
+      "segment_col": "attr_total_quality_bucket",
+      "segment_value": "q1_low",
+      "rows": 34,
+      "actual_mean": 33009.60117647059,
+      "pred_mean": 32920.891125516646,
+      "mean_bias": -88.71005095394663,
+      "abs_bias": 4827.370294169735,
+      "mape": 0.140645982571238,
+      "r2": 0.06630655776049255,
+      "pred_variance": 12216005.42438883,
+      "actual_variance": 51381564.9424107,
+      "variance_ratio": 0.23775074655823988
+    },
+    {
+      "segment_col": "room_count",
+      "segment_value": "4+1",
+      "rows": 73,
+      "actual_mean": 38120.80041095891,
+      "pred_mean": 37070.725009924485,
+      "mean_bias": -1050.0754010344147,
+      "abs_bias": 6058.417316144144,
+      "mape": 0.1576966848995235,
+      "r2": 0.14291277042442352,
+      "pred_variance": 15998870.945800211,
+      "actual_variance": 76788058.76527621,
+      "variance_ratio": 0.20835102753027204
+    },
+    {
+      "segment_col": "building_age_group",
+      "segment_value": "5",
+      "rows": 36,
+      "actual_mean": 43599.10083333333,
+      "pred_mean": 40751.74335741687,
+      "mean_bias": -2847.357475916453,
+      "abs_bias": 5991.641839432077,
+      "mape": 0.1297658472762563,
+      "r2": 0.18751287650064763,
+      "pred_variance": 24353371.86688259,
+      "actual_variance": 82639519.652625,
+      "variance_ratio": 0.2946940152756444
+    },
+    {
+      "segment_col": "building_age_group",
+      "segment_value": "0 (Yapım Aşamasında)",
+      "rows": 78,
+      "actual_mean": 40681.003333333334,
+      "pred_mean": 40360.83717651284,
+      "mean_bias": -320.16615682048894,
+      "abs_bias": 4442.808215829255,
+      "mape": 0.10833748595402132,
+      "r2": 0.22285007075182817,
+      "pred_variance": 17073993.12534876,
+      "actual_variance": 50262946.9772251,
+      "variance_ratio": 0.3396934352672406
+    },
+    {
+      "segment_col": "is_large_flat",
+      "segment_value": "1",
+      "rows": 194,
+      "actual_mean": 38526.08525773196,
+      "pred_mean": 37997.834569864164,
+      "mean_bias": -528.2506878677959,
+      "abs_bias": 5382.643848629354,
+      "mape": 0.13827001520640586,
+      "r2": 0.23961226388498724,
+      "pred_variance": 22083081.78478416,
+      "actual_variance": 68768650.94267894,
+      "variance_ratio": 0.3211213464575767
+    },
+    {
+      "segment_col": "district",
+      "segment_value": "Barbaros Mah.",
+      "rows": 94,
+      "actual_mean": 40902.6,
+      "pred_mean": 40604.64325712097,
+      "mean_bias": -297.95674287902125,
+      "abs_bias": 4868.664245532774,
+      "mape": 0.11774400547125786,
+      "r2": 0.2914256474463842,
+      "pred_variance": 20567321.197196323,
+      "actual_variance": 61946192.94525593,
+      "variance_ratio": 0.3320191317547537
+    },
+    {
+      "segment_col": "m2_group",
+      "segment_value": "151-200",
+      "rows": 148,
+      "actual_mean": 38497.52864864865,
+      "pred_mean": 38199.096947818936,
+      "mean_bias": -298.4317008297115,
+      "abs_bias": 5032.946415546545,
+      "mape": 0.12922770718663498,
+      "r2": 0.29218405009623083,
+      "pred_variance": 20998367.138704214,
+      "actual_variance": 64085286.27206755,
+      "variance_ratio": 0.3276628436917296
+    },
+    {
+      "segment_col": "attr_total_quality_bucket",
+      "segment_value": "q5_high",
+      "rows": 289,
+      "actual_mean": 44603.31290657439,
+      "pred_mean": 43598.8212098602,
+      "mean_bias": -1004.4916967141905,
+      "abs_bias": 4795.418830353791,
+      "mape": 0.10527218535027989,
+      "r2": 0.3108511615334615,
+      "pred_variance": 24247118.05132777,
+      "actual_variance": 59567245.22373179,
+      "variance_ratio": 0.4070545475161177
+    }
+  ],
+  "top_karamursel_error_segments": [
+    {
+      "segment_col": "heating",
+      "segment_value": "Yerden Isıtma",
+      "rows": 21,
+      "actual_mean": 50758.9119047619,
+      "pred_mean": 50779.86355106725,
+      "mean_bias": 20.95164630534072,
+      "abs_bias": 5333.969881242544,
+      "mape": 0.10665884485497676,
+      "r2": -0.4936378456123949,
+      "pred_variance": 39163625.24933399,
+      "actual_variance": 28255664.860506188,
+      "variance_ratio": 1.3860450795505506
+    },
+    {
+      "segment_col": "district",
+      "segment_value": "Ereğli Mh.",
+      "rows": 20,
+      "actual_mean": 48524.06,
+      "pred_mean": 48202.71319261501,
+      "mean_bias": -321.3468073849879,
+      "abs_bias": 6941.290143524551,
+      "mape": 0.14494357135241157,
+      "r2": -0.00869680328374689,
+      "pred_variance": 53120779.11147823,
+      "actual_variance": 92973357.29476842,
+      "variance_ratio": 0.5713548553814278
+    },
+    {
+      "segment_col": "building_age_group",
+      "segment_value": "31 ve üzeri",
+      "rows": 63,
+      "actual_mean": 28176.812222222223,
+      "pred_mean": 27771.503883551235,
+      "mean_bias": -405.3083386709896,
+      "abs_bias": 5818.305287026266,
+      "mape": 0.20014414204986183,
+      "r2": 0.022363745557548165,
+      "pred_variance": 21214791.016473208,
+      "actual_variance": 63150838.26438854,
+      "variance_ratio": 0.33593839131089515
+    },
+    {
+      "segment_col": "building_age_group",
+      "segment_value": "11-15 arası",
+      "rows": 28,
+      "actual_mean": 42771.58571428571,
+      "pred_mean": 41614.12817450615,
+      "mean_bias": -1157.4575397795597,
+      "abs_bias": 6592.952953161663,
+      "mape": 0.15656603049259,
+      "r2": 0.21642150909957847,
+      "pred_variance": 25409193.966239545,
+      "actual_variance": 81425383.82607725,
+      "variance_ratio": 0.312054948620359
+    },
+    {
+      "segment_col": "site_inside",
+      "segment_value": "Evet",
+      "rows": 46,
+      "actual_mean": 40168.461956521736,
+      "pred_mean": 40245.52684954896,
+      "mean_bias": 77.06489302722193,
+      "abs_bias": 7458.489086824032,
+      "mape": 0.19340132327496545,
+      "r2": 0.27271421422701025,
+      "pred_variance": 70539130.12265535,
+      "actual_variance": 117533609.90667385,
+      "variance_ratio": 0.6001613511119593
+    },
+    {
+      "segment_col": "district",
+      "segment_value": "Kayacık Mh.",
+      "rows": 68,
+      "actual_mean": 42825.69044117647,
+      "pred_mean": 41957.957587333054,
+      "mean_bias": -867.7328538434274,
+      "abs_bias": 7292.162241045322,
+      "mape": 0.17321530031565543,
+      "r2": 0.3958284030199184,
+      "pred_variance": 62078779.20697984,
+      "actual_variance": 152078242.9323446,
+      "variance_ratio": 0.4082028961539027
+    },
+    {
+      "segment_col": "m2_group",
+      "segment_value": "126-150",
+      "rows": 42,
+      "actual_mean": 31611.89738095238,
+      "pred_mean": 30953.646427751653,
+      "mean_bias": -658.2509532007274,
+      "abs_bias": 5857.12157956374,
+      "mape": 0.18578180789178836,
+      "r2": 0.48573063670376915,
+      "pred_variance": 85250925.19198509,
+      "actual_variance": 135744620.95421493,
+      "variance_ratio": 0.6280243341704068
+    },
+    {
+      "segment_col": "building_age_group",
+      "segment_value": "26-30 arası",
+      "rows": 30,
+      "actual_mean": 31728.644333333337,
+      "pred_mean": 30532.466007032246,
+      "mean_bias": -1196.1783263010918,
+      "abs_bias": 4922.462161346866,
+      "mape": 0.1489066337793535,
+      "r2": 0.49614525491051154,
+      "pred_variance": 30119204.16555974,
+      "actual_variance": 83332611.6156599,
+      "variance_ratio": 0.36143358022274835
+    },
+    {
+      "segment_col": "detail_effect_total_bucket",
+      "segment_value": "q2",
+      "rows": 49,
+      "actual_mean": 39183.14551020408,
+      "pred_mean": 37472.63869641978,
+      "mean_bias": -1710.5068137842954,
+      "abs_bias": 7139.8682267432605,
+      "mape": 0.18524826895700608,
+      "r2": 0.50992179322371,
+      "pred_variance": 105427801.19808577,
+      "actual_variance": 184174432.89766276,
+      "variance_ratio": 0.5724345097164878
+    },
+    {
+      "segment_col": "m2_group",
+      "segment_value": "76-100",
+      "rows": 66,
+      "actual_mean": 41462.26136363637,
+      "pred_mean": 41153.73724161472,
+      "mean_bias": -308.5241220216443,
+      "abs_bias": 6246.819965356587,
+      "mape": 0.16035479640584654,
+      "r2": 0.5298733164611306,
+      "pred_variance": 67739683.62121013,
+      "actual_variance": 120349236.82887967,
+      "variance_ratio": 0.5628592702879105
+    }
+  ],
+  "top_basiskele_residual_correlations": [
+    {
+      "feature": "location_baseline_m2",
+      "spearman_corr_residual": 0.05934477806769826,
+      "spearman_corr_log_residual": 0.06550284394893349,
+      "abs_spearman": 0.05934477806769826
+    },
+    {
+      "feature": "attr_total_quality_score",
+      "spearman_corr_residual": 0.054922918606489984,
+      "spearman_corr_log_residual": 0.06423237179295495,
+      "abs_spearman": 0.054922918606489984
+    },
+    {
+      "feature": "gross_m2",
+      "spearman_corr_residual": -0.053928771019985874,
+      "spearman_corr_log_residual": -0.05535662552070993,
+      "abs_spearman": 0.053928771019985874
+    },
+    {
+      "feature": "net_m2",
+      "spearman_corr_residual": -0.046894014685049064,
+      "spearman_corr_log_residual": -0.04795412404984488,
+      "abs_spearman": 0.046894014685049064
+    },
+    {
+      "feature": "dues",
+      "spearman_corr_residual": 0.034882813614830935,
+      "spearman_corr_log_residual": 0.03993171198298697,
+      "abs_spearman": 0.034882813614830935
+    },
+    {
+      "feature": "detail_effect_view_sum",
+      "spearman_corr_residual": 0.028275153585268366,
+      "spearman_corr_log_residual": 0.026241975704676398,
+      "abs_spearman": 0.028275153585268366
+    },
+    {
+      "feature": "basiskele_detail_view_premium_signal",
+      "spearman_corr_residual": 0.028275153585268366,
+      "spearman_corr_log_residual": 0.026241975704676398,
+      "abs_spearman": 0.028275153585268366
+    },
+    {
+      "feature": "building_age",
+      "spearman_corr_residual": -0.025014559999770505,
+      "spearman_corr_log_residual": -0.030958626549756205,
+      "abs_spearman": 0.025014559999770505
+    },
+    {
+      "feature": "basiskele_detail_outside_premium_signal",
+      "spearman_corr_residual": -0.018454223402565487,
+      "spearman_corr_log_residual": -0.01939559396876219,
+      "abs_spearman": 0.018454223402565487
+    },
+    {
+      "feature": "detail_selected_count",
+      "spearman_corr_residual": -0.01684167135475425,
+      "spearman_corr_log_residual": -0.016994614195521673,
+      "abs_spearman": 0.01684167135475425
+    }
+  ],
+  "recommended_v16_experiments": [
+    {
+      "id": "V16-E1",
+      "name": "basiskele_spread_residual_layer",
+      "why": "Mean-pulling confirmed (var_ratio<0.55 + cheap over / rich under). Need OOF-safe delta that expands prediction variance without raising MAPE.",
+      "guardrails": [
+        "global_mape<=0.131",
+        "basiskele_mape<=0.115",
+        "izmit_r2>=0.70"
+      ],
+      "success": "basiskele_r2>=0.50 and variance_ratio>=0.55"
+    },
+    {
+      "id": "V16-E2",
+      "name": "basiskele_large_home_regime",
+      "why": "Başiskele large_home R2=0.240 vs non-large R2=0.502; share=22.7%. Separate simple regime better than more global features.",
+      "guardrails": [
+        "no global mape worsen >0.002",
+        "non-large basiskele r2 must not drop >0.01"
+      ],
+      "success": "basiskele_large_home_r2 lift >=0.08"
+    },
+    {
+      "id": "V16-E3",
+      "name": "karamursel_data_plus_strong_baseline",
+      "why": "Karamürsel n=202, MAPE high; district error concentrated. building_age segments weak. Prefer stronger fold-safe location/age baseline over aggressive county expert.",
+      "guardrails": [
+        "karamursel_mape<=0.17",
+        "global_r2>=0.675"
+      ],
+      "success": "karamursel_r2>=0.60"
+    }
+  ],
+  "answers": {
+    "q1_basiskele_segments_hurting_r2": [
+      {
+        "segment_col": "m2_group",
+        "segment_value": "200+",
+        "rows": 39,
+        "actual_mean": 38448.00692307693,
+        "pred_mean": 36647.9715385178,
+        "mean_bias": -1800.0353845591255,
+        "abs_bias": 6788.058884645727,
+        "mape": 0.1694056111984377,
+        "r2": -0.030620808870506666,
+        "pred_variance": 14551604.042688195,
+        "actual_variance": 80560888.11900608,
+        "variance_ratio": 0.18062864477353188
+      },
+      {
+        "segment_col": "building_age_group",
+        "segment_value": "3",
+        "rows": 24,
+        "actual_mean": 43513.017499999994,
+        "pred_mean": 41503.14331886426,
+        "mean_bias": -2009.8741811357431,
+        "abs_bias": 5241.159436504418,
+        "mape": 0.11993832368690689,
+        "r2": 0.007751414736896223,
+        "pred_variance": 18523333.10894358,
+        "actual_variance": 47676327.21555871,
+        "variance_ratio": 0.3885226524516903
+      },
+      {
+        "segment_col": "attr_total_quality_bucket",
+        "segment_value": "q1_low",
+        "rows": 34,
+        "actual_mean": 33009.60117647059,
+        "pred_mean": 32920.891125516646,
+        "mean_bias": -88.71005095394663,
+        "abs_bias": 4827.370294169735,
+        "mape": 0.140645982571238,
+        "r2": 0.06630655776049255,
+        "pred_variance": 12216005.42438883,
+        "actual_variance": 51381564.9424107,
+        "variance_ratio": 0.23775074655823988
+      },
+      {
+        "segment_col": "room_count",
+        "segment_value": "4+1",
+        "rows": 73,
+        "actual_mean": 38120.80041095891,
+        "pred_mean": 37070.725009924485,
+        "mean_bias": -1050.0754010344147,
+        "abs_bias": 6058.417316144144,
+        "mape": 0.1576966848995235,
+        "r2": 0.14291277042442352,
+        "pred_variance": 15998870.945800211,
+        "actual_variance": 76788058.76527621,
+        "variance_ratio": 0.20835102753027204
+      },
+      {
+        "segment_col": "building_age_group",
+        "segment_value": "5",
+        "rows": 36,
+        "actual_mean": 43599.10083333333,
+        "pred_mean": 40751.74335741687,
+        "mean_bias": -2847.357475916453,
+        "abs_bias": 5991.641839432077,
+        "mape": 0.1297658472762563,
+        "r2": 0.18751287650064763,
+        "pred_variance": 24353371.86688259,
+        "actual_variance": 82639519.652625,
+        "variance_ratio": 0.2946940152756444
+      },
+      {
+        "segment_col": "building_age_group",
+        "segment_value": "0 (Yapım Aşamasında)",
+        "rows": 78,
+        "actual_mean": 40681.003333333334,
+        "pred_mean": 40360.83717651284,
+        "mean_bias": -320.16615682048894,
+        "abs_bias": 4442.808215829255,
+        "mape": 0.10833748595402132,
+        "r2": 0.22285007075182817,
+        "pred_variance": 17073993.12534876,
+        "actual_variance": 50262946.9772251,
+        "variance_ratio": 0.3396934352672406
+      },
+      {
+        "segment_col": "is_large_flat",
+        "segment_value": "1",
+        "rows": 194,
+        "actual_mean": 38526.08525773196,
+        "pred_mean": 37997.834569864164,
+        "mean_bias": -528.2506878677959,
+        "abs_bias": 5382.643848629354,
+        "mape": 0.13827001520640586,
+        "r2": 0.23961226388498724,
+        "pred_variance": 22083081.78478416,
+        "actual_variance": 68768650.94267894,
+        "variance_ratio": 0.3211213464575767
+      },
+      {
+        "segment_col": "district",
+        "segment_value": "Barbaros Mah.",
+        "rows": 94,
+        "actual_mean": 40902.6,
+        "pred_mean": 40604.64325712097,
+        "mean_bias": -297.95674287902125,
+        "abs_bias": 4868.664245532774,
+        "mape": 0.11774400547125786,
+        "r2": 0.2914256474463842,
+        "pred_variance": 20567321.197196323,
+        "actual_variance": 61946192.94525593,
+        "variance_ratio": 0.3320191317547537
+      }
+    ],
+    "q2_basiskele_decile_bias": [
+      {
+        "decile": 1,
+        "mean_bias": 5719.429239727923,
+        "bias_pct_of_actual": 0.1974623050277544,
+        "role": "cheapest"
+      },
+      {
+        "decile": 10,
+        "mean_bias": -10526.162912076274,
+        "bias_pct_of_actual": -0.18269361469235967,
+        "role": "most_expensive"
+      }
+    ],
+    "q3_basiskele_large_home_primary_culprit": {
+      "yes": true,
+      "large_home_r2": 0.23961226388498724,
+      "non_large_home_r2": 0.5023567532484365,
+      "large_home_share_in_basiskele": 0.2266355140186916,
+      "large_home_rows": 194
+    },
+    "q4_karamursel_error_concentrated_in_districts": {
+      "yes": true,
+      "top_districts_by_abs_error_mass": [
+        {
+          "district": "4 Temmuz Mah.",
+          "rows": 102,
+          "mape": 0.1665701720988034,
+          "mean_abs_err": 5619.696797685356,
+          "total_abs": 573209.0733639062,
+          "error_share": 0.442247443832348
+        },
+        {
+          "district": "Kayacık Mh.",
+          "rows": 68,
+          "mape": 0.1732153003156554,
+          "mean_abs_err": 7292.162241045323,
+          "total_abs": 495867.032391082,
+          "error_share": 0.3825758135138004
+        },
+        {
+          "district": "Ereğli Mh.",
+          "rows": 20,
+          "mape": 0.14494357135241157,
+          "mean_abs_err": 6941.290143524551,
+          "total_abs": 138825.80287049102,
+          "error_share": 0.10710813786869486
+        },
+        {
+          "district": "Dereköy Mh.",
+          "rows": 8,
+          "mape": 0.17650799299372635,
+          "mean_abs_err": 5315.749484075919,
+          "total_abs": 42525.99587260735,
+          "error_share": 0.03281004060301363
+        },
+        {
+          "district": "Yalakdere Mh.",
+          "rows": 1,
+          "mape": 0.2887230019247486,
+          "mean_abs_err": 16142.24029968094,
+          "total_abs": 16142.24029968094,
+          "error_share": 0.0124542070982349
+        }
+      ]
+    },
+    "q5_karamursel_root_cause": {
+      "data_sparsity": true,
+      "district_concentration": true,
+      "building_age_weak_segments": true,
+      "primary": "district_hotspots_plus_sparsity",
+      "rows": 202
+    },
+    "q6_top3_v16_experiments": [
+      {
+        "id": "V16-E1",
+        "name": "basiskele_spread_residual_layer",
+        "why": "Mean-pulling confirmed (var_ratio<0.55 + cheap over / rich under). Need OOF-safe delta that expands prediction variance without raising MAPE.",
+        "guardrails": [
+          "global_mape<=0.131",
+          "basiskele_mape<=0.115",
+          "izmit_r2>=0.70"
+        ],
+        "success": "basiskele_r2>=0.50 and variance_ratio>=0.55"
+      },
+      {
+        "id": "V16-E2",
+        "name": "basiskele_large_home_regime",
+        "why": "Başiskele large_home R2=0.240 vs non-large R2=0.502; share=22.7%. Separate simple regime better than more global features.",
+        "guardrails": [
+          "no global mape worsen >0.002",
+          "non-large basiskele r2 must not drop >0.01"
+        ],
+        "success": "basiskele_large_home_r2 lift >=0.08"
+      },
+      {
+        "id": "V16-E3",
+        "name": "karamursel_data_plus_strong_baseline",
+        "why": "Karamürsel n=202, MAPE high; district error concentrated. building_age segments weak. Prefer stronger fold-safe location/age baseline over aggressive county expert.",
+        "guardrails": [
+          "karamursel_mape<=0.17",
+          "global_r2>=0.675"
+        ],
+        "success": "karamursel_r2>=0.60"
+      }
+    ]
+  },
+  "proxy_notes": {
+    "proxies": [
+      "attr_total_quality_score via attribute_features",
+      "detail_effect_*_sum = sum of present detail binaries (coverage proxy, not fold-safe residual effects)",
+      "location_baseline_m2 / district_target_median = OOF actual group medians (diagnostic proxies only)",
+      "basiskele_* via BasiskelePremiumSpecialistAdder on binary-sum proxies"
+    ],
+    "missing_requested": []
+  },
+  "caveats": [
+    "detail_effect_* here are binary coverage proxies, not V15 fold-safe residual effects.",
+    "location_baseline_m2 / district_target_median are OOF actual group medians for diagnosis only.",
+    "No model was trained or modified in this sprint."
+  ]
+}
