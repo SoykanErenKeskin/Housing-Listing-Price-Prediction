@@ -8,6 +8,48 @@ Başiskele-only calibration / anti-shrink track. The repository is organized by
 
 ---
 
+## Dataset shape (what the model sees)
+
+Training rows come from a **private listing database** (sale + rental). Raw dumps
+are **not** in this repository. Below is only the schema shape and **synthetic**
+example rows (no listing IDs, URLs, site names, or portal brands).
+
+### Feature groups
+
+| Group | Examples | Role |
+|---|---|---|
+| Identity / target | `price` (sale) or `monthly_rent` (rental), `currency`, `listing_purpose` | Supervision only; IDs/URLs never used as features |
+| Size & layout | `gross_m2`, `net_m2`, `room_count`, `rooms`, `living_rooms`, `bathroom_count`, `m2_group` | Core structural signal |
+| Building & floor | `building_age`, `building_age_group`, `floor_num`, `total_floors`, `floor_segment`, `is_ground_floor`, `is_top_floor`, … | Vertical / age structure |
+| Amenities (categorical) | `heating`, `kitchen`, `balcony`, `elevator`, `parking`, `furnished`, `usage_status`, `site_inside`, `credit_eligible`, `deed_status`, `energy_certificate`, `seller_type` | Listing attributes |
+| Location (categorical) | `city`, `county`, `district` | Geography keys |
+| Detail flags / scores | `detail_*` counts, `front_*`, `view_*`, `transport_*`, `near_*`, `in_*`, `out_*`, quality scores | Parsed listing detail checkboxes → numeric scores |
+| Market / rent context | `district_rent_m2_*`, `county_rent_m2_*`, `estimated_rent_m2_gross`, `trend_*`, `location_baseline_*` | Engineered from peer listings (no external brand) |
+| Demographics (optional) | `demo_*`, `county_demo_*` | Neighborhood / county socio-economic context |
+| Geo context (optional) | coast / road / POI distances from local `data/external/geo_context` | OSM-style distance features |
+
+Active pipelines (e.g. V19) concatenate the numeric + categorical columns above into
+the training matrix; exact lists live in each generation’s train script
+(`NUMERIC_FEATURES`, `CATEGORICAL_FEATURES`).
+
+### Synthetic example rows (sale listings)
+
+Illustrative only — values are made up for documentation.
+
+| # | county | district | gross_m2 | net_m2 | room_count | building_age | floor_num | total_floors | heating | balcony | elevator | parking | site_inside | bathroom_count | price (TRY) |
+|---|---|---|---:|---:|---|---:|---:|---:|---|---|---|---|---|---:|---:|
+| A | Başiskele | Sample Mah. A | 125 | 105 | 3+1 | 8 | 3 | 5 | Kombi | Var | Var | Açık Otopark | Evet | 1 | 4_250_000 |
+| B | İzmit | Sample Mah. B | 95 | 80 | 2+1 | 15 | 2 | 4 | Kombi | Var | Yok | Yok | Hayır | 1 | 2_800_000 |
+| C | Karamürsel | Sample Mah. C | 160 | 135 | 4+1 | 3 | 7 | 8 | Merkezi (Pay Ölçer) | Var | Var | Kapalı Otopark | Evet | 2 | 6_100_000 |
+| D | Gölcük | Sample Mah. D | 110 | 90 | 3+1 | 22 | 0 | 3 | Soba | Yok | Yok | Yok | Hayır | 1 | 1_950_000 |
+
+After feature engineering, row A might also carry derived fields such as
+`net_gross_ratio ≈ 0.84`, `m2_group = 101-125`, `floor_segment = Ara Kat`,
+`is_middle_floor = 1`, plus district rent/trend and (if enabled) geo-distance
+columns — still without any listing link or firm name.
+
+---
+
 ## Quick start (active: V19 Başiskele)
 
 ### 1. Environment
