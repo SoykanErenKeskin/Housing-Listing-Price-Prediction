@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 """
 V16 county-specialist pipeline for Kocaeli housing unit price model.
@@ -4963,7 +4963,8 @@ def parse_args() -> argparse.Namespace:
         "--run-calibration-ablation",
         action=argparse.BooleanOptionalAction,
         default=False,
-        help="Run V19 calibration/ensemble/target ablation matrix (deferred until smoke passes).",
+        help="Run minimal V19 calibration×ensemble ablation "
+        "(none/linear/isotonic × balanced/no_ridge; target_profile=residual_log).",
     )
     ap.add_argument(
         "--ensemble-profile",
@@ -5046,15 +5047,20 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
-    if bool(getattr(args, "run_calibration_ablation", False)):
-        raise SystemExit(
-            "Calibration ablation is deferred until smoke passes. "
-            "Re-run with --no-run-calibration-ablation (default)."
-        )
     # V19: comparable predictor rejected — force none unless explicitly overridden for research forks.
     args.comparable_mode = "none"
     args.run_comparable_ablation = False
     args.county_experts = False
+
+    run_cal_ablation = bool(getattr(args, "run_calibration_ablation", False))
+    if run_cal_ablation:
+        # Minimal matrix locks target_profile; ignore CLI override for this flag.
+        if str(getattr(args, "target_profile", "residual_log")).lower() != "residual_log":
+            warnings.warn(
+                f"--run-calibration-ablation forces target_profile=residual_log "
+                f"(got {args.target_profile!r}); direct_price/hybrid deferred."
+            )
+        args.target_profile = "residual_log"
 
     try:
         from ensemble_profiles import resolve_selected_models
@@ -5135,7 +5141,7 @@ def main() -> None:
         ensemble_profile=str(getattr(args, "ensemble_profile", "balanced")),
         target_profile=str(getattr(args, "target_profile", "residual_log")),
         hybrid_lambda_grid=str(getattr(args, "hybrid_lambda_grid", "0.0,0.1,0.2,0.3,0.5")),
-        run_calibration_ablation=False,
+        run_calibration_ablation=run_cal_ablation,
     )
     # stash target profile report on cfg via dynamic attr for metrics writers
     cfg._target_profile_report = build_target_profile_report(  # type: ignore[attr-defined]
@@ -5207,6 +5213,8 @@ def main() -> None:
         geo_context_mode: str | None = None,
         location_scope: str | None = None,
         comparable_mode: str | None = None,
+        calibration_mode: str | None = None,
+        ensemble_profile: str | None = None,
     ):
         dmode = str(detail_mode if detail_mode is not None else getattr(cfg, "detail_effect_mode", "group"))
         smode = str(specialist_mode if specialist_mode is not None else getattr(cfg, "basiskele_specialist_mode", "premium_target_stats"))
@@ -5218,6 +5226,13 @@ def main() -> None:
         gctx_mode = str(geo_context_mode if geo_context_mode is not None else getattr(cfg, "geo_context_mode", "full"))
         loc_scope = str(location_scope if location_scope is not None else getattr(cfg, "location_scope", "basiskele_only"))
         comp_mode = str(comparable_mode if comparable_mode is not None else getattr(cfg, "comparable_mode", "full"))
+        cal_mode = str(calibration_mode if calibration_mode is not None else getattr(cfg, "calibration_mode", "none"))
+        ens_prof = str(ensemble_profile if ensemble_profile is not None else getattr(cfg, "ensemble_profile", "balanced"))
+        try:
+            from ensemble_profiles import resolve_selected_models as _resolve_models
+        except ImportError:
+            from v19_basiskele.ensemble_profiles import resolve_selected_models as _resolve_models
+        sel_models = _resolve_models(ens_prof, fast_mode=bool(getattr(cfg, "fast_mode", False)))
         mode_cfg = RunConfig(
             **{
                 **asdict(cfg),
@@ -5233,6 +5248,10 @@ def main() -> None:
                 "geo_context_mode": gctx_mode,
                 "location_scope": loc_scope,
                 "comparable_mode": comp_mode,
+                "calibration_mode": cal_mode,
+                "ensemble_profile": ens_prof,
+                "selected_models": list(sel_models),
+                "target_profile": str(getattr(cfg, "target_profile", "residual_log")),
             }
         )
         demo_features = build_demographic_features(demographic_raw, mode=demo_mode)
@@ -5281,6 +5300,9 @@ def main() -> None:
         metrics_summary["ensemble"]["location_scope"] = loc_scope
         metrics_summary["ensemble"]["comparable_mode"] = str(getattr(mode_cfg, "comparable_mode", "full"))
         metrics_summary["ensemble"]["model_scope"] = str(getattr(mode_cfg, "model_scope", "basiskele_only"))
+        metrics_summary["ensemble"]["calibration_mode"] = str(getattr(mode_cfg, "calibration_mode", "none"))
+        metrics_summary["ensemble"]["ensemble_profile"] = str(getattr(mode_cfg, "ensemble_profile", "balanced"))
+        metrics_summary["ensemble"]["target_profile"] = str(getattr(mode_cfg, "target_profile", "residual_log"))
         metrics_summary["ensemble"]["location_feature_metadata"] = location_feature_metadata(loc_mode)
         metrics_summary["selected_comparable_mode"] = str(getattr(mode_cfg, "comparable_mode", "full"))
         metrics_summary["ensemble"]["fast_mode"] = bool(getattr(mode_cfg, "fast_mode", False))
@@ -5351,6 +5373,15 @@ def main() -> None:
     selected_comparable_mode = str(getattr(args, "comparable_mode", "full"))
     location_ablation_rows: list[dict[str, Any]] = []
     comparable_ablation_rows: list[dict[str, Any]] = []
+    calibration_ablation_rows: list[dict[str, Any]] = []
+    selected_calibration_mode = str(getattr(cfg, "calibration_mode", "none"))
+    selected_ensemble_profile = str(getattr(cfg, "ensemble_profile", "balanced"))
+    selected_calibration_experiment = (
+        f"{selected_calibration_mode}__{selected_ensemble_profile}__{getattr(cfg, 'target_profile', 'residual_log')}"
+    )
+    calibration_ablation_metrics: dict[str, dict[str, Any]] = {}
+    calibration_ablation_bundles: dict[str, Any] = {}
+    skip_final_retrain = False
 
     n_attr_runs = 3 if bool(args.run_attribute_ablation) else 0
     n_demo_runs = 3 if bool(args.run_demographics_ablation) else 0
@@ -5359,22 +5390,24 @@ def main() -> None:
     n_regime_runs = 5 if bool(getattr(args, "run_v16_regime_ablation", False)) else 0
     n_location_runs = 5 if bool(getattr(args, "run_location_ablation", False)) else 0
     n_comparable_runs = 6 if bool(getattr(args, "run_comparable_ablation", False)) else 0
+    n_calibration_runs = 6 if bool(getattr(cfg, "run_calibration_ablation", False)) else 0
     total_units = estimate_training_units(
         n_models=len(cfg.selected_models) or 4,
         n_attr_runs=n_attr_runs,
         n_demo_runs=n_demo_runs,
         n_detail_runs=n_detail_runs + n_specialist_runs + n_regime_runs,
-        include_final=True,
+        include_final=not bool(n_calibration_runs),
         n_segments=4,
         n_counties_est=4,
-        n_location_runs=n_location_runs + n_comparable_runs,
+        n_location_runs=n_location_runs + n_comparable_runs + n_calibration_runs,
     )
     progress = TrainProgress(total_units=total_units)
     set_progress(progress)
     progress.start()
     _plog(
         f"Eğitim ilerlemesi başlıyor (~{total_units} adım tahmini; "
-        f"location ablation={n_location_runs}, comparable ablation={n_comparable_runs})."
+        f"location ablation={n_location_runs}, comparable ablation={n_comparable_runs}, "
+        f"calibration ablation={n_calibration_runs})."
     )
 
     try:
@@ -5844,48 +5877,175 @@ def main() -> None:
                 f"(comparable_mode={selected_comparable_mode})"
             )
 
-        # Final run into main out dirs with selected modes
-        _pstage(
-            f"FINAL demo={selected_demo} attr={selected_attr} detail={selected_detail} loc={selected_location_mode}"
-        )
-        _plog(
-            f"\n========== V19 FINAL: demo={selected_demo} attr={selected_attr} detail={selected_detail} "
-            f"location={selected_location_mode} geo_context={selected_geo_context_mode} "
-            f"comparable={selected_comparable_mode} "
-            f"scope={selected_location_scope} =========="
-        )
-        final_cfg_dict = {
-            **asdict(cfg),
-            "demographics_mode": selected_demo,
-            "attribute_mode": selected_attr,
-            "detail_effect_mode": selected_detail,
-            "basiskele_specialist_mode": selected_specialist,
-            "basiskele_variance_lift": selected_variance_lift,
-            "basiskele_large_home_regime": selected_lh_regime,
-            "basiskele_spread_layer": selected_spread,
-            "karamursel_baseline_mode": selected_kar_baseline,
-            "location_feature_mode": selected_location_mode,
-            "geo_context_mode": selected_geo_context_mode,
-            "location_scope": selected_location_scope,
-            "comparable_mode": selected_comparable_mode,
-        }
-        cfg = RunConfig(**final_cfg_dict)
-        (out_dirs["base"] / "run_config_v19_basiskele.json").write_text(json.dumps(asdict(cfg), indent=2, ensure_ascii=False), encoding="utf-8")
-        bundle, metrics_summary, demo_feature_report, anomaly_filter_report = run_one_mode(
-            selected_demo,
-            selected_attr,
-            out_dirs,
-            detail_mode=selected_detail,
-            specialist_mode=selected_specialist,
-            variance_lift=selected_variance_lift,
-            large_home_regime=selected_lh_regime,
-            spread_layer=selected_spread,
-            karamursel_baseline=selected_kar_baseline,
-            location_mode=selected_location_mode,
-            geo_context_mode=selected_geo_context_mode,
-            location_scope=selected_location_scope,
-            comparable_mode=selected_comparable_mode,
-        )
+        # V19 minimal calibration × ensemble ablation (residual_log only)
+        if bool(getattr(cfg, "run_calibration_ablation", False)):
+            try:
+                from calibration_ablation import (
+                    MINIMAL_CALIBRATION_EXPERIMENTS,
+                    apply_selection_flags,
+                    build_calibration_ablation_row,
+                    promote_selected_bundle,
+                    select_calibration_ablation,
+                    write_ablation_csv,
+                    write_experiment_mini_summary,
+                )
+            except ImportError:
+                from v19_basiskele.calibration_ablation import (
+                    MINIMAL_CALIBRATION_EXPERIMENTS,
+                    apply_selection_flags,
+                    build_calibration_ablation_row,
+                    promote_selected_bundle,
+                    select_calibration_ablation,
+                    write_ablation_csv,
+                    write_experiment_mini_summary,
+                )
+
+            for exp_name, cal_m, ens_p in MINIMAL_CALIBRATION_EXPERIMENTS:
+                _pstage(f"Calibration ablation: {exp_name}")
+                _plog(
+                    f"\n========== V19 CALIBRATION ABLATION: {exp_name} "
+                    f"cal={cal_m} ensemble={ens_p} target=residual_log =========="
+                )
+                mode_dirs = build_output_dirs(out_dirs["base"] / "ablation_runs" / exp_name)
+                bundle_i, ms, _d, _f = run_one_mode(
+                    selected_demo,
+                    selected_attr,
+                    mode_dirs,
+                    detail_mode=selected_detail,
+                    specialist_mode=selected_specialist,
+                    variance_lift=selected_variance_lift,
+                    large_home_regime=selected_lh_regime,
+                    spread_layer=selected_spread,
+                    karamursel_baseline=selected_kar_baseline,
+                    location_mode=selected_location_mode,
+                    geo_context_mode=selected_geo_context_mode,
+                    location_scope=selected_location_scope,
+                    comparable_mode=selected_comparable_mode,
+                    calibration_mode=cal_m,
+                    ensemble_profile=ens_p,
+                )
+                write_experiment_mini_summary(out_dirs["reports"], exp_name, ms)
+                row = build_calibration_ablation_row(
+                    experiment=exp_name,
+                    calibration_mode=cal_m,
+                    ensemble_profile=ens_p,
+                    metrics_summary=ms,
+                    reports_dir=mode_dirs["reports"],
+                )
+                calibration_ablation_rows.append(row)
+                calibration_ablation_metrics[exp_name] = ms
+                calibration_ablation_bundles[exp_name] = {
+                    "bundle": bundle_i,
+                    "artifacts_dir": mode_dirs["artifacts"],
+                    "mode_dirs": mode_dirs,
+                }
+
+            pick = select_calibration_ablation(calibration_ablation_rows, calibration_ablation_metrics)
+            apply_selection_flags(calibration_ablation_rows, pick)
+            write_ablation_csv(
+                calibration_ablation_rows,
+                out_dirs["reports"] / "metrics_calibration_ablation_v19_basiskele.csv",
+            )
+            picked = next((r for r in calibration_ablation_rows if r.get("experiment") == pick), {}) or {}
+            selected_calibration_mode = str(picked.get("calibration_mode") or "none")
+            selected_ensemble_profile = str(picked.get("ensemble_profile") or "balanced")
+            selected_calibration_experiment = str(pick)
+            promote_selected_bundle(
+                Path(calibration_ablation_bundles[pick]["artifacts_dir"]),
+                out_dirs["artifacts"],
+            )
+            # Promote selected metrics as the run's primary summary (no 7th retrain).
+            metrics_summary = calibration_ablation_metrics[pick]
+            bundle = calibration_ablation_bundles[pick]["bundle"]
+            demo_feature_report = metrics_summary.get("demographic_features") or {}
+            anomaly_filter_report = metrics_summary.get("anomaly_training_filter") or {}
+            skip_final_retrain = True
+            _plog(
+                f"Selected V19 calibration after ablation: {pick} "
+                f"(cal={selected_calibration_mode}, ensemble={selected_ensemble_profile})"
+            )
+
+        # Final run into main out dirs with selected modes (skipped when calibration ablation promotes winner)
+        if not skip_final_retrain:
+            _pstage(
+                f"FINAL demo={selected_demo} attr={selected_attr} detail={selected_detail} loc={selected_location_mode}"
+            )
+            _plog(
+                f"\n========== V19 FINAL: demo={selected_demo} attr={selected_attr} detail={selected_detail} "
+                f"location={selected_location_mode} geo_context={selected_geo_context_mode} "
+                f"comparable={selected_comparable_mode} "
+                f"scope={selected_location_scope} =========="
+            )
+            final_cfg_dict = {
+                **asdict(cfg),
+                "demographics_mode": selected_demo,
+                "attribute_mode": selected_attr,
+                "detail_effect_mode": selected_detail,
+                "basiskele_specialist_mode": selected_specialist,
+                "basiskele_variance_lift": selected_variance_lift,
+                "basiskele_large_home_regime": selected_lh_regime,
+                "basiskele_spread_layer": selected_spread,
+                "karamursel_baseline_mode": selected_kar_baseline,
+                "location_feature_mode": selected_location_mode,
+                "geo_context_mode": selected_geo_context_mode,
+                "location_scope": selected_location_scope,
+                "comparable_mode": selected_comparable_mode,
+                "calibration_mode": selected_calibration_mode,
+                "ensemble_profile": selected_ensemble_profile,
+                "selected_models": resolve_selected_models(
+                    selected_ensemble_profile, fast_mode=bool(getattr(cfg, "fast_mode", False))
+                ),
+            }
+            cfg = RunConfig(**final_cfg_dict)
+            (out_dirs["base"] / "run_config_v19_basiskele.json").write_text(json.dumps(asdict(cfg), indent=2, ensure_ascii=False), encoding="utf-8")
+            bundle, metrics_summary, demo_feature_report, anomaly_filter_report = run_one_mode(
+                selected_demo,
+                selected_attr,
+                out_dirs,
+                detail_mode=selected_detail,
+                specialist_mode=selected_specialist,
+                variance_lift=selected_variance_lift,
+                large_home_regime=selected_lh_regime,
+                spread_layer=selected_spread,
+                karamursel_baseline=selected_kar_baseline,
+                location_mode=selected_location_mode,
+                geo_context_mode=selected_geo_context_mode,
+                location_scope=selected_location_scope,
+                comparable_mode=selected_comparable_mode,
+                calibration_mode=selected_calibration_mode,
+                ensemble_profile=selected_ensemble_profile,
+            )
+        else:
+            # Keep run_config aligned with the selected ablation arm.
+            cfg = RunConfig(
+                **{
+                    **asdict(cfg),
+                    "demographics_mode": selected_demo,
+                    "attribute_mode": selected_attr,
+                    "detail_effect_mode": selected_detail,
+                    "basiskele_specialist_mode": selected_specialist,
+                    "basiskele_variance_lift": selected_variance_lift,
+                    "basiskele_large_home_regime": selected_lh_regime,
+                    "basiskele_spread_layer": selected_spread,
+                    "karamursel_baseline_mode": selected_kar_baseline,
+                    "location_feature_mode": selected_location_mode,
+                    "geo_context_mode": selected_geo_context_mode,
+                    "location_scope": selected_location_scope,
+                    "comparable_mode": selected_comparable_mode,
+                    "calibration_mode": selected_calibration_mode,
+                    "ensemble_profile": selected_ensemble_profile,
+                    "selected_models": resolve_selected_models(
+                        selected_ensemble_profile, fast_mode=bool(getattr(cfg, "fast_mode", False))
+                    ),
+                }
+            )
+            (out_dirs["base"] / "run_config_v19_basiskele.json").write_text(
+                json.dumps(asdict(cfg), indent=2, ensure_ascii=False), encoding="utf-8"
+            )
+            # Refresh top-level metrics summary after selection annotations.
+            (out_dirs["reports"] / "metrics_summary_v19_basiskele.json").write_text(
+                json.dumps(metrics_summary, indent=2, ensure_ascii=False), encoding="utf-8"
+            )
     except KeyboardInterrupt:
         progress.finish("iptal edildi")
         set_progress(None)
@@ -5921,7 +6081,13 @@ def main() -> None:
     metrics_summary["selected_location_scope"] = selected_location_scope
     metrics_summary["location_ablation"] = location_ablation_rows
     metrics_summary["comparable_ablation"] = comparable_ablation_rows
+    metrics_summary["calibration_ablation"] = calibration_ablation_rows
     metrics_summary["selected_comparable_mode"] = selected_comparable_mode
+    metrics_summary["selected_calibration_mode"] = selected_calibration_mode
+    metrics_summary["selected_ensemble_profile"] = selected_ensemble_profile
+    metrics_summary["selected_target_profile"] = str(getattr(cfg, "target_profile", "residual_log"))
+    metrics_summary["selected_experiment"] = selected_calibration_experiment
+    metrics_summary["run_calibration_ablation"] = bool(getattr(cfg, "run_calibration_ablation", False))
     metrics_summary["comparability_note"] = (
         "fast_mode location result is smoke only, not comparable. "
         "V15/V16 comparisons only with full train."

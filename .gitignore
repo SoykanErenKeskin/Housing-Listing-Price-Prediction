@@ -82,6 +82,8 @@ analysis_outputs/**
 *.model
 *.bin
 *.zip
+*.rar
+*.7z
 
 # Large prediction / matrix dumps inside otherwise-tracked output folders
 **/oof_predictions*.csv

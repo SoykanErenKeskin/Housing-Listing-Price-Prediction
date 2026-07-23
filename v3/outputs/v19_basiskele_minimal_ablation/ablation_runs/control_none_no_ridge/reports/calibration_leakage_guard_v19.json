@@ -1,0 +1,10 @@
+{
+  "pass": true,
+  "outer_validation_targets_used_in_calibrator": false,
+  "inner_oof_used": false,
+  "calibration_mode": "none",
+  "correction_cap": 0.1,
+  "notes": [
+    "calibration disabled"
+  ]
+}

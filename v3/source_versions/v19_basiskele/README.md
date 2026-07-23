@@ -1,10 +1,14 @@
 # V19 Başiskele-only — Calibration / Anti-Shrink Research
 
-**Active package:** `v3/source_versions/v19_basiskele/`
+**Package:** `v3/source_versions/v19_basiskele/`  
+**Status:** Minimal calibration ablation **closed** — `diagnostic / rejected_for_final_model`.
 
-V19 continues from the closed V18 Başiskele-only geo control checkpoint and tests
-**OOF-safe prediction-level calibration** (and related anti-shrink levers) to reduce
-mean-pulling / variance compression.
+V19 tested OOF-safe prediction-level calibration and no-ridge ensembles on the V18
+Başiskele-only geo control base. Selected arm: **`control_none_balanced`**.
+Calibration / no-ridge are **not** promoted to final; keep **V18 geo control /
+`comparable_mode=none`** as the best known Başiskele checkpoint.
+
+Decision write-up: `v3/outputs/v19_basiskele_minimal_ablation/README_v19_basiskele_run.md`
 
 ---
 
@@ -90,11 +94,14 @@ python v3/source_versions/v19_basiskele/train_v19_basiskele_calibration_pipeline
 
 ---
 
-## Full calibration ablation
+## Minimal calibration ablation (6 arms)
+
+Runs `calibration_mode ∈ {none, linear, isotonic}` × `ensemble_profile ∈ {balanced, no_ridge}`
+with `target_profile=residual_log` fixed. Selects vs `control_none_balanced`.
 
 ```powershell
 python v3/source_versions/v19_basiskele/train_v19_basiskele_calibration_pipeline.py `
-  --out v3/outputs/v19_basiskele_ablation `
+  --out v3/outputs/v19_basiskele_minimal_ablation `
   --model-scope basiskele_only `
   --location-feature-mode geo `
   --geo-context-mode geo_with_coast `
@@ -106,7 +113,15 @@ python v3/source_versions/v19_basiskele/train_v19_basiskele_calibration_pipeline
   --geo-context-cache-dir data/external/geo_context
 ```
 
-`--run-calibration-ablation` expands the run (multiple calibrator / profile arms). Expect a long wall-clock.
+Expect ~6× full-train wall-clock. Outputs:
+
+| Path | Contents |
+|---|---|
+| `reports/metrics_calibration_ablation_v19_basiskele.csv` | 6-row ablation table + `selected` |
+| `reports/ablation_runs/<experiment>/metrics_summary.json` | Per-arm mini summary |
+| `artifacts/model_bundle_v19_basiskele.joblib` | Bundle from the selected arm |
+
+`direct_price` / `hybrid` / `bin` / `quantile_map` are **not** in this minimal matrix.
 
 ---
 
@@ -114,10 +129,10 @@ python v3/source_versions/v19_basiskele/train_v19_basiskele_calibration_pipeline
 
 | Path | Contents |
 |---|---|
-| `reports/metrics_summary_v19_basiskele.json` | Core metrics |
+| `reports/metrics_summary_v19_basiskele.json` | Core metrics (selected arm when ablation runs) |
 | `reports/calibration_leakage_guard_v19.json` | Leakage guard result |
 | `reports/calibration_curve_v19_basiskele.csv` | Calibration curve (when applicable) |
-| `reports/metrics_calibration_ablation_*.csv` | Ablation table (when enabled) |
+| `reports/metrics_calibration_ablation_v19_basiskele.csv` | Ablation table (when `--run-calibration-ablation`) |
 | `data/output/oof_predictions_v19_basiskele.csv` | OOF predictions |
 | `artifacts/model_bundle_v19_basiskele.joblib` | Bundle (gitignored) |
 

@@ -23,6 +23,7 @@
       "included_versions": ["v17", "v18_basiskele"],
       "purpose": "Location feature era and Başiskele-only sandbox",
       "best_checkpoint": "v18_basiskele_geo_control_comparable_none",
+      "note": "V18 remains the era-local Başiskele reference; globally superseded by V21 (via V20) as best known Başiskele checkpoint.",
       "outputs_path": "./v2/outputs",
       "scripts_path": "./v2/scripts",
       "source_versions_path": "./v2/source_versions",
@@ -30,7 +31,9 @@
         "comparable_mode": "none",
         "r2": 0.4731,
         "mape": 0.1093,
-        "variance_ratio": 0.4264
+        "variance_ratio": 0.4264,
+        "expensive_decile_bias": -10811,
+        "status": "superseded_by_v21"
       },
       "rejected": [
         "nearest_comparable",
@@ -46,22 +49,94 @@
       "name": "v3",
       "path": "./v3",
       "era_label": "next_experiments",
-      "included_versions": [],
-      "purpose": "V19+ calibration and anti-shrink experiments",
-      "best_checkpoint": null,
+      "included_versions": [
+        "v19_basiskele",
+        "v20_basiskele_premium_signals",
+        "v21_basiskele_site_project_extraction"
+      ],
+      "purpose": "V19+ premium-signal / site-extraction experiments; V21 is current best Başiskele checkpoint",
+      "best_checkpoint": "v21_basiskele_full_v21_foldsafe",
+      "best_known_basiskele_checkpoint": "./v3/outputs/v21_basiskele_site_extraction_full",
       "outputs_path": "./v3/outputs",
       "scripts_path": "./v3/scripts",
       "shared_scripts_path": "./v3/shared_scripts",
       "source_versions_path": "./v3/source_versions",
-      "known_issues": [],
-      "status": "active_scaffold",
+      "known_issues": [
+        "basiskele_mean_pulling",
+        "expensive_decile_bias_not_solved",
+        "v19_calibration_rejected",
+        "v19_no_ridge_rejected"
+      ],
+      "status": "active",
+      "v21_best_basiskele_checkpoint": {
+        "status": "best_known_basiskele_checkpoint",
+        "output": "./v3/outputs/v21_basiskele_site_extraction_full",
+        "package": "./v3/source_versions/v21_basiskele_site_project_extraction",
+        "selected_experiment": "full_v21",
+        "equivalent_experiment": "interactions_foldsafe",
+        "site_extraction_mode": "full",
+        "site_project_encoding": "foldsafe_target",
+        "comparable_mode": "none",
+        "calibration_mode": "none",
+        "metrics": {
+          "r2": 0.5059,
+          "mape": 0.1055,
+          "variance_ratio": 0.4590,
+          "large_home_r2": 0.309,
+          "expensive_decile_bias": -10159,
+          "canonical_non_missing_rate": 0.343,
+          "dict_hit_rate": 0.155,
+          "severe_bad_merge": 0
+        },
+        "v20_reference": {
+          "r2": 0.5017,
+          "mape": 0.1060,
+          "variance_ratio": 0.4616,
+          "expensive_decile_bias": -10139,
+          "has_site_project_name_rate": 0.20,
+          "known_premium_rate": 0.067
+        },
+        "decision": "V21 replaces V20 as best known Başiskele checkpoint. Coverage and R2/MAPE improved; severe bad merge = 0. Expensive decile bias slightly worse (−10139 → −10159) but not rejected. Expensive bias not solved.",
+        "caveat": "expensive_bias_not_solved"
+      },
+      "v20_best_basiskele_checkpoint": {
+        "status": "superseded_by_v21",
+        "output": "./v3/outputs/v20_basiskele_premium_signals_full",
+        "package": "./v3/source_versions/v20_basiskele_premium_signals",
+        "selected_experiment": "site_foldsafe_target",
+        "premium_feature_mode": "site",
+        "site_project_encoding": "foldsafe_target",
+        "metrics": {
+          "r2": 0.5017,
+          "mape": 0.1060,
+          "variance_ratio": 0.4616,
+          "expensive_decile_bias": -10139
+        },
+        "decision": "First site/project premium signal with meaningful lift over V18. Superseded by V21 for best known Başiskele checkpoint; keep as evidence baseline."
+      },
+      "v19_minimal_ablation": {
+        "status": "diagnostic_rejected_for_final_model",
+        "output": "./v3/outputs/v19_basiskele_minimal_ablation",
+        "selected_experiment": "control_none_balanced",
+        "calibration_mode": "none",
+        "ensemble_profile": "balanced",
+        "target_profile": "residual_log",
+        "decision": "No calibration/no_ridge arm beat control on R2 with MAPE guardrail. V19 does not replace V18/V20/V21.",
+        "notes": [
+          "isotonic raised variance_ratio but hurt R2/MAPE",
+          "linear gave small variance lift but worse R2/MAPE than control",
+          "no_ridge materially degraded performance",
+          "calibration/no_ridge not promoted to final model"
+        ]
+      },
       "planned_experiments": [
-        "oof_safe_calibration",
-        "isotonic_calibration",
-        "spline_bin_calibration",
-        "quantile_mapping",
-        "no_ridge_tree_heavy_ensemble",
-        "direct_price_vs_residual_log_vs_hybrid_target"
+        "expensive_decile_bias_reduction_without_comparable_or_calibration"
+      ],
+      "rejected_or_closed_experiments": [
+        "comparable_market_predictors_as_final",
+        "oof_safe_calibration_as_final_adjustment",
+        "isotonic_calibration_final",
+        "no_ridge_tree_heavy_ensemble_final"
       ]
     }
   ],
@@ -71,6 +146,7 @@
   "root_outputs": null,
   "root_scripts": null,
   "created_at": "2026-07-20",
+  "updated_at": "2026-07-23",
   "policy": {
     "single_root_env": true,
     "training_feature_logic_unchanged": true,
