@@ -122,5 +122,6 @@ python train_v18_basiskele_comparable_pipeline.py --out outputs/v18_basiskele_fu
 - Ship gate (Başiskele-only research): R2 ≥ 0.65 — **not met**; V18 remains a
   research checkpoint, not a Kocaeli replacement.
 
-Active follow-on work: V19 calibration / anti-shrink under
-`v3/source_versions/v19_basiskele/` (starts from this closed geo control).
+Follow-on (historical → current): V19 calibration diagnostic and V20/V21
+tabular premium / site-project modeling live under `v3/` (**Tabular Premium
+Signals**; best = V21). Visual/satellite work continues under `v4/`.

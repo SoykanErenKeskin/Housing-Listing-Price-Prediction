@@ -1,6 +1,13 @@
 # Model Workspace Index
 
-Index of generation eras in this repository. **Active development is `v3/`.**
+Index of generation eras in this repository.
+
+| Generation | Official name | Path | Role |
+|---|---|---|---|
+| v1 | Thesis / classic model archive | `./v1/` | Archived |
+| v2 | Location + Başiskele (pre comparable/calibration close-out) | `./v2/` | Archived reference |
+| v3 | **Tabular Premium Signals** | `./v3/` | Best tabular Başiskele checkpoint (V21) |
+| v4 | Visual / Satellite / Image-based experiments | `./v4/` | Active scaffold; does not modify V3 |
 
 ---
 
@@ -34,7 +41,7 @@ Index of generation eras in this repository. **Active development is `v3/`.**
 - Location / geo / comparable scripts under `v2/scripts/`
 - Era outputs under `v2/outputs/` (local; gitignored)
 
-**Status:** Archived / reference for the location era.
+**Status:** Archived / reference for the location era (comparable / calibration öncesi dönem).
 
 **Best checkpoints (era-local):**
 
@@ -56,56 +63,78 @@ Index of generation eras in this repository. **Active development is `v3/`.**
 
 ---
 
-## v3 — Next Experiments
+## v3 — Tabular Premium Signals
 
 **Path:** [`./v3/`](v3/README.md)
 
+**Short name:** `v3_tabular_premium_signals` (folder remains `./v3/`)
+
+**Scope:**  
+Başiskele-only tabular premium feature experiments.
+
 **Includes:**
 
-- V19+ experiment packages under `v3/source_versions/`
-- Run outputs under `v3/outputs/` (gitignored)
-- Shared helpers under `v3/shared_scripts/` (e.g. `env_loader.py`)
+- V19 calibration/no-ridge diagnostic
+- V20 premium signal / site-project first lift
+- V21 improved site/project extraction
 
-**Status:** Active. **Best known Başiskele checkpoint is V21.**
+**Best checkpoint:**  
+V21 Başiskele site/project extraction:
 
-### Best known Başiskele checkpoint — V21
+- R2 = 0.5059
+- MAPE = 0.1055
+- variance_ratio = 0.4590
+- selected = full_v21 / interactions_foldsafe
+- canonical_non_missing ≈ 34.3%
+- dict_hit ≈ 15.5%
+- severe_bad_merge = 0
 
-| Field | Value |
+**Status:**  
+Current best tabular Başiskele checkpoint.
+
+**Known issue:**  
+Expensive decile underprediction still exists. Site/project extraction improved overall score but did not solve premium top-decile bias fully.
+
+**Rejected / diagnostic:**
+
+- V19 isotonic/linear calibration
+- V19 no-ridge
+- V20 comparable remains rejected from earlier generation
+- V20 text flags alone gave small lift but site/project identity was stronger
+
+**Next:**  
+V4 visual/satellite experiments will test image-derived neighborhood features without mixing into V3.
+
+| Package / output | Role |
 |---|---|
-| Output | `v3/outputs/v21_basiskele_site_extraction_full/` |
-| Package | [`v3/source_versions/v21_basiskele_site_project_extraction/`](v3/source_versions/v21_basiskele_site_project_extraction/README.md) |
-| selected_experiment | `full_v21` (same metrics as `interactions_foldsafe`) |
-| site_extraction_mode | `full` |
-| site_project_encoding | `foldsafe_target` |
-| R² | 0.5059 |
-| MAPE | 0.1055 |
-| variance_ratio | 0.4590 |
-| large_home_r2 | 0.309 |
-| canonical_non_missing | 34.3% |
-| dict_hit | 15.5% |
-| severe_bad_merge | 0 |
-| expensive_decile_bias | −10159 |
+| `v3/source_versions/v21_basiskele_site_project_extraction/` | Best tabular package |
+| `v3/outputs/v21_basiskele_site_extraction_full/` | Best tabular run output |
+| `v3/source_versions/v20_basiskele_premium_signals/` | First site/project premium lift (superseded) |
+| `v3/source_versions/v19_basiskele/` | Calibration / no-ridge diagnostic (closed) |
 
-**Decision:** V21 **replaces V20** as best known Başiskele checkpoint. V20 remains important evidence that site/project identity is the useful premium signal. Comparable / calibration / no-ridge remain **rejected**.
+---
 
-**Caveat:** expensive decile bias is slightly worse than V20 (−10139 → −10159). Gap is small; V21 is not rejected for it. **Expensive bias is not solved.**
+## v4 — Visual / Satellite Experiments
 
-### Prior Başiskele checkpoints (superseded)
+**Path:** [`./v4/`](v4/README.md)
 
-| Version | Output | Role |
-|---|---|---|
-| V20 | `v3/outputs/v20_basiskele_premium_signals_full/` | First site/project premium lift; superseded by V21 |
-| V18 | `v2/best_checkpoints/best_basiskele_only_checkpoint/` | Geo control baseline |
+**Status:** active / planned (scaffold)
 
-### Closed / rejected
+**Base checkpoint:** V21 from V3 (`v3/outputs/v21_basiskele_site_extraction_full`)
 
-**V19 minimal calibration ablation:** diagnostic / rejected_for_final_model.
+**Goal:** test satellite/static-map visual features and image embeddings as additional premium/micro-location signals
 
-**Still rejected:** comparable-market predictors (V18); OOF calibration / no_ridge as final (V19).
+**First planned experiment:** V22 Başiskele satellite visual pilot  
+(`v4/source_versions/v22_basiskele_satellite_visual_pilot/` → `v4/outputs/v22_basiskele_satellite_visual_pilot/`)
 
-### Open issue / next direction
+**Notes:**
 
-Expensive-segment underprediction (decile bias) remains. Further site segmentation / premium project quality may help; do not reopen comparable or calibration as final unless they beat V21.
+- V4 does **not** modify V3 (or v1/v2)
+- V3 remains tabular + site/project/premium text only
+- V4 explores satellite / static-map / image embeddings
+- Large image cache stays under shared data: `data/external/satellite_cache/basiskele/`
+- Image cache references (lightweight): `v4/image_cache_reference/`
+- Best checkpoint remains **V21** until a V4 run beats it
 
 ---
 
@@ -113,14 +142,14 @@ Expensive-segment underprediction (decile bias) remains. Further site segmentati
 
 | Path | Role |
 |---|---|
-| [`./data/`](data/external/geo_context/) | Shared datasets / geo context cache |
+| [`./data/`](data/external/geo_context/) | Shared datasets / geo context / satellite cache |
 | [`./outlier_cleaning/`](outlier_cleaning/README.md) | Standalone outlier cleaning package |
 | [`./shared_scripts/`](shared_scripts/README.md) | Root analysis / maintenance scripts (not model training) |
 | [`./analysis_outputs/`](analysis_outputs/) | Analysis script outputs (timestamped; gitignored) |
 | [`./.env`](.env.example) | **Single** DB / secrets config (gitignored) |
 | [`./.cursor/`](.cursor/) | Editor metadata (gitignored) |
 
-Root-level `outputs/` and `scripts/` were removed; content lives under `v1/`, `v2/`, and `v3/`.
+Root-level `outputs/` and `scripts/` were removed; content lives under `v1/`, `v2/`, `v3/`, and `v4/`.
 
 ### Inventory analysis example
 
@@ -128,9 +157,10 @@ Root-level `outputs/` and `scripts/` were removed; content lives under `v1/`, `v
 python shared_scripts/analyze_listing_inventory.py --city Kocaeli
 ```
 
-### Start from best Başiskele checkpoint (V21)
+### Start from best tabular Başiskele checkpoint (V21 in V3)
 
 1. Configure root `.env` from `.env.example`
 2. Use `v3/source_versions/v21_basiskele_site_project_extraction/`
 3. Reference metrics / ablation under `v3/outputs/v21_basiskele_site_extraction_full/`
 4. Keep comparable/calibration/no-ridge off unless a new experiment explicitly beats V21
+5. Put visual/satellite work under `v4/` — do not mix into V3
