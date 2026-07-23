@@ -1,0 +1,2 @@
+﻿rows,actual_variance,prediction_variance,variance_explained_ratio,mape,r2,attribute_sensitivity_avg_abs_diff,note
+919,69253281.46726415,31335467.496916536,0.4524762846325013,0.11009354581006575,0.4675555260152189,2951.233637562114,

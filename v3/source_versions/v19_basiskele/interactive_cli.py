@@ -611,15 +611,16 @@ def apply_interactive_prompts(args: Any, argv: list[str] | None = None) -> Any:
 def build_early_arg_parser() -> Any:
     """Argparse without importing the heavy training module."""
     import argparse
+    import os
 
     ap = argparse.ArgumentParser(
         description="V16 attribute-sensitivity training pipeline. "
         "Eksik ana ayarlar terminalde ok tuşlarıyla sorulur; --no-interactive ile kapat."
     )
     ap.add_argument("--db-url", default=None)
-    ap.add_argument("--sale-table", default="sale_listings")
-    ap.add_argument("--rental-table", default="rental_listings")
-    ap.add_argument("--trend-table", default="trend_observed")
+    ap.add_argument("--sale-table", default=os.getenv("SALE_TABLE", "sale_listings"))
+    ap.add_argument("--rental-table", default=os.getenv("RENTAL_TABLE", "rental_listings"))
+    ap.add_argument("--trend-table", default=os.getenv("TREND_TABLE", "trend_observed"))
     ap.add_argument("--city", default="Kocaeli")
     ap.add_argument("--counties", default="Başiskele")
     ap.add_argument("--out", default="outputs/v17_full")
@@ -709,9 +710,47 @@ def build_early_arg_parser() -> Any:
     return ap
 
 
+def _load_root_env_early() -> None:
+    """Load project-root .env before parsing, so table/source defaults see env.
+
+    The heavy training module also loads .env later (override=False), but the
+    early CLI parser runs first, so env must be available here too.
+    """
+    try:
+        from pathlib import Path
+        import os
+
+        here = Path(__file__).resolve().parent
+        try:
+            for cand in (
+                here.parents[2] / "shared_scripts",  # repo/shared_scripts
+                here.parents[1] / "shared_scripts",  # v3/shared_scripts
+            ):
+                if (cand / "env_loader.py").is_file():
+                    sys.path.insert(0, str(cand))
+                    break
+            from env_loader import load_root_env
+
+            load_root_env(start=here)
+            return
+        except Exception:
+            pass
+
+        from dotenv import load_dotenv
+
+        for parent in [here, *here.parents]:
+            cand = parent / ".env"
+            if cand.is_file():
+                load_dotenv(cand)
+                break
+    except Exception:
+        pass
+
+
 def parse_cli_early(argv: list[str] | None = None) -> Any:
     """Parse CLI + interactive prompts BEFORE heavy ML imports."""
     argv = list(argv if argv is not None else sys.argv[1:])
+    _load_root_env_early()
     ap = build_early_arg_parser()
     args = ap.parse_args(argv)
     if bool(getattr(args, "interactive", True)):

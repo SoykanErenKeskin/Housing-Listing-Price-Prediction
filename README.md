@@ -41,10 +41,10 @@ labels (e.g. `Kombi`, `Var`, `Kapalı Otopark`), which the pipeline maps consist
 
 | # | county | district | gross_m2 | net_m2 | room_count | building_age | floor_num | total_floors | heating | balcony | elevator | parking | site_inside | bathroom_count | price (TRY) |
 |---|---|---|---:|---:|---|---:|---:|---:|---|---|---|---|---|---:|---:|
-| A | Başiskele | Sample District A | 125 | 105 | 3+1 | 8 | 3 | 5 | Individual (combi) | Yes | Yes | Open parking | Yes | 1 | 4_250_000 |
-| B | İzmit | Sample District B | 95 | 80 | 2+1 | 15 | 2 | 4 | Individual (combi) | Yes | No | None | No | 1 | 2_800_000 |
-| C | Karamürsel | Sample District C | 160 | 135 | 4+1 | 3 | 7 | 8 | Central (heat-cost allocator) | Yes | Yes | Closed parking | Yes | 2 | 6_100_000 |
-| D | Gölcük | Sample District D | 110 | 90 | 3+1 | 22 | 0 | 3 | Stove | No | No | None | No | 1 | 1_950_000 |
+| A | Başiskele | Sample District A | 125 | 105 | 3+1 | 8 | 3 | 5 | Individual (combi) | Yes | Yes | Open parking | Yes | 1 | 4.250.000 |
+| B | İzmit | Sample District B | 95 | 80 | 2+1 | 15 | 2 | 4 | Individual (combi) | Yes | No | None | No | 1 | 2.800.000 |
+| C | Karamürsel | Sample District C | 160 | 135 | 4+1 | 3 | 7 | 8 | Central (heat-cost allocator) | Yes | Yes | Closed parking | Yes | 2 | 6.100.000 |
+| D | Gölcük | Sample District D | 110 | 90 | 3+1 | 22 | 0 | 3 | Stove | No | No | None | No | 1 | 1.950.000 |
 
 After feature engineering, row A might also carry derived fields such as
 `net_gross_ratio ≈ 0.84`, `m2_group = 101-125`, `floor_segment = mid-floor`,
@@ -94,11 +94,27 @@ python v3/source_versions/v19_basiskele/train_v19_basiskele_calibration_pipeline
   --geo-context-cache-dir data/external/geo_context
 ```
 
-### 4. Full calibration ablation
+### 4. Full single-profile run
 
 ```powershell
 python v3/source_versions/v19_basiskele/train_v19_basiskele_calibration_pipeline.py `
   --out v3/outputs/v19_basiskele_ablation `
+  --model-scope basiskele_only `
+  --location-feature-mode geo `
+  --geo-context-mode geo_with_coast `
+  --calibration-mode isotonic `
+  --ensemble-profile balanced `
+  --target-profile residual_log `
+  --no-run-calibration-ablation `
+  --use-trend --no-interactive `
+  --geo-context-cache-dir data/external/geo_context
+```
+
+### 5. Minimal calibration ablation (6 arms)
+
+```powershell
+python v3/source_versions/v19_basiskele/train_v19_basiskele_calibration_pipeline.py `
+  --out v3/outputs/v19_basiskele_minimal_ablation `
   --model-scope basiskele_only `
   --location-feature-mode geo `
   --geo-context-mode geo_with_coast `
@@ -110,6 +126,9 @@ python v3/source_versions/v19_basiskele/train_v19_basiskele_calibration_pipeline
   --geo-context-cache-dir data/external/geo_context
 ```
 
+Grid: `none|linear|isotonic` × `balanced|no_ridge` (`target_profile=residual_log` fixed).
+Writes `reports/metrics_calibration_ablation_v19_basiskele.csv` and promotes the selected arm’s bundle.
+
 Outputs are written under `--out` and are **gitignored** (`**/outputs/`, `**/artifacts/`, `*.joblib`).
 
 ---
@@ -118,7 +137,7 @@ Outputs are written under `--out` and are **gitignored** (`**/outputs/`, `**/art
 
 | Path | Role | Status |
 |---|---|---|
-| [`v3/`](v3/README.md) | Next experiments (V19+ calibration / anti-shrink) | **Active** |
+| [`v3/`](v3/README.md) | Next experiments (V19 diagnostic; V18 remains best Başiskele) | Active scaffold |
 | [`v2/`](v2/README.md) | Location + Başiskele sandbox (V17 / V18) | Archived reference |
 | [`v1/`](v1/README.md) | Thesis legacy (V1–V16 classic Kocaeli) | Archived |
 | [`data/`](data/external/geo_context/) | Shared geo cache / external data | Shared |
@@ -168,7 +187,7 @@ Use `best_checkpoints/` + `reports/` first when browsing results on GitHub.
 1. **V1–V16 (thesis):** classic Kocaeli multi-county models. Başiskele often underperformed (low R² / variance compression).
 2. **V17:** location / geo features; meaningful lift in places, still compression issues in Başiskele.
 3. **V18 Başiskele-only:** geo control plateau (~R² 0.47, MAPE ~0.11). Comparable-market predictors ablated and **rejected**.
-4. **V19 (active):** OOF-safe **prediction calibration** and anti-shrink research on the V18 geo control base (`comparable_mode=none`).
+4. **V19 (closed minimal ablation):** OOF-safe calibration × no-ridge grid selected `control_none_balanced`. Calibration/no_ridge **rejected** for final; V18 geo control remains best Başiskele checkpoint. Optional later: `direct_price` / `hybrid` only if they beat V18.
 
 ---
 

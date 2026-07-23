@@ -36,20 +36,21 @@ Index of generation eras in this repository. **Active development is `v3/`.**
 
 **Status:** Archived / reference for the location era.
 
-**Best checkpoints:**
+**Best checkpoints (era-local):**
 
 | Checkpoint | Location | Notes |
 |---|---|---|
 | Kocaeli location | `v2/best_checkpoints/best_kocaeli_location_checkpoint/` | V17 |
-| Başiskele-only | `v2/best_checkpoints/best_basiskele_only_checkpoint/` | V18 geo control, `comparable_mode=none` |
+| Başiskele-only (superseded) | `v2/best_checkpoints/best_basiskele_only_checkpoint/` | V18 geo control — later superseded by V20, then **V21** |
 
-**V18 Başiskele-only reference metrics:**
+**V18 Başiskele-only reference metrics (historical):**
 
 | Metric | Approx. value |
 |---|---|
 | R² | 0.4731 |
 | MAPE | 0.1093 |
 | variance_ratio | 0.4264 |
+| expensive_decile_bias | −10811 |
 
 **Rejected (V18 comparable ablation):** nearest / similar / weighted / large_home / full comparable.
 
@@ -65,11 +66,46 @@ Index of generation eras in this repository. **Active development is `v3/`.**
 - Run outputs under `v3/outputs/` (gitignored)
 - Shared helpers under `v3/shared_scripts/` (e.g. `env_loader.py`)
 
-**Status:** **Active development.**
+**Status:** Active. **Best known Başiskele checkpoint is V21.**
 
-**Goal:** Reduce Başiskele mean-pulling / variance compression via OOF-safe calibration, ensemble profiles, and target profiles — without reintroducing rejected comparable predictors.
+### Best known Başiskele checkpoint — V21
 
-Primary package: [`v3/source_versions/v19_basiskele/`](v3/source_versions/v19_basiskele/README.md)
+| Field | Value |
+|---|---|
+| Output | `v3/outputs/v21_basiskele_site_extraction_full/` |
+| Package | [`v3/source_versions/v21_basiskele_site_project_extraction/`](v3/source_versions/v21_basiskele_site_project_extraction/README.md) |
+| selected_experiment | `full_v21` (same metrics as `interactions_foldsafe`) |
+| site_extraction_mode | `full` |
+| site_project_encoding | `foldsafe_target` |
+| R² | 0.5059 |
+| MAPE | 0.1055 |
+| variance_ratio | 0.4590 |
+| large_home_r2 | 0.309 |
+| canonical_non_missing | 34.3% |
+| dict_hit | 15.5% |
+| severe_bad_merge | 0 |
+| expensive_decile_bias | −10159 |
+
+**Decision:** V21 **replaces V20** as best known Başiskele checkpoint. V20 remains important evidence that site/project identity is the useful premium signal. Comparable / calibration / no-ridge remain **rejected**.
+
+**Caveat:** expensive decile bias is slightly worse than V20 (−10139 → −10159). Gap is small; V21 is not rejected for it. **Expensive bias is not solved.**
+
+### Prior Başiskele checkpoints (superseded)
+
+| Version | Output | Role |
+|---|---|---|
+| V20 | `v3/outputs/v20_basiskele_premium_signals_full/` | First site/project premium lift; superseded by V21 |
+| V18 | `v2/best_checkpoints/best_basiskele_only_checkpoint/` | Geo control baseline |
+
+### Closed / rejected
+
+**V19 minimal calibration ablation:** diagnostic / rejected_for_final_model.
+
+**Still rejected:** comparable-market predictors (V18); OOF calibration / no_ridge as final (V19).
+
+### Open issue / next direction
+
+Expensive-segment underprediction (decile bias) remains. Further site segmentation / premium project quality may help; do not reopen comparable or calibration as final unless they beat V21.
 
 ---
 
@@ -92,9 +128,9 @@ Root-level `outputs/` and `scripts/` were removed; content lives under `v1/`, `v
 python shared_scripts/analyze_listing_inventory.py --city Kocaeli
 ```
 
-### Start V19 here
+### Start from best Başiskele checkpoint (V21)
 
 1. Configure root `.env` from `.env.example`
-2. Use `v3/source_versions/v19_basiskele/`
-3. Write runs to `v3/outputs/...`
-4. Load env via `shared_scripts/env_loader.py` or `v3/shared_scripts/env_loader.py`
+2. Use `v3/source_versions/v21_basiskele_site_project_extraction/`
+3. Reference metrics / ablation under `v3/outputs/v21_basiskele_site_extraction_full/`
+4. Keep comparable/calibration/no-ridge off unless a new experiment explicitly beats V21
