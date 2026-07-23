@@ -41,5 +41,7 @@ ablation table, reproduce commands, and report list.
 
 ## Follow-on
 
-Active research continues in V19 (`v3/source_versions/v19_basiskele/`) with
-prediction calibration / anti-shrink, keeping `comparable_mode=none`.
+V18 is superseded as best Başiskele checkpoint. Tabular premium / site-project
+modeling continued under **V3 — Tabular Premium Signals** (V19 diagnostic →
+V20/V21; best = V21). Visual/satellite work is under **V4**. Keep
+`comparable_mode=none` unless a new experiment explicitly revisits it.

@@ -2,9 +2,9 @@
 
 Research workspace for **housing listing price prediction** models.
 
-Current focus areas include a multi-county thesis archive and an active
-Başiskele-only calibration / anti-shrink track. The repository is organized by
-**generation eras**; active development lives under **`v3/`**.
+The repository is organized by **generation eras**:
+**v1** thesis archive, **v2** location/Başiskele sandbox, **v3** Tabular Premium
+Signals (best = V21), **v4** visual/satellite experiments (scaffold).
 
 ---
 
@@ -137,7 +137,8 @@ Outputs are written under `--out` and are **gitignored** (`**/outputs/`, `**/art
 
 | Path | Role | Status |
 |---|---|---|
-| [`v3/`](v3/README.md) | Next experiments (V19 diagnostic; V18 remains best Başiskele) | Active scaffold |
+| [`v4/`](v4/README.md) | Visual / satellite / image-based experiments | Active scaffold |
+| [`v3/`](v3/README.md) | Tabular Premium Signals (V19–V21; best = V21) | Best tabular checkpoint |
 | [`v2/`](v2/README.md) | Location + Başiskele sandbox (V17 / V18) | Archived reference |
 | [`v1/`](v1/README.md) | Thesis legacy (V1–V16 classic Kocaeli) | Archived |
 | [`data/`](data/external/geo_context/) | Shared geo cache / external data | Shared |

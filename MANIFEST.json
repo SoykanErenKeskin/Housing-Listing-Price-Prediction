@@ -46,30 +46,28 @@
       "status": "archived_for_reference"
     },
     {
-      "name": "v3",
+      "name": "v3_tabular_premium_signals",
       "path": "./v3",
-      "era_label": "next_experiments",
+      "era_label": "tabular_premium_signals",
       "included_versions": [
         "v19_basiskele",
         "v20_basiskele_premium_signals",
         "v21_basiskele_site_project_extraction"
       ],
-      "purpose": "V19+ premium-signal / site-extraction experiments; V21 is current best Başiskele checkpoint",
-      "best_checkpoint": "v21_basiskele_full_v21_foldsafe",
-      "best_known_basiskele_checkpoint": "./v3/outputs/v21_basiskele_site_extraction_full",
+      "purpose": "Başiskele-only tabular premium feature experiments: calibration diagnostics, premium text/site signals, and improved site/project extraction.",
+      "best_checkpoint": "v3/outputs/v21_basiskele_site_extraction_full",
+      "status": "best_tabular_checkpoint",
       "outputs_path": "./v3/outputs",
       "scripts_path": "./v3/scripts",
       "shared_scripts_path": "./v3/shared_scripts",
       "source_versions_path": "./v3/source_versions",
       "known_issues": [
-        "basiskele_mean_pulling",
-        "expensive_decile_bias_not_solved",
-        "v19_calibration_rejected",
-        "v19_no_ridge_rejected"
+        "expensive_decile_underprediction_persists",
+        "site_project_coverage_improved_but_not_complete",
+        "visual/interior_quality_not_modeled"
       ],
-      "status": "active",
       "v21_best_basiskele_checkpoint": {
-        "status": "best_known_basiskele_checkpoint",
+        "status": "best_tabular_basiskele_checkpoint",
         "output": "./v3/outputs/v21_basiskele_site_extraction_full",
         "package": "./v3/source_versions/v21_basiskele_site_project_extraction",
         "selected_experiment": "full_v21",
@@ -96,7 +94,7 @@
           "has_site_project_name_rate": 0.20,
           "known_premium_rate": 0.067
         },
-        "decision": "V21 replaces V20 as best known Başiskele checkpoint. Coverage and R2/MAPE improved; severe bad merge = 0. Expensive decile bias slightly worse (−10139 → −10159) but not rejected. Expensive bias not solved.",
+        "decision": "V21 replaces V20 as best tabular Başiskele checkpoint. Coverage and R2/MAPE improved; severe bad merge = 0. Expensive decile bias slightly worse (−10139 → −10159) but not rejected. Expensive bias not solved.",
         "caveat": "expensive_bias_not_solved"
       },
       "v20_best_basiskele_checkpoint": {
@@ -112,7 +110,7 @@
           "variance_ratio": 0.4616,
           "expensive_decile_bias": -10139
         },
-        "decision": "First site/project premium signal with meaningful lift over V18. Superseded by V21 for best known Başiskele checkpoint; keep as evidence baseline."
+        "decision": "First site/project premium signal with meaningful lift over V18. Superseded by V21 for best tabular Başiskele checkpoint; keep as evidence baseline."
       },
       "v19_minimal_ablation": {
         "status": "diagnostic_rejected_for_final_model",
@@ -129,15 +127,35 @@
           "calibration/no_ridge not promoted to final model"
         ]
       },
-      "planned_experiments": [
-        "expensive_decile_bias_reduction_without_comparable_or_calibration"
-      ],
       "rejected_or_closed_experiments": [
         "comparable_market_predictors_as_final",
         "oof_safe_calibration_as_final_adjustment",
         "isotonic_calibration_final",
         "no_ridge_tree_heavy_ensemble_final"
-      ]
+      ],
+      "note": "Visual/satellite/image experiments belong under v4; do not mix into v3."
+    },
+    {
+      "name": "v4_visual_satellite_experiments",
+      "path": "./v4",
+      "era_label": "visual_satellite_image_experiments",
+      "included_versions": [],
+      "purpose": "Satellite/static-map imagery and image-derived neighborhood feature experiments",
+      "base_checkpoint": "v3/outputs/v21_basiskele_site_extraction_full",
+      "base_generation": "v3_tabular_premium_signals",
+      "status": "active_scaffold",
+      "outputs_path": "./v4/outputs",
+      "source_versions_path": "./v4/source_versions",
+      "image_cache_reference_path": "./v4/image_cache_reference",
+      "large_image_cache_path": "./data/external/satellite_cache/basiskele",
+      "first_planned_experiment": "v22_basiskele_satellite_visual_pilot",
+      "known_issues": [
+        "image cache size",
+        "API cost/terms",
+        "spatial leakage risk",
+        "satellite may not capture interior quality"
+      ],
+      "note": "Reads V21 from V3 as base; does not modify V3 source trees."
     }
   ],
   "root_env": "./.env",

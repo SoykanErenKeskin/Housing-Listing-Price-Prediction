@@ -1,13 +1,31 @@
-# V3 — Next Experiments
-
-Home for **V19+** research after the V18 Başiskele geo-control plateau.
+# V3 — Tabular Premium Signals
 
 **Path:** `./v3/`  
-**Status:** Active. **Best known Başiskele checkpoint is V21.**
+**Short name:** `v3_tabular_premium_signals`  
+**Status:** Best tabular Başiskele checkpoint (V21)
+
+This generation is for **Başiskele-only tabular premium signal** experiments —
+site/project extraction and premium segment features — not a generic “next
+experiments” bucket.
+
+- **V19:** calibration / no-ridge diagnostic; final seçilmedi.
+- **V20:** site/project identity ilk anlamlı premium lift verdi.
+- **V21:** site/project extraction coverage iyileşti ve yeni best tabular checkpoint oldu.
+- **V3** is not a catch-all for future work; **V4** is separate for visual/satellite/image experiments.
 
 ---
 
-## Best known Başiskele checkpoint — V21
+## Version summary
+
+| Version | Purpose | Result |
+|---|---|---|
+| V19 | calibration/no-ridge diagnostic | rejected; no candidate beat control |
+| V20 | premium/site project first model | R2 0.5017, MAPE 0.1060 |
+| V21 | improved site/project extraction | R2 0.5059, MAPE 0.1055, **best tabular** |
+
+---
+
+## Best tabular checkpoint — V21
 
 | Field | Value |
 |---|---|
@@ -25,7 +43,7 @@ Home for **V19+** research after the V18 Başiskele geo-control plateau.
 | severe_bad_merge | 0 |
 | expensive_decile_bias | −10159 |
 
-**Decision:** V21 **replaces V20** as best known Başiskele checkpoint.  
+**Decision:** V21 replaces V20 as best tabular Başiskele checkpoint.  
 V20 remains the evidence baseline that site/project identity is the useful premium signal.
 
 | | V20 | V21 selected |
@@ -38,30 +56,18 @@ V20 remains the evidence baseline that site/project identity is the useful premi
 | dict_hit | ~6.7% | **15.5%** |
 | expensive_decile_bias | −10139 | −10159 |
 
-**Caveat:** expensive decile bias is slightly worse than V20. Gap is small; not a reject. **Expensive bias is not solved.**
+**Known issue:** expensive decile underprediction persists. Site/project extraction improved overall score but did not fully solve premium top-decile bias.
 
 Comparable / calibration / no-ridge remain **rejected**.
 
 ---
 
-## Research goal
+## Rejected / diagnostic
 
-Reduce Başiskele **mean-pulling / variance compression** without bringing back
-comparable-market predictors (V18) or rejected calibration/no_ridge finals (V19).
-
-### Open issue
-
-Expensive-segment underprediction (decile bias) remains after V21.
-
-### Closed / rejected
-
-1. Comparable-market predictors as final (V18)
-2. OOF-safe prediction calibration as final (V19)
-3. `no_ridge` ensemble as final (V19)
-
-Optional / research-only only if they beat V21:
-
-- Target profiles (`direct_price`, `hybrid`)
+1. V19 isotonic / linear calibration (diagnostic; not final)
+2. V19 `no_ridge` ensemble (not final)
+3. Comparable-market predictors (rejected in V2; stay off in V3)
+4. V20 text flags alone — small lift; site/project identity was stronger
 
 ---
 
@@ -69,8 +75,7 @@ Optional / research-only only if they beat V21:
 
 | Path | Use |
 |---|---|
-| `next_experiments/` | Era label |
-| `source_versions/` | V19+ packages (code) |
+| `source_versions/` | V19–V21 packages (Başiskele tabular premium modeling) |
 | `outputs/` | Training run outputs (**gitignored**) |
 | `reports/` | Curated metrics / ablation tables |
 | `artifacts/` | Model bundles (**gitignored**) |
@@ -78,6 +83,7 @@ Optional / research-only only if they beat V21:
 | `prompts/` | Experiment briefs |
 | `shared_scripts/` | V3 helpers (`env_loader.py`, …) |
 | `scripts/` | Ad-hoc era scripts |
+| `next_experiments/` | Legacy label folder only (name kept; era = Tabular Premium Signals) |
 
 ---
 
@@ -112,8 +118,9 @@ Requires repo-root `.env` with `DATABASE_URL` and the geo cache under `data/exte
 
 ## Rules of engagement
 
-- Do **not** modify archived V17/V18 trees under `../v2/source_versions/` for V19+ iteration.
-- Do **not** modify V19/V20 packages when iterating beyond V21.
+- Do **not** modify archived V17/V18 trees under `../v2/source_versions/`.
+- Do **not** modify V19/V20 packages when iterating beyond V21 inside V3.
 - Keep `comparable_mode=none` and calibration off unless a new, explicit experiment says otherwise.
-- Prefer writing all runs under `v3/outputs/...` (ignored by git).
+- Prefer writing tabular runs under `v3/outputs/...` (ignored by git).
+- Put visual / satellite / image work under **`../v4/`** — do not mix into V3.
 - Never commit `.env`, joblibs, or full output trees.
