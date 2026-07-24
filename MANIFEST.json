@@ -139,23 +139,47 @@
       "name": "v4_visual_satellite_experiments",
       "path": "./v4",
       "era_label": "visual_satellite_image_experiments",
-      "included_versions": [],
+      "included_versions": [
+        "v22_basiskele_satellite_environment_pilot"
+      ],
       "purpose": "Satellite/static-map imagery and image-derived neighborhood feature experiments",
       "base_checkpoint": "v3/outputs/v21_basiskele_site_extraction_full",
       "base_generation": "v3_tabular_premium_signals",
-      "status": "active_scaffold",
+      "best_checkpoint": null,
+      "status": "active_v22_diagnostic_no_lift",
       "outputs_path": "./v4/outputs",
       "source_versions_path": "./v4/source_versions",
       "image_cache_reference_path": "./v4/image_cache_reference",
       "large_image_cache_path": "./data/external/satellite_cache/basiskele",
-      "first_planned_experiment": "v22_basiskele_satellite_visual_pilot",
+      "satellite_features_path": "./data/external/satellite_features/basiskele",
+      "first_experiment": "v22_basiskele_satellite_environment_pilot",
+      "v22_basiskele_satellite_environment_pilot": {
+        "status": "DIAGNOSTIC_NO_LIFT",
+        "package": "./v4/source_versions/v22_basiskele_satellite_environment_pilot",
+        "output": "./v4/outputs/v22_basiskele_satellite_full",
+        "feature_csv": "./data/external/satellite_features/basiskele/sentinel_features_v22.csv",
+        "selected_experiment": "control_v21",
+        "candidate_experiment": "sat_full",
+        "satellite_feature_coverage": 0.7666,
+        "ablation": {
+          "control_v21": {"r2": 0.4813, "mape": 0.1084, "variance_ratio": 0.4488},
+          "sat_basic_250m": {"r2": 0.4827, "mape": 0.1083, "variance_ratio": 0.4491},
+          "sat_radii": {"r2": 0.4801, "mape": 0.1086, "variance_ratio": 0.4513},
+          "sat_full": {"r2": 0.4829, "mape": 0.1086, "variance_ratio": 0.4462}
+        },
+        "v21_reference": {"r2": 0.5059, "mape": 0.1055, "variance_ratio": 0.4590},
+        "decision": "Sentinel satellite/environment CSV features did not improve the V21 Başiskele checkpoint. Do not promote V22. Best tabular checkpoint remains V21.",
+        "caveat": "V22 control_v21 did not reproduce exact V21 reference scores; treat V22 as diagnostic only, not a replacement benchmark.",
+        "interpretation": "Free Sentinel-2 environment features at this resolution did not add meaningful predictive value over V21 tabular + location + site/project features for Başiskele."
+      },
       "known_issues": [
         "image cache size",
         "API cost/terms",
         "spatial leakage risk",
-        "satellite may not capture interior quality"
+        "satellite may not capture interior quality",
+        "v22_sentinel_environment_no_lift_vs_v21"
       ],
-      "note": "Reads V21 from V3 as base; does not modify V3 source trees."
+      "note": "Reads V21 from V3 as base; does not modify V3 source trees. V22 closed as DIAGNOSTIC_NO_LIFT; V21 remains best."
     }
   ],
   "root_env": "./.env",
@@ -164,7 +188,7 @@
   "root_outputs": null,
   "root_scripts": null,
   "created_at": "2026-07-20",
-  "updated_at": "2026-07-23",
+  "updated_at": "2026-07-24",
   "policy": {
     "single_root_env": true,
     "training_feature_logic_unchanged": true,

@@ -7,7 +7,7 @@ Index of generation eras in this repository.
 | v1 | Thesis / classic model archive | `./v1/` | Archived |
 | v2 | Location + Başiskele (pre comparable/calibration close-out) | `./v2/` | Archived reference |
 | v3 | **Tabular Premium Signals** | `./v3/` | Best tabular Başiskele checkpoint (V21) |
-| v4 | Visual / Satellite / Image-based experiments | `./v4/` | Active scaffold; does not modify V3 |
+| v4 | Visual / Satellite / Image-based experiments | `./v4/` | Active; V22 = diagnostic/no-lift (V21 still best) |
 
 ---
 
@@ -103,7 +103,7 @@ Expensive decile underprediction still exists. Site/project extraction improved 
 - V20 text flags alone gave small lift but site/project identity was stronger
 
 **Next:**  
-V4 visual/satellite experiments will test image-derived neighborhood features without mixing into V3.
+V4 visual/satellite work continues under `v4/` without mixing into V3. V22 Sentinel environment features did **not** beat V21.
 
 | Package / output | Role |
 |---|---|
@@ -118,21 +118,40 @@ V4 visual/satellite experiments will test image-derived neighborhood features wi
 
 **Path:** [`./v4/`](v4/README.md)
 
-**Status:** active / planned (scaffold)
+**Status:** active (V22 closed as diagnostic)
 
-**Base checkpoint:** V21 from V3 (`v3/outputs/v21_basiskele_site_extraction_full`)
+**Base / best tabular checkpoint (unchanged):** V21 — `v3/outputs/v21_basiskele_site_extraction_full/`  
+(R² 0.5059 / MAPE 0.1055 / VR 0.4590)
 
 **Goal:** test satellite/static-map visual features and image embeddings as additional premium/micro-location signals
 
-**First planned experiment:** V22 Başiskele satellite visual pilot  
-(`v4/source_versions/v22_basiskele_satellite_visual_pilot/` → `v4/outputs/v22_basiskele_satellite_visual_pilot/`)
+### V22 — Sentinel environment pilot = `DIAGNOSTIC_NO_LIFT`
+
+| Role | Path |
+|---|---|
+| Package | `v4/source_versions/v22_basiskele_satellite_environment_pilot/` |
+| Full ablation output | `v4/outputs/v22_basiskele_satellite_full/` |
+| Feature CSV | `data/external/satellite_features/basiskele/sentinel_features_v22.csv` |
+
+| Experiment | R² | MAPE | VR | selected |
+|---|---:|---:|---:|---|
+| control_v21 | 0.4813 | 0.1084 | 0.4488 | yes |
+| sat_basic_250m | 0.4827 | 0.1083 | 0.4491 | no |
+| sat_radii | 0.4801 | 0.1086 | 0.4513 | no |
+| sat_full | 0.4829 | 0.1086 | 0.4462 | no |
+
+**Decision:** free Sentinel-2 environment CSV features did not improve the real V21 Başiskele checkpoint. Best checkpoint remains V21. Do **not** promote V22.
+
+**Caveat:** V22 `control_v21` did not reproduce the exact V21 reference score — treat V22 as a diagnostic satellite experiment, not a replacement benchmark. Satellite arms only showed tiny lift over the V22 internal control; none beat V21 gates.
+
+**Interpretation:** free Sentinel-2 environment features at this resolution did not add meaningful predictive value over V21’s tabular + location + site/project features for Başiskele.
 
 **Notes:**
 
 - V4 does **not** modify V3 (or v1/v2)
 - V3 remains tabular + site/project/premium text only
-- V4 explores satellite / static-map / image embeddings
-- Large image cache stays under shared data: `data/external/satellite_cache/basiskele/`
+- V4 may still explore static-map / image embeddings later
+- Large image cache (optional later): `data/external/satellite_cache/basiskele/`
 - Image cache references (lightweight): `v4/image_cache_reference/`
 - Best checkpoint remains **V21** until a V4 run beats it
 

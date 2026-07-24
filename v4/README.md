@@ -25,6 +25,13 @@ Rules:
 - Start with image cache + pretrained embeddings + simple image stats.
 - Best checkpoint remains V21 until V4 beats it.
 
+### V22 status — `DIAGNOSTIC_NO_LIFT`
+
+Free Sentinel-2 environment features (NDVI/NDWI/NDBI etc.) did **not** improve V21.  
+Full ablation: `v4/outputs/v22_basiskele_satellite_full/`  
+Selected: `control_v21`. Best tabular checkpoint remains V21.  
+Treat V22 as diagnostic only (internal control did not reproduce exact V21 reference scores).
+
 ---
 
 ## Layout
@@ -44,9 +51,11 @@ Rules:
 
 | Role | Path |
 |---|---|
-| Package | `v4/source_versions/v22_basiskele_satellite_visual_pilot/` |
-| Outputs | `v4/outputs/v22_basiskele_satellite_visual_pilot/` |
+| Package | `v4/source_versions/v22_basiskele_satellite_environment_pilot/` |
+| Outputs | `v4/outputs/v22_basiskele_satellite_environment_pilot/` |
+| Feature CSV | `data/external/satellite_features/basiskele/sentinel_features_v22.csv` |
 | Image cache references | `v4/image_cache_reference/` |
-| Large image cache (shared data) | `data/external/satellite_cache/basiskele/` |
+| Large image cache (shared data, optional) | `data/external/satellite_cache/basiskele/` |
 
 V4 may **read** V21 as base checkpoint (`v3/outputs/v21_basiskele_site_extraction_full`) but must not modify V3 files.
+

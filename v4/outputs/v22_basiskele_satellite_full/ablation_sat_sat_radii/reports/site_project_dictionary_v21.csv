@@ -1,0 +1,22 @@
+﻿canonical_id,aliases,quality_tier,known_premium,notes
+zeray_perla,zeray perla | zeray perla sitesi,premium,1,curated premium
+zeray_korupark,zeray korupark | zeray koru park | zeray korupark sitesi,premium,1,curated premium
+zeray_gunesi,zeray gunesi | zeray gunes | zeray gunesi sitesi,premium,1,curated premium
+orka_life_2,orka life 2 | orka life ii | orka life 2 sitesi,premium,1,phase kept; not orka_life
+orka_life,orka life | orka life sitesi,mid,0,separate from orka_life_2
+evimiz_kocaeli,evimiz kocaeli | evimiz | evimiz sitesi,premium,1,suffix-only merge
+alizepark_city,alizepark city | alize park city | alizepark city sitesi,premium,1,curated premium
+ustgrup_mezire,ustgrup mezire | ust grup mezire | mezire,premium,1,curated premium
+mamik_life,mamik life | mamik life sitesi,premium,1,distinct from mamik_reform
+mamik_reform,mamik reform | mamik reform sitesi,mid,0,distinct from mamik_life
+royal_life,royal life | royal life sitesi,premium,1,distinct from royal_city / royal_country
+royal_city_akkurt,royal city akkurt | royal city | royal city sitesi,mid,0,distinct from royal_life
+royal_country,royal country | royal country sitesi,mid,0,distinct from royal_life
+panoramakent,panoramakent | panorama kent | panoramakent sitesi,premium,1,unnumbered; panoramakent_3 separate if seen
+bahcekent_konutlari,bahcekent konutlari | bahcekent | bahce kent,mid,0,suffix strip only
+kirazli_kent,kirazli kent | kirazli kent sitesi,mid,0,brand kent preserved
+yakamoz_konutlari,yakamoz konutlari | yakamoz,mid,0,curated mid
+yuvana_evleri,yuvana evleri | yuvana,mid,0,curated mid
+zeraykent_yuvacik,zeraykent yuvacik | zeray kent yuvacik,mid,0,kent preserved
+ustpark_afraze,ustpark afraze | ust park afraze,mid,0,park preserved
+ritim_vadi_evleri,ritim vadi evleri | ritim vadi,mid,0,vadi preserved
