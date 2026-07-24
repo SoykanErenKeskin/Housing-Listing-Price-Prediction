@@ -1,0 +1,26 @@
+{
+  "generation": "v4_visual_satellite_experiments",
+  "version": "v22_basiskele_satellite_environment_pilot",
+  "base_checkpoint": "v21_basiskele_site_project_extraction",
+  "reference": {
+    "r2": 0.5059,
+    "mape": 0.1055,
+    "variance_ratio": 0.459
+  },
+  "selected_experiment": "control_v21",
+  "satellite_feature_coverage": 0.0,
+  "r2": 0.44081479565854353,
+  "mape": 0.11169442902010444,
+  "variance_ratio": 0.4264471479144817,
+  "log_r2": 0.4488999198366821,
+  "large_home_r2": 0.2893457175831967,
+  "expensive_decile_bias": -10874.333742651703,
+  "cheap_decile_bias": 5297.6062843365935,
+  "decision": {
+    "overall": "DIAGNOSTIC",
+    "warnings": [
+      "satellite_csv_missing_control_only"
+    ],
+    "qa_findings": []
+  }
+}

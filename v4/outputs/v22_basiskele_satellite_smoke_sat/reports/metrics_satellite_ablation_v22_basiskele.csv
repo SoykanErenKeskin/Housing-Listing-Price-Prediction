@@ -1,0 +1,2 @@
+﻿experiment,satellite_feature_mode,rows,sat_feature_coverage,r2,log_r2,mape,mae,median_ape,variance_ratio,large_home_r2,expensive_decile_bias,cheap_decile_bias,selected,decision,notes
+sat_basic,basic,944,0.7665615141955836,0.4827457300856719,0.48709430594824943,0.1083479186696556,4419.453586109525,0.086182735742004,0.4490875680317034,0.28048565180274376,-10389.749768232905,5074.477005936471,False,DIAGNOSTIC,sat_basic_did_not_beat_v21_reference

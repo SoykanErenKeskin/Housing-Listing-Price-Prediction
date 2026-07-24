@@ -1,0 +1,9 @@
+﻿county,feature,rows,non_null,coverage,mean
+Başiskele,attr_has_elevator,922,922,1.0,0.5195227765726681
+Başiskele,attr_has_parking,922,919,0.9967462039045553,0.9804134929270947
+Başiskele,attr_has_balcony,922,922,1.0,0.982646420824295
+Başiskele,attr_is_site_inside,922,918,0.9956616052060737,0.41938997821350765
+Başiskele,attr_credit_eligible,922,0,0.0,
+Başiskele,attr_building_age_score,922,922,1.0,0.8787418655097614
+Başiskele,attr_heating_quality_score,922,922,1.0,0.9205531453362256
+Başiskele,attr_total_quality_score,922,922,1.0,0.8171041678254259

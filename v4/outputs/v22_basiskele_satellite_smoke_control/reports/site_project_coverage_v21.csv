@@ -1,0 +1,9 @@
+﻿metric,value
+extracted_raw_rate,0.34164859002169196
+alias_hit_rate,0.289587852494577
+dict_hit_rate,0.1540130151843818
+canonical_non_missing_rate,0.34164859002169196
+n_rows,922.0
+n_canonical_sites,149.0
+foldsafe_encoded_site_count,28.0
+top_expensive_underpredicted_site_missing_rate,0.5384615384615384

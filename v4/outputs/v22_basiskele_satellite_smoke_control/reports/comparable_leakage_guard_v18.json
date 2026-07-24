@@ -1,0 +1,16 @@
+{
+  "fit_called": true,
+  "uses_train_pool_only": true,
+  "self_match_exclude": true,
+  "validation_targets_unused": true,
+  "model_scope": "basiskele_only",
+  "county": "Başiskele",
+  "comparable_mode": "none",
+  "pass": true,
+  "notes": [
+    "mode=none; comparable disabled"
+  ],
+  "fit_n": 0,
+  "feature_count": 0,
+  "mode": "none"
+}

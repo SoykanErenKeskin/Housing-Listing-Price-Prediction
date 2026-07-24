@@ -1,0 +1,6 @@
+﻿feature,importance_mean,n_models
+sat_ndvi_mean_250m,0.0051707800503820005,2
+sat_ndbi_mean_250m,0.0047389058372244,2
+sat_brightness_mean_250m,0.0034608839409975,2
+sat_ndwi_mean_250m,0.0033252547483858,2
+sat_has_features,7.565417393485e-05,2

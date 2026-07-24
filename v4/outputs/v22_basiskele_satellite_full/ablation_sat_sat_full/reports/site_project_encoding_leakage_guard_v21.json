@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "uses_train_pool_only": true,
+  "validation_targets_used": false,
+  "outer_validation_targets_used_in_encoder": false,
+  "min_count": 3,
+  "alpha": 20.0,
+  "pass": true,
+  "notes": [
+    "fit on train fold unit prices only"
+  ],
+  "n_sites_encoded": 28,
+  "global_mean": 40664.75715042373
+}

@@ -1,0 +1,2 @@
+﻿experiment,satellite_feature_mode,rows,sat_feature_coverage,r2,log_r2,mape,mae,median_ape,variance_ratio,large_home_r2,expensive_decile_bias,cheap_decile_bias,selected,notes
+control_v21,none,922,0.0,0.44081479565854353,0.4488999198366821,0.11169442902010444,4593.429844361525,0.08652293439277901,0.4264471479144817,0.2893457175831967,-10874.333742651703,5297.6062843365935,True,single_run; satellite_csv_missing

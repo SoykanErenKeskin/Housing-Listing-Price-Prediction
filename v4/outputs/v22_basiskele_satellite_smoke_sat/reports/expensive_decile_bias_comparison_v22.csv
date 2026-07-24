@@ -1,0 +1,3 @@
+﻿model,expensive_decile_bias,r2,mape,satellite_feature_mode
+v21_reference,-10159.0,0.5059,0.1055,
+v22_selected,-10389.749768232905,0.4827457300856719,0.1083479186696556,basic

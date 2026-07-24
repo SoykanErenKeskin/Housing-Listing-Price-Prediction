@@ -1,0 +1,32 @@
+{
+  "generation": "v4_visual_satellite_experiments",
+  "version": "v22_basiskele_satellite_environment_pilot",
+  "base_checkpoint": "v21_basiskele_site_project_extraction",
+  "reference": {
+    "r2": 0.5059,
+    "mape": 0.1055,
+    "variance_ratio": 0.459
+  },
+  "selected_experiment": "control_v21",
+  "candidate_experiment": "sat_full",
+  "satellite_feature_coverage": 0.7665615141955836,
+  "coverage_definition": "non_null_any_of_sat_ndvi_mean_250m|sat_ndbi_mean_250m|sat_ndwi_mean_250m",
+  "r2": 0.481280798919443,
+  "mape": 0.1083641874887162,
+  "variance_ratio": 0.44883124906181665,
+  "log_r2": 0.48650737667601573,
+  "large_home_r2": 0.2832704267968037,
+  "expensive_decile_bias": -10423.791542031546,
+  "cheap_decile_bias": 5042.119190638964,
+  "notes": [
+    "sentinel_features_did_not_improve_v21"
+  ],
+  "decision": {
+    "overall": "DIAGNOSTIC_NO_LIFT",
+    "warnings": [],
+    "qa_findings": [],
+    "notes": [
+      "sentinel_features_did_not_improve_v21"
+    ]
+  }
+}

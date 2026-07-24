@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-07-23T15:47:49.760310+00:00",
+  "city": "Kocaeli",
+  "county": "Başiskele",
+  "source_requested": "gee",
+  "source_used": "gee",
+  "out": "data\\external\\satellite_features\\basiskele\\sentinel_features_v22.csv",
+  "failed_out": "C:\\Users\\soyka\\OneDrive\\Desktop\\Quarox Emlak\\pure_listing_model_v0_izmit_thesis\\data\\external\\satellite_features\\basiskele\\sentinel_features_v22_failed.csv",
+  "resume": true,
+  "save_every": 25,
+  "status": "gee_ok",
+  "total": 997,
+  "processed": 939,
+  "skipped_existing": 58,
+  "failed": 0,
+  "rows": 997,
+  "sat_feature_coverage": 0.7713139418254764,
+  "interrupted": false,
+  "to_fetch": 939
+}
