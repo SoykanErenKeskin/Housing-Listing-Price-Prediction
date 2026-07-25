@@ -1,0 +1,14 @@
+﻿county,district,rows,matched_demo_rows,matched_county_demo_rows,avg_demo_coverage_score,match_rate,county_match_rate
+Başiskele,Aydınkent Mh.,5,5,5,0.875,1.0,1.0
+Başiskele,Barbaros Mah.,1,1,1,0.875,1.0,1.0
+Başiskele,Damlar Mah.,5,5,5,0.875,1.0,1.0
+Başiskele,Döngel Mh.,46,46,46,0.875,1.0,1.0
+Başiskele,Fatih Mah.,107,107,107,0.875,1.0,1.0
+Başiskele,Havuzlubahçe Mh.,3,3,3,0.875,1.0,1.0
+Başiskele,Paşadağ Mh.,45,45,45,0.875,1.0,1.0
+Başiskele,Sahil Mah.,3,3,3,0.875,1.0,1.0
+Başiskele,Serdar Mah.,23,23,23,0.875,1.0,1.0
+Başiskele,Tepecik Mh.,1,1,1,0.75,1.0,1.0
+Başiskele,Yaylacık Mh.,1,1,1,0.875,1.0,1.0
+Başiskele,Yeşilyurt Mh.,153,153,153,0.875,1.0,1.0
+Başiskele,Yuvacık Yakacık Mh.,1,1,1,0.875,1.0,1.0

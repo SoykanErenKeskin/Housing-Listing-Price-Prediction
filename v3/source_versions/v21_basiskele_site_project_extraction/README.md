@@ -1,7 +1,8 @@
 # V21 Başiskele Site/Project Extraction
 
 **Package:** `v3/source_versions/v21_basiskele_site_project_extraction/`  
-**Status:** **Best known Başiskele checkpoint** (replaces V20)  
+**Status:** **Best known Başiskele checkpoint on the older inventory distribution** (still the old-data reference)  
+**New-data note:** For the **refreshed** Başiskele inventory (duplex/large-home refresh), selected checkpoint is **V23** `duplex_interactions` at `v3/outputs/v23_basiskele_duplex_largehome_refresh_full/`. Compare V23 primarily to `control_v21_on_new_data`, not to this old R²=0.5059 score.  
 **Base:** V20 `site_foldsafe_target` (R² 0.5017 / MAPE 0.1060 / VR 0.4616)
 
 ---

@@ -1,0 +1,35 @@
+{
+  "status": "selected_checkpoint_new_data",
+  "selected_experiment": "duplex_interactions",
+  "duplex_feature_mode": "interactions",
+  "output": "v3/outputs/v23_basiskele_duplex_largehome_refresh_full/",
+  "primary_comparison": "control_v21_on_new_data",
+  "secondary_reference_old_v21": {
+    "r2": 0.5059,
+    "mape": 0.1055,
+    "variance_ratio": 0.459,
+    "note": "older data distribution; do not compare blindly"
+  },
+  "selected_metrics": {
+    "r2": 0.49181579342533,
+    "mape": 0.10393495168766125,
+    "variance_ratio": 0.4774022607347701,
+    "large_home_r2": 0.354198287731171,
+    "expensive_decile_bias": -9416.720059122918
+  },
+  "control_v21_on_new_data": {
+    "r2": 0.4833413112579207,
+    "mape": 0.10480543341622237,
+    "variance_ratio": 0.45932887121804705,
+    "large_home_r2": 0.34694109425922925,
+    "expensive_decile_bias": -9676.026685355373
+  },
+  "lift_summary": "Modest but consistent duplex-aware improvement vs new-data control; not a large breakthrough.",
+  "known_issues": [
+    "Expensive top-decile underprediction persists.",
+    "Garden duplex segment remains difficult."
+  ],
+  "best_checkpoint_new_data": true,
+  "best_checkpoint_old_distribution_remains_v21": true,
+  "decided_at": "2026-07-24T17:42:49.920017+00:00"
+}

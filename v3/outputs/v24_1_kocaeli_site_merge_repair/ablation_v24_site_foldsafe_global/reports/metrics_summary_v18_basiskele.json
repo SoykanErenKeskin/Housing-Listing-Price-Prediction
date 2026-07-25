@@ -1,0 +1,849 @@
+{
+  "ensemble": {
+    "rows": 6667,
+    "r2": 0.6474900897247552,
+    "log_r2": 0.6633733550071614,
+    "mape": 0.11819666845933008,
+    "median_ape": 0.09226177142969073,
+    "mae_tl_per_m2": 4435.336764017853,
+    "median_ae_tl_per_m2": 3348.7763018507612,
+    "model": "county_expert_segment_aware_ensemble_v16",
+    "base_weights": {
+      "ridge": 0.3396100867923748,
+      "extra_trees": 0.3346870793439788,
+      "gradient_boosting": 0.32570283386364635
+    },
+    "segment_weights": {
+      "large_home": {
+        "ridge": 0.501911800926678,
+        "extra_trees": 0.498088199073322
+      },
+      "compact_home": {
+        "gradient_boosting": 0.5049619158668005,
+        "ridge": 0.49503808413319944
+      },
+      "old_building": {
+        "extra_trees": 0.500594750510224,
+        "gradient_boosting": 0.4994052494897761
+      },
+      "mainstream_home": {
+        "ridge": 0.5006336534978247,
+        "extra_trees": 0.4993663465021753
+      }
+    },
+    "segment_blend_weights": {
+      "large_home": 0.15,
+      "compact_home": 0.35,
+      "old_building": 0.5,
+      "mainstream_home": 0.65
+    },
+    "county_weights": {},
+    "county_blend_weights": {},
+    "attribute_mode": "full",
+    "detail_effect_mode": "group",
+    "basiskele_specialist_mode": "premium_target_stats",
+    "basiskele_variance_lift": "none",
+    "basiskele_variance_lift_report": {
+      "mode": "none",
+      "status": "disabled",
+      "lambda": 0.0,
+      "basiskele_r2_before": NaN,
+      "basiskele_r2_after": NaN,
+      "global_mape_before": NaN,
+      "global_mape_after": NaN,
+      "note": "variance lift off"
+    },
+    "basiskele_large_home_regime": "none",
+    "basiskele_spread_layer": "none",
+    "karamursel_baseline_mode": "none",
+    "basiskele_large_home_residual_report": {
+      "status": "disabled",
+      "selected_model": "",
+      "selected_lambda": 0.0,
+      "note": "mode=none (residual layer only runs for residual)"
+    },
+    "basiskele_spread_residual_report": {
+      "status": "disabled",
+      "selected_lambda": 0.0,
+      "selected_model": "",
+      "note": "spread layer off"
+    },
+    "target_mode": "residual",
+    "n_splits": 5,
+    "pass_guardrail": null,
+    "pass_global_guardrail": false,
+    "pass_sensitivity": null,
+    "pass_basiskele_lift": true,
+    "pass_basiskele_variance_lift": true,
+    "pass_karamursel_lift": true,
+    "pass_karamursel_guardrail": true,
+    "direction_pass_rate": 0.96875,
+    "karamursel_sale_diff_pct": 0.5906746156725916,
+    "basiskele_variance_ratio": 0.46674428554591013,
+    "site_project_encoding_leakage_guard": {
+      "enabled": true,
+      "uses_train_pool_only": true,
+      "validation_targets_used": false,
+      "outer_validation_targets_used_in_encoder": false,
+      "min_count": 3,
+      "alpha": 20.0,
+      "pass": true,
+      "notes": [
+        "fit on train fold unit prices only"
+      ],
+      "n_sites_encoded": 188,
+      "global_mean": 38191.14448927554
+    },
+    "location_scope_report": {
+      "location_scope": "global",
+      "enabled_counties": [
+        "Başiskele",
+        "Gölcük",
+        "Karamürsel",
+        "Kartepe",
+        "İzmit"
+      ],
+      "coverage": {
+        "Başiskele": 0.8762122076440388,
+        "Gölcük": 0.8807106598984772,
+        "Karamürsel": 0.8871951219512195,
+        "Kartepe": 1.0,
+        "İzmit": 0.7284105131414268
+      },
+      "warnings": [],
+      "n_numeric_masked": 91,
+      "n_categorical_masked": 8
+    },
+    "demographics_mode": "safe",
+    "location_feature_mode": "geo",
+    "geo_context_mode": "geo_with_coast",
+    "location_scope": "global",
+    "comparable_mode": "none",
+    "site_extraction_mode": "dict",
+    "site_project_encoding": "foldsafe_target",
+    "duplex_feature_mode": "none",
+    "model_scope": "kocaeli_global",
+    "location_feature_metadata": {
+      "location_feature_mode": "geo",
+      "numeric_features": [
+        "has_lat_lon",
+        "lat",
+        "lon",
+        "lat_centered_city",
+        "lon_centered_city",
+        "lat_centered_county",
+        "lon_centered_county",
+        "location_precision_exact",
+        "location_precision_approx",
+        "location_precision_district_only",
+        "location_precision_missing",
+        "location_source_data_attr_map",
+        "location_backfill_ok",
+        "location_backfill_listing_removed",
+        "location_quality_score",
+        "distance_to_county_centroid_m",
+        "bearing_from_county_centroid_sin",
+        "bearing_from_county_centroid_cos",
+        "distance_to_district_centroid_m",
+        "bearing_from_district_centroid_sin",
+        "bearing_from_district_centroid_cos",
+        "distance_to_izmit_center_m",
+        "distance_to_basiskele_coast_m",
+        "distance_to_yuvacik_m",
+        "distance_to_bahcecik_m",
+        "distance_to_kullar_m",
+        "distance_to_sahil_m",
+        "distance_to_golcuk_center_m",
+        "distance_to_karamursel_center_m",
+        "distance_to_coastline_m",
+        "is_coastal_500m",
+        "is_coastal_1000m",
+        "is_coastal_2000m",
+        "distance_to_geo_cluster_center_m",
+        "location_quality_x_detail_effect_total",
+        "distance_to_coast_x_view_sea",
+        "distance_to_coast_x_near_sea_zero",
+        "distance_to_coast_x_site_inside",
+        "distance_to_coast_x_large_home",
+        "basiskele_lat_lon_interaction",
+        "basiskele_distance_to_coast_x_large_home",
+        "basiskele_distance_to_coast_x_quality"
+      ],
+      "categorical_features": [
+        "location_precision",
+        "location_source",
+        "geo_cluster_city",
+        "geo_cluster_county",
+        "basiskele_geo_cluster",
+        "coast_distance_bucket",
+        "basiskele_geo_cluster_x_m2_group",
+        "geo_cluster_x_room_count"
+      ],
+      "exact_map_required_features": [
+        "bearing_from_county_centroid_cos",
+        "bearing_from_county_centroid_sin",
+        "bearing_from_district_centroid_cos",
+        "bearing_from_district_centroid_sin",
+        "distance_to_bahcecik_m",
+        "distance_to_basiskele_coast_m",
+        "distance_to_coast_x_large_home",
+        "distance_to_coast_x_near_sea_zero",
+        "distance_to_coast_x_site_inside",
+        "distance_to_coast_x_view_sea",
+        "distance_to_coastline_m",
+        "distance_to_county_centroid_m",
+        "distance_to_district_centroid_m",
+        "distance_to_geo_cluster_center_m",
+        "distance_to_golcuk_center_m",
+        "distance_to_izmit_center_m",
+        "distance_to_karamursel_center_m",
+        "distance_to_kullar_m",
+        "distance_to_sahil_m",
+        "distance_to_yuvacik_m",
+        "is_coastal_1000m",
+        "is_coastal_2000m",
+        "is_coastal_500m",
+        "lat",
+        "lat_centered_city",
+        "lat_centered_county",
+        "lon",
+        "lon_centered_city",
+        "lon_centered_county"
+      ],
+      "app_safe": true,
+      "uses_target": false,
+      "note": "Distance/cluster features are unreliable when location_precision is district_only or missing."
+    },
+    "fast_mode": false,
+    "training_rows_before_anomaly_filter": 6729,
+    "training_rows_after_anomaly_filter": 6667,
+    "excluded_anomaly_rows": 62,
+    "exclude_anomalies_threshold": 25.0
+  },
+  "base_ensemble": {
+    "rows": 6667,
+    "r2": 0.6371044006044158,
+    "log_r2": 0.6548421674156415,
+    "mape": 0.1204997059241725,
+    "median_ape": 0.09511766860247584,
+    "mae_tl_per_m2": 4531.401215172675,
+    "median_ae_tl_per_m2": 3436.3193427387996,
+    "model": "ensemble_base_top_models_v16",
+    "weights": {
+      "ridge": 0.3396100867923748,
+      "extra_trees": 0.3346870793439788,
+      "gradient_boosting": 0.32570283386364635
+    },
+    "target_mode": "residual",
+    "n_splits": 5
+  },
+  "segment_before_county": {
+    "rows": 6667,
+    "r2": 0.6474900897247552,
+    "log_r2": 0.6633733550071614,
+    "mape": 0.11819666845933008,
+    "median_ape": 0.09226177142969073,
+    "mae_tl_per_m2": 4435.336764017853,
+    "median_ae_tl_per_m2": 3348.7763018507612,
+    "model": "segment_aware_before_county_v16"
+  },
+  "county_metrics": [
+    {
+      "county": "Kartepe",
+      "rows": 1007,
+      "r2": 0.549177331582881,
+      "log_r2": 0.5666072246849572,
+      "mape": 0.10124933635849614,
+      "median_ape": 0.07986859597575637,
+      "mae_tl_per_m2": 3997.9643702934395,
+      "median_ae_tl_per_m2": 2969.265529153774
+    },
+    {
+      "county": "Başiskele",
+      "rows": 1753,
+      "r2": 0.4985027223993085,
+      "log_r2": 0.5064995016495907,
+      "mape": 0.10390293102072146,
+      "median_ape": 0.08104628577672296,
+      "mae_tl_per_m2": 4054.917939322248,
+      "median_ae_tl_per_m2": 3074.726305227814
+    },
+    {
+      "county": "Gölcük",
+      "rows": 1182,
+      "r2": 0.6640112115696508,
+      "log_r2": 0.6754155267995328,
+      "mape": 0.11839772756076107,
+      "median_ape": 0.09143661842171971,
+      "mae_tl_per_m2": 3816.9436497274037,
+      "median_ae_tl_per_m2": 2863.5723351641827
+    },
+    {
+      "county": "İzmit",
+      "rows": 2397,
+      "r2": 0.6790272041106802,
+      "log_r2": 0.6836776387819536,
+      "mape": 0.13012423549654029,
+      "median_ape": 0.10203713005748914,
+      "mae_tl_per_m2": 4964.861755850043,
+      "median_ae_tl_per_m2": 3835.3250695706665
+    },
+    {
+      "county": "Karamürsel",
+      "rows": 328,
+      "r2": 0.5764683896483065,
+      "log_r2": 0.6152318202900923,
+      "mape": 0.158729763304868,
+      "median_ape": 0.12159124041334948,
+      "mae_tl_per_m2": 6170.024129388079,
+      "median_ae_tl_per_m2": 4761.622252987419
+    }
+  ],
+  "segment_layer": [
+    {
+      "segment": "large_home",
+      "rows": 1612,
+      "status": "used_blend",
+      "status_note": "",
+      "blend_weight": 0.15,
+      "base_r2": 0.5492116268611242,
+      "base_log_r2": 0.5442387205237083,
+      "base_mape": 0.13670114752151694,
+      "base_mae_tl_per_m2": 5029.278201168778,
+      "segment_r2": 0.48671141479668456,
+      "segment_log_r2": 0.4752059184676144,
+      "segment_mape": 0.14482593606818076,
+      "segment_mae_tl_per_m2": 5332.983473628064,
+      "best_blended_r2": 0.5513589494192419,
+      "best_blended_log_r2": 0.5466329734848119,
+      "best_blended_mape": 0.13638429601099472,
+      "best_blended_mae_tl_per_m2": 5018.8861170183745,
+      "blend_candidates": "[{\"blend_weight\": 0.15, \"r2\": 0.5513589494192419, \"log_r2\": 0.5466329734848119, \"mape\": 0.13638429601099472, \"mae_tl_per_m2\": 5018.8861170183745}, {\"blend_weight\": 0.25, \"r2\": 0.5505312126211667, \"log_r2\": 0.5457110112362169, \"mape\": 0.1364248746662976, \"mae_tl_per_m2\": 5021.446540707272}, {\"blend_weight\": 0.35, \"r2\": 0.5478960476869685, \"log_r2\": 0.542796170054737, \"mape\": 0.1367592318171663, \"mae_tl_per_m2\": 5034.62290317961}, {\"blend_weight\": 0.5, \"r2\": 0.5405543725304409, \"log_r2\": 0.5347056527091119, \"mape\": 0.13770074258397794, \"mae_tl_per_m2\": 5070.810448918347}, {\"blend_weight\": 0.65, \"r2\": 0.5291459840676367, \"log_r2\": 0.5221499097142247, \"mape\": 0.1392068428201231, \"mae_tl_per_m2\": 5126.5925119414305}, {\"blend_weight\": 0.8, \"r2\": 0.5136708822985558, \"log_r2\": 0.5050910376707456, \"mape\": 0.14128222783437439, \"mae_tl_per_m2\": 5203.092411672577}, {\"blend_weight\": 1.0, \"r2\": 0.48671141479668456, \"log_r2\": 0.4752059184676144, \"mape\": 0.14482593606818076, \"mae_tl_per_m2\": 5332.983473628064}]",
+      "weights": "{\"ridge\": 0.501911800926678, \"extra_trees\": 0.498088199073322}"
+    },
+    {
+      "segment": "compact_home",
+      "rows": 867,
+      "status": "used_blend",
+      "status_note": "",
+      "blend_weight": 0.35,
+      "base_r2": 0.609047758207544,
+      "base_log_r2": 0.6370606646461285,
+      "base_mape": 0.11726297511183076,
+      "base_mae_tl_per_m2": 5215.13919978118,
+      "segment_r2": 0.6025387298230434,
+      "segment_log_r2": 0.6222117884456009,
+      "segment_mape": 0.12060875996451972,
+      "segment_mae_tl_per_m2": 5235.052587402945,
+      "best_blended_r2": 0.6339768106862911,
+      "best_blended_log_r2": 0.6599128089237043,
+      "best_blended_mape": 0.11362429765476158,
+      "best_blended_mae_tl_per_m2": 5020.362149051916,
+      "blend_candidates": "[{\"blend_weight\": 0.15, \"r2\": 0.623319402115577, \"log_r2\": 0.6509153936951517, \"mape\": 0.11490719180669434, \"mae_tl_per_m2\": 5098.847478055732}, {\"blend_weight\": 0.25, \"r2\": 0.6298440278256955, \"log_r2\": 0.6567226917903809, \"mape\": 0.11402968398050425, \"mae_tl_per_m2\": 5050.222250128806}, {\"blend_weight\": 0.35, \"r2\": 0.6339768106862911, \"log_r2\": 0.6599128089237043, \"mape\": 0.11362429765476158, \"mae_tl_per_m2\": 5020.362149051916}, {\"blend_weight\": 0.5, \"r2\": 0.6356912796343291, \"log_r2\": 0.6599903175443451, \"mape\": 0.11373564397313894, \"mae_tl_per_m2\": 5005.955257484164}, {\"blend_weight\": 0.65, \"r2\": 0.6320241021709408, \"log_r2\": 0.6546486269298514, \"mape\": 0.11463668029997036, \"mae_tl_per_m2\": 5024.977836453846}, {\"blend_weight\": 0.8, \"r2\": 0.6229752782961262, \"log_r2\": 0.6440990723592873, \"mape\": 0.11662907118523372, \"mae_tl_per_m2\": 5090.444147093377}, {\"blend_weight\": 1.0, \"r2\": 0.6025387298230434, \"log_r2\": 0.6222117884456009, \"mape\": 0.12060875996451972, \"mae_tl_per_m2\": 5235.052587402945}]",
+      "weights": "{\"gradient_boosting\": 0.5049619158668005, \"ridge\": 0.49503808413319944}"
+    },
+    {
+      "segment": "old_building",
+      "rows": 1000,
+      "status": "used_blend",
+      "status_note": "",
+      "blend_weight": 0.5,
+      "base_r2": 0.49792161144076375,
+      "base_log_r2": 0.4541001234826222,
+      "base_mape": 0.15671606966592752,
+      "base_mae_tl_per_m2": 4340.362158447394,
+      "segment_r2": 0.46247717154204626,
+      "segment_log_r2": 0.4219879659343273,
+      "segment_mape": 0.1585283863685478,
+      "segment_mae_tl_per_m2": 4444.474194963623,
+      "best_blended_r2": 0.505492397335704,
+      "best_blended_log_r2": 0.4679343300789417,
+      "best_blended_mape": 0.15313339986498573,
+      "best_blended_mae_tl_per_m2": 4267.135581770595,
+      "blend_candidates": "[{\"blend_weight\": 0.15, \"r2\": 0.5055043784365487, \"log_r2\": 0.46421864438539107, \"mape\": 0.1546649872930651, \"mae_tl_per_m2\": 4291.317139521715}, {\"blend_weight\": 0.25, \"r2\": 0.5080302558493086, \"log_r2\": 0.4681491007737718, \"mape\": 0.15382215446538386, \"mae_tl_per_m2\": 4273.446690945844}, {\"blend_weight\": 0.35, \"r2\": 0.5085326927945247, \"log_r2\": 0.4698008751643351, \"mape\": 0.15331086640310107, \"mae_tl_per_m2\": 4264.356706710413}, {\"blend_weight\": 0.5, \"r2\": 0.505492397335704, \"log_r2\": 0.4679343300789417, \"mape\": 0.15313339986498573, \"mae_tl_per_m2\": 4267.135581770595}, {\"blend_weight\": 0.65, \"r2\": 0.4978993608249095, \"log_r2\": 0.46072522704994767, \"mape\": 0.1537194347580938, \"mae_tl_per_m2\": 4290.811071443396}, {\"blend_weight\": 0.8, \"r2\": 0.48575358326214113, \"log_r2\": 0.4479869986684113, \"mape\": 0.15523226466175127, \"mae_tl_per_m2\": 4341.5362031870445}, {\"blend_weight\": 1.0, \"r2\": 0.46247717154204626, \"log_r2\": 0.4219879659343273, \"mape\": 0.1585283863685478, \"mae_tl_per_m2\": 4444.474194963623}]",
+      "weights": "{\"extra_trees\": 0.500594750510224, \"gradient_boosting\": 0.4994052494897761}"
+    },
+    {
+      "segment": "mainstream_home",
+      "rows": 3367,
+      "status": "used_blend",
+      "status_note": "",
+      "blend_weight": 0.65,
+      "base_r2": 0.528727062730973,
+      "base_log_r2": 0.5292742095526286,
+      "base_mape": 0.10616917427264619,
+      "base_mae_tl_per_m2": 4210.58852763682,
+      "segment_r2": 0.5285659906361204,
+      "segment_log_r2": 0.5227599134752485,
+      "segment_mape": 0.10510738226234237,
+      "segment_mae_tl_per_m2": 4131.907688900455,
+      "best_blended_r2": 0.5456570007007481,
+      "best_blended_log_r2": 0.5421506862834752,
+      "best_blended_mape": 0.10382203107357524,
+      "best_blended_mae_tl_per_m2": 4094.7920274691546,
+      "blend_candidates": "[{\"blend_weight\": 0.15, \"r2\": 0.5382497851739197, \"log_r2\": 0.5381638045011257, \"mape\": 0.10510140461059905, \"mae_tl_per_m2\": 4163.766865696718}, {\"blend_weight\": 0.25, \"r2\": 0.5427263289089872, \"log_r2\": 0.5420461862160331, \"mape\": 0.10455714526267387, \"mae_tl_per_m2\": 4138.835724690278}, {\"blend_weight\": 0.35, \"r2\": 0.5457053223292038, \"log_r2\": 0.5443530038062878, \"mape\": 0.10417507730805196, \"mae_tl_per_m2\": 4120.088962284668}, {\"blend_weight\": 0.5, \"r2\": 0.5473659056191833, \"log_r2\": 0.5449385728674938, \"mape\": 0.10385940753711849, \"mae_tl_per_m2\": 4101.980699251539}, {\"blend_weight\": 0.65, \"r2\": 0.5456570007007481, \"log_r2\": 0.5421506862834752, \"mape\": 0.10382203107357524, \"mae_tl_per_m2\": 4094.7920274691546}, {\"blend_weight\": 0.8, \"r2\": 0.5405786075738983, \"log_r2\": 0.5360416153125069, \"mape\": 0.10412353231347356, \"mae_tl_per_m2\": 4100.807053414386}, {\"blend_weight\": 1.0, \"r2\": 0.5285659906361204, \"log_r2\": 0.5227599134752485, \"mape\": 0.10510738226234237, \"mae_tl_per_m2\": 4131.907688900455}]",
+      "weights": "{\"ridge\": 0.5006336534978247, \"extra_trees\": 0.4993663465021753}"
+    }
+  ],
+  "county_expert_layer": [
+    {
+      "status": "disabled"
+    }
+  ],
+  "anomaly_metric_diagnostics": [
+    {
+      "rows": 6667,
+      "r2": 0.6474900897247552,
+      "log_r2": 0.6633733550071614,
+      "mape": 0.11819666845933008,
+      "median_ape": 0.09226177142969073,
+      "mae_tl_per_m2": 4435.336764017853,
+      "median_ae_tl_per_m2": 3348.7763018507612,
+      "slice": "all_rows"
+    },
+    {
+      "rows": 6662,
+      "r2": 0.6477644743260477,
+      "log_r2": 0.663667246395817,
+      "mape": 0.11801146521372884,
+      "median_ape": 0.09224345338409962,
+      "mae_tl_per_m2": 4431.168611776183,
+      "median_ae_tl_per_m2": 3346.260008723135,
+      "slice": "score_lt_25"
+    },
+    {
+      "rows": 6667,
+      "r2": 0.6474900897247552,
+      "log_r2": 0.6633733550071614,
+      "mape": 0.11819666845933008,
+      "median_ape": 0.09226177142969073,
+      "mae_tl_per_m2": 4435.336764017853,
+      "median_ae_tl_per_m2": 3348.7763018507612,
+      "slice": "score_lt_45"
+    },
+    {
+      "rows": 5,
+      "r2": 0.027949781780550964,
+      "log_r2": 0.02196439429572128,
+      "mape": 0.36496147289842396,
+      "median_ape": 0.4080994627386569,
+      "mae_tl_per_m2": 9988.982810818483,
+      "median_ae_tl_per_m2": 7957.939523403809,
+      "slice": "score_gte_25"
+    }
+  ],
+  "model_comparison": [
+    {
+      "rows": 6667,
+      "r2": 0.6300791474838437,
+      "log_r2": 0.645895866508658,
+      "mape": 0.12195695403055716,
+      "median_ape": 0.09684233960130717,
+      "mae_tl_per_m2": 4586.9049401169295,
+      "median_ae_tl_per_m2": 3554.5000449949366,
+      "model": "ridge"
+    },
+    {
+      "rows": 6667,
+      "r2": 0.6141018914647456,
+      "log_r2": 0.6333723963378302,
+      "mape": 0.12375085355680408,
+      "median_ape": 0.09583148061598146,
+      "mae_tl_per_m2": 4660.321521635534,
+      "median_ae_tl_per_m2": 3484.8655655117327,
+      "model": "extra_trees"
+    },
+    {
+      "rows": 6667,
+      "r2": 0.5990291131560586,
+      "log_r2": 0.6192192781454157,
+      "mape": 0.1271644193325948,
+      "median_ape": 0.0992783381049709,
+      "mae_tl_per_m2": 4784.689896222762,
+      "median_ae_tl_per_m2": 3643.4832686221707,
+      "model": "gradient_boosting"
+    },
+    {
+      "rows": 6667,
+      "r2": 0.5924067124345013,
+      "log_r2": 0.6130734016090429,
+      "mape": 0.12756843622624528,
+      "median_ape": 0.09911223863070598,
+      "mae_tl_per_m2": 4798.080107377888,
+      "median_ae_tl_per_m2": 3611.1351483966937,
+      "model": "random_forest"
+    }
+  ],
+  "basiskele_large_home_residual": {
+    "status": "disabled",
+    "selected_model": "",
+    "selected_lambda": 0.0,
+    "note": "mode=none (residual layer only runs for residual)"
+  },
+  "basiskele_spread_residual": {
+    "status": "disabled",
+    "selected_lambda": 0.0,
+    "selected_model": "",
+    "note": "spread layer off"
+  },
+  "karamursel_sensitivity": {
+    "district": "4 Temmuz Mah.",
+    "sale_pred_old": 25029.627941217346,
+    "sale_pred_new": 39813.99380582386,
+    "sale_diff_tl_m2": 14784.365864606516,
+    "sale_diff_pct": 0.5906746156725916,
+    "warning": ""
+  },
+  "basiskele_variance": {
+    "rows": 1753,
+    "actual_variance": 60883068.0172442,
+    "prediction_variance": 28416824.083551694,
+    "variance_explained_ratio": 0.46674428554591013,
+    "mape": 0.10390293102072146,
+    "r2": 0.4985027223993085,
+    "attribute_sensitivity_avg_abs_diff": 3636.437630073654,
+    "note": "",
+    "decile_bias_json": [
+      {
+        "decile": 0,
+        "mean_bias": 5101.796085415134
+      },
+      {
+        "decile": 1,
+        "mean_bias": 3306.975287980903
+      },
+      {
+        "decile": 2,
+        "mean_bias": 2481.1397799877795
+      },
+      {
+        "decile": 3,
+        "mean_bias": 1348.6667550002423
+      },
+      {
+        "decile": 4,
+        "mean_bias": 747.4454192387311
+      },
+      {
+        "decile": 5,
+        "mean_bias": -85.746648815173
+      },
+      {
+        "decile": 6,
+        "mean_bias": -1101.457858367535
+      },
+      {
+        "decile": 7,
+        "mean_bias": -2088.9543333454126
+      },
+      {
+        "decile": 8,
+        "mean_bias": -3570.3176562833605
+      },
+      {
+        "decile": 9,
+        "mean_bias": -9338.178940300788
+      }
+    ]
+  },
+  "basiskele_variance_lift": {
+    "mode": "none",
+    "status": "disabled",
+    "lambda": 0.0,
+    "basiskele_r2_before": NaN,
+    "basiskele_r2_after": NaN,
+    "global_mape_before": NaN,
+    "global_mape_after": NaN,
+    "note": "variance lift off"
+  },
+  "decision": {
+    "selected_site_extraction_mode": "dict",
+    "selected_site_project_encoding": "foldsafe_target",
+    "r2": 0.6474900897247552,
+    "mape": 0.11819666845933008,
+    "variance_ratio": 0.6269858442846672,
+    "expensive_decile_bias": -8736.729739585191,
+    "large_home_r2": 0.5463405521621038,
+    "leakage_guard_pass": true,
+    "coverage": {
+      "extracted_raw_rate": 0.3049347532623369,
+      "alias_hit_rate": 0.2734363281835908,
+      "dict_hit_rate": 0.030148492575371232,
+      "canonical_non_missing_rate": 0.3047847607619619,
+      "n_rows": 6667.0,
+      "n_canonical_sites": 890.0,
+      "foldsafe_encoded_site_count": 188.0,
+      "top_expensive_underpredicted_site_missing_rate": 0.5144312393887945
+    },
+    "best_checkpoint": false,
+    "note": "V24.1 is not auto-promoted; promote only after severe merge warnings=0 and selection gates pass."
+  },
+  "v14_reference": {
+    "r2": 0.6787,
+    "mape": 0.129,
+    "basiskele_r2": 0.4553,
+    "basiskele_mape": 0.1103,
+    "basiskele_variance_ratio": 0.4224,
+    "golcuk_r2": 0.6444,
+    "karamursel_r2": 0.5582,
+    "izmit_r2": 0.7107,
+    "k180_karamursel_r2": 0.5768
+  },
+  "v15_reference": {
+    "r2": 0.6799,
+    "mape": 0.129,
+    "basiskele_r2": 0.4534,
+    "basiskele_mape": 0.111,
+    "basiskele_variance_ratio": 0.4516,
+    "basiskele_large_home_r2": 0.2396,
+    "golcuk_r2": 0.6481,
+    "karamursel_r2": 0.5681,
+    "izmit_r2": 0.7109,
+    "ship_ready_all_counties_r2_ge_0_65": false
+  },
+  "v13_reference": {},
+  "v13_delta": {},
+  "v14_delta": {},
+  "v15_delta": {
+    "r2": -0.03240991027524476,
+    "mape": -0.010803331540669925,
+    "basiskele_r2": 0.04510272239930846,
+    "karamursel_r2": 0.00836838964830644
+  },
+  "v12_delta": {},
+  "warnings": [
+    "global_guardrail_failed",
+    "izmit_r2_soft_floor"
+  ],
+  "qa_findings": {
+    "site_extraction_mode": "dict",
+    "site_project_encoding": "foldsafe_target",
+    "comparable_mode": "none",
+    "calibration_mode": "none",
+    "best_checkpoint": false
+  },
+  "ship_ready_all_counties_r2_ge_0_65": false,
+  "selected_detail_effect_mode": "group",
+  "selected_basiskele_specialist_mode": "premium_target_stats",
+  "selected_basiskele_variance_lift_mode": "none",
+  "county_feature_sensitivity": [
+    {
+      "county": "Başiskele",
+      "n_tests": 8,
+      "mean_abs_diff_tl_m2": 3636.437630073654,
+      "mean_abs_diff_pct": 0.11473787001291798,
+      "pass_rate": 1.0
+    },
+    {
+      "county": "Gölcük",
+      "n_tests": 8,
+      "mean_abs_diff_tl_m2": 4069.0096257176347,
+      "mean_abs_diff_pct": 0.1492169135085962,
+      "pass_rate": 1.0
+    },
+    {
+      "county": "Karamürsel",
+      "n_tests": 8,
+      "mean_abs_diff_tl_m2": 4075.6783450183034,
+      "mean_abs_diff_pct": 0.15736494264390266,
+      "pass_rate": 0.875
+    },
+    {
+      "county": "İzmit",
+      "n_tests": 8,
+      "mean_abs_diff_tl_m2": 3692.4882623659882,
+      "mean_abs_diff_pct": 0.12422929982158307,
+      "pass_rate": 1.0
+    }
+  ],
+  "attribute_feature_coverage_rows": 40,
+  "detail_feature_coverage_rows": 325,
+  "model_scope": "kocaeli_global",
+  "county": null,
+  "rows": 6667,
+  "r2": 0.6474900897247552,
+  "mape": 0.11819666845933008,
+  "variance_ratio": 0.6269858442846672,
+  "large_home_r2": 0.5463405521621038,
+  "large_home_mape": 0.13302906830214348,
+  "cheap_decile_bias": 3977.694448274492,
+  "expensive_decile_bias": -8736.729739585191,
+  "ship_ready_basiskele_r2_ge_0_65": false,
+  "selected_comparable_mode": "none",
+  "selected_site_extraction_mode": "dict",
+  "selected_site_project_encoding": "foldsafe_target",
+  "historical_reference": {
+    "v20_selected_reference": {
+      "selected_experiment": "site_foldsafe_target",
+      "r2": 0.5017,
+      "mape": 0.106,
+      "variance_ratio": 0.4616,
+      "expensive_decile_bias": -10139,
+      "has_site_project_name_rate": 0.2,
+      "known_premium_rate": 0.067
+    },
+    "v18_geo_control_reference": {
+      "r2": 0.473,
+      "mape": 0.1093,
+      "variance_ratio": 0.4283,
+      "comparable_mode": "none"
+    },
+    "v17_basiskele_reference": {
+      "r2": 0.483426974660913,
+      "mape": 0.10936049990506336,
+      "variance_ratio": 0.43462561422648777,
+      "global_kocaeli_r2": 0.6888282987651515,
+      "note": "Başiskele county metrics from V17 geo full run."
+    },
+    "v24_control_reference": {
+      "experiment": "control_v17_or_v21_like_global",
+      "r2": 0.6355303940198862,
+      "mape": 0.12012936749595975,
+      "variance_ratio": 0.6147205314789795,
+      "basiskele_r2": 0.4862605571949984,
+      "izmit_r2": 0.6625129410605489,
+      "golcuk_r2": 0.6609125400563349,
+      "karamursel_r2": 0.5774965050458485,
+      "kartepe_r2": 0.5309089223206018,
+      "merge_audit_severe_warnings": 0,
+      "leakage_pass": true
+    },
+    "v24_safe_duplex_reference": {
+      "experiment": "duplex_largehome_global",
+      "site_extraction_mode": "none",
+      "site_project_encoding": "none",
+      "duplex_feature_mode": "full",
+      "r2": 0.6358656162289547,
+      "mape": 0.12003687930512741,
+      "variance_ratio": 0.6184810005227498,
+      "basiskele_r2": 0.48961528851390135,
+      "izmit_r2": 0.6633843128240349,
+      "golcuk_r2": 0.657070542679931,
+      "karamursel_r2": 0.5768160507548209,
+      "kartepe_r2": 0.5304984704509776,
+      "merge_audit_severe_warnings": 0,
+      "leakage_pass": true,
+      "note": "V24 safe selected arm; keep until site merge severe=0 and gates pass."
+    },
+    "decision_basiskele_slice": {
+      "overall": "FAIL",
+      "pass_basiskele_lift": true,
+      "pass_mape_guardrail": false,
+      "pass_variance_lift": true,
+      "pass_large_home_lift": true,
+      "ship_ready_basiskele_r2_ge_0_65": false,
+      "selected_comparable_mode": "none",
+      "v18_geo_control_reference": {
+        "r2": 0.473,
+        "mape": 0.1093,
+        "variance_ratio": 0.4283,
+        "comparable_mode": "none",
+        "note": "V18 Başiskele-only geo control; comparable success needs R2>0.4730 and MAPE<=0.1143."
+      },
+      "v17_basiskele_reference": {
+        "r2": 0.483426974660913,
+        "mape": 0.10936049990506336,
+        "variance_ratio": 0.43462561422648777,
+        "global_kocaeli_r2": 0.6888282987651515,
+        "note": "Başiskele county metrics from V17 geo full run."
+      },
+      "warnings": [],
+      "qa_findings": [],
+      "model_scope": "basiskele_only",
+      "note": "Bu model Kocaeli geneli modelin yerine geçmez. Başiskele-only research checkpoint'tir."
+    }
+  },
+  "basiskele_slice": {
+    "rows": 6667,
+    "r2": 0.6474900897247552,
+    "mape": 0.11819666845933008,
+    "variance_ratio": 0.6269858442846672,
+    "decision": {
+      "overall": "FAIL",
+      "pass_basiskele_lift": true,
+      "pass_mape_guardrail": false,
+      "pass_variance_lift": true,
+      "pass_large_home_lift": true,
+      "ship_ready_basiskele_r2_ge_0_65": false,
+      "selected_comparable_mode": "none",
+      "v18_geo_control_reference": {
+        "r2": 0.473,
+        "mape": 0.1093,
+        "variance_ratio": 0.4283,
+        "comparable_mode": "none",
+        "note": "V18 Başiskele-only geo control; comparable success needs R2>0.4730 and MAPE<=0.1143."
+      },
+      "v17_basiskele_reference": {
+        "r2": 0.483426974660913,
+        "mape": 0.10936049990506336,
+        "variance_ratio": 0.43462561422648777,
+        "global_kocaeli_r2": 0.6888282987651515,
+        "note": "Başiskele county metrics from V17 geo full run."
+      },
+      "warnings": [],
+      "qa_findings": [],
+      "model_scope": "basiskele_only",
+      "note": "Bu model Kocaeli geneli modelin yerine geçmez. Başiskele-only research checkpoint'tir."
+    }
+  },
+  "comparable_leakage_guard": {
+    "fit_called": true,
+    "uses_train_pool_only": true,
+    "self_match_exclude": true,
+    "validation_targets_unused": true,
+    "model_scope": "kocaeli_global",
+    "county": null,
+    "comparable_mode": "none",
+    "pass": true,
+    "notes": [
+      "mode=none; comparable disabled"
+    ],
+    "fit_n": 0,
+    "feature_count": 0,
+    "mode": "none"
+  },
+  "note": "V24.1 Kocaeli global site-merge repair. model_scope=kocaeli_global; not auto-promoted until severe merge warnings are cleared and selection gates pass.",
+  "site_project_encoding_leakage_guard": {
+    "enabled": true,
+    "uses_train_pool_only": true,
+    "validation_targets_used": false,
+    "outer_validation_targets_used_in_encoder": false,
+    "min_count": 3,
+    "alpha": 20.0,
+    "pass": true,
+    "notes": [
+      "fit on train fold unit prices only"
+    ],
+    "n_sites_encoded": 188,
+    "global_mean": 38191.14448927554
+  },
+  "site_coverage": {
+    "extracted_raw_rate": 0.3049347532623369,
+    "alias_hit_rate": 0.2734363281835908,
+    "dict_hit_rate": 0.030148492575371232,
+    "canonical_non_missing_rate": 0.3047847607619619,
+    "n_rows": 6667.0,
+    "n_canonical_sites": 890.0,
+    "foldsafe_encoded_site_count": 188.0,
+    "top_expensive_underpredicted_site_missing_rate": 0.5144312393887945
+  },
+  "merge_audit_severe_warnings": 0,
+  "selected_duplex_feature_mode": "none",
+  "demographic_features": {
+    "mode": "safe",
+    "demo_rows": 488,
+    "listing_rows": 6729,
+    "matched_listing_rows": 6696,
+    "match_rate": 0.9950958537672759,
+    "county_matched_listing_rows": 6696,
+    "county_match_rate": 0.9950958537672759,
+    "join_method": "name_fallback",
+    "county_join_method": "county_id"
+  },
+  "anomaly_training_filter": {
+    "training_rows_before_anomaly_filter": 6729,
+    "training_rows_after_anomaly_filter": 6667,
+    "excluded_anomaly_rows": 62,
+    "exclude_anomalies_threshold": 25.0
+  }
+}

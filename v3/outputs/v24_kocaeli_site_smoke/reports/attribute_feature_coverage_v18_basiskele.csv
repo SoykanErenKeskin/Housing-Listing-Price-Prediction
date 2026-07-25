@@ -1,0 +1,17 @@
+﻿county,feature,rows,non_null,coverage,mean
+Gölcük,attr_has_elevator,521,521,1.0,0.15930902111324377
+Gölcük,attr_has_parking,521,521,1.0,0.9424184261036468
+Gölcük,attr_has_balcony,521,521,1.0,0.9865642994241842
+Gölcük,attr_is_site_inside,521,521,1.0,0.2533589251439539
+Gölcük,attr_credit_eligible,521,0,0.0,
+Gölcük,attr_building_age_score,521,521,1.0,0.8162188099808061
+Gölcük,attr_heating_quality_score,521,521,1.0,0.9006142034548943
+Gölcük,attr_total_quality_score,521,521,1.0,0.7378427169972276
+Kartepe,attr_has_elevator,631,629,0.9968304278922345,0.302066772655008
+Kartepe,attr_has_parking,631,628,0.9952456418383518,0.9792993630573248
+Kartepe,attr_has_balcony,631,631,1.0,0.9873217115689382
+Kartepe,attr_is_site_inside,631,628,0.9952456418383518,0.3678343949044586
+Kartepe,attr_credit_eligible,631,0,0.0,
+Kartepe,attr_building_age_score,631,631,1.0,0.9114104595879555
+Kartepe,attr_heating_quality_score,631,631,1.0,0.9278605388272584
+Kartepe,attr_total_quality_score,631,631,1.0,0.7862142102482832

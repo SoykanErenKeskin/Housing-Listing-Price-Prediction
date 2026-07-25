@@ -1,0 +1,2 @@
+﻿district,sale_pred_old,sale_pred_new,sale_diff_tl_m2,sale_diff_pct,warning
+missing,28250.05767434008,28802.41518919441,552.3575148543277,0.019552438484259863,Model is still insensitive for Karamürsel quality differences

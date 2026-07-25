@@ -1,0 +1,67 @@
+{
+  "status": "promoted_best_kocaeli_global_checkpoint",
+  "selected_experiment": "full_v24",
+  "best_checkpoint": true,
+  "promote": true,
+  "model_scope": "kocaeli_global",
+  "output": "v3/outputs/v24_1_kocaeli_site_merge_repair/",
+  "package": "v3/source_versions/v24_1_kocaeli_site_merge_repair/",
+  "site_extraction_mode": "full",
+  "site_project_encoding": "foldsafe_target",
+  "duplex_feature_mode": "full",
+  "metrics": {
+    "r2": 0.652324,
+    "mape": 0.117628,
+    "variance_ratio": 0.631573,
+    "rows": 6667,
+    "leakage_pass": true,
+    "merge_audit_severe_warnings": 0,
+    "severe_bad_merge": 0,
+    "possible_bad_merge": 12
+  },
+  "county_metrics": {
+    "İzmit": {
+      "r2": 0.682681,
+      "mape": 0.129376
+    },
+    "Gölcük": {
+      "r2": 0.670027,
+      "mape": 0.118001
+    },
+    "Başiskele": {
+      "r2": 0.511732,
+      "mape": 0.102983
+    },
+    "Karamürsel": {
+      "r2": 0.578453,
+      "mape": 0.158589
+    },
+    "Kartepe": {
+      "r2": 0.550115,
+      "mape": 0.10138
+    }
+  },
+  "safe_duplex_reference": {
+    "experiment": "duplex_largehome_global",
+    "r2": 0.635866,
+    "mape": 0.120037,
+    "variance_ratio": 0.618481
+  },
+  "lift_vs_safe_duplex": {
+    "r2": 0.01646,
+    "mape": -0.00241,
+    "variance_ratio_improved": true
+  },
+  "merge_audit": {
+    "severe_bad_merge": 0,
+    "possible_bad_merge": 12,
+    "possible_bad_merge_policy": "non_blocking_manual_review_candidates"
+  },
+  "hierarchy": {
+    "best_kocaeli_global_checkpoint": "v24_1_full_v24",
+    "best_refreshed_basiskele_only_checkpoint": "v23_duplex_interactions",
+    "v22_status": "diagnostic_no_lift"
+  },
+  "decision": "Promote V24.1 as best Kocaeli global checkpoint. Site/project extraction is now validated globally after merge repair. V23 remains the best refreshed Başiskele-only checkpoint. V22 remains diagnostic no-lift.",
+  "note": "V24.1 full_v24 is the best Kocaeli global checkpoint. severe_bad_merge=0; possible_bad_merge=12 kept as non-blocking manual review candidates. V23 remains the best refreshed Başiskele-only checkpoint. V22 remains diagnostic no-lift. Site/project extraction is now validated globally after merge repair."
+}

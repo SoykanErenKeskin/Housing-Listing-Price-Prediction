@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import os
 import sys
 import warnings
 from datetime import datetime
@@ -358,6 +359,28 @@ def build_county_distribution(sale: pd.DataFrame, rental: pd.DataFrame) -> pd.Da
                 "warning": "|".join(warn),
             }
         )
+    if not rows:
+        return pd.DataFrame(
+            columns=[
+                "city",
+                "county",
+                "sale_count",
+                "rental_count",
+                "total_count",
+                "sale_share",
+                "rental_share",
+                "sale_coord_coverage",
+                "rental_coord_coverage",
+                "sale_exact_map_coverage",
+                "rental_exact_map_coverage",
+                "median_sale_unit_price",
+                "median_rent_m2",
+                "median_gross_m2_sale",
+                "median_gross_m2_rental",
+                "district_count",
+                "warning",
+            ]
+        )
     return pd.DataFrame(rows).sort_values("total_count", ascending=False)
 
 
@@ -401,6 +424,26 @@ def build_district_distribution(sale: pd.DataFrame, rental: pd.DataFrame) -> pd.
                 "large_home_share": float(s["is_large_home"].mean()) if len(s) else np.nan,
                 "warning": "|".join(warn),
             }
+        )
+    if not rows:
+        return pd.DataFrame(
+            columns=[
+                "city",
+                "county",
+                "district",
+                "sale_count",
+                "rental_count",
+                "total_count",
+                "sale_coord_coverage",
+                "rental_coord_coverage",
+                "median_sale_unit_price",
+                "median_rent_m2",
+                "median_gross_m2_sale",
+                "median_building_age_sale",
+                "large_home_count",
+                "large_home_share",
+                "warning",
+            ]
         )
     return pd.DataFrame(rows).sort_values("total_count", ascending=False)
 
@@ -929,8 +972,21 @@ def parse_args() -> argparse.Namespace:
     ap.add_argument("--county", default=None)
     ap.add_argument("--district", default=None)
     ap.add_argument("--purpose", choices=["sale", "rental", "both"], default="both")
-    ap.add_argument("--sale-table", default="sale_listings")
-    ap.add_argument("--rental-table", default="rental_listings")
+    ap.add_argument(
+        "--sale-table",
+        default=os.getenv("SALE_TABLE", "sale_listings"),
+        help="Sale listings table (default: SALE_TABLE env or sale_listings)",
+    )
+    ap.add_argument(
+        "--rental-table",
+        default=os.getenv("RENTAL_TABLE", "rental_listings"),
+        help="Rental listings table (default: RENTAL_TABLE env or rental_listings)",
+    )
+    ap.add_argument(
+        "--source-site",
+        default=os.getenv("SOURCE_SITE", "listing_portal"),
+        help="source_site filter (default: SOURCE_SITE env or listing_portal)",
+    )
     ap.add_argument("--out", default=None, help="Output directory (default: analysis_outputs/listing_inventory/<ts>)")
     ap.add_argument("--export-samples", action="store_true")
     ap.add_argument("--sample-size", type=int, default=50)
@@ -944,7 +1000,6 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> int:
-    args = parse_args()
     warnings.filterwarnings("ignore", category=UserWarning)
 
     try:
@@ -953,6 +1008,7 @@ def main() -> int:
         print(f"ERROR: failed to load root .env — {exc}")
         return 2
 
+    args = parse_args()
     root = _repo_root()
     out_dir = Path(args.out) if args.out else root / "analysis_outputs" / "listing_inventory" / _ts_folder()
     if not out_dir.is_absolute():
@@ -984,6 +1040,7 @@ def main() -> int:
                 city=args.city,
                 county=args.county,
                 district=args.district,
+                source_site=args.source_site,
             )
             fetch_meta["sale"] = meta_s
             missing_cols.extend(meta_s.get("missing_columns") or [])
@@ -996,6 +1053,7 @@ def main() -> int:
                 city=args.city,
                 county=args.county,
                 district=args.district,
+                source_site=args.source_site,
             )
             fetch_meta["rental"] = meta_r
             missing_cols.extend(meta_r.get("missing_columns") or [])

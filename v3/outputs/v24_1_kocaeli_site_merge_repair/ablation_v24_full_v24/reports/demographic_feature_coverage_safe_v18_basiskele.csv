@@ -1,0 +1,142 @@
+﻿county,district,rows,matched_demo_rows,matched_county_demo_rows,avg_demo_coverage_score,match_rate,county_match_rate
+Başiskele,Altınkent Mh.,58,58,58,0.875,1.0,1.0
+Başiskele,Atakent Mah.,16,16,16,0.875,1.0,1.0
+Başiskele,Aydınkent Mh.,29,29,29,0.875,1.0,1.0
+Başiskele,Bahçecik Kılıçaslan Mh.,16,0,0,0.0,0.0,0.0
+Başiskele,Bahçecik Şehitekrem Mh.,5,0,0,0.0,0.0,0.0
+Başiskele,Barbaros Mah.,218,218,218,0.875,1.0,1.0
+Başiskele,Damlar Mah.,10,10,10,0.875,1.0,1.0
+Başiskele,Döngel Mh.,85,85,85,0.875,1.0,1.0
+Başiskele,Fatih Mah.,360,360,360,0.875,1.0,1.0
+Başiskele,Havuzlubahçe Mh.,13,13,13,0.875,1.0,1.0
+Başiskele,Karşıyaka Mh.,6,6,6,0.875,1.0,1.0
+Başiskele,Kullar Merkez Mh.,12,0,0,0.0,0.0,0.0
+Başiskele,Kullar Tepecik Mh.,20,20,20,0.875,1.0,1.0
+Başiskele,Kullar Yakacık Mh.,43,43,43,0.875,1.0,1.0
+Başiskele,Körfez Mh.,27,27,27,0.875,1.0,1.0
+Başiskele,Mahmutpaşa Mh.,45,45,45,0.875,1.0,1.0
+Başiskele,Paşadağ Mh.,185,185,185,0.875,1.0,1.0
+Başiskele,Sahil Mah.,7,7,7,0.875,1.0,1.0
+Başiskele,Serdar Mah.,75,75,75,0.875,1.0,1.0
+Başiskele,Seymen Mah.,22,22,22,0.875,1.0,1.0
+Başiskele,Tepecik Mh.,1,1,1,0.75,1.0,1.0
+Başiskele,Vezirçiftliği Mh.,1,1,1,0.875,1.0,1.0
+Başiskele,Yaylacık Mh.,56,56,56,0.875,1.0,1.0
+Başiskele,Yeniköy Merkez Mh.,29,29,29,0.875,1.0,1.0
+Başiskele,Yeşilkent Mh.,9,9,9,0.875,1.0,1.0
+Başiskele,Yeşilyurt Mh.,409,409,409,0.875,1.0,1.0
+Başiskele,Yuvacık Yakacık Mh.,1,1,1,0.875,1.0,1.0
+Gölcük,Atatürk Mh.,45,45,45,0.875,1.0,1.0
+Gölcük,Cumhuriyet Mah.,51,51,51,0.875,1.0,1.0
+Gölcük,Değirmendere Merkez Mh.,39,39,39,0.875,1.0,1.0
+Gölcük,Değirmendere Yalı Mh.,34,34,34,0.875,1.0,1.0
+Gölcük,Donanma Mah.,56,56,56,0.875,1.0,1.0
+Gölcük,Dumlupınar Mh.,25,25,25,0.875,1.0,1.0
+Gölcük,Düzağaç Mh.,17,17,17,0.875,1.0,1.0
+Gölcük,Halıdere Yalı Mh.,18,18,18,0.875,1.0,1.0
+Gölcük,Halıdere Yeni Mh.,3,3,3,0.875,1.0,1.0
+Gölcük,Hisareyn Merkez Mah.,51,51,51,0.875,1.0,1.0
+Gölcük,Karaköprü Mh.,59,59,59,0.875,1.0,1.0
+Gölcük,Kavaklı Mh.,43,43,43,0.875,1.0,1.0
+Gölcük,Körfez Mh.,27,27,27,0.875,1.0,1.0
+Gölcük,Merkez Mah.,43,43,43,0.875,1.0,1.0
+Gölcük,Piyalepaşa Mh.,74,74,74,0.875,1.0,1.0
+Gölcük,Saraylı Mh.,2,2,2,0.875,1.0,1.0
+Gölcük,Topçular Mh.,98,98,98,0.875,1.0,1.0
+Gölcük,Ulaşlı Yalı Mh.,3,3,3,0.875,1.0,1.0
+Gölcük,Ulaşlı Yavuz Sultan Selim Mh.,8,8,8,0.875,1.0,1.0
+Gölcük,Yazlık Merkez Mh.,54,54,54,0.875,1.0,1.0
+Gölcük,Yazlık Yeni Mh.,45,45,45,0.875,1.0,1.0
+Gölcük,Yeni Mah.,59,59,59,0.875,1.0,1.0
+Gölcük,Yukarı Mh.,23,23,23,0.875,1.0,1.0
+Gölcük,Yunus Emre Mah.,10,10,10,0.875,1.0,1.0
+Gölcük,Yüzbaşılar Mh.,52,52,52,0.875,1.0,1.0
+Gölcük,Çiftlik Mh.,78,78,78,0.875,1.0,1.0
+Gölcük,Örcün Mh.,9,9,9,0.875,1.0,1.0
+Gölcük,İhsaniye Merkez Mh.,42,42,42,0.875,1.0,1.0
+Gölcük,İpek Yolu Mh.,17,17,17,0.875,1.0,1.0
+Gölcük,Şehitler Mh.,72,72,72,0.875,1.0,1.0
+Gölcük,Şirinköy Mh.,43,43,43,0.875,1.0,1.0
+Karamürsel,4 Temmuz Mah.,172,172,172,0.875,1.0,1.0
+Karamürsel,Avcıköy Mh.,1,1,1,0.75,1.0,1.0
+Karamürsel,Dereköy Mh.,12,12,12,0.875,1.0,1.0
+Karamürsel,Ereğli Mh.,30,30,30,0.875,1.0,1.0
+Karamürsel,Kayacık Mh.,113,113,113,0.875,1.0,1.0
+Karamürsel,Tepeköy Mh.,5,5,5,0.875,1.0,1.0
+Karamürsel,Yalakdere Mh.,1,1,1,0.875,1.0,1.0
+Karamürsel,Çamçukur Mh.,1,1,1,0.875,1.0,1.0
+Kartepe,Acısu Mh.,1,1,1,0.875,1.0,1.0
+Kartepe,Arslanbey Mh.,18,18,18,0.875,1.0,1.0
+Kartepe,Ataevler Mh.,177,177,177,0.875,1.0,1.0
+Kartepe,Ataşehir Mh.,20,20,20,0.875,1.0,1.0
+Kartepe,Derbent Mh.,15,15,15,0.875,1.0,1.0
+Kartepe,Dumlupınar Mh.,86,86,86,0.875,1.0,1.0
+Kartepe,Emekevler Mh.,66,66,66,0.875,1.0,1.0
+Kartepe,Ertuğrul Gazi Mh.,98,98,98,0.875,1.0,1.0
+Kartepe,Fatih Sultan Mehmet Mh.,302,302,302,0.875,1.0,1.0
+Kartepe,Köseköy Mh.,32,32,32,0.875,1.0,1.0
+Kartepe,Maşukiye Mh.,11,11,11,0.875,1.0,1.0
+Kartepe,Rahmiye Mah.,6,6,6,0.875,1.0,1.0
+Kartepe,Sarımeşe Mh.,31,31,31,0.875,1.0,1.0
+Kartepe,Uzuntarla Mh.,5,5,5,0.875,1.0,1.0
+Kartepe,Uzunçiftlik Mh.,67,67,67,0.875,1.0,1.0
+Kartepe,Çepni Mh.,10,10,10,0.875,1.0,1.0
+Kartepe,İbrikdere Mh.,16,16,16,0.875,1.0,1.0
+Kartepe,İstasyon Mh.,50,50,50,0.875,1.0,1.0
+Kartepe,Şevkatiye Mh.,1,1,1,0.875,1.0,1.0
+İzmit,28 Haziran Mah.,78,78,78,0.875,1.0,1.0
+İzmit,Akarca Mah.,19,19,19,0.875,1.0,1.0
+İzmit,Akpınar Mh.,87,87,87,0.875,1.0,1.0
+İzmit,Akçakoca Mh.,23,23,23,0.875,1.0,1.0
+İzmit,Alikahya Atatürk Mh.,107,107,107,0.875,1.0,1.0
+İzmit,Alikahya Cumhuriyet Mah.,50,50,50,0.875,1.0,1.0
+İzmit,Alikahya Fatih Mah.,76,76,76,0.875,1.0,1.0
+İzmit,Alikahya Merkez Mah.,2,2,2,0.875,1.0,1.0
+İzmit,Arızlı Mh.,2,2,2,0.875,1.0,1.0
+İzmit,Ayazma Mah.,16,16,16,0.875,1.0,1.0
+İzmit,Bekirdere Mah.,10,10,10,0.875,1.0,1.0
+İzmit,Cedit Mah.,54,54,54,0.875,1.0,1.0
+İzmit,Cumhuriyet Mah.,60,60,60,0.875,1.0,1.0
+İzmit,Doğan Mh.,14,14,14,0.875,1.0,1.0
+İzmit,Durhasan Mh.,1,1,1,0.875,1.0,1.0
+İzmit,Erenler Mah.,40,40,40,0.875,1.0,1.0
+İzmit,Fatih Mah.,16,16,16,0.875,1.0,1.0
+İzmit,Fevzi Çakmak Mh.,29,29,29,0.875,1.0,1.0
+İzmit,Gültepe Mh.,11,11,11,0.875,1.0,1.0
+İzmit,Gündoğdu Mh.,150,150,150,0.875,1.0,1.0
+İzmit,Hacıhasan Mh.,26,26,26,0.875,1.0,1.0
+İzmit,Hacıhızır Mh.,33,33,33,0.875,1.0,1.0
+İzmit,Hatipköy Mh.,38,38,38,0.875,1.0,1.0
+İzmit,Kabaoğlu Mh.,47,47,47,0.875,1.0,1.0
+İzmit,Kadıköy Mh.,63,63,63,0.875,1.0,1.0
+İzmit,Karabaş Mh.,54,54,54,0.875,1.0,1.0
+İzmit,Karadenizliler Mah.,22,22,22,0.875,1.0,1.0
+İzmit,Kemalpaşa Mh.,7,7,7,0.875,1.0,1.0
+İzmit,Kocatepe Mah.,46,46,46,0.875,1.0,1.0
+İzmit,Kozluk Mah.,87,87,87,0.875,1.0,1.0
+İzmit,Kuruçeşme Fatih Mh.,26,26,26,0.875,1.0,1.0
+İzmit,Körfez Mh.,20,20,20,0.875,1.0,1.0
+İzmit,M. Alipaşa Mh.,36,36,36,0.875,1.0,1.0
+İzmit,Malta Mah.,26,26,26,0.875,1.0,1.0
+İzmit,Orhan Mah.,121,121,121,0.875,1.0,1.0
+İzmit,Sanayi Mah.,6,6,6,0.875,1.0,1.0
+İzmit,Sekbanlı Mh.,23,23,23,0.875,1.0,1.0
+İzmit,Sepetçi Mh.,22,22,22,0.875,1.0,1.0
+İzmit,Serdar Mah.,29,29,29,0.875,1.0,1.0
+İzmit,Tavşantepe Mh.,11,11,11,0.875,1.0,1.0
+İzmit,Tepecik Mah.,25,25,25,0.875,1.0,1.0
+İzmit,Tepeköy Mh.,37,37,37,0.875,1.0,1.0
+İzmit,Topçular Mh.,72,72,72,0.875,1.0,1.0
+İzmit,Turgut Mah.,71,71,71,0.875,1.0,1.0
+İzmit,Tüysüzler Mh.,25,25,25,0.875,1.0,1.0
+İzmit,Veliahmet Mah.,34,34,34,0.875,1.0,1.0
+İzmit,Yahyakaptan Mah.,73,73,73,0.875,1.0,1.0
+İzmit,Yeni Mah.,87,87,87,0.875,1.0,1.0
+İzmit,Yenidoğan Mh.,16,16,16,0.875,1.0,1.0
+İzmit,Yenişehir Mh.,91,91,91,0.875,1.0,1.0
+İzmit,Yeşilova Mh.,66,66,66,0.875,1.0,1.0
+İzmit,Zabıtan Mh.,10,10,10,0.875,1.0,1.0
+İzmit,Çayırköy Mh.,107,107,107,0.875,1.0,1.0
+İzmit,Çukurbağ Mh.,28,28,28,0.875,1.0,1.0
+İzmit,Ömerağa Mh.,26,26,26,0.875,1.0,1.0
+İzmit,Şirintepe Mh.,68,68,68,0.875,1.0,1.0

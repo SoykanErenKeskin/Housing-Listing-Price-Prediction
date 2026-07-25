@@ -6,8 +6,18 @@ Index of generation eras in this repository.
 |---|---|---|---|
 | v1 | Thesis / classic model archive | `./v1/` | Archived |
 | v2 | Location + Başiskele (pre comparable/calibration close-out) | `./v2/` | Archived reference |
-| v3 | **Tabular Premium Signals** | `./v3/` | Best tabular Başiskele checkpoint (V21) |
-| v4 | Visual / Satellite / Image-based experiments | `./v4/` | Active; V22 = diagnostic/no-lift (V21 still best) |
+| v3 | **Tabular Premium Signals** | `./v3/` | Best Kocaeli global = **V24.1**; best refreshed Başiskele-only = **V23** |
+| v4 | Visual / Satellite / Image-based experiments | `./v4/` | Active; V22 = diagnostic/no-lift |
+
+### Current checkpoint hierarchy
+
+| Scope | Best checkpoint | Path |
+|---|---|---|
+| **Kocaeli global** | **V24.1 `full_v24`** | `v3/outputs/v24_1_kocaeli_site_merge_repair/` |
+| **Başiskele-only (refreshed data)** | **V23 `duplex_interactions`** | `v3/outputs/v23_basiskele_duplex_largehome_refresh_full/` |
+| Visual / satellite | V22 | diagnostic no-lift (do not promote) |
+
+Site/project extraction is now validated globally after merge repair (`severe_bad_merge=0`; `possible_bad_merge=12` non-blocking manual review).
 
 ---
 
@@ -48,7 +58,7 @@ Index of generation eras in this repository.
 | Checkpoint | Location | Notes |
 |---|---|---|
 | Kocaeli location | `v2/best_checkpoints/best_kocaeli_location_checkpoint/` | V17 |
-| Başiskele-only (superseded) | `v2/best_checkpoints/best_basiskele_only_checkpoint/` | V18 geo control — later superseded by V20, then **V21** |
+| Başiskele-only (superseded) | `v2/best_checkpoints/best_basiskele_only_checkpoint/` | V18 geo control — later superseded by V20 → V21 → **V23** (refreshed) |
 
 **V18 Başiskele-only reference metrics (historical):**
 
@@ -70,45 +80,88 @@ Index of generation eras in this repository.
 **Short name:** `v3_tabular_premium_signals` (folder remains `./v3/`)
 
 **Scope:**  
-Başiskele-only tabular premium feature experiments.
+Tabular premium feature experiments — Başiskele-only through V23, then Kocaeli global site-aware (V24 / V24.1).
 
 **Includes:**
 
 - V19 calibration/no-ridge diagnostic
 - V20 premium signal / site-project first lift
-- V21 improved site/project extraction
+- V21 improved site/project extraction (older Başiskele distribution)
+- V23 duplex / large-home refresh (refreshed Başiskele-only)
+- V24 Kocaeli site-aware global refresh
+- **V24.1** Kocaeli site merge repair → **best Kocaeli global checkpoint**
 
-**Best checkpoint:**  
-V21 Başiskele site/project extraction:
+### Best Kocaeli global checkpoint — V24.1 `full_v24`
 
-- R2 = 0.5059
-- MAPE = 0.1055
-- variance_ratio = 0.4590
-- selected = full_v21 / interactions_foldsafe
-- canonical_non_missing ≈ 34.3%
-- dict_hit ≈ 15.5%
-- severe_bad_merge = 0
+| Field | Value |
+|---|---|
+| Output | `v3/outputs/v24_1_kocaeli_site_merge_repair/` |
+| Package | `v3/source_versions/v24_1_kocaeli_site_merge_repair/` |
+| selected_experiment | `full_v24` |
+| site_extraction_mode | `full` |
+| site_project_encoding | `foldsafe_target` |
+| duplex_feature_mode | `full` |
+| R² | 0.652324 |
+| MAPE | 0.117628 |
+| variance_ratio | 0.631573 |
+| rows | 6667 |
+| leakage_pass | true |
+| severe_bad_merge | **0** |
+| possible_bad_merge | **12** (non-blocking manual review) |
+| best_checkpoint | **true** |
 
-**Status:**  
-Current best tabular Başiskele checkpoint.
+**Lift vs V24 safe duplex (`duplex_largehome_global`):** R² +0.01646 (0.635866 → 0.652324), MAPE −0.00241 (0.120037 → 0.117628), VR improved (0.618481 → 0.631573).
 
-**Known issue:**  
-Expensive decile underprediction still exists. Site/project extraction improved overall score but did not solve premium top-decile bias fully.
+**County metrics:**
+
+| County | R² | MAPE |
+|---|---:|---:|
+| İzmit | 0.682681 | 0.129376 |
+| Gölcük | 0.670027 | 0.118001 |
+| Başiskele | 0.511732 | 0.102983 |
+| Karamürsel | 0.578453 | 0.158589 |
+| Kartepe | 0.550115 | 0.101380 |
+
+**Decision:** Promote V24.1 as the best Kocaeli global checkpoint. Site/project extraction is now validated globally after merge repair. Keep `possible_bad_merge=12` as non-blocking manual review candidates. Document `severe_bad_merge=0`.
+
+### Best refreshed Başiskele-only checkpoint — V23 `duplex_interactions`
+
+| Field | Value |
+|---|---|
+| Output | `v3/outputs/v23_basiskele_duplex_largehome_refresh_full/` |
+| Package | `v3/source_versions/v23_basiskele_duplex_largehome_refresh/` |
+| selected_experiment | `duplex_interactions` |
+| R² | ≈0.4918 |
+| MAPE | ≈0.1039 |
+| variance_ratio | ≈0.4774 |
+
+**Decision:** V23 remains the best refreshed Başiskele-only checkpoint. Do not conflate with Kocaeli global V24.1.
+
+### Historical Başiskele tabular — V21 (older distribution)
+
+| Field | Value |
+|---|---|
+| Output | `v3/outputs/v21_basiskele_site_extraction_full/` |
+| R² / MAPE / VR | 0.5059 / 0.1055 / 0.4590 |
+| severe_bad_merge | 0 |
+
+V21 remains the older-distribution Başiskele reference; refreshed-data Başiskele best is **V23**.
 
 **Rejected / diagnostic:**
 
 - V19 isotonic/linear calibration
 - V19 no-ridge
 - V20 comparable remains rejected from earlier generation
-- V20 text flags alone gave small lift but site/project identity was stronger
-
-**Next:**  
-V4 visual/satellite work continues under `v4/` without mixing into V3. V22 Sentinel environment features did **not** beat V21.
+- V24 safe duplex kept only as promotion reference after V24.1 site merge repair
 
 | Package / output | Role |
 |---|---|
-| `v3/source_versions/v21_basiskele_site_project_extraction/` | Best tabular package |
-| `v3/outputs/v21_basiskele_site_extraction_full/` | Best tabular run output |
+| `v3/source_versions/v24_1_kocaeli_site_merge_repair/` | **Best Kocaeli global package** |
+| `v3/outputs/v24_1_kocaeli_site_merge_repair/` | **Best Kocaeli global run output** |
+| `v3/source_versions/v23_basiskele_duplex_largehome_refresh/` | Best refreshed Başiskele-only package |
+| `v3/outputs/v23_basiskele_duplex_largehome_refresh_full/` | Best refreshed Başiskele-only run |
+| `v3/source_versions/v21_basiskele_site_project_extraction/` | Older Başiskele tabular package |
+| `v3/outputs/v21_basiskele_site_extraction_full/` | Older Başiskele tabular run |
 | `v3/source_versions/v20_basiskele_premium_signals/` | First site/project premium lift (superseded) |
 | `v3/source_versions/v19_basiskele/` | Calibration / no-ridge diagnostic (closed) |
 
@@ -120,8 +173,9 @@ V4 visual/satellite work continues under `v4/` without mixing into V3. V22 Senti
 
 **Status:** active (V22 closed as diagnostic)
 
-**Base / best tabular checkpoint (unchanged):** V21 — `v3/outputs/v21_basiskele_site_extraction_full/`  
-(R² 0.5059 / MAPE 0.1055 / VR 0.4590)
+**Base / best tabular Başiskele (older distribution):** V21 — `v3/outputs/v21_basiskele_site_extraction_full/`  
+**Refreshed Başiskele-only best:** V23 — `v3/outputs/v23_basiskele_duplex_largehome_refresh_full/`  
+**Best Kocaeli global:** V24.1 — `v3/outputs/v24_1_kocaeli_site_merge_repair/`
 
 **Goal:** test satellite/static-map visual features and image embeddings as additional premium/micro-location signals
 
@@ -140,11 +194,9 @@ V4 visual/satellite work continues under `v4/` without mixing into V3. V22 Senti
 | sat_radii | 0.4801 | 0.1086 | 0.4513 | no |
 | sat_full | 0.4829 | 0.1086 | 0.4462 | no |
 
-**Decision:** free Sentinel-2 environment CSV features did not improve the real V21 Başiskele checkpoint. Best checkpoint remains V21. Do **not** promote V22.
+**Decision:** V22 remains diagnostic no-lift. Free Sentinel-2 environment CSV features did not improve the real V21 Başiskele checkpoint. Do **not** promote V22.
 
-**Caveat:** V22 `control_v21` did not reproduce the exact V21 reference score — treat V22 as a diagnostic satellite experiment, not a replacement benchmark. Satellite arms only showed tiny lift over the V22 internal control; none beat V21 gates.
-
-**Interpretation:** free Sentinel-2 environment features at this resolution did not add meaningful predictive value over V21’s tabular + location + site/project features for Başiskele.
+**Caveat:** V22 `control_v21` did not reproduce the exact V21 reference score — treat V22 as a diagnostic satellite experiment, not a replacement benchmark.
 
 **Notes:**
 
@@ -153,7 +205,6 @@ V4 visual/satellite work continues under `v4/` without mixing into V3. V22 Senti
 - V4 may still explore static-map / image embeddings later
 - Large image cache (optional later): `data/external/satellite_cache/basiskele/`
 - Image cache references (lightweight): `v4/image_cache_reference/`
-- Best checkpoint remains **V21** until a V4 run beats it
 
 ---
 
@@ -176,10 +227,11 @@ Root-level `outputs/` and `scripts/` were removed; content lives under `v1/`, `v
 python shared_scripts/analyze_listing_inventory.py --city Kocaeli
 ```
 
-### Start from best tabular Başiskele checkpoint (V21 in V3)
+### Start from best Kocaeli global checkpoint (V24.1)
 
 1. Configure root `.env` from `.env.example`
-2. Use `v3/source_versions/v21_basiskele_site_project_extraction/`
-3. Reference metrics / ablation under `v3/outputs/v21_basiskele_site_extraction_full/`
-4. Keep comparable/calibration/no-ridge off unless a new experiment explicitly beats V21
-5. Put visual/satellite work under `v4/` — do not mix into V3
+2. Use `v3/source_versions/v24_1_kocaeli_site_merge_repair/`
+3. Reference metrics / ablation under `v3/outputs/v24_1_kocaeli_site_merge_repair/`
+4. Keep `severe_bad_merge=0`; treat `possible_bad_merge=12` as manual review only
+5. For refreshed Başiskele-only work, use V23 — do not replace V24.1 with V23 (different scope)
+6. Put visual/satellite work under `v4/` — V22 remains diagnostic no-lift

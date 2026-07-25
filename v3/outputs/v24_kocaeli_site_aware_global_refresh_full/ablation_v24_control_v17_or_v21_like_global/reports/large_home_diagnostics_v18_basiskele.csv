@@ -1,0 +1,2 @@
+﻿rows,base_r2,segment_r2,best_blended_r2,mape,mae,status,status_note,basiskele_large_home_rows,basiskele_large_home_r2,top_large_home_features
+1612,0.5371833253008538,0.4826829728108225,0.5411500067580042,0.13857264508033287,5093.408559771298,used_blend,,560,0.374846083714508,"large_home_m2_excess,large_home_quality_x_m2,large_home_detail_premium_x_m2,large_home_site_x_m2,large_home_basiskele_premium"

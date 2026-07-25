@@ -1,0 +1,395 @@
+﻿detail_konut_tipi_raw,title_raw,duplex_type,is_duplex,is_roof_duplex,is_garden_duplex,is_middle_floor_duplex,is_standard_duplex,duplex_match_source,duplex_source_conflict,extraction_notes,classified_id
+,BAŞİSKELE EV FİNANSMANINA UYGUN 2+1 SATILIK ÇATI DUBLEX DAİRE,roof,1,1,0,0,0,title,0,,1329064713
+,BAŞİSKELE DE EVFİNANSMANINA UYGUN SATILIK 2+1 ÇATI DUBLEKS DAİRE,roof,1,1,0,0,0,title,0,,1329064369
+Dubleks|Bahçe Dubleksi,CB Envoy'dan Başiskele Cadde 53 Sitesi'nde 5+1 Dubleks Daire,garden,1,0,1,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1322959684
+Bahçe Dubleksi,CB Mahall'den Özel Bahçe Kullanımlı 3+1 Dubleks,garden,1,0,1,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1314805377
+,"EĞİMSİZ TERAS DUBLEKS,YUVACIK'A2KM",roof,1,1,0,0,0,title,0,,1306764070
+Bahçe Dubleksi,"BAŞİSKELE YEŞİLYURT MAH, FERAH 3+1 BAHÇE DUBLEKS DAİRE SATILIK",garden,1,0,1,0,0,detail_and_title,0,,1317585424
+Bahçe Dubleksi,REMAX DREAM BAŞİSKELE MAMİK REFORM 2 SİTESİ 4+1 DUBLEKS DAİRE,garden,1,0,1,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1317567697
+En Üst Kat,KOCAELİ BAŞİSKELE YEŞİLYURT MAH. 3+1 DUBLEKS SATILIK DAİRE,standard,1,0,0,0,1,title,0,,1317006501
+,BAŞİSKELE YEŞİLYURT MAHALLESİ NDE SATILIK ALT DUBLEKS DAİRE,standard,1,0,0,0,1,title,0,,1326082827
+Çatı Dubleksi,FATİH MAHALLESİNDE 4+1 SATILIK LÜKS ÇATI DUBLEKSİ,roof,1,1,0,0,0,detail_and_title,0,,1323080991
+Dubleks|En Üst Kat|Çatı Dubleksi,EMLAKÇIM41'DE BAŞİSKELE/ FATİH MH.DE MANZARALI GENİŞ 4+1 DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1328967840
+Bahçe Dubleksi,BAŞİSKELE YUVACIK PANORAMA 1 DE BAHÇELİ 4+1 DUBLEKS DAİRE,garden,1,0,1,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1328971632
+,BAŞİSKELE KULLAR MAHALLESİ'NDE 2+1 GİRİŞ KAT SATILIK DAİRE..,none,0,0,0,0,0,none,0,,1328951083
+Ara Kat,CB MAHALDEN YEŞİLYURTTA 3+1 ŞIK GENİŞ DAİRE,none,0,0,0,0,0,none,0,,1328934119
+En Üst Kat,YEŞİLYURT ROZNA SİTESİ 2+1 EN ÜST KAT ÇİFT CEPHE DAİRE,none,0,0,0,0,0,none,0,,1328927083
+,YEŞİLYURT MAH. GENİŞ BAHÇELİ SATILIK 2+1 YÜKSEK GİRİŞ DÜZ DAİRE,none,0,0,0,0,0,none,0,,1328933128
+Çatı Dubleksi,YEŞİLYURT MAH.MERKEZİ KONUMDA SATILIK 2+1 Ç.DUBLEKSİ DAİRE,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1296891862
+Çatı Dubleksi,KW ARVEN'DEN YEŞİLYURT MAH SATILIK ASANSÖRLÜ 3+1 ÇATI DUBLEKS D.,roof,1,1,0,0,0,detail_and_title,0,,1328929797
+Çatı Dubleksi,BAŞİSKELE PAŞADAĞ MAH. GENİŞ KULLANIŞLI SATILIK 3+1 ÇATI DUBLEX,roof,1,1,0,0,0,detail_and_title,0,,1323001995
+Bahçe Dubleksi,NEOS'TAN BAŞİSKELE ZERAYPERLA'DA 3+1 BAHÇE DUBLEKS SATILIK DAİRE,garden,1,0,1,0,0,detail_and_title,0,,1259512954
+Bahçe Dubleksi,BAŞİSKELE YUVACIK'TA 3+1 BAHÇE KULLANIM ALANLI DUBLEKS DAİRE,garden,1,0,1,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1328879834
+Ters Dubleks,BAŞİSKELE YUVACIKTA 3+1 YÜKSEK GİRİŞ SATILIK TERS DUBLEKS DAİRE,standard,1,0,0,0,1,detail_and_title,0,,1322475523
+Ters Dubleks,Yuvacık Cadde Üzeri Satılık 2+1 Ters Dubleks Daire (130m²),standard,1,0,0,0,1,detail_and_title,0,,1324995136
+Çatı Dubleksi,Başiskele Yeşilyurt Mahallesi'nde 1+1 Çatı Dubleks Daire,roof,1,1,0,0,0,detail_and_title,0,,1328891824
+Çatı Dubleksi,KOCAELİ YUVACIK ZERAY GÜNEŞİ ÇOK TEMİZ SATILIK 3+1 ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1270736951
+Çatı Dubleksi,BAŞİSKELE YEŞİLYURT MAHALLESİ SATILIK 3+1 ÇATI DUBLEX,roof,1,1,0,0,0,detail_and_title,0,,1310017843
+Dubleks|Bahçe Dubleksi,YEŞİLYURT'TA MERKEZİ KONUMDA SATILIK 3+1 BAHÇE DUBLEKS,garden,1,0,1,0,0,detail_and_title,0,,1311720792
+Çatı Dubleksi,"Başiskele'de Panoramik Manzaralı, Sıfır 2+1 Çatı Dubleks Daire",roof,1,1,0,0,0,detail_and_title,0,,1297879888
+Bahçe Dubleksi,KOCAELİ BAŞİSKELE FATİH DE LÜKS 155 M2 3+1 BAHÇE DUBLEKSشقة فاخر,garden,1,0,1,0,0,detail_and_title,0,,1269106617
+,"Zeray Güneş'te Önü Kapanmaz Manzaralı, Geniş 3+1 Çatı Dublek",none,0,0,0,0,0,none,0,,1325835584
+Ara Kat,"BAŞİSKELE YEŞİLYURT'TA, SATILIK LÜKS 3+1 ARA KAT ASANSÖRLÜ DAİRE",none,0,0,0,0,0,none,0,,1328334009
+,Başiskele Akkurt Royal City de Satılık 3+1 Dubleks Daire,standard,1,0,0,0,1,title,0,,1283276882
+Dubleks,BAŞISKELE YEŞİLYURT 2+1 GENİŞ KULLANIM TERAS DUBLEKS,standard,1,0,0,0,1,conflict_detail_wins,1,conflict detail=standard title=roof,1314027634
+Çatı Dubleksi,SATIŞ OFİSİNDEN BAŞISKELEDE ASANSÖRLÜ 4+1 EĞİMSİZ ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1271845226
+Çatı Dubleksi,BAŞİSKELE YEŞİLYURT MAH. ASANSÖRLÜ 3+1 ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1298202529
+Ara Kat,YEŞİLYURT MAH ARAKAT 1+1 DAİRE (Mopaş arkasında),none,0,0,0,0,0,none,0,,1328722730
+,BASİSKELE BAHÇEKENT SİTESİNDE 2+1 SATILIK DAİRE,none,0,0,0,0,0,none,0,,1328714154
+,Daireye Ait Bahçeli Dubleks,garden,1,0,1,0,0,title,0,,1328709499
+Ara Kat,TANYILDIZ'DAN BAŞİSKELEDE SİTE İÇİ ARAKAT SATILIK 2+1 DAİRE,none,0,0,0,0,0,none,0,,1328629840
+Bahçe Dubleksi,YONCA SİTEDE ÖZEL KIŞ BAHÇELİ 4+1 DUBLEKS FOR SALE,garden,1,0,1,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1328702313
+Dubleks|Bahçe Dubleksi,Başiskele Yeşilyurt Da 2+1 Bahçe Dubleks شقة للبيع,garden,1,0,1,0,0,detail_and_title,0,,1328696198
+Çatı Dubleksi,BAŞİSKELE FATİH MAH. EĞİMSİZ 2+1 ÇATI DUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1312956963
+Dubleks,ÜST GRUP'TAN BAŞİSKELE PAŞADAĞ'DA DENİZ MANZARALI DUBLEX 4+1,standard,1,0,0,0,1,detail_and_title,0,,1279206573
+Dubleks,YEŞİLYURT MERKEZİ KONUMDA 2+1 SATILIK ÇATI DUBLEKS,standard,1,0,0,0,1,conflict_detail_wins,1,conflict detail=standard title=roof,1313846469
+Dubleks,Başiskele'de Satılık 3+1 Dubleks Daire - Royal Country,standard,1,0,0,0,1,detail_and_title,0,,1268472878
+Çatı Dubleksi,BAŞİSKELE FATİH MAH PANORAMİK DENİZ MANZARALI 3+1 ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1325725121
+Dubleks|En Üst Kat|Çatı Dubleksi,BAŞİSKELE'DE HAVUZLU SİTEDE SATILIK 3+1 DUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1325717740
+Bahçe Dubleksi,BAŞİSKELE ZERAY GÜNEŞİ / EŞYALI SATILIK 3+1 BAHÇE DUBLEKS,garden,1,0,1,0,0,detail_and_title,0,,1328659161
+,BAŞİSKELE YEŞİLYURTTA SATILIK 3+1 ÇATI DUBLEKS,roof,1,1,0,0,0,title,0,,1328667120
+,Başiskele Fatihte Site İçinde Satılık 3+1 Dubleks Krediye Uygun,standard,1,0,0,0,1,title,0,,1328662451
+Çatı Dubleksi,YEŞİLYURT MAH.GENİŞ TERASLI SATILIK 2+1 Ç.DUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1311240789
+,SERDAR MH 2+1 90M² DAİREMİZ SATILIKTIR,none,0,0,0,0,0,none,0,,1328655612
+Çatı Dubleksi,YEŞİLYURT MAHALLESİNDE MERKEZİ KONUMDA 3+1 TERASLI ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1317226636
+Bahçe Dubleksi,YEŞİLYURT MAHALLESİNDE MERKEZİ KONUMDA 2+1 BAHÇE DUBLEKS,garden,1,0,1,0,0,detail_and_title,0,,1317222815
+Ara Kat,RW Nova'dan Paşadağ Mh.Emar Delüx Sitesi Satılık 2+1 Arakat,none,0,0,0,0,0,none,0,,1328621433
+Ara Kat,Başiskele'de Ara Kat Asansörlü Geniş 3+1 Daire,none,0,0,0,0,0,none,0,,1328602336
+Çatı Dubleksi,FATİH MAHALLESİNDE 4+1 SATILIK LÜKS ÇATI DUBLEKSİ,roof,1,1,0,0,0,detail_and_title,0,,1294621423
+,ERENOĞLU GM'DEN SİTE İÇİ SATILIK 3+1 YÜKSEK GİRİŞ DAİRE,none,0,0,0,0,0,none,0,,1328593333
+Bahçe Dubleksi,REMAX DREAM DEN BAŞISKELE YEŞİLYURT'TA SATILIK 4+1 DAİRE,garden,1,0,1,0,0,detail,0,,1328589706
+Dubleks,DERIN'DEN ZERAY PERLA'DA SATILIK 3+1 DUBLEKS GENİŞ DAİRE,standard,1,0,0,0,1,detail_and_title,0,,1314085801
+Dubleks,BAŞİSKELE SATILIK 3+1 BAHÇE DUBLEKS,standard,1,0,0,0,1,conflict_detail_wins,1,conflict detail=standard title=garden,1297071556
+Dubleks,BAİŞKELE YEŞİLYURTTA YÜKSEK TAVAN 3+1 SATILIK DUBLEKS DAİRE,standard,1,0,0,0,1,detail_and_title,0,,1317178863
+Çatı Dubleksi,BAŞİSKELE'DE HAVUZLU SİTE İÇİ SIFIR 3+1 ÇATI DUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1328539343
+Ara Kat,TURYAP'TAN ÜSTPARK'TA KAPANMAZ MANZARALI FIRSAT 2+1,none,0,0,0,0,0,none,0,,1328537969
+,Havuz başı özel bahçeli acil satılık,none,0,0,0,0,0,none,0,,1328523710
+Ara Kat,DERİN'DEN MEGATRON SİTESİ'NDE SATILIK 3+1 DUBLEKS DAİRE,standard,1,0,0,0,1,title,0,,1325551411
+Bahçe Dubleksi,Başiskele Fatih Mahallesi'nde Sıfır Bahçe Dubleksi Satılık Daire,garden,1,0,1,0,0,detail_and_title,0,,1320526798
+Ara Kat|Çatı Dubleksi,BU EVDE MANZARAYA DOYACAKSINIZ VİLLA TADINDA EMSALSİZ DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1324624082
+Çatı Dubleksi,ListingPortal Panorama1 sitesinde deniz manzaralı köşe çatı dubleks,roof,1,1,0,0,0,detail_and_title,0,,1252244107
+Çatı Dubleksi,KREDİYE UYGUN BAŞİSKELEDE GENİŞ TERASLI 3+1 ÇATI DUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1315328494
+Dubleks|Bahçe Dubleksi,BAŞİSKELE PAŞADAĞ'DA SATILIK 3+1 BAHÇE DUBLEKS,garden,1,0,1,0,0,detail_and_title,0,,1328484780
+Ara Kat,Fatih Mh'de Satılık 1+1 ve 2+1 Arakat Daireler Asansörlü,none,0,0,0,0,0,none,0,,1328487748
+Çatı Dubleksi,BAŞİSKELE MAVİ YEŞİL PARK EVLERİ SATILIK 4+1 ÇATI DUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1298410966
+Dubleks,BAŞİSKELEDE MERKEZİ KONUMDA 3+1 TERASLI ÇATI DUBLEKSİ,standard,1,0,0,0,1,conflict_detail_wins,1,conflict detail=standard title=roof,1328456040
+,DEALLİFE'DAN BAŞİSKELE YUVACIKTA 4+1 EĞİMSİZ DUBLEKS,standard,1,0,0,0,1,title,0,,1311052956
+Çatı Dubleksi,"Başiskele Panorama 1'de Deniz Manzaralı, Yapılı 4+1 Çatı Dubleks",roof,1,1,0,0,0,detail_and_title,0,,1316870951
+,KOCAELİ BAŞİSKELE YUVACIK MAH SATILIK 3+1 SIFIR ÇATI DUBLEKS,roof,1,1,0,0,0,title,0,,1316248762
+Çatı Dubleksi,"Tarcanlardan Başiskele ,Paşadağ'da 2+1 Dubleks Daire Satılık",roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1328405343
+Ara Kat,2+1 ARA KAT Tertemiz - Bahçekent Sitesi 610 Konutlu Sitede Daire,none,0,0,0,0,0,none,0,,1328382618
+Ara Kat,Yuvacık Lotus Mahza Sitesi'nde Satılık 3+1 ARAKAT Daire,none,0,0,0,0,0,none,0,,1328397664
+Çatı Dubleksi,TERAS MARMARA SİTESİNDE SATILIK 3+1 FULL DENİZ MANZARALI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1305741820
+Çatı Dubleksi,ACİL SATILIK DENİZ MANZARALI EĞİMSİZ ÇATI DUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1328379992
+,"BAŞİSKELE'DE MERKEZİ KONUMDA, 100 m² BAHÇELİ FERAH 2+1 DAİRE!",none,0,0,0,0,0,none,0,,1328331671
+,REMAX DREAMDEN BAŞİSKELE FATİH'DE SİTE İÇİ 3+1 DAİRE,none,0,0,0,0,0,none,0,,1312137615
+,BAŞİSKELE PAŞADAĞ MAH. SATILIK 4+1 ASANSÖRLÜ DUBLEKS DAİRE,standard,1,0,0,0,1,title,0,,1328344009
+Dubleks|Bahçe Dubleksi|Ters Dubleks,LUXORA'DAN BAŞİSKELE YEŞİLYURT MAH'DE SATILIK 3+1 BAHÇE DUBLEKS,garden,1,0,1,0,0,detail_and_title,0,,1321819069
+,BAŞİSKELE YUVACIK DOĞA EVLERİ SİTESİ 3+1 SATILIK DAİRE,none,0,0,0,0,0,none,0,,1328310506
+Çatı Dubleksi,"4+1 GENİŞ ÇATI DUBLEKS DAİRE, ÇATI EĞİMSİZ, İYİ KONUM, İSKANLI",roof,1,1,0,0,0,detail_and_title,0,,1300169006
+Bahçe Dubleksi,BAŞİSKELE YUVACIK SİTE İÇİ BAHÇE DUBLEKS 4+1,garden,1,0,1,0,0,detail_and_title,0,,1282646283
+Çatı Dubleksi,BAŞİSKELE YUVACIK YUVANA EVLERİ SİTESİ 3+1 ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1311450413
+,Başiskele Bahçekent'te Satılık 2+1 Daire (77m²),none,0,0,0,0,0,none,0,,1287275506
+,BAŞİSKELE FATİH MAHALESİNDE ÖNÜ KAPANMAZ 3+1 ÇATI DUBLEKS,roof,1,1,0,0,0,title,0,,1328270372
+En Üst Kat|Ara Kat|Çatı Dubleksi,BAŞİSKELE YEŞİLYURT MERKEZİ KONUM 3+1SATILIK 165M2 DUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1328263976
+Dubleks,KOCAELİ BAŞİSKELE FATİH MAHALLESİ SATILIK FIRSAT DAİRE,standard,1,0,0,0,1,detail,0,,1328267742
+Çatı Dubleksi,YEŞİLYURTTA 3+1 DENİZ MANZARALI SATILIK EĞİMSİZ ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1318740218
+,Yeşilyurt merkezi konumda sıfır 3+1 geniş arakat daire,none,0,0,0,0,0,none,0,,1328267407
+Dubleks|Çatı Dubleksi,Başiskele Yeşilyurt Mah.de 3+1 Dubleks Satılık Daire,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1322029815
+,YUVACIK VADİ EVLERİNDE 2+1 GENİŞ BAHÇELİ DUBLEKS FIRSAT DAİRE,garden,1,0,1,0,0,title,0,,1328252264
+,YUVACIK VADİ EVLERİNDE 3+1 GENİŞ BAHÇELİ DUBLEKS FIRSAT DAİRE,garden,1,0,1,0,0,title,0,,1328249426
+Ara Kat,ORKA LIFE 2 SİTESİ'NDE FIRSAT 4+1 DAİRE,none,0,0,0,0,0,none,0,,1328237229
+,YEŞİLYURT STRADA AVM'YE YAKIN | 2+1 YÜKSEK GİRİŞ FIRSAT DAİRE,none,0,0,0,0,0,none,0,,1328230276
+,"ÇİFT TERASLI, MERKEZİ KONUMDA, UYGUN FİYAT 3+1 ÇATIDUBLEKS DAİRE",roof,1,1,0,0,0,title,0,,1313931531
+Bahçe Dubleksi,"ÖZEL BAHÇE KULLANIMLI, MERKEZİ KONUMDA, 3+1 BAHÇEDUBLEKS DAİRE",garden,1,0,1,0,0,detail_and_title,0,,1300097262
+Dubleks|Çatı Dubleksi,Lotus Evleri 2/Site İçi Satılık 2+1 120 M² Çatı Dubleks,roof,1,1,0,0,0,detail_and_title,0,,1322218232
+Çatı Dubleksi,Re/max Mir Başiskele'de Satılık 2+1 Çatı Dubleks Daire,roof,1,1,0,0,0,detail_and_title,0,,1282847040
+,YEŞİLYURT MAHALLESİ MERKEZİ KONUMLU BÜYÜK TERAS KULLANIŞLI 2+1,none,0,0,0,0,0,none,0,,1328168880
+Dubleks|Çatı Dubleksi,BAŞİSKELE'DE FERAH VE ÖNÜ AÇIK 3+1 ÇATI DUBLEKS ASANSÖRLÜ,roof,1,1,0,0,0,detail_and_title,0,,1328194431
+Çatı Dubleksi,ARKUN GAYRİMENKUL'DEN MERKEZİ KONUMDA SATILIK 3+1 SIFIR DAİRE,roof,1,1,0,0,0,detail,0,,1328150793
+Çatı Dubleksi,ARAÇ TAKASILI BAŞİSKELE YEŞİLYURT MAH. EĞİMSİZ 2+1 ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1322242064
+Ara Kat,BAŞİSKELE YEŞİLYURT MAH 3+1 ULTRA LÜKS SATILIK ARAKAT DAİRE,none,0,0,0,0,0,none,0,,1328149236
+Çatı Dubleksi,KAÇIRILMAYACAK FIRSAT 3+1 ÇATI DUBLEKS GENİŞ TERASLI MANZARALI,roof,1,1,0,0,0,detail_and_title,0,,1316875701
+Dubleks|Bahçe Dubleksi|Ters Dubleks,BAŞİSKELE KULLAR'DA 2+1 DUBLEKS FIRSATI,garden,1,0,1,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1328125379
+,BAŞİSKELE YEŞİLYURTDA SİTE İÇERİSİNDE SATILIK DAİRE,none,0,0,0,0,0,none,0,,1239765243
+,TINAZTEPE CAD. SATILIK TERASLI 2+1 ÇATI DUBLEKS,roof,1,1,0,0,0,title,0,,1322198706
+Bahçe Dubleksi,BAŞİSKELE FATİH MAH. OTURUMA HAZIR 3+1 BAHÇE DUBLEKS,garden,1,0,1,0,0,detail_and_title,0,,1322177629
+Dubleks|En Üst Kat|Çatı Dubleksi,Site İçi Satılık 3+1 170 M² Geniş EĞİMSİZ Dubleks,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1322199055
+Çatı Dubleksi,DERİN'DEN YEŞİLYURT'TA SATILIK 4+1 DENİZ MANZARALI ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1315730731
+Çatı Dubleksi,Başiskele Yuvacık'ta Satılık 1+1 Çatı Dubleks Daire Asansörlü,roof,1,1,0,0,0,detail_and_title,0,,1318766705
+Çatı Dubleksi,REMAX MYRA SİTE İÇİNDE SATILIK 4+1 ÇATI DUBLEX GENİŞ KULLANIŞLI,roof,1,1,0,0,0,detail_and_title,0,,1308053579
+Bahçe Dubleksi,YUVACIK AYDINKENTTE DOĞA İÇİNDE BAHÇE DUBLEKS 3+1 DAİRE,garden,1,0,1,0,0,detail_and_title,0,,1322188606
+Çatı Dubleksi,CB Mahall'den Deniz manz. Yeşilyurtta Eğimsiz 2+1 Çatı Dubleks,roof,1,1,0,0,0,detail_and_title,0,,1319837793
+Çatı Dubleksi,YOLDAŞ EMLAKTAN ÜSTPARK YUVACIK SİTESİ SATILIK 4+1 DUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1328076497
+,MAMIKLER REFORM'DA HAVUZ CEPHELİ SİTE İÇİ GİRİŞ 3+1 DAİRE,none,0,0,0,0,0,none,0,,1241583743
+Dubleks|En Üst Kat|Çatı Dubleksi|Ters Dubleks,BAŞİSKELE YEŞİLYURT DA 4+1 220 M2 VİLLA TİPİ ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1328060163
+Bahçe Dubleksi,SATILIK 3+1 ZERAY GÜNEŞİ MÜSTAKİL BAHÇELİ DAİRE,garden,1,0,1,0,0,detail,0,,1294778590
+,BAHÇEKENT SİTESİNDE 2+1 ZEMİN KAT | ️ AMERİKAN & KAPALIMUTFAK,none,0,0,0,0,0,none,0,,1328064302
+,İSKANI ALINMIŞ MERKEZİ KONUM 2+1 ÇATI DUBLEKS,roof,1,1,0,0,0,title,0,,1314903502
+Ara Kat,SATILIK 2+1 ARA KAT | 105 m² BRÜT | DURAK/MARKET/FIRIN,none,0,0,0,0,0,none,0,,1328055588
+Çatı Dubleksi,ERENOĞLU GM'DEN FATİH MAH SATILIK 4+1 ÇATI DUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1313561056
+Bahçe Dubleksi,ERENOĞLU GM'DEN YEŞİLYURT MAH SATILIK 3+1 BAHÇE DUBLEX DAİRE,garden,1,0,1,0,0,detail_and_title,0,,1314938960
+Ara Kat,ERENOĞLU GM'DEN FATİH MAH SATILIK 2+1 ARA KAT DAİRE,none,0,0,0,0,0,none,0,,1313572956
+Çatı Dubleksi,Başiskele Yeşilyurt Mahallesinde 3+1 Çatı Dubleks Ekstralı,roof,1,1,0,0,0,detail_and_title,0,,1328050687
+,DENİZ MANZARALI 2+1 ÇATI DUBLEKS | YEŞİLYURT MAHALLESİ,roof,1,1,0,0,0,title,0,,1312780417
+Dubleks|En Üst Kat|Çatı Dubleksi,Başiskele Fatih de 155 m2 3+1 Çatı Dubleks شقة للبيع في باشيسكيل,roof,1,1,0,0,0,detail_and_title,0,,1322032511
+Dubleks|Çatı Dubleksi,GENİŞ 2+1 ÇATI DUBLEKS DAİRE ŞEHİR VE DENİZ MANZARALI,roof,1,1,0,0,0,detail_and_title,0,,1321287924
+Dubleks,BAŞİSKELE FATİH MAH SIFIR SATILIK 3+1 EYİMSİZ ÇATI DUBLEKS,standard,1,0,0,0,1,conflict_detail_wins,1,conflict detail=standard title=roof,1322150251
+Çatı Dubleksi,SERDAR MH. 3+1 ÇATI DUBLEKS İSKANLI OTURUMA HAZIR,roof,1,1,0,0,0,detail_and_title,0,,1321950540
+Çatı Dubleksi,YEŞİLYURT 3+1 ÇATI DUBLEKS DAİRE MERKEZİ KONUM,roof,1,1,0,0,0,detail_and_title,0,,1316785969
+Çatı Dubleksi,BAŞİSKELE PAŞADAĞ 4+1 PRESTİJLİ TERAS DUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1321775121
+Ara Kat,ERENOĞLU GM'DEN SATILIK MERKEZİ LOKASYONDA 2+1 ARAKAT DAİRE,none,0,0,0,0,0,none,0,,1328043195
+Çatı Dubleksi,BAŞİSKELE TINAZTEPE CADDESİNDE 2+1 EĞİMSİZ ARA DUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1322126977
+Ara Kat,FIRSAT!! ZERAY PERLA 2+1 ARAKAT DOĞA MANZARALI SATILIK DAİRE,none,0,0,0,0,0,none,0,,1297738335
+Ara Kat,ACİL FIRSAT...!! YEŞİLYURT MAH'DE ARA KAT 2+1 SATILIK DAİRE .!!,none,0,0,0,0,0,none,0,,1327993812
+,Akasya Modern Sitede Özel Bahçeli 4+1 Dubleks Önü Kapanmaz,standard,1,0,0,0,1,title,0,,1264766521
+Ara Kat,BAŞİSKELE PAŞADAĞ MAH. FULL DENİZ MANZARALI SİTE İÇERİSİ ARA KAT,none,0,0,0,0,0,none,0,,1327989606
+Çatı Dubleksi,Cb Mahall'den Başiskele Fatih Mah. Satılık 3+1 Çatı Dubleks,roof,1,1,0,0,0,detail_and_title,0,,1307361345
+Çatı Dubleksi,BAŞİSKELE PAŞADAĞ 4+1 SATILIK İÇİ BOŞ DAİRE,roof,1,1,0,0,0,detail,0,,1296917816
+Çatı Dubleksi,Kaçırılmayacak Fırsat! Villa Konforunda 3+1 Dubleks,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1318867214
+Çatı Dubleksi,"Başiskele Paşadağda , Asansörlü Modern 3+1 Çatı Dublex",roof,1,1,0,0,0,detail_and_title,0,,1295420642
+,SATIŞ OFİSİNDEN FATİH MAH. ASANSÖRLÜ 3+1 ÇATI DUBLEKS,roof,1,1,0,0,0,title,0,,1294143997
+Bahçe Dubleksi,"Şehir Merkezinde Bahçeli, 3 Girişli, 2 Master Odalı Dubleks Dair",garden,1,0,1,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1318651810
+Ara Kat,BAŞİSKELE YUVACIK YEŞİLYUT MAH. SATILIK SIFIR 2+1 ARAKAT DAİRE,none,0,0,0,0,0,none,0,,1327924382
+Çatı Dubleksi,"2+1 GENİŞ TERASLI ÇATIDUBLEKS DAİRE, AVM BUCADDE ÜSTÜNDE",roof,1,1,0,0,0,detail_and_title,0,,1296319668
+,4+1 BU FİYATA YOK . 185 M2 YEŞİLYURT MH'DE 2 BAHÇE DUBLEKS DAİRE,garden,1,0,1,0,0,title,0,,1313777917
+Dubleks,"EMİN, FUZUL, KATILIM, SİNPAŞ GYO FİNANS YATIRIMA SATIŞI UYGUNDUR",standard,1,0,0,0,1,detail,0,,1327877264
+Dubleks,BAŞİSKELE DENİZ MANZARALI DUBLEX TERASLI BÜYÜK 4+1 BOŞ DAİRE,standard,1,0,0,0,1,detail_and_title,0,,1316646935
+Ara Kat|Çatı Dubleksi,KOCAELİ BAŞİSKELE'DE 2+1 ÇATI DUBLEKS 4 BALKONLU SATILIK DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1318967659
+Bahçe Dubleksi,BAHÇE KULANIMLI 3+1 BAHÇE DUBLEX ORMAN MANZARALI EŞSİZ DAİRE,garden,1,0,1,0,0,detail_and_title,0,,1316093366
+Çatı Dubleksi,BAŞİSKELE YEŞİLYURT MAHLESİNDE KULANIŞLI 2+1 ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1319913251
+Çatı Dubleksi,BAŞİSKELE BELEDİYE YAKININDA DENİZ MANZARALI 3+1 ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1293423850
+Bahçe Dubleksi,BAŞİSKELE YUVACIK ZERAY GÜNEŞİ SİTESİNDE 3+1 BAHÇE DUBLEKS,garden,1,0,1,0,0,detail_and_title,0,,1327630786
+Bahçe Dubleksi,BAŞİSKELE YUVACIK SUPARK MEGARON SİTESİ'NDE 3+1 BAHÇE DUBLEKS,garden,1,0,1,0,0,detail_and_title,0,,1294516047
+Ters Dubleks,BAŞİSKELE TINAZ TEPEDE 3+1 SATILIK 140 M² DUBLEKS DAİRE,standard,1,0,0,0,1,detail_and_title,0,,1310029861
+Çatı Dubleksi,BAŞİSKELE ZERAY KENT SİTESİNDE SATILIK 2+1 DUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1321797792
+,BAŞİSKELE AKVEN ARMONI TERAS SATILIK BAHÇE DUBLEX,garden,1,0,1,0,0,title,0,,1299610100
+,Ziraat Bankası'ndan Paşadağ Mahallesinde Dubleks Mesken,standard,1,0,0,0,1,title,0,,1316504550
+,BAŞİSKELE FATİH MAHALLESİNDE SATILIK 3+1 BAHÇE DUBLEKS,garden,1,0,1,0,0,title,0,,1327727279
+Çatı Dubleksi,SERDAR MH 3+1 120M² DENİZ MANZARALI ÇATI DUBLEKS SATILIKTIR,roof,1,1,0,0,0,detail_and_title,0,,1327739751
+Çatı Dubleksi,BAŞİSKELE YEŞİLYURT MAH.2+1 ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1321597866
+Çatı Dubleksi,HAVUZLU SİTEDE 3+1 140M² ÇATI DUBLEKS DAİREMİZ SATILIKTIR,roof,1,1,0,0,0,detail_and_title,0,,1327710327
+Çatı Dubleksi,BAŞİSKELE YEŞİLYURT MAHALLESİNDE SATILIK 3+1 ÇATI DUBLEX DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1321723601
+Çatı Dubleksi,BAŞİSKELE TINAZ TEPEDE TED KORLEJİNE YÜRÜME MSFEDE 3+1 DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1321723501
+,BAŞISKELE YEŞILYURT'TA SATILIK ASANSÖRLÜ 3 + 1 DUBLEKS DAIRE,standard,1,0,0,0,1,title,0,,1316065668
+Bahçe Dubleksi,BAŞİSKELE PAŞADAĞDA 2+1 KULLANIŞLI BAHÇE DUBLEKS SIFIR DAİRE,garden,1,0,1,0,0,detail_and_title,0,,1309569340
+,ACİL Yuvacık'ta Villa Konforunda 4+1 Bahçe Dubleks Daire,garden,1,0,1,0,0,title,0,,1313343884
+Ters Dubleks,Serdar Mh. 3+1 Deniz Manzaralı Çatı Dubleks KREDİ SERBEST,standard,1,0,0,0,1,conflict_detail_wins,1,conflict detail=standard title=roof,1316357086
+,Başiskele Yeşilyurt'ta Doğa Manzaralı Lüks 3+1 Çatı Dubleks,roof,1,1,0,0,0,title,0,,1320450682
+Dubleks|En Üst Kat|Çatı Dubleksi,Tarcanlardan Başiskele Yeşilyurt 3+1 Satılık Eğimsiz Ç. Dublex,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1299351409
+,Kocaeli Başiskele Satılık Daire Yuvacık'ta Site İçinde,none,0,0,0,0,0,none,0,,1327639828
+Ara Kat,%1.69 KREDİ İMKÂNIYLA YUVACIK MERKEZ'DE SATILIK LÜKS 2+1 DAİRE,none,0,0,0,0,0,none,0,,1327580501
+Dubleks|En Üst Kat|Çatı Dubleksi,Yeşilyurt Başiskele'de Satılık 2+1 Çatı Dubleks Deniz Manzaralı,roof,1,1,0,0,0,detail_and_title,0,,1324676483
+Dubleks,YEŞİLYURT MAH. MÜKEMMEL LOKASYONDA 3+1 SATILIK DUBLEKS DAİRE,standard,1,0,0,0,1,detail_and_title,0,,1321553299
+,YEŞİLYURT MAHALLESİNDE SATILIK TERASLI 2+1 ÇATI DUBLEKS,roof,1,1,0,0,0,title,0,,1321561956
+Bahçe Dubleksi,YATIRIM VE OTURUM İÇİN KAÇIRILMAYACAK 2+1 BAHÇE DUBLEKS,garden,1,0,1,0,0,detail_and_title,0,,1327570541
+Çatı Dubleksi,BAŞİSKELE YEŞİLYURT MAH SİTE İÇİ 3+1 ÇATIDUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1327548752
+Çatı Dubleksi,Attichouse'tan Deniz Manzaralı Satılık 4+1 Çatı Dubleks Daire,roof,1,1,0,0,0,detail_and_title,0,,1304660210
+Dubleks,BAŞİSKELE TINAZ TEPEDE KULANIŞLI 2+1 ÇATI DUBLEKS FERAH TERASLI,standard,1,0,0,0,1,conflict_detail_wins,1,conflict detail=standard title=roof,1303872254
+Bahçe Dubleksi,BAŞİSKELE YEŞİLYURT MAH.2+1 BAHÇE DUBLEKS DAiRE,garden,1,0,1,0,0,detail_and_title,0,,1325530039
+,SINIRSIZ KREDI IMKANI 3 + 1 ASANSÖRLÜ ÇATI DUBLEKS,roof,1,1,0,0,0,title,0,,1320300245
+,BAŞİSKELE YUVACIK FATİH MAHALLESİN'de 3+1 EĞİMSİZ ÇATI DUBLEKS,roof,1,1,0,0,0,title,0,,1321453587
+,SINIRSIZ KREDİ İMKANLI 3+1 BAHÇE DUBLEKS,garden,1,0,1,0,0,title,0,,1320628821
+Bahçe Dubleksi,AZİZE EVLERİNDE SATILIK 3+1 BAHÇE DUBLEKS DAİRE,garden,1,0,1,0,0,detail_and_title,0,,1321495135
+,BAŞİSKELE YEŞİLYURT MAH'DE SATILIK 3+1 BAHÇE DUBLEKS,garden,1,0,1,0,0,title,0,,1291472930
+Bahçe Dubleksi,DERİN'DEN ZERAY PERLA'DA ÖZEL BAHÇE KULLANIMLI 3+1 DUBLEKS DAİRE,garden,1,0,1,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1295381901
+Bahçe Dubleksi,BAŞİSKELE YUVACIK MERKEZ DE SATILIK 3+1 BAHÇE DUBLEKS DAİRE,garden,1,0,1,0,0,detail_and_title,0,,1327494780
+Dubleks|Bahçe Dubleksi,HAVUZLU GÜVENLİKLİ SİTEDE 100M2 BAHÇE KULANIMLI DUBLEX DAİRE,garden,1,0,1,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1327361323
+Çatı Dubleksi,BAŞİSKELE SERDAR MAH. ASANSÖRLÜ EĞİMSiZ 3+1 ÇATI DUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1321354540
+,Başiskele Paşadağ'da Eğimsiz 2+1 AraDubleks Daire,none,0,0,0,0,0,none,0,,1320453500
+Çatı Dubleksi,BAŞİSKELE AYDINKENT SATILIK 3+1 ÇATI DUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1327282500
+,"5 + 2 çatı dubleks , Deniz manzaralı",roof,1,1,0,0,0,title,0,,1315704275
+Çatı Dubleksi,KW.ARVEN G.Y.DEN BAŞİSKELE SERDAR DA SATILIK 3+1 DUBLEKS DAİRE..,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1321238025
+Çatı Dubleksi,BAŞİSKELE YEŞİLYURT MERKEZ'DE ULTRA LÜKS 3+1 TERAS DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1324422116
+Bahçe Dubleksi,BAŞİSKELE YUVACIK SİTE İÇİ 3+1 SATILIK GENİŞ BAHÇE DUBLEKS DAİRE,garden,1,0,1,0,0,detail_and_title,0,,1269675049
+Ters Dubleks,BAŞİSKELE YEŞİLYURT'TA 3+1 SATILIK BAHÇE DUBLEKS,standard,1,0,0,0,1,conflict_detail_wins,1,conflict detail=standard title=garden,1310267707
+Bahçe Dubleksi,RE/MAX MYRA'DAN VİLLA TADINADA 4+1 BAÇE DUBLEKS 5 BANYOLU,garden,1,0,1,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1324414221
+Ters Dubleks,LİFESİDE SİTESİNDE MUHTEŞEM KONUMDA SATILIK 3+1 DUBLEKS DAİRE,standard,1,0,0,0,1,detail_and_title,0,,1309595018
+Çatı Dubleksi,CB Envoy'dan Yeşilyurt Mahallesi'nde Geniş 2+1 Çatı Dubleks,roof,1,1,0,0,0,detail_and_title,0,,1316038795
+Bahçe Dubleksi,YEŞİLYURT MAH. ASANSÖRLÜ 3+1 BAHÇE DUBLEKS LÜKS DAİRE,garden,1,0,1,0,0,detail_and_title,0,,1281338787
+Dubleks|En Üst Kat|Çatı Dubleksi,DENİZ MANZARASIYLA AYRICALIKLI YAŞAM! YEŞİLYURTTA 4+1 DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1298583671
+,BAŞİSKELE YEŞİLYURT'DA EBEVYN BANYOLU 3+1 SATILIK BAHÇE DUBLEKS,garden,1,0,1,0,0,title,0,,1327331514
+Bahçe Dubleksi,Yuvacık'ta Deniz Manzaralı Bahçeli 3+1 Dubleks,garden,1,0,1,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1327317786
+Çatı Dubleksi,BAŞISKELE YEŞİLYURT MERKEZ ULTRA LÜKS GENİŞ 3+1 TERAS DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1324371637
+Bahçe Dubleksi,BAŞİSKELE'DE HAVUZLU SİTE İÇİ SIFIR 3+1 ÇATI DUBLEKS DAİRE,garden,1,0,1,0,0,conflict_detail_wins,1,conflict detail=garden title=roof,1309993677
+Dubleks|Çatı Dubleksi,BAŞİSKELE FATİH MAHALLESİ SIFIR BİR AYA TESLİM SATILIK DAİRE,roof,1,1,0,0,0,detail,0,,1327275697
+Çatı Dubleksi,RİBANKTAN SATILIK 3+1 ÇATI DUBLEKS 165 M2 LÜKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1321238618
+,ALAN PANORAMA 1.ETAPTA SATILIK 4+1 ÇATI DUBLEKS DAİRE,roof,1,1,0,0,0,title,0,,1321056327
+Bahçe Dubleksi,LOFT GROUP GM'DEN YEŞİLYURT'TA 4+2 MÜSTAKİL BAHÇELİ DUBLEKS,garden,1,0,1,0,0,detail_and_title,0,,1321139992
+Bahçe Dubleksi,MERKEZİ KONUMDA DUBLEKS DAİRE,garden,1,0,1,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1310215736
+,BAŞİSKELE FATİH MAHALLESİN'DE 4+1 EBEVYN BANYOLU ÇATI DUBLEKS,roof,1,1,0,0,0,title,0,,1315915515
+,SUPARK MEGARON EVLERİNDE BAHÇE DUBLEX,garden,1,0,1,0,0,title,0,,1274202447
+,KOCAELİ BAŞİSKELE YUVACIK SATILIK 4+1 ÇATI DUBLEKS DAİRE,roof,1,1,0,0,0,title,0,,1315909815
+,YUVACIKTA OTURMAYA HAZIR OKUL YANI CADDE ÜZERİ 210m2 DUBLEKS,standard,1,0,0,0,1,title,0,,1315849709
+,MERKEZİ KONUM | 2+1 EĞİMSİZ DUBLEKS | İSKAN ALINDI | BÜYÜK TERAS,standard,1,0,0,0,1,title,0,,1320780307
+Bahçe Dubleksi,Başiskele Yeşilyurt mahallesinde 2+1 bahçe dubleks,garden,1,0,1,0,0,detail_and_title,0,,1327079526
+,BAHÇE KULLANIM HAKLI 4+1 BAHÇE DUBLEKS BU HAFTAYA ÖZEL FİYAT,garden,1,0,1,0,0,title,0,,1315419419
+Dubleks,TANYILDIZ'DAN BAŞISKELE FATIH MH 3+1 SATILIK 0 DUBLEKS,standard,1,0,0,0,1,detail_and_title,0,,1298938490
+Ara Kat|Çatı Dubleksi,BAŞİSKELE YEŞİLYURT'TA SATILIK 2+1 ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1315739813
+Dubleks|Bahçe Dubleksi|Ters Dubleks,bahçe kullanımla bahçe dubleksi,garden,1,0,1,0,0,detail_and_title,0,,1327008241
+,KW ARVEN'den FATİH MAH.de 4 MİLYON KREDİ İMKANI 3+1 BAHÇE DUBLEX,garden,1,0,1,0,0,title,0,,1318514021
+Çatı Dubleksi,YUVACIK FATİH MAHALLESİNDE SATILIK 3+1 ÇATI DUBLEKS SIFIR DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1309477215
+Dubleks|En Üst Kat|Çatı Dubleksi,EMLAKÇIM41'DE BAŞİSKELE/ FATİH MH.DE MANZARALI GENİŞ 2+1 DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1326889729
+Ara Kat|Çatı Dubleksi,Yeşilyurt'ta 3+1 Satılık Çatı Dubleks,roof,1,1,0,0,0,detail_and_title,0,,1315726202
+Dubleks|Çatı Dubleksi,BAŞİSKELE YEŞİLYURT MAH. SATILIK 2+1 ÇATI DUBLEKS SIFIR DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1269129972
+,YAPI SAHİBİNDEN SIFIR DUBLEX 3*1 ANAHTAR TESLİM,standard,1,0,0,0,1,title,0,,1317968908
+Çatı Dubleksi,BAŞİSKELE YUVACIK MERKEZ FIRSAT 3+1 GENİŞ EĞİMSİZ ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1302367370
+,BAŞİSKELE FATİH'TE 3+1 İSKANI ALINMIŞ ÇATI DUBLEX DAİRE,roof,1,1,0,0,0,title,0,,1278275257
+,"Deniz Manzaralı, Büyük Bahçeli 3+1 Satılık Daire",none,0,0,0,0,0,none,0,,1326853523
+,FULL DENİZ MANZARALI 3+1 ÇATI DUBLEX,roof,1,1,0,0,0,title,0,,1314650304
+Bahçe Dubleksi,BAŞİSKELE YEŞİLYURT'TA MUHTEŞEM 4+1 210M2 SATILIK BAHÇE DUBLEKS.,garden,1,0,1,0,0,detail_and_title,0,,1315664123
+Çatı Dubleksi,BAŞİSKELE YEŞİLYURT MAH.3+1 ÇATI DUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1315480618
+Bahçe Dubleksi,BAŞİSKELE YEŞİLYURT MAH.3+1 BAHÇE DUBLEKS GENİŞ BAHÇE KULLANIMLI,garden,1,0,1,0,0,detail_and_title,0,,1315478777
+Çatı Dubleksi,SERDAR MAHALLESİ'NDE 3+1 EĞİMSİZ ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1315567040
+Bahçe Dubleksi,BAŞİSKELE ZERAY KENT'TE SATILIK 4+1 BAHÇE DUBLEKS DAİRE,garden,1,0,1,0,0,detail_and_title,0,,1315610624
+Dubleks,Başiskele 3+1 dublex daire,standard,1,0,0,0,1,detail_and_title,0,,1169855282
+Dubleks|En Üst Kat|Çatı Dubleksi,BAŞİSKELE'DE DENİZ MANZARALI 3+1 EĞİMSİZ DUBLEKS SATILIK DAİRE,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1318800974
+Çatı Dubleksi,BAŞİSKELE YEŞİLYURT MAH. SATILIK 105 M2 ÇATI DUBLEX 2+1,roof,1,1,0,0,0,detail_and_title,0,,1315560898
+Dubleks,SON RAKAM BAŞİSKELE YUVACIK FATİH MAH'de 4+1 SATILIK DUBLEKS,standard,1,0,0,0,1,detail_and_title,0,,1315431725
+,Başiskele KarpayLifeCenter'da 3+1 Havuzlu Bahçe Dubleksi Daire,garden,1,0,1,0,0,title,0,,1320425746
+En Üst Kat|Çatı Dubleksi,BAŞİSKELE'DE DENİZ VE DOĞA MANZARALI SATILIK ÇATIDUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1156905454
+Çatı Dubleksi,RİBANKTAN BELEDİYEYE YAKIN SATILIK 3+1 EĞİMSİZ Ç.DUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1315359279
+Çatı Dubleksi,RİBANKTAN SATILIK 2+1 ÇATI DUBLEKS DENİZ MANZARALI SIFIR DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1279731409
+,YEŞİLYURT MAH. OTURUMA HAZIR 2+1 SATILIK ARKA ÇATI DUBLEKS,roof,1,1,0,0,0,title,0,,1303615064
+Dubleks|Bahçe Dubleksi,BAŞİSKELE FATİH MAHALLESİNDE SATILIK SİTE İÇİ 3+1 BAHÇE DUBLEKS,garden,1,0,1,0,0,detail_and_title,0,,1326477846
+Çatı Dubleksi,YEŞİLYURT MAH. EBEVEYN BANYOLU SATILIK 2+1 EĞİMSİZ ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1298136149
+Dubleks|En Üst Kat|Çatı Dubleksi,SERDAR MAHALLESİNDE SATILIK EĞİMSİZ 3+1 ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1315222866
+Çatı Dubleksi,YEŞİLYURT MAH. SATILIK 135 M2 2+1 EĞİMSİZ ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1313944453
+,BAŞİSKELE FATİH MAHALLESİ 110 M2 2+1 ÇATI DÜBLEKS HAVUZLU SİTE,roof,1,1,0,0,0,title,0,,1326409466
+Çatı Dubleksi,Başiskele Zeray Kent Sitesinde Satılık 3+1 Çatı Dubleks,roof,1,1,0,0,0,detail_and_title,0,,1315248100
+Bahçe Dubleksi,Başiskele Yeşilyurt Satılık Kredi'ye Uygun 3+1 BahçeDubleks,garden,1,0,1,0,0,detail_and_title,0,,1326398384
+Ara Kat,BAŞİSKELE YUVACIK'TA SATILIK DENİZ MANZARALI 3+1 DUBLEKS DAİRE,standard,1,0,0,0,1,title,0,,1320280016
+Çatı Dubleksi,YEŞİLYURT'TA DENİZ MANZARALI 3+1 ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1315159132
+Dubleks|Çatı Dubleksi,Başiskele Paşadağ'da Yüksek Kredili 3+1 140 m² Dubleks Daire,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1314990257
+Çatı Dubleksi,Başikele Paşadağ'da 3+1 Çatı Dubleks Daire,roof,1,1,0,0,0,detail_and_title,0,,1309161078
+En Üst Kat|Çatı Dubleksi,PAŞADAĞ MH 2+1 SATILIK ÇATI DUBLEKS DOĞA MANZARALI,roof,1,1,0,0,0,detail_and_title,0,,1292137095
+Bahçe Dubleksi,"YEŞİLYURT'TA 4+1, 2 BAHÇE DUBLEKS 185M2 NET SIFIR DAİRE",garden,1,0,1,0,0,detail_and_title,0,,1320308654
+,BAŞİSKELE YEŞİLYURTTA SIFIR 3+1 EĞİMSİZ ÇATI DUBLEKS,roof,1,1,0,0,0,title,0,,1326328697
+Çatı Dubleksi,Başiskele Paşadağ'da Butik Sitede Sıfır 4+1 Çatı Dubleks,roof,1,1,0,0,0,detail_and_title,0,,1326272332
+Dubleks|En Üst Kat|Çatı Dubleksi,BAŞISKELE YEŞILYURT DENIZ GÖREN 3+1 EĞİMSİZ BETON ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1320026055
+Çatı Dubleksi,Başiskele Zeraykent Dublex Daire,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1308716831
+En Üst Kat,BAŞİSKELE TINAZTEPE DE 3+1 ÇATI DUBLEXS SATILIK DAİRE,roof,1,1,0,0,0,title,0,,1326082184
+Bahçe Dubleksi,YÜKSEK KREDİ İMKANLI YEŞİLYURT MAH 180M2 4+1 BAHÇE D. DAİRE,garden,1,0,1,0,0,detail,0,,1314943054
+Çatı Dubleksi,BAŞISKELE YEŞILYURT MAH.3+1 ÇATI DUBLEKS. GENİŞ TERASLI,roof,1,1,0,0,0,detail_and_title,0,,1314507870
+,ROYAL COUNTRY DE SATILIK 3+1 DENİZ MANZARALI LÜX DUBLEKS DAİRE,standard,1,0,0,0,1,title,0,,1305199767
+Bahçe Dubleksi,BAŞİSKELE YEŞİLYURT MAH. SATILIK 2+1 LÜX BAHÇE DUBLEX DAİRE,garden,1,0,1,0,0,detail_and_title,0,,1238673387
+Bahçe Dubleksi,THE GATE EMLAK'tan Yuvacıkta satılık 4+1 Bahçe Dubleks Daire,garden,1,0,1,0,0,detail_and_title,0,,1297079908
+Çatı Dubleksi,YUVACIK VADİ PARKI KARŞISI-İSKANI ALINMIŞ-ASANSÖRLÜ 3+1 DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1326092494
+Çatı Dubleksi,BAŞİSKELE YEŞİLYURT MAH. SATILIK 2+1 DENİZ MAN. EĞİMSİZ DUBLEX,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1238672114
+Ara Kat,ESKİDJİden ZERAY GÜNEŞİNDE DOĞA MANZARALI ARA KAT GENİŞ 1+1,none,0,0,0,0,0,none,0,,1314405280
+En Üst Kat|Çatı Dubleksi,BAŞİSKELE FATİH MH 3+1 ÇATI DUBLEKS KREDİYE UYGUN,roof,1,1,0,0,0,detail_and_title,0,,1244012731
+En Üst Kat|Çatı Dubleksi,BAŞİSKELE YEŞİLYURT MAHALLESİNDE SATILIK 3+1 ÇATI DUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1303490301
+,BAŞİSKELE TINAZTEPEDE 4+1 200m2 BAHÇE DUBLEKS,garden,1,0,1,0,0,title,0,,1325971262
+Bahçe Dubleksi,BAŞİSKELE YEŞİLYURT MAH. ULTRA LÜX YAPILI 3+1 BAHÇE DUBLEX,garden,1,0,1,0,0,detail_and_title,0,,1319895654
+Çatı Dubleksi,END'DEN YUVACIK FATİH MAHALLESİNDE SATILIK 2+1 DUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1325961336
+Dubleks|Çatı Dubleksi,BAŞİSKELE YEŞİLYURT'TA MERKEZİ KONUMDA SATILIK 3+1 DUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1325833426
+Bahçe Dubleksi,SATILIK BAHÇE DUBLEKS 4+1 DAİRE,garden,1,0,1,0,0,detail_and_title,0,,1308882684
+Ara Kat|Çatı Dubleksi,SERDAR MAHALLESİNDE SATILIK ÇATIDUPLEKS FERAH BİR DAİRE,roof,1,1,0,0,0,detail,0,,1319842150
+Çatı Dubleksi,BAŞİSKELE FATİH MAH. LÜX 3+1 ÇATI DUBLEX DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1308868300
+Çatı Dubleksi,ELİZLER EMLAK'TAN SERDAR MH 3+1 160M² Ç.DUBLEKS DAİREMİZ SATILIK,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1297784649
+,BAŞİSKELE FATİH MAH.TINAZTEPE 2+1 SATILIK ARA ÇATI DUBLEKS,roof,1,1,0,0,0,title,0,,1319681077
+,Satılık Bahçe Dubleks 3+1 Havuzlu Site,garden,1,0,1,0,0,title,0,,1319658346
+Dubleks|Çatı Dubleksi,Deniz ve Doğa manzaralı ebeveyn banyolu 4+1 catı dubleks,roof,1,1,0,0,0,detail_and_title,0,,1155421373
+Ara Kat Dubleks,FIRSAT ARAKAT DUBLEX DAİRE,middle_floor,1,0,0,1,0,detail_and_title,0,title_generic_confirms_detail_subtype,1325777804
+En Üst Kat|Çatı Dubleksi,FIRSAT DAİRE FİYAT DÜŞTÜ 2+1 A.MUTFAK ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1314508605
+Çatı Dubleksi,BAŞİSKELENİN EN PRESTİJLİ LOKASYONU PAŞADAĞDA SATILIK ÇATIDUBLEX,roof,1,1,0,0,0,detail_and_title,0,,1325518308
+Bahçe Dubleksi,YEŞİLYURT'TA 4+1 BAHÇE DUBLEKS ACİL SATILIK,garden,1,0,1,0,0,detail_and_title,0,,1312900249
+Bahçe Dubleksi,SÜRELİ FIRSAT BAŞİSKELE ASRIN EV. SATILIK DENİZ MAN 2+1 BAH. DUB,garden,1,0,1,0,0,detail,0,,1308569312
+Çatı Dubleksi,ACİL SATILIK ListingPortal Deniz Manzaralı Dublex Daire,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1319445368
+,EKOMAXTAN BAŞİSKELE F MAH DE 3+1 ARA DUBLEKS,standard,1,0,0,0,1,title,0,,1313835754
+Bahçe Dubleksi,YÜKSEK KREDİ İMKANI SİTE İÇİ 4+1 BAHÇE DUBLEKS HAVUZLU ASANSÖR,garden,1,0,1,0,0,detail_and_title,0,,1325513830
+Dubleks|Bahçe Dubleksi,BAŞİSKELE YEŞİLYURT'TA SATILIK 3+1 BAHÇE DUBLEKS DAİRE,garden,1,0,1,0,0,detail_and_title,0,,1254949952
+Ters Dubleks,Eminevime ve Krediye Uygun Yeşilyurt Mah. 3+1 Ters Dubleks,standard,1,0,0,0,1,detail_and_title,0,,1325469440
+,SAHİBİNDEN SATILIK DENİZ MANZARALI 2+1 ÇATI DUBLEXS,roof,1,1,0,0,0,title,0,,1325333480
+Ara Kat|Çatı Dubleksi,GÜNCEL ! EMAR DELUX YUVACIK 3+1 TERAS DUBLEKS FOR SALE,roof,1,1,0,0,0,detail_and_title,0,,1325322314
+Ara Kat|Çatı Dubleksi,ACİL!!!ZERAY PERLA SİTESİNDE SATILIK 3+1 DUBLEKS FIRSAT DAİRE,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1264489423
+Çatı Dubleksi,PERLA'DA KAÇIRILMAYACAK 3+1 ÇATI DUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1265326135
+Dubleks,TANTA EMLAK'TAN FATİH MAH.DE 3+1 DENİZ VE DOĞA MANZARALI DUBLEKS,standard,1,0,0,0,1,detail_and_title,0,,1325264715
+Dubleks,YEŞİLYURT MAH 170 M2 3+1 FERAH TAM DONANIMLI EĞİMSİZ ÇATI DUBLEX,standard,1,0,0,0,1,conflict_detail_wins,1,conflict detail=standard title=roof,1325169377
+Dubleks|Çatı Dubleksi,YEŞİLYURT MAHALLESİ'NDE DENİZ MANZARALI MUHTEŞEM ÇATI DUBLEKSİ,roof,1,1,0,0,0,detail_and_title,0,,1325138943
+Dubleks|Çatı Dubleksi,BAŞİSKELE PAŞADAĞDA YUVANA SİTESİNE KOMŞU 3+1 DUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1302275920
+Çatı Dubleksi,BAŞİSKELE ORKA BOUTIQUE TE SATILIK SIFIR 4+1 ÇATI DUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1142198929
+Dubleks|En Üst Kat|Ara Kat|Çatı Dubleksi,FATİH MAHALLESİNDE EMİNEVİME UYGUN GENİŞ 2+1 ÇATI DUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1325020732
+Çatı Dubleksi,Tınaztepe 3+1 Sıfır Dubleks DilekErcan RE/MAXÇAKRA,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1307110645
+Dubleks,"Kocaeli'de Geniş Teraslı, Modern ve Satılık Dubleks Daire",standard,1,0,0,0,1,detail_and_title,0,,1324936376
+Bahçe Dubleksi,BAŞİSKELE YEŞİLYURT MAH.SATILIK 4+1 BAHÇE DUBLEKS DAİRE 180 M2,garden,1,0,1,0,0,detail_and_title,0,,1290404754
+Dubleks|En Üst Kat|Ara Kat|Ara Kat Dubleks|Bahçe Dubleksi|Çatı Dubleksi|Forleks|Ters Dubleks|Tripleks,ORKA BOUTIQUE FIRSAT 3+1 DUBLEKS DOĞA VE HAVUZ MANZARALI,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1285061922
+Dubleks,ERENOĞLU GM'DEN SATILIK YÜKSEK KREDİLİ 3+1 ÇATI DUBLEKS DAİRE,standard,1,0,0,0,1,conflict_detail_wins,1,conflict detail=standard title=roof,1307206586
+Bahçe Dubleksi,BAŞİSKELE YEŞİLYURT MAH.SATILIK 3+1 BAHÇE DUBLEKS DAİRE,garden,1,0,1,0,0,detail_and_title,0,,1289708069
+Çatı Dubleksi,YEŞİLYURT MAH 150 M2 ÖNÜ KAPANMAZ DENİZ MANZARALI 3+1 ÇATI D.,roof,1,1,0,0,0,detail,0,,1313550480
+Çatı Dubleksi,BAŞİSKELE SERDAR MAH. SATILIK 1+1 DUBLEKS ASANSÖRLÜ DAİRE,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1324793898
+,ZERAY KORUPARK'ta 3+1 164 m2 ÇATI DUBLEKSİ,roof,1,1,0,0,0,title,0,,1324770092
+Bahçe Dubleksi,Bol manzaralı bahçe dublex,garden,1,0,1,0,0,detail_and_title,0,,1292874003
+,"Baṣiskele , Yeṣilyurt mah , Bahçe dubleks , 180 metre kare",garden,1,0,1,0,0,title,0,,1313167432
+Çatı Dubleksi,BAŞİSKELEDE 4+1 ÇATI DUBLEKS 160m2 FIRSAT DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1324709100
+Çatı Dubleksi,(FIRSAT!!!) DENİZ MANZARALI 3+1 SIFIR ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1307376027
+Çatı Dubleksi,YEŞİLYURTTA SATILIK 2+1 Ç.DUBLEKS ASANSÖRLÜ LÜKS SIFIR DAİRE,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1313365725
+Çatı Dubleksi,"Fatih Mah'de Önü Kapanmaz Manzara, Yerden Isıtma 3+1 Çatı Duble",roof,1,1,0,0,0,detail,0,,1318891520
+Çatı Dubleksi,FATİH MH. 3+1 ÇATI DUBLEKS DAİRE OTURUMA HAZIR İSKANLI,roof,1,1,0,0,0,detail_and_title,0,,1318889430
+,Başiskele Yeşilyurt mh. Satılık 3+1 Bahçe Dubleks Daire,garden,1,0,1,0,0,title,0,,1324413554
+Çatı Dubleksi,BAŞİSKELE ORKA BOUTIQUE TE SATILIK SIFIR 4+1 ÇATI DUBLEKS DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1190665407
+Ters Dubleks,SAHİBİNDEN VADİ YUVACIK SİTE İÇİNDE 3+1 BAHÇE DUBLEKS (TAKASLI),standard,1,0,0,0,1,conflict_detail_wins,1,conflict detail=standard title=garden,1313189386
+Bahçe Dubleksi,BAŞİSKELE 2+1 BAHÇE DUBLEX HAVUZLU GENİŞ KULANIŞLI DAİRE,garden,1,0,1,0,0,detail_and_title,0,,1324372679
+,BAŞİSKELE MERKEZİ KONUM BAHÇELİ 3+1 BAHÇE DUBLEKS,garden,1,0,1,0,0,title,0,,1324397181
+Çatı Dubleksi,YEŞİLYURT MAHALLESİNDE SATILIK 3+1 ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1289888125
+,"Havuzlu sitede, deniz ve doğa manzaralı özel dubleks daire",standard,1,0,0,0,1,title,0,,1324313063
+Bahçe Dubleksi,SİTEDE BAHÇELİ GENİŞ 3+1 BAHÇE DUBLEKSİ FOR SALE,garden,1,0,1,0,0,detail_and_title,0,,1323982933
+Çatı Dubleksi,BAŞİSKELE MERKEZ DÖNGEL 3+1 ÇATI DUBLEKS 165 M2 SİTE İÇİ,roof,1,1,0,0,0,detail_and_title,0,,1271815159
+Çatı Dubleksi,BAŞİSKELE DÖNGEL MAH. DENİZ MANZARALI 4+1 ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1329877571
+,Başiskelede 3+1Çatı Dubleks Manzara Konfor Güven Bir Arada!,roof,1,1,0,0,0,title,0,,1277984425
+,SAHİBİNDEN SATILIK,none,0,0,0,0,0,none,0,,1329525793
+,"Sitenin En Güzeli, Yapılı, Masrafsız",none,0,0,0,0,0,none,0,,1329324426
+,SAHİBİNDEN TÜM ODALAR DENİZ VE HAVUZ MANZARALI,none,0,0,0,0,0,none,0,,1329291766
+Bahçe Dubleksi,END'DEN BAŞİSKLE DAMLAR 2+1 DUBLEKS SATILIK DAİRE,garden,1,0,1,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1317804165
+,DÖNGELDE SİTE İÇERİSİNDE ASANSÖRLÜ 3+1 EĞİMSİZ ÇATI DUBLEKS,roof,1,1,0,0,0,title,0,,1323035743
+Çatı Dubleksi,Tarcanlardan Başiskelede Satılık 3+1 Daire,roof,1,1,0,0,0,detail,0,,1317560704
+,BAŞİSKELE DÖNGELDE 2+1 ÇATI DUBLEKS,roof,1,1,0,0,0,title,0,,1328763711
+Bahçe Dubleksi,Başiskele Döngel'de Deniz Manzaralı 4+1 Bahçe Dubleks,garden,1,0,1,0,0,detail_and_title,0,,1313980718
+Ara Kat,ListingPortal 2+1 Arakat Yeniköy Kirazlıkent'te Daire,none,0,0,0,0,0,none,0,,1311329885
+,ACİLLLL . BAŞİSKELE DÖNGELDE DREM GARDEN SİTESİNDE BAHCE DUBLEX,garden,1,0,1,0,0,title,0,,1325665770
+Bahçe Dubleksi,BAŞİSKELE DÖNGEL BARBAROS MAHALLESİ SINIRINDA 2+1 BAHÇE DUBLEKSİ,garden,1,0,1,0,0,detail_and_title,0,,1328593714
+Ara Kat,BAŞİSKELEDE LEON SUITES'TE SATILIK SIFIR 2+1 DAİRE HAVUZLU SİTE,none,0,0,0,0,0,none,0,,1328515441
+Ara Kat Dubleks,ASİL GROUPTAN BAŞİSKELE DÖNGEL MAH 3+1 ÇATI DUBLEKS,middle_floor,1,0,0,1,0,conflict_detail_wins,1,conflict detail=middle_floor title=roof,1322345258
+Dubleks|En Üst Kat|Ara Kat|Ara Kat Dubleks|Bahçe Dubleksi|Çatı Dubleksi|Ters Dubleks|Tripleks,BAŞİSKELEDE PREJTİJLİ PROJE SON 2 ÇATI DUBLEKS 2+1 SATILIK DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1305369124
+Ara Kat,BAŞİSKELE DÖNGELDE SATILIK 3+1 BAHÇE DUBLEKSİ,garden,1,0,1,0,0,title,0,,1328415285
+,Ziraat Bankası'ndan Döngel Mahallesinde Dubleks Mesken,standard,1,0,0,0,1,title,0,,1294518218
+Ara Kat,RW Nova'dan Oluklu life Sit. Satılık 3+1 Arakat Ebeveyn Banyolu,none,0,0,0,0,0,none,0,,1328388907
+Ara Kat,DENİZ MANZARALI ARAKAT 3+1 SIFIR DAİRE,none,0,0,0,0,0,none,0,,1288042140
+,Harika konum da son 3+1 fırsat daire için hemen arayın,none,0,0,0,0,0,none,0,,1328306010
+Ara Kat,BAŞİSKELE DÖNGEL DE 3+1 SATILIK DAİRE,none,0,0,0,0,0,none,0,,1328288707
+,DÖNGEL MAH. VİLLA TADINDA 3+1 BAHÇE DUBLEKS,garden,1,0,1,0,0,title,0,,1283255123
+Bahçe Dubleksi,TUAL'DEN ELİT KENTİN EN UYGUN 3+1 BAHÇE KATI DAİRESİ,garden,1,0,1,0,0,detail,0,,1314890134
+Çatı Dubleksi,Başiskele Merkezde Satılık 4+1 Çatı Dubleks | Asansörlü,roof,1,1,0,0,0,detail_and_title,0,,1316839463
+Ara Kat|Çatı Dubleksi,BAŞİSKELENİN KALBİ KARŞIYAYA DÖNGEL MEVKİİNDE Ç.DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1312062284
+,Tarcanlardan Satılık Döngel'De Asansörlü Deniz Manzaralı Dubleks,standard,1,0,0,0,1,title,0,,1310821347
+Ara Kat Dubleks,ASİL GROUPTAN DÖNGEL MAH.'DE 3+1 ARA DUBLEKS,middle_floor,1,0,0,1,0,detail_and_title,0,title_generic_confirms_detail_subtype,1321922090
+Dubleks|Çatı Dubleksi,BAŞİSKELE OLUKLU LIFE SİTESİNDE MODERN YAPILI 2+1 ÇATI DUBLEKS,roof,1,1,0,0,0,detail_and_title,0,,1322024373
+,BAŞİSKELE DÖNGEL MH. 3+1 DUBLEKS SATILIK DAİRE,standard,1,0,0,0,1,title,0,,1327876113
+Bahçe Dubleksi,Haura Bahçe'de Satılık 2+1 Bahçe Dubleks Daire,garden,1,0,1,0,0,detail_and_title,0,,1282634581
+Çatı Dubleksi,My Yaka Sitesi'nde Satılık 3+1 Çatı Dubleks Daire,roof,1,1,0,0,0,detail_and_title,0,,1321911180
+Çatı Dubleksi,BAŞİSKELE SAHİL MAH.SATILIK DENİZ MAN.ÇATI DUBLEKS SIFIR DAİRE,roof,1,1,0,0,0,detail_and_title,0,,1321669991
+Dubleks|Bahçe Dubleksi,Basiskele Dongelde Genis 3+1 Bahce Dubleks,garden,1,0,1,0,0,detail_and_title,0,,1327636291
+Bahçe Dubleksi,Tarcanlar'dan Satılık Döngelde Modern Lüks 183Metre BahçeDubleks,garden,1,0,1,0,0,detail_and_title,0,,1276419918
+Çatı Dubleksi,ÇATI DUBLEKSİ,roof,1,1,0,0,0,detail_and_title,0,,1111409910
+,SINIRSIZ KREDİLİ SAHİBNDEN 160m 2+1 GENİŞ BAHÇE DUBLEX,garden,1,0,1,0,0,title,0,,1316157192
+Çatı Dubleksi,Döngel'de Deniz Manzarali Luks 3+1 Geniş Çatı Dubleks,roof,1,1,0,0,0,detail_and_title,0,,1327435317
+Bahçe Dubleksi,Yüz Yapı'dan Modern Mimarili 3+1 Bahçe Dubleksi,garden,1,0,1,0,0,detail_and_title,0,,1327305560
+Çatı Dubleksi,Yüz Yapı'dan Deniz ve Vadi Manzaralı Lüks 4+1 Çatı Dubleksi,roof,1,1,0,0,0,detail_and_title,0,,1327133300
+Bahçe Dubleksi,BAŞİSKELE DÖNGEL MAH. SATILIK 3+1 BAHÇE DUBLEKS DAİRE,garden,1,0,1,0,0,detail_and_title,0,,1306647260
+,TAMAMI KREDİLİ SAHİBİNDEN 160 m 2+1 YÜKSEK GİRİŞLİ BAHÇE DUBLEX,garden,1,0,1,0,0,title,0,,1316151663
+,SIFIR DENİZ MANZARALI VİLLA TADINDA 3+1 BAHÇE KATI,none,0,0,0,0,0,none,0,,1320515623
+Dubleks|Bahçe Dubleksi,BAŞİSKELE / DAMLAR / VİLLA NİTELİKLİ/ 4+1/ÖZEL BAHÇELİ DUBLEKS,garden,1,0,1,0,0,detail_and_title,0,,1304168229
+,ÇELİK-AY GAYRİMENKUL'DEN SATILIK 3+1 ÇATI DUBLEKS DAİRE,roof,1,1,0,0,0,title,0,,1326768783
+,BAŞİSKELE 3+1 SIFIR DUBLEKS ÇATI EĞİMSİZ ÖN CEPHE MİLLET BAHÇESİ,standard,1,0,0,0,1,title,0,,1315278629
+Bahçe Dubleksi,DÖNGEL MAH.SATILIK İSKANLI GENİŞ SIFIR 5+1 B.DUBLEKSİ DAİRE,garden,1,0,1,0,0,detail_and_title,0,title_generic_confirms_detail_subtype,1303839903
+Çatı Dubleksi,Başiskele Döngel'de Deniz Manzaralı Satılık 3+1 Çatı Dubleks,roof,1,1,0,0,0,detail_and_title,0,,1326335569
+Dubleks,SAHİBİNDEN DAMLAR MAH.DENİZ MANZARALI 3+1 DUBLEX DAİRE NET 155m,standard,1,0,0,0,1,detail_and_title,0,,1308796203
+Bahçe Dubleksi,BAŞİSKELE BARBAROS'DA SATILIK GENİŞ 3+1 BAHÇE DUBLEKS,garden,1,0,1,0,0,detail_and_title,0,,1325995278
+Dubleks,BAŞİSKELE DAMLAR MAH VİLLA KONSEPT 4+1 DUBLEKS DAİRE,standard,1,0,0,0,1,detail_and_title,0,,1314213618
+,ÇARŞİ MERKEZDE SATİLİK DUBLEX DAİRE,standard,1,0,0,0,1,title,0,,1325723061
+,Deniz manzarali dublex daire,standard,1,0,0,0,1,title,0,,1325364830
+Ara Kat|Çatı Dubleksi,"Başıiskele Merkezde Deniz Manzaralı, Önü Açık 4+1 Çatı Dubleksi",roof,1,1,0,0,0,detail_and_title,0,,1308082052
+,ENKA GYO'DAN BAŞİSKELEDE 4+1 DENİZ MANZARALI DUBLEKS DAİRE,standard,1,0,0,0,1,title,0,,1324745372
+,MERKEZİ LOKASYONDA KAÇIRILMAYACAK FIRSAT,none,0,0,0,0,0,none,0,,1322839095
+Ara Kat,BAŞİSKELE TWİNKLE LİFE SİTESİNDE 3+1 SATILIK BAHÇELİ DAİRE,none,0,0,0,0,0,none,0,,1292302818
+,FIRSAT DAİRE 3+1 İSKANI ALINMIŞ OTURUMA HAZIR DAİRELER,none,0,0,0,0,0,none,0,,1315354860

@@ -1,0 +1,9 @@
+﻿metric,v21_reference,v23_current
+sale_raw,,6979.0
+rental_raw,,3573.0
+sale_after_basic_filter,,6868.0
+rental_after_basic_filter,,3525.0
+sale_training_rows,,6729.0
+large_home_count_ge180,,712.0
+large_home_share_ge180,,0.10581067023331847
+duplex_count_sale,,2502.0

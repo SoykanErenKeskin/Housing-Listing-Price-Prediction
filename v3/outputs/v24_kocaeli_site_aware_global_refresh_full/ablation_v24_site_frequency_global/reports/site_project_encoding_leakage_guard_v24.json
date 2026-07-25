@@ -1,0 +1,12 @@
+{
+  "enabled": false,
+  "uses_train_pool_only": true,
+  "validation_targets_used": false,
+  "outer_validation_targets_used_in_encoder": false,
+  "min_count": 3,
+  "alpha": 20.0,
+  "pass": true,
+  "notes": [
+    "foldsafe encoder disabled"
+  ]
+}

@@ -1,0 +1,8 @@
+﻿county,group,mean_abs_effect,positive_feature_count,negative_feature_count,top_positive_features,top_negative_features
+Başiskele,front,0.022402632433590954,1,4,front_north|front_score|front_east,front_west|front_south|front_east
+Başiskele,inside,0.009951039627544274,8,6,in_pantry|in_parent_bathroom|in_pvc,in_air_conditioner|in_glass_balcony|in_laminate_floor
+Başiskele,nearby,0.013199742545766875,1,10,near_sea_zero|near_mall|near_city_center,near_park|near_lake_zero|near_hospital
+Başiskele,outside,0.07028209489000632,10,2,out_open_pool|out_pool|out_closed_pool,out_heat_insulation|out_sound_insulation|out_hydrofor
+Başiskele,subtype,0.024830489007365335,3,3,subtype_middle_floor|subtype_top_floor|subtype_reverse_duplex,subtype_duplex|subtype_garden_duplex|subtype_roof_duplex
+Başiskele,transport,0.021364320237080747,0,10,transport_score|transport_e5|transport_tem,transport_train|transport_tram|transport_metro
+Başiskele,view,0.03622503657012762,3,6,view_pool|view_park_green|view_sea,view_bosphorus|view_lake|view_river

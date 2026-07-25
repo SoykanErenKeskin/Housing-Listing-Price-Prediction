@@ -2,15 +2,17 @@
 
 **Path:** `./v3/`  
 **Short name:** `v3_tabular_premium_signals`  
-**Status:** Best tabular Başiskele checkpoint (V21)
+**Status:** Best Kocaeli global = **V24.1**; best refreshed Başiskele-only = **V23**
 
-This generation is for **Başiskele-only tabular premium signal** experiments —
-site/project extraction and premium segment features — not a generic “next
-experiments” bucket.
+This generation covers tabular premium signal experiments — Başiskele-only through
+V23, then Kocaeli global site-aware (V24 / V24.1).
 
 - **V19:** calibration / no-ridge diagnostic; final seçilmedi.
 - **V20:** site/project identity ilk anlamlı premium lift verdi.
-- **V21:** site/project extraction coverage iyileşti ve yeni best tabular checkpoint oldu.
+- **V21:** older-distribution Başiskele tabular reference.
+- **V23:** best refreshed Başiskele-only checkpoint (`duplex_interactions`).
+- **V24.1:** **best Kocaeli global checkpoint** (`full_v24`); site/project extraction validated globally after merge repair.
+- **V22** (under v4) remains diagnostic no-lift.
 - **V3** is not a catch-all for future work; **V4** is separate for visual/satellite/image experiments.
 
 ---
@@ -21,11 +23,31 @@ experiments” bucket.
 |---|---|---|
 | V19 | calibration/no-ridge diagnostic | rejected; no candidate beat control |
 | V20 | premium/site project first model | R2 0.5017, MAPE 0.1060 |
-| V21 | improved site/project extraction | R2 0.5059, MAPE 0.1055, **best tabular** |
+| V21 | improved site/project extraction | R2 0.5059, MAPE 0.1055 (older Başiskele ref) |
+| V23 | duplex / large-home refresh | **best refreshed Başiskele-only** |
+| V24.1 | Kocaeli site merge repair | **best Kocaeli global** (`full_v24`, R2 0.652324) |
 
 ---
 
-## Best tabular checkpoint — V21
+## Best Kocaeli global checkpoint — V24.1
+
+| Field | Value |
+|---|---|
+| Output | [`outputs/v24_1_kocaeli_site_merge_repair/`](outputs/v24_1_kocaeli_site_merge_repair/) |
+| Package | [`source_versions/v24_1_kocaeli_site_merge_repair/`](source_versions/v24_1_kocaeli_site_merge_repair/README.md) |
+| selected_experiment | `full_v24` |
+| R² / MAPE / VR | 0.652324 / 0.117628 / 0.631573 |
+| severe_bad_merge | 0 |
+| possible_bad_merge | 12 (non-blocking manual review) |
+| best_checkpoint | true |
+
+**Decision:** V24.1 is the best Kocaeli global checkpoint. V23 remains the best refreshed Başiskele-only checkpoint. V22 remains diagnostic no-lift.
+
+See [`outputs/v24_1_kocaeli_site_merge_repair/reports/SELECTION_V24_1_KOCAELI_GLOBAL.md`](outputs/v24_1_kocaeli_site_merge_repair/reports/SELECTION_V24_1_KOCAELI_GLOBAL.md).
+
+---
+
+## Historical Başiskele tabular — V21
 
 | Field | Value |
 |---|---|

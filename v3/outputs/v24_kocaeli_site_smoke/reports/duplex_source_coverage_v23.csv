@@ -1,0 +1,3 @@
+﻿split,detail_duplex_count,title_duplex_count,detail_and_title_duplex_count,title_only_duplex_count,detail_only_duplex_count,conflict_count,roof_duplex_count,garden_duplex_count,middle_floor_duplex_count,generic_duplex_count
+sale,535,744,452,275,66,17,429,128,6,247
+rental,188,214,147,63,37,4,135,39,1,76

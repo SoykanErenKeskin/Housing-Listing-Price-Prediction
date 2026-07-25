@@ -1,0 +1,15 @@
+﻿county,group,mean_abs_effect,positive_feature_count,negative_feature_count,top_positive_features,top_negative_features
+Gölcük,front,0.031000951610385262,0,5,front_score|front_south|front_west,front_north|front_east|front_west
+Gölcük,inside,0.025444909645298403,9,5,in_smart_home|in_dressing_room|in_parent_bathroom,in_pantry|in_glass_balcony|in_terrace
+Gölcük,nearby,0.01920337115572548,8,3,near_sea_zero|near_lake_zero|near_mosque,near_university|near_hospital|near_city_center
+Gölcük,outside,0.043302760762210964,12,0,out_sauna_hamam|out_open_pool|out_pool,out_heat_insulation|out_sound_insulation|out_generator
+Gölcük,subtype,0.07837975454853452,2,5,subtype_reverse_duplex|subtype_middle_floor|subtype_duplex,subtype_triplex|subtype_garden_duplex|subtype_top_floor
+Gölcük,transport,0.023818103061120886,8,2,transport_metro|transport_e5|transport_airport,transport_train|transport_tem|transport_bus_stop
+Gölcük,view,0.024541279819275768,4,4,view_pool|view_bosphorus|view_sea,view_city|view_lake|view_score
+Kartepe,front,0.003556698751524875,2,3,front_score|front_west|front_east,front_north|front_south|front_east
+Kartepe,inside,0.03314267138967559,11,3,in_smart_home|in_dressing_room|in_parent_bathroom,in_pantry|in_terrace|in_glass_balcony
+Kartepe,nearby,0.01815953404996339,10,1,near_sea_zero|near_lake_zero|near_city_center,near_university|near_market|near_school
+Kartepe,outside,0.04820882904848276,12,0,out_open_pool|out_pool|out_sauna_hamam,out_sound_insulation|out_heat_insulation|out_generator
+Kartepe,subtype,0.07753195024018422,3,4,subtype_reverse_duplex|subtype_middle_floor|subtype_garden_duplex,subtype_triplex|subtype_duplex|subtype_roof_duplex
+Kartepe,transport,0.02794840830971972,8,2,transport_metro|transport_minibus|transport_tram,transport_train|transport_tem|transport_e5
+Kartepe,view,0.03174245743591253,7,1,view_pool|view_bosphorus|view_sea,view_lake|view_river|view_nature
