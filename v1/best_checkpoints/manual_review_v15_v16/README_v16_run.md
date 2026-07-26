@@ -1,50 +1,56 @@
 # V16 Regime Residual — run notes
 
-V16, V15 county specialist üzerine kuruludur. **Daha fazla genel feature değil**;
-kontrollü rejim bazlı residual / baseline deneyleri hedeflenir.
+**Era:** V1 curated review pack (`v1/best_checkpoints/manual_review_v15_v16/`)  
+**Canonical source:** `v1/source_versions/v16/`  
+**Status:** Historical. Built on V15 county specialist. Focus is **controlled
+regime residual / baseline experiments**, not more generic features.
 
-V15 dosyalarına dokunulmaz. Tüm değişiklikler `v16/` içindedir.
+V15 files are left untouched; all changes live under `v16/`.
 
-## Faz 0 teşhis bulguları (neden V16)
+## Phase-0 diagnostic findings (why V16)
 
 - Başiskele mean-pulling confirmed: `var(pred)/var(actual) ≈ 0.452`
-- En ucuz decile ≈ +5.7k TL/m² fazla; en pahalı ≈ −10.5k TL/m² düşük
-- Large_home R² ≈ 0.24 vs non-large ≈ 0.50 (share ≈ %22.7)
+- Cheapest decile ≈ +5.7k ₺/m² too high; most expensive ≈ −10.5k ₺/m² too low
+- Large_home R² ≈ 0.24 vs non-large ≈ 0.50 (share ≈ 22.7%)
 - `m2_group=200+` R² ≈ −0.03; `room_count=4+1` R² ≈ 0.14
-- Karamürsel n≈202 sparsity; hata 4 Temmuz / Kayacık / Ereğli’de yoğun
+- Karamürsel n≈202 sparsity; errors concentrate in 4 Temmuz / Kayacık / Ereğli
 - Karamürsel `building_age_group=31+` R² ≈ 0.02
 
-V15 specialist genel R² lift vermedi → V16 rejim odaklı.
+V15 specialist did not deliver general R² lift → V16 goes regime-focused.
 
-## V16 hipotezleri
+## V16 hypotheses
 
-1. **Başiskele large_home regime features** (deterministic, app-safe) large/200+/4+1
-   varyansını modele görünür kılar.
-2. **Başiskele spread residual** (OOF-safe) ucuz/pahalı uç bias’ını küçültür.
-3. **Karamürsel location×age baseline** (fold-safe residual medians) sparse ilçede
-   aggressive expert zorlamadan düzenli sinyal verir.
-4. Residual layer’lar guardrail fail ederse **disabled** kalır (skeleton + rapor korunur).
+1. **Başiskele large_home regime features** (deterministic, app-safe) make
+   large / 200+ / 4+1 variance visible to the model.
+2. **Başiskele spread residual** (OOF-safe) shrinks cheap/expensive tail bias.
+3. **Karamürsel location×age baseline** (fold-safe residual medians) gives
+   structured signal in a sparse county without forcing an aggressive expert.
+4. If residual layers fail guardrails, they stay **disabled** (skeleton + reports
+   remain).
 
-## Neden genel feature eklenmedi?
+## Why not more generic features?
 
-Faz 0, sinyal eksikliğinden çok **rejim ve spread** problemi gösterdi.
-Generic attr/detail genişletmesi V14/V15’te zaten denendi; Başiskele R² lift gelmedi.
+Phase 0 pointed to **regime and spread**, not missing generic signal.
+Attr/detail expansion was already tried in V14/V15 without Başiskele R² lift.
 
-## Neden Başiskele large_home / spread?
+## Why Başiskele large_home / spread?
 
-- Large_home share küçük ama R² çöküşü büyük → hedefe odaklı feature + opsiyonel residual.
-- Mean-pulling MAPE’yi iyi, R²’yi kötü gösterir → spread residual variance_ratio + uç bias’a bakar.
-- V12 tarzı global price-tier correction **yok**.
+- Large_home share is small but R² collapse is large → targeted features +
+  optional residual.
+- Mean-pulling looks good on MAPE and bad on R² → spread residual watches
+  variance_ratio and tail bias.
+- No V12-style global price-tier correction.
 
-## Neden Karamürsel’de aggressive expert değil location-age?
+## Why Karamürsel location-age instead of aggressive expert?
 
-- n≈202; expert blend zorlamak overfitting / nestabilite riski.
-- Mahalle + yaş heterojenliği → `district × age/m2/room` smoothed residual medians.
-- Ayrı post-hoc correction yok; feature olarak modele girer.
+- n≈202; forcing expert blend risks overfitting / instability.
+- Neighborhood + age heterogeneity → smoothed `district × age/m2/room` residual
+  medians.
+- No separate post-hoc correction; enters as features.
 
-## V15 referans (full)
+## V15 reference (full)
 
-| Metrik | Değer |
+| Metric | Value |
 |--------|------:|
 | Global R² | 0.6799 |
 | Global MAPE | 0.1290 |
@@ -72,36 +78,36 @@ Generic attr/detail genişletmesi V14/V15’te zaten denendi; Başiskele R² lif
 --no-run-v16-regime-ablation
 ```
 
-Kullanılmayanlar: `detail-effect-mode full` final, title/photo/description,
-V12 price-tier, zorla yükseltilmiş county expert blend.
+Not used in final: `detail-effect-mode full`, title/photo/description,
+V12 price-tier, forced high county-expert blends.
 
 ## Leakage checklist
 
 - `attr_effect_*`, `detail_effect_*`, `basiskele_*_target_stats`,
-  `karamursel_*_residual_median` yalnız CV fold-train `y` ile fit
-- Large_home / spread residual: delta modeli **train fold** `(actual − pred_current)` ile fit;
-  validation actual fit’te yok
-- Spread decile/rank: train fold predicted quantile threshold → val’a uygulanır
-- Effect CSV’leri final fitted encoder’dan (in-sample); seçim OOF metriklerine dayanır
-- App-safe: runtime’da olmayan title/photo/description yok
+  `karamursel_*_residual_median` fit only on CV fold-train `y`
+- Large_home / spread residual: delta model fits **train fold**
+  `(actual − pred_current)`; validation actual is not in fit
+- Spread decile/rank: train-fold predicted quantile thresholds applied to val
+- Effect CSVs from final fitted encoder (in-sample); selection uses OOF metrics
+- App-safe: no runtime title/photo/description
 
 ## Ship gate
 
-Ideal hedefler:
+Ideal targets:
 
 - Başiskele R² ≥ 0.50; variance_ratio ≥ 0.55; large_home R² lift ≥ +0.08
 - Karamürsel R² ≥ 0.60
 
-Final **PASS** için: global guardrail (R²≥0.670, MAPE≤0.131) + sensitivity +
-V15’e göre no-regression yeterli olabilir.
+Final **PASS** may only need global guardrail (R²≥0.670, MAPE≤0.131) +
+sensitivity + no-regression vs V15.
 
-`ship_ready_all_counties_r2_ge_0_65=true` ancak her county R² ≥ 0.65.
+`ship_ready_all_counties_r2_ge_0_65=true` only if every county R² ≥ 0.65.
 
-`overall=PASS` ama ship_ready=false ise:
+If `overall=PASS` but ship_ready=false:
 
 > **PASS as experiment, NOT ship-ready.**
 
-## Raporlar
+## Reports
 
 - `reports/metrics_summary_v16.json` (decision + `v15_delta` + `selected_v16_layers`)
 - `reports/county_metrics_v16.csv`
@@ -116,7 +122,7 @@ V15’e göre no-regression yeterli olabilir.
 - `reports/large_home_diagnostics_v16.csv`
 - `reports/county_error_heatmap_v16.csv`
 
-## Komutlar
+## Commands
 
 ### Smoke
 
@@ -137,3 +143,8 @@ python train_v16_regime_residual_pipeline.py --out outputs/v16_full --demographi
 ```bash
 python ../scripts/debug_single_prediction_features_v16.py --a path/a.json --b path/b.json
 ```
+
+## Follow-on
+
+Location / geo work continues in V17 under `v2/source_versions/v17/` (regime
+residual layers that failed ablation stay off by default there).

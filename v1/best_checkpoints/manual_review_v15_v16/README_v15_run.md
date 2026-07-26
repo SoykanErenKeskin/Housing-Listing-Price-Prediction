@@ -1,22 +1,25 @@
 # V15 County Specialist — run notes
 
-V15, V14 local detail premium üzerine kuruludur. Global skordan çok **county-level lift** hedefler.
-Price-tier / post-hoc correction yoktur. Title/photo/description feature yoktur.
+**Era:** V1 curated review pack (`v1/best_checkpoints/manual_review_v15_v16/`)  
+**Canonical source:** `v1/source_versions/v15/`  
+**Status:** Historical. Built on V14 local detail premium. Optimizes for
+**county-level lift** more than global score. No price-tier / post-hoc
+correction. No title/photo/description features.
 
-## Amaç
+## Purpose
 
-V14’te Başiskele’de detail premium sinyali vardı ama tahminler ortalamaya sıkışıyordu
-(`var(pred)/var(actual) ≈ 0.42`). V15:
+In V14, Başiskele had a detail-premium signal but predictions still collapsed
+toward the mean (`var(pred)/var(actual) ≈ 0.42`). V15 adds:
 
 1. Başiskele premium specialist (deterministic + fold-safe target stats)
-2. Karamürsel `min_rows=180` override (global 250 kalır)
-3. Large_home redesign feature’ları + segment raporu
-4. Opsiyonel OOF-safe Başiskele variance-lift (conservative default)
-5. Global MAPE/R² guardrail’i bozmamak
+2. Karamürsel `min_rows=180` override (global stays 250)
+3. Large_home redesign features + segment report
+4. Optional OOF-safe Başiskele variance-lift (conservative default)
+5. Preserve global MAPE/R² guardrails
 
-## V14 referans (group)
+## V14 reference (group)
 
-| Metrik | Değer |
+| Metric | Value |
 |--------|------:|
 | Global R² | 0.6787 |
 | Global MAPE | 0.1290 |
@@ -28,12 +31,13 @@ V14’te Başiskele’de detail premium sinyali vardı ama tahminler ortalamaya 
 | İzmit R² | 0.7107 |
 | ship_ready_all_counties_r2_ge_0_65 | false |
 
-`detail-effect-mode full` V14’te kötüleşti; V15 final’de **group** seçilir.
+`detail-effect-mode full` worsened V14; V15 final keeps **group**.
 
 ## Başiskele mean-pulling
 
-Detail premiums sinyal verdi ama model hâlâ uçları ortalamaya çekiyor. V15 premium skor,
-bucket target stats ve (opsiyonel) variance-lift ile R² + variance ratio artırmayı dener.
+Detail premiums fire, but the model still pulls tails to the mean. V15 tries
+premium scores, bucket target stats, and optional variance-lift to raise R² and
+variance ratio.
 
 ## Karamürsel k180 override
 
@@ -42,24 +46,30 @@ bucket target stats ve (opsiyonel) variance-lift ile R² + variance ratio artır
 --county-expert-min-rows-overrides "Karamürsel:180"
 ```
 
-Başiskele / Gölcük / İzmit → 250; Karamürsel → 180. Parse edilemezse uyarı + global 250.
+Başiskele / Gölcük / İzmit → 250; Karamürsel → 180. Unparseable overrides warn
+and fall back to global 250.
 
 ## Large_home redesign
 
-Deterministic feature’lar (`large_home_m2_excess`, quality×m2, detail×m2, …) base pipeline’a girer.
-Segment layer large_home için ridge / GB / ET / RF dener; `kept_base` / `used_blend` raporda açık yazılır.
+Deterministic features (`large_home_m2_excess`, quality×m2, detail×m2, …) enter
+the base pipeline. The segment layer tries ridge / GB / ET / RF for large_home;
+`kept_base` / `used_blend` is explicit in the report.
 
 ## Leakage checklist
 
-- `attr_effect_*`, `detail_effect_*`, `basiskele_*_target_stats` yalnız CV fold-train `y` ile fit
-- Full-X target encoding precompute yok
-- Variance-lift: delta modeli train fold `(actual-pred)` ile fit; validation actual görmez
-- Effect CSV’leri final fitted encoder’dan (in-sample); seçim OOF metriklerine dayanır
+- `attr_effect_*`, `detail_effect_*`, `basiskele_*_target_stats` fit only on CV
+  fold-train `y`
+- No full-X target-encoding precompute
+- Variance-lift delta model fits train-fold `(actual-pred)`; validation actual
+  is not used in fit
+- Effect CSVs come from the final fitted encoder (in-sample); selection uses OOF
+  metrics
 
 ## App-safe / deployment
 
-Uygulama `front_*` / `view_*` / `near_*` / `out_*` / `in_*` / `subtype_*` almıyorsa
-`--detail-effect-mode group|full` deploy edilmemeli. Title/photo/description yok.
+If the app does not collect `front_*` / `view_*` / `near_*` / `out_*` / `in_*` /
+`subtype_*`, do not deploy `--detail-effect-mode group|full`. No
+title/photo/description features.
 
 ## Defaults
 
@@ -74,24 +84,24 @@ Uygulama `front_*` / `view_*` / `near_*` / `out_*` / `in_*` / `subtype_*` almıy
 --large-home-specialist-mode redesigned
 ```
 
-## Success hedefleri (V15)
+## Success targets (V15)
 
 - Başiskele R² > 0.4553; variance ratio > 0.4224
-- Karamürsel R² ≥ 0.5582 (tercihen ≥ 0.5768)
+- Karamürsel R² ≥ 0.5582 (preferably ≥ 0.5768)
 - Gölcük R² ≥ 0.62 soft floor
 - Global R² ≥ 0.670; MAPE ≤ 0.134
 - Direction pass ≥ 0.70; Karamürsel sale_diff_pct ≥ 0.03
-- Long-term ship: her county R² ≥ 0.65 → aksi halde `ship_ready=false`
+- Long-term ship: every county R² ≥ 0.65 → else `ship_ready=false`
 
 ## Ship gate
 
-`overall` PASS olabilir ama `ship_ready_all_counties_r2_ge_0_65=false` ise:
+`overall` may PASS while `ship_ready_all_counties_r2_ge_0_65=false`:
 
 > **PASS as experiment, NOT ship-ready.**
 
-## Komutlar
+## Commands
 
-### Smoke (önce bunu çalıştır)
+### Smoke (run this first)
 
 ```bash
 cd v15
@@ -104,7 +114,7 @@ python train_v15_county_specialist_pipeline.py --out outputs/v15_test --fast --l
 python train_v15_county_specialist_pipeline.py --out outputs/v15_full --demographics-mode safe --attribute-mode full --detail-effect-mode group --basiskele-specialist-mode premium_target_stats --basiskele-variance-lift conservative --county-expert-min-rows-overrides "Karamürsel:180" --run-basiskele-specialist-ablation --no-interactive
 ```
 
-## Önemli raporlar
+## Important reports
 
 - `metrics_summary_v15.json`
 - `county_expert_layer_report_v15.csv` (`min_rows_used`, `override_used`, …)

@@ -51,7 +51,7 @@ Site/project extraction is now validated globally after merge repair (`severe_ba
 - Location / geo / comparable scripts under `v2/scripts/`
 - Era outputs under `v2/outputs/` (local; gitignored)
 
-**Status:** Archived / reference for the location era (comparable / calibration öncesi dönem).
+**Status:** Archived / reference for the location era (pre comparable / calibration close-out).
 
 **Best checkpoints (era-local):**
 

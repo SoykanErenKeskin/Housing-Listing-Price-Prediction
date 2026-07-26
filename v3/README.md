@@ -7,8 +7,8 @@
 This generation covers tabular premium signal experiments — Başiskele-only through
 V23, then Kocaeli global site-aware (V24 / V24.1).
 
-- **V19:** calibration / no-ridge diagnostic; final seçilmedi.
-- **V20:** site/project identity ilk anlamlı premium lift verdi.
+- **V19:** calibration / no-ridge diagnostic; not selected for the final model.
+- **V20:** site/project identity delivered the first meaningful premium lift.
 - **V21:** older-distribution Başiskele tabular reference.
 - **V23:** best refreshed Başiskele-only checkpoint (`duplex_interactions`).
 - **V24.1:** **best Kocaeli global checkpoint** (`full_v24`); site/project extraction validated globally after merge repair.
