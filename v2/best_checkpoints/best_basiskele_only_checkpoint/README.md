@@ -41,7 +41,12 @@ ablation table, reproduce commands, and report list.
 
 ## Follow-on
 
-V18 is superseded as best Başiskele checkpoint. Tabular premium / site-project
-modeling continued under **V3 — Tabular Premium Signals** (V19 diagnostic →
-V20/V21; best = V21). Visual/satellite work is under **V4**. Keep
+V18 is superseded as best Başiskele checkpoint. Later hierarchy under
+**V3 — Tabular Premium Signals**:
+
+- Older-distribution Başiskele reference: **V21**
+- Best refreshed Başiskele-only: **V23** `duplex_interactions`
+- Best Kocaeli global: **V24.1** `full_v24`
+
+Visual/satellite work is under **V4** (V22 = diagnostic no-lift). Keep
 `comparable_mode=none` unless a new experiment explicitly revisits it.

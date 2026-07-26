@@ -3,7 +3,8 @@
 Classic **Kocaeli multi-county** listing price models from the thesis era (through V16).
 
 **Path:** `./v1/`  
-**Status:** **Archived** — do not start new model development here. Active work: [`../v3/`](../v3/README.md).
+**Status:** **Archived** — do not start new model development here. Current bests:
+[`../v3/`](../v3/README.md) (Kocaeli global = V24.1; refreshed Başiskele-only = V23).
 
 ---
 

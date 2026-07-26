@@ -4,33 +4,36 @@ Scope:
 This generation is for satellite imagery, map tiles, visual neighborhood features, image embeddings, and image-based real estate experiments.
 
 Separation from V3:
-- **V3 — Tabular Premium Signals** (`./v3/`, short name `v3_tabular_premium_signals`) holds V19–V21 tabular / site-project work.
+- **V3 — Tabular Premium Signals** (`./v3/`) holds V19–V24.1 tabular / site-project / duplex work.
 - **V4** explores satellite / static-map / image embeddings and must **not** modify V3.
 
-Base checkpoint (from V3):
-V21 Başiskele site/project extraction model:
-- R2 = 0.5059
-- MAPE = 0.1055
-- variance_ratio = 0.4590
-- selected = full_v21 / interactions_foldsafe
-- path = `v3/outputs/v21_basiskele_site_extraction_full`
+Current tabular checkpoint hierarchy (read-only bases):
+
+| Scope | Checkpoint | Path |
+|---|---|---|
+| Best Kocaeli global | V24.1 `full_v24` | `v3/outputs/v24_1_kocaeli_site_merge_repair/` |
+| Best refreshed Başiskele-only | V23 `duplex_interactions` | `v3/outputs/v23_basiskele_duplex_largehome_refresh_full/` |
+| V22 base (older Başiskele) | V21 `full_v21` | `v3/outputs/v21_basiskele_site_extraction_full/` |
 
 Reason:
-V3 improved tabular premium signals using site/project extraction. V4 explores whether visual neighborhood signals from satellite/static map imagery can further explain Başiskele premium pricing and expensive underprediction.
+V3 improved tabular premium signals using site/project extraction and duplex features.
+V4 explores whether visual neighborhood signals from satellite/static map imagery can
+further explain Başiskele premium pricing and expensive underprediction.
 
 Rules:
 - Do not modify v1/v2/v3 source trees.
 - Do not put image experiments under v3.
 - Do not fine-tune CNNs in the first pilot.
 - Start with image cache + pretrained embeddings + simple image stats.
-- Best checkpoint remains V21 until V4 beats it.
+- Do not promote a V4 arm unless it clearly beats the relevant tabular baseline.
 
 ### V22 status — `DIAGNOSTIC_NO_LIFT`
 
 Free Sentinel-2 environment features (NDVI/NDWI/NDBI etc.) did **not** improve V21.  
 Full ablation: `v4/outputs/v22_basiskele_satellite_full/`  
-Selected: `control_v21`. Best tabular checkpoint remains V21.  
-Treat V22 as diagnostic only (internal control did not reproduce exact V21 reference scores).
+Selected: `control_v21`. Treat V22 as diagnostic only (internal control did not
+reproduce exact V21 reference scores). Feature CSV already exists under
+`data/external/satellite_features/basiskele/sentinel_features_v22.csv`.
 
 ---
 
@@ -52,10 +55,9 @@ Treat V22 as diagnostic only (internal control did not reproduce exact V21 refer
 | Role | Path |
 |---|---|
 | Package | `v4/source_versions/v22_basiskele_satellite_environment_pilot/` |
-| Outputs | `v4/outputs/v22_basiskele_satellite_environment_pilot/` |
+| Full ablation | `v4/outputs/v22_basiskele_satellite_full/` |
 | Feature CSV | `data/external/satellite_features/basiskele/sentinel_features_v22.csv` |
 | Image cache references | `v4/image_cache_reference/` |
 | Large image cache (shared data, optional) | `data/external/satellite_cache/basiskele/` |
 
-V4 may **read** V21 as base checkpoint (`v3/outputs/v21_basiskele_site_extraction_full`) but must not modify V3 files.
-
+V4 may **read** V3 checkpoints as baselines but must not modify V3 files.

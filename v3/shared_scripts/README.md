@@ -1,6 +1,6 @@
 # Shared scripts (V3)
 
-Helpers used by V19+ packages under `v3/source_versions/`.
+Helpers used by V19+ packages under `v3/source_versions/` (through V24.1).
 
 ---
 

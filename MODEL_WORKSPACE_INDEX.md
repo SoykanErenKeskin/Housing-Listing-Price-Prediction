@@ -217,7 +217,6 @@ V21 remains the older-distribution Başiskele reference; refreshed-data Başiske
 | [`./shared_scripts/`](shared_scripts/README.md) | Root analysis / maintenance scripts (not model training) |
 | [`./analysis_outputs/`](analysis_outputs/) | Analysis script outputs (timestamped; gitignored) |
 | [`./.env`](.env.example) | **Single** DB / secrets config (gitignored) |
-| [`./.cursor/`](.cursor/) | Editor metadata (gitignored) |
 
 Root-level `outputs/` and `scripts/` were removed; content lives under `v1/`, `v2/`, `v3/`, and `v4/`.
 

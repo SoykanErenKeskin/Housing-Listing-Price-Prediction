@@ -1,11 +1,13 @@
 # V24 Kocaeli Site-Aware Global Refresh
 
 **Package:** `v3/source_versions/v24_kocaeli_site_aware_global_refresh/`  
-**Status:** Research sprint (not auto-promoted until ablation gates pass)  
+**Status:** Closed research sprint — superseded for best checkpoint by **V24.1**  
+(`v3/source_versions/v24_1_kocaeli_site_merge_repair/`, selected `full_v24`)  
 **Output:** `v3/outputs/v24_kocaeli_site_aware_global_refresh_full/`  
 **Base:** V23 duplex + V21 site stack, generalized to Kocaeli multi-county  
 
-V21/V23 sources are untouched. V4 satellite is out of scope.
+V21/V23 sources are untouched. V4 satellite is out of scope.  
+Keep this package as the pre-repair global ablation archive; do not promote over V24.1.
 
 ---
 

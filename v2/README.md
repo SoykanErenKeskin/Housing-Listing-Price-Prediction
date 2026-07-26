@@ -4,7 +4,8 @@ Generation where **location / geo features** became first-class, including the
 **Başiskele-only** research sandbox (V18).
 
 **Path:** `./v2/`  
-**Status:** **Archived / reference.** New experiments: [`../v3/`](../v3/README.md).
+**Status:** **Archived / reference.** Current bests: [`../v3/`](../v3/README.md)
+(Kocaeli global = V24.1; refreshed Başiskele-only = V23). Visual work: [`../v4/`](../v4/README.md).
 
 ---
 

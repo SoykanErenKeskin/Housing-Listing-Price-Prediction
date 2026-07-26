@@ -4,7 +4,20 @@ Research workspace for **housing listing price prediction** models.
 
 The repository is organized by **generation eras**:
 **v1** thesis archive, **v2** location/Başiskele sandbox, **v3** Tabular Premium
-Signals (best = V21), **v4** visual/satellite experiments (scaffold).
+Signals (best Kocaeli global = **V24.1**; best refreshed Başiskele-only = **V23**),
+**v4** visual/satellite experiments (V22 = diagnostic no-lift).
+
+---
+
+## Current checkpoint hierarchy
+
+| Scope | Best checkpoint | Path |
+|---|---|---|
+| **Kocaeli global** | **V24.1 `full_v24`** | `v3/outputs/v24_1_kocaeli_site_merge_repair/` |
+| **Başiskele-only (refreshed data)** | **V23 `duplex_interactions`** | `v3/outputs/v23_basiskele_duplex_largehome_refresh_full/` |
+| Visual / satellite | V22 | diagnostic no-lift (do not promote) |
+
+Do not conflate scopes: V23 is Başiskele-only on refreshed inventory; V24.1 is multi-county Kocaeli global after site merge repair.
 
 ---
 
@@ -27,9 +40,11 @@ example rows (no listing IDs, URLs, site names, or portal brands).
 | Market / rent context | `district_rent_m2_*`, `county_rent_m2_*`, `estimated_rent_m2_gross`, `trend_*`, `location_baseline_*` | Engineered from peer listings (no external brand) |
 | Demographics (optional) | `demo_*`, `county_demo_*` | Neighborhood / county socio-economic context |
 | Geo context (optional) | coast / road / POI distances from local `data/external/geo_context` | OSM-style distance features |
+| Site / project (V20+) | county-scoped `site_project_id`, fold-safe target encoding, coverage flags | Premium identity signal |
+| Duplex / large-home (V23+) | controlled duplex flags / interactions (no raw title text in model) | Segment-aware lift |
 
-Active pipelines (e.g. V19) concatenate the numeric + categorical columns above into
-the training matrix; exact lists live in each generation’s train script
+Active pipelines concatenate numeric + categorical columns into the training
+matrix; exact lists live in each generation’s train script
 (`NUMERIC_FEATURES`, `CATEGORICAL_FEATURES`).
 
 ### Synthetic example rows (sale listings)
@@ -48,12 +63,12 @@ labels (e.g. `Kombi`, `Var`, `Kapalı Otopark`), which the pipeline maps consist
 
 After feature engineering, row A might also carry derived fields such as
 `net_gross_ratio ≈ 0.84`, `m2_group = 101-125`, `floor_segment = mid-floor`,
-`is_middle_floor = 1`, plus district rent/trend and (if enabled) geo-distance
-columns — still without any listing link or firm name.
+`is_middle_floor = 1`, plus district rent/trend, geo-distance columns, and (when
+enabled) site/project or duplex flags — still without any listing link or firm name.
 
 ---
 
-## Quick start (active: V19 Başiskele)
+## Quick start (active: V24.1 Kocaeli global)
 
 ### 1. Environment
 
@@ -77,57 +92,37 @@ Pass it explicitly to training:
 --geo-context-cache-dir data/external/geo_context
 ```
 
-### 3. Smoke train (fast)
+### 3. Reproduce best Kocaeli global (V24.1 site-repair-only)
+
+Uses frozen V24 duplex references; trains site/full arms after merge repair:
 
 ```powershell
-python v3/source_versions/v19_basiskele/train_v19_basiskele_calibration_pipeline.py `
-  --out v3/outputs/v19_basiskele_test `
-  --fast --limit-sale 300 --limit-rental 300 `
-  --model-scope basiskele_only `
-  --location-feature-mode geo `
-  --geo-context-mode geo_with_coast `
-  --calibration-mode linear `
-  --ensemble-profile balanced `
-  --target-profile residual_log `
-  --no-run-calibration-ablation `
+python v3/source_versions/v24_1_kocaeli_site_merge_repair/train_v24_1_kocaeli_site_pipeline.py `
+  --out v3/outputs/v24_1_kocaeli_site_merge_repair `
+  --model-scope kocaeli_global `
+  --location-feature-mode geo --geo-context-mode geo_with_coast `
+  --location-scope global `
+  --site-extraction-mode full --site-project-encoding foldsafe_target `
+  --duplex-feature-mode full `
+  --run-site-ablation --site-repair-only `
   --use-trend --no-interactive `
   --geo-context-cache-dir data/external/geo_context
 ```
 
-### 4. Full single-profile run
+Selected arm: `full_v24` — R² ≈ 0.6523 / MAPE ≈ 0.1176 / VR ≈ 0.6316 (`severe_bad_merge=0`).
+
+### 4. Reproduce best refreshed Başiskele-only (V23)
 
 ```powershell
-python v3/source_versions/v19_basiskele/train_v19_basiskele_calibration_pipeline.py `
-  --out v3/outputs/v19_basiskele_ablation `
+python v3/source_versions/v23_basiskele_duplex_largehome_refresh/train_v23_basiskele_duplex_pipeline.py `
+  --out v3/outputs/v23_basiskele_duplex_largehome_refresh_full `
   --model-scope basiskele_only `
-  --location-feature-mode geo `
-  --geo-context-mode geo_with_coast `
-  --calibration-mode isotonic `
-  --ensemble-profile balanced `
-  --target-profile residual_log `
-  --no-run-calibration-ablation `
+  --location-feature-mode geo --geo-context-mode geo_with_coast `
+  --site-extraction-mode full --site-project-encoding foldsafe_target `
+  --duplex-feature-mode interactions --no-run-duplex-ablation `
   --use-trend --no-interactive `
   --geo-context-cache-dir data/external/geo_context
 ```
-
-### 5. Minimal calibration ablation (6 arms)
-
-```powershell
-python v3/source_versions/v19_basiskele/train_v19_basiskele_calibration_pipeline.py `
-  --out v3/outputs/v19_basiskele_minimal_ablation `
-  --model-scope basiskele_only `
-  --location-feature-mode geo `
-  --geo-context-mode geo_with_coast `
-  --calibration-mode isotonic `
-  --ensemble-profile balanced `
-  --target-profile residual_log `
-  --run-calibration-ablation `
-  --use-trend --no-interactive `
-  --geo-context-cache-dir data/external/geo_context
-```
-
-Grid: `none|linear|isotonic` × `balanced|no_ridge` (`target_profile=residual_log` fixed).
-Writes `reports/metrics_calibration_ablation_v19_basiskele.csv` and promotes the selected arm’s bundle.
 
 Outputs are written under `--out` and are **gitignored** (`**/outputs/`, `**/artifacts/`, `*.joblib`).
 
@@ -137,11 +132,11 @@ Outputs are written under `--out` and are **gitignored** (`**/outputs/`, `**/art
 
 | Path | Role | Status |
 |---|---|---|
-| [`v4/`](v4/README.md) | Visual / satellite / image-based experiments | Active scaffold |
-| [`v3/`](v3/README.md) | Tabular Premium Signals (V19–V21; best = V21) | Best tabular checkpoint |
+| [`v4/`](v4/README.md) | Visual / satellite / image-based experiments | Active; V22 = diagnostic no-lift |
+| [`v3/`](v3/README.md) | Tabular Premium Signals (V19–V24.1) | Best Kocaeli global = V24.1; best refreshed Başiskele = V23 |
 | [`v2/`](v2/README.md) | Location + Başiskele sandbox (V17 / V18) | Archived reference |
 | [`v1/`](v1/README.md) | Thesis legacy (V1–V16 classic Kocaeli) | Archived |
-| [`data/`](data/external/geo_context/) | Shared geo cache / external data | Shared |
+| [`data/`](data/external/geo_context/) | Shared geo cache / satellite features / external data | Shared |
 | [`outlier_cleaning/`](outlier_cleaning/README.md) | Standalone listing outlier cleaner | Shared utility |
 | [`shared_scripts/`](shared_scripts/README.md) | Inventory / DB health analysis (not model training) | Shared utility |
 | [`analysis_outputs/`](analysis_outputs/) | Timestamped analysis runs | Local only (gitignored) |
@@ -177,7 +172,6 @@ See also: [`MODEL_WORKSPACE_INDEX.md`](MODEL_WORKSPACE_INDEX.md) and [`MANIFEST.
 | `analysis_outputs/` | Local inventory dumps |
 | `outlier_cleaning/data/input\|output/` | Large CSV exports |
 | `.env` | Database credentials |
-| `.cursor/` | Editor metadata |
 
 Use `best_checkpoints/` + `reports/` first when browsing results on GitHub.
 
@@ -188,7 +182,11 @@ Use `best_checkpoints/` + `reports/` first when browsing results on GitHub.
 1. **V1–V16 (thesis):** classic Kocaeli multi-county models. Başiskele often underperformed (low R² / variance compression).
 2. **V17:** location / geo features; meaningful lift in places, still compression issues in Başiskele.
 3. **V18 Başiskele-only:** geo control plateau (~R² 0.47, MAPE ~0.11). Comparable-market predictors ablated and **rejected**.
-4. **V19 (closed minimal ablation):** OOF-safe calibration × no-ridge grid selected `control_none_balanced`. Calibration/no_ridge **rejected** for final; V18 geo control remains best Başiskele checkpoint. Optional later: `direct_price` / `hybrid` only if they beat V18.
+4. **V19:** calibration / no-ridge diagnostic — **rejected** for final (control won).
+5. **V20 → V21:** site/project identity became the useful premium signal (older Başiskele distribution; V21 R² ≈ 0.5059).
+6. **V22 (v4):** free Sentinel-2 environment features — **diagnostic no-lift**.
+7. **V23:** duplex / large-home refresh on new Başiskele inventory — **best refreshed Başiskele-only** (`duplex_interactions`).
+8. **V24 → V24.1:** Kocaeli global site-aware model; merge repair promoted **V24.1 `full_v24`** as best Kocaeli global checkpoint.
 
 ---
 
@@ -196,7 +194,9 @@ Use `best_checkpoints/` + `reports/` first when browsing results on GitHub.
 
 - Prefer running training from **repo root** so relative paths and `.env` resolve correctly.
 - After moving archived trees under `v1/source_versions/...`, old `../data` relatives may break — pass absolute/`data/external/...` flags.
-- Do not edit archived V17/V18 trees when iterating V19; fork or copy into `v3/source_versions/`.
+- Do not edit archived V17/V18 trees when iterating V3+; fork or copy into `v3/source_versions/` (or `v4/` for visual work).
+- Keep `comparable_mode=none` and calibration off unless a new, explicit experiment says otherwise.
+- Put visual / satellite / image work under **`v4/`** — do not mix into V3.
 
 ---
 

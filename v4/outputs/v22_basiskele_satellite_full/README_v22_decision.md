@@ -29,7 +29,8 @@ Sentinel satellite/environment CSV features did **not** improve the V21 Başiske
 
 - Do **not** promote V22.
 - Do **not** update MODEL_WORKSPACE_INDEX / MANIFEST best checkpoint to V22.
-- Keep V21 as best tabular checkpoint.
+- At V22 close-out, V21 remained the best tabular Başiskele baseline for this pilot.
+- Later hierarchy (post-V22): best refreshed Başiskele-only = **V23**; best Kocaeli global = **V24.1**. V22 stays diagnostic no-lift.
 - Mark V22 as diagnostic / no-lift.
 
 ## Caveat

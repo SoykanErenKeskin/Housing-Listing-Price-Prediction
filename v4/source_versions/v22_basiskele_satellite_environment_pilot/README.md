@@ -143,7 +143,14 @@ Full ablation: `v4/outputs/v22_basiskele_satellite_full/`
 | sat_radii | 0.4801 | 0.1086 | 0.4513 | no |
 | sat_full | 0.4829 | 0.1086 | 0.4462 | no |
 
-V21 reference: R² 0.5059 / MAPE 0.1055 / VR 0.4590 — **still the best tabular checkpoint** (`v3/outputs/v21_basiskele_site_extraction_full/`).
+V21 reference: R² 0.5059 / MAPE 0.1055 / VR 0.4590 — older-distribution Başiskele
+tabular reference (`v3/outputs/v21_basiskele_site_extraction_full/`).
+
+Current checkpoint hierarchy (do not promote V22):
+
+- Best Kocaeli global: **V24.1** `full_v24`
+- Best refreshed Başiskele-only: **V23** `duplex_interactions`
+- V22: diagnostic no-lift only
 
 - Sentinel environment CSV features did not beat V21 gates.
 - Tiny lift vs V22 internal control only; not meaningful.

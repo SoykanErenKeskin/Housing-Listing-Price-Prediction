@@ -3,7 +3,7 @@
 Standalone utility that cleans outliers from Neon/CSV listing exports and routes
 suspicious rows into a separate review file.
 
-This package is **independent** of the V17–V19 training pipelines (those have their
+This package is **independent** of the V17–V24 training pipelines (those have their
 own in-pipeline cleaners). Use it for offline CSV QC / thesis-era exports.
 
 ---
