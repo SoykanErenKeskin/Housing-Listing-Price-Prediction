@@ -9,8 +9,12 @@ from typing import Any, Iterable, Sequence
 import pandas as pd
 
 _IDENT = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
+_IDENT_QUALIFIED = re.compile(
+    r"^[A-Za-z_][A-Za-z0-9_]*(\.[A-Za-z_][A-Za-z0-9_]*)?$"
+)
 
 # Preferred columns for inventory analysis (requested if present).
+# Includes both legacy pipeline aliases and canonical physical names.
 PREFERRED_COLUMNS: tuple[str, ...] = (
     "classified_id",
     "source_url",
@@ -19,6 +23,7 @@ PREFERRED_COLUMNS: tuple[str, ...] = (
     "city",
     "county",
     "district",
+    "province",
     "neighborhood",
     "title",
     # sale price candidates
@@ -123,44 +128,46 @@ def resolve_first_present_column(df_or_cols, candidates: Sequence[str]) -> str |
 
 
 def validate_table_name(table: str) -> str:
-    name = str(table or "").strip()
-    if not _IDENT.match(name):
-        raise ValueError(f"Unsafe table name: {table!r}")
-    return name
+    """Resolve legacy/bare names to allowlisted ``schema.table`` via canonical_db."""
+    from canonical_db import resolve_relation
+
+    return resolve_relation(table)
 
 
-def get_database_url() -> str:
-    url = (os.getenv("DATABASE_URL") or os.getenv("DB_URL") or "").strip()
-    if not url:
-        raise RuntimeError(
-            "DATABASE_URL missing. Put .env in project root with DATABASE_URL=..."
-        )
-    return url
+def get_database_url(database_url_override: str | None = None) -> str:
+    """Return a driver-ready URL (``DATABASE_URL`` + ``DB_ROLE_PASSWORD``).
+
+    Never log the return value — it contains the role password.
+    """
+    from db_url import resolve_database_url
+
+    return resolve_database_url(database_url_override=database_url_override)
 
 
 def create_engine(db_url: str | None = None):
-    try:
-        from sqlalchemy import create_engine as _create_engine
-    except ImportError as exc:  # pragma: no cover
-        raise RuntimeError("sqlalchemy is required. pip install sqlalchemy") from exc
-    url = db_url or get_database_url()
-    return _create_engine(url)
+    """Create SQLAlchemy engine via the central URL resolver."""
+    from db_url import create_sqlalchemy_engine
+
+    # ``db_url`` is treated as an optional password-less template override
+    # (e.g. CLI ``--db-url``), not a fully credentialed DSN.
+    return create_sqlalchemy_engine(database_url_override=db_url or None)
 
 
 def list_table_columns(engine, table: str) -> list[str]:
-    """Return lowercase column names present on ``table``."""
+    """Return lowercase column names present on ``table`` (schema-qualified)."""
     from sqlalchemy import inspect
 
-    table = validate_table_name(table)
+    relation = validate_table_name(table)
+    schema, name = relation.split(".", 1)
     insp = inspect(engine)
-    # Try public schema first; fall back to first matching table.
     cols = []
     try:
-        cols = insp.get_columns(table)
+        cols = insp.get_columns(name, schema=schema)
     except Exception:
-        for schema in insp.get_schema_names():
+        # Fallback: search schemas (should be rare for allowlisted relations).
+        for sch in insp.get_schema_names():
             try:
-                cols = insp.get_columns(table, schema=schema)
+                cols = insp.get_columns(name, schema=sch)
                 if cols:
                     break
             except Exception:
@@ -257,19 +264,26 @@ def fetch_listings(
 ) -> tuple[pd.DataFrame, dict[str, Any]]:
     """Fetch listings with graceful column selection.
 
+    SQL uses canonical ``province`` / ``district`` (ilçe) / ``neighborhood``.
+    Returned frame is aliased to legacy ``city`` / ``county`` / ``district``
+    for downstream inventory scripts that still expect the old names.
+
     Returns (dataframe, meta) where meta includes missing_columns / sql notes.
     """
     from sqlalchemy import text
 
-    table = validate_table_name(table)
-    available = list_table_columns(engine, table)
+    from canonical_db import alias_listing_frame, sql_relation
+
+    relation = validate_table_name(table)
+    rel_sql = sql_relation(relation)
+    available = list_table_columns(engine, relation)
     if columns is None:
         selected, missing = pick_available_columns(available)
     else:
         selected, missing = pick_available_columns(available, preferred=columns)
 
     meta: dict[str, Any] = {
-        "table": table,
+        "table": relation,
         "available_column_count": len(available),
         "available_columns": available,
         "selected_columns": selected,
@@ -278,14 +292,19 @@ def fetch_listings(
     }
 
     if not selected:
-        # last resort: SELECT *
         select_sql = "*"
         meta["note"] = "no preferred columns found; using SELECT *"
     else:
         select_sql = ", ".join(selected)
 
+    # Prefer canonical location columns when present; fall back to legacy names.
+    avail_l = {a.lower() for a in available}
+    province_col = "province" if "province" in avail_l else "city"
+    district_ilce_col = "district" if "province" in avail_l else "county"
+    neighborhood_col = "neighborhood" if "neighborhood" in avail_l else "district"
+
     where = [
-        "lower(coalesce(city, '')) = lower(:city)",
+        f"lower(coalesce({province_col}, '')) = lower(:city)",
         "lower(coalesce(listing_purpose, '')) = lower(:purpose)",
     ]
     params: dict[str, Any] = {"city": city, "purpose": purpose}
@@ -293,14 +312,14 @@ def fetch_listings(
         where.append("lower(coalesce(source_site, 'listing_portal')) = lower(:source_site)")
         params["source_site"] = source_site
     if county:
-        where.append("county = :county")
+        where.append(f"{district_ilce_col} = :county")
         params["county"] = county
     if district:
-        where.append("district = :district")
+        # Caller "district" historically means mahalle.
+        where.append(f"{neighborhood_col} = :district")
         params["district"] = district
 
     order = ""
-    avail_l = {a.lower() for a in available}
     if "saved_at" in avail_l and "updated_at" in avail_l:
         order = "ORDER BY saved_at DESC NULLS LAST, updated_at DESC NULLS LAST"
     elif "updated_at" in avail_l:
@@ -311,7 +330,7 @@ def fetch_listings(
     sql = text(
         f"""
         SELECT {select_sql}
-        FROM {table}
+        FROM {rel_sql}
         WHERE {' AND '.join(where)}
         {order}
         """
@@ -320,9 +339,10 @@ def fetch_listings(
         df = pd.read_sql(sql, engine, params=params)
     except Exception as exc:
         raise RuntimeError(
-            f"Failed to query table '{table}' for purpose='{purpose}'. "
+            f"Failed to query table '{relation}' for purpose='{purpose}'. "
             f"Check DB connectivity and filters. Error: {exc}"
         ) from exc
 
+    df = alias_listing_frame(df)
     meta["rows"] = int(len(df))
     return df, meta

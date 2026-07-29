@@ -657,12 +657,25 @@ def metric_dict(y_true: Iterable[float], y_pred: Iterable[float]) -> dict[str, f
 # =========================
 
 
-def create_db_engine(db_url: str):
+def create_db_engine(db_url: str | None = None):
+    """Create engine via central DATABASE_URL + DB_ROLE_PASSWORD resolver."""
     if create_engine is None:
         raise RuntimeError("sqlalchemy is not installed. Install sqlalchemy and psycopg2-binary for DB mode.")
-    if not db_url:
-        raise ValueError("DB URL is empty. Set DATABASE_URL, DB_URL, or pass --db-url.")
-    return create_engine(db_url, pool_pre_ping=True)
+    try:
+        from db_url import create_sqlalchemy_engine as _create_sqlalchemy_engine
+    except ImportError:
+        import sys
+        from pathlib import Path as _Path
+        _here = _Path(__file__).resolve()
+        for _p in [_here.parent, *_here.parents]:
+            _cand = _p / "shared_scripts"
+            if (_cand / "db_url.py").is_file():
+                if str(_cand) not in sys.path:
+                    sys.path.insert(0, str(_cand))
+                break
+        from db_url import create_sqlalchemy_engine as _create_sqlalchemy_engine
+    # Optional db_url is a password-less template override (e.g. --db-url), not a secret DSN.
+    return _create_sqlalchemy_engine(database_url_override=(db_url or None))
 
 
 def fetch_listing_table(engine, table: str, purpose: str, city: str, limit: int | None = None) -> pd.DataFrame:

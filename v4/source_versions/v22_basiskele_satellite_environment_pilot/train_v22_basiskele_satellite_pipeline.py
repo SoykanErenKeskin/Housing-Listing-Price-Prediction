@@ -366,10 +366,10 @@ except Exception:  # pragma: no cover - handled at runtime if DB mode is used
 # Do NOT commit a real DB URL to GitHub.
 DB_URL = os.getenv("DATABASE_URL") or ""
 
-DEFAULT_SALE_TABLE = os.getenv("SALE_TABLE", "sale_listings")
-DEFAULT_RENTAL_TABLE = os.getenv("RENTAL_TABLE", "rental_listings")
+DEFAULT_SALE_TABLE = os.getenv("SALE_TABLE", "market.sale_listings")
+DEFAULT_RENTAL_TABLE = os.getenv("RENTAL_TABLE", "market.rental_listings")
 DEFAULT_SOURCE_SITE = os.getenv("SOURCE_SITE", "listing_portal")
-DEFAULT_TREND_TABLE = "trend_observed"
+DEFAULT_TREND_TABLE = "market.price_observations"
 DEFAULT_CITY = "Kocaeli"
 DEFAULT_COUNTIES = ["Başiskele"]
 MODEL_SCOPE = "basiskele_only"
@@ -956,10 +956,21 @@ def to_num(x: Any) -> float:
 
 
 def validate_table_name(name: str) -> str:
-    allowed = set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_")
-    if not name or any(ch not in allowed for ch in name):
-        raise ValueError(f"Invalid table name: {name}")
-    return name
+    """Allowlist schema-qualified (or legacy-alias) relation names via canonical_db."""
+    try:
+        from canonical_db import resolve_relation as _resolve_relation
+    except ImportError:
+        import sys
+        from pathlib import Path as _Path
+        _here = _Path(__file__).resolve()
+        for _p in [_here.parent, *_here.parents]:
+            _cand = _p / "shared_scripts"
+            if (_cand / "canonical_db.py").is_file():
+                if str(_cand) not in sys.path:
+                    sys.path.insert(0, str(_cand))
+                break
+        from canonical_db import resolve_relation as _resolve_relation
+    return _resolve_relation(name)
 
 
 def parse_counties(s: str | None) -> list[str]:
@@ -1068,101 +1079,88 @@ def metric_dict(y_true: Iterable[float], y_pred: Iterable[float]) -> dict[str, f
 # =========================
 
 
-def create_db_engine(db_url: str):
+def create_db_engine(db_url: str | None = None):
+    """Create engine via central DATABASE_URL + DB_ROLE_PASSWORD resolver."""
     if create_engine is None:
         raise RuntimeError("sqlalchemy is not installed. Install sqlalchemy and psycopg2-binary for DB mode.")
-    if not db_url:
-        raise ValueError("DB URL is empty. Set DATABASE_URL, DB_URL, or pass --db-url.")
-    return create_engine(db_url, pool_pre_ping=True)
+    try:
+        from db_url import create_sqlalchemy_engine as _create_sqlalchemy_engine
+    except ImportError:
+        import sys
+        from pathlib import Path as _Path
+        _here = _Path(__file__).resolve()
+        for _p in [_here.parent, *_here.parents]:
+            _cand = _p / "shared_scripts"
+            if (_cand / "db_url.py").is_file():
+                if str(_cand) not in sys.path:
+                    sys.path.insert(0, str(_cand))
+                break
+        from db_url import create_sqlalchemy_engine as _create_sqlalchemy_engine
+    # Optional db_url is a password-less template override (e.g. --db-url), not a secret DSN.
+    return _create_sqlalchemy_engine(database_url_override=(db_url or None))
 
 
 def fetch_listing_table(engine, table: str, purpose: str, city: str, limit: int | None = None, county: str = "Başiskele") -> pd.DataFrame:
-    """V18: ONLY Başiskele. Never pull İzmit/Gölcük/Karamürsel."""
-    table = validate_table_name(table)
-    limit_clause = f" LIMIT {int(limit)}" if limit else ""
-    county = county or "Başiskele"
-    sql = text(
-        f"""
-        SELECT *
-        FROM {table}
-        WHERE lower(coalesce(city, '')) = lower(:city)
-          AND lower(coalesce(listing_purpose, '')) = lower(:purpose)
-          AND county = :county
-          AND lower(coalesce(source_site, :source_site)) = lower(:source_site)
-        ORDER BY saved_at DESC NULLS LAST, updated_at DESC NULLS LAST
-        {limit_clause}
-        """
+    """Fetch listings for a single county (canonical DB + legacy DF aliases)."""
+    try:
+        from canonical_db import fetch_listing_table as _fetch_listing_table
+    except ImportError:
+        import sys
+        from pathlib import Path as _Path
+        _here = _Path(__file__).resolve()
+        for _p in [_here.parent, *_here.parents]:
+            _cand = _p / "shared_scripts"
+            if (_cand / "canonical_db.py").is_file():
+                if str(_cand) not in sys.path:
+                    sys.path.insert(0, str(_cand))
+                break
+        from canonical_db import fetch_listing_table as _fetch_listing_table
+    return _fetch_listing_table(
+        engine,
+        table,
+        purpose,
+        city,
+        limit=limit,
+        county=county or "Başiskele",
+        source_site=DEFAULT_SOURCE_SITE,
+        filter_source_site=True,
     )
-    return pd.read_sql(sql, engine, params={"city": city, "purpose": purpose, "county": county, "source_site": DEFAULT_SOURCE_SITE})
 
 
 def fetch_latest_trend_table(engine, table: str, city: str, max_date: str | None = None) -> pd.DataFrame:
-    table = validate_table_name(table)
-    date_filter = "AND property_date <= :max_date" if max_date else ""
-    params = {"city": city}
-    if max_date:
-        params["max_date"] = max_date
-    sql = text(
-        f"""
-        WITH filtered AS (
-            SELECT
-                id,
-                property_date,
-                property_year,
-                property_month,
-                city_name,
-                county_name,
-                district_name,
-                district_id,
-                unit_price_for_sale,
-                unit_price_for_rent,
-                count_for_sale,
-                count_for_rent,
-                listing_period_for_sale,
-                yield,
-                price_change_sale,
-                unit_price_sale_annual_change,
-                projection_like,
-                ROW_NUMBER() OVER (
-                    PARTITION BY county_name, district_name
-                    ORDER BY property_date DESC
-                ) AS rn
-            FROM {table}
-            WHERE lower(coalesce(city_name, '')) = lower(:city)
-              AND coalesce(projection_like, false) = false
-              {date_filter}
-        )
-        SELECT *
-        FROM filtered
-        WHERE rn = 1
-        ORDER BY county_name, district_name
-        """
-    )
-    return pd.read_sql(sql, engine, params=params)
-
+    """Latest price observations (canonical columns aliased to legacy city/county/district names)."""
+    try:
+        from canonical_db import fetch_latest_trend_table as _fetch_latest_trend_table
+    except ImportError:
+        import sys
+        from pathlib import Path as _Path
+        _here = _Path(__file__).resolve()
+        for _p in [_here.parent, *_here.parents]:
+            _cand = _p / "shared_scripts"
+            if (_cand / "canonical_db.py").is_file():
+                if str(_cand) not in sys.path:
+                    sys.path.insert(0, str(_cand))
+                break
+        from canonical_db import fetch_latest_trend_table as _fetch_latest_trend_table
+    return _fetch_latest_trend_table(engine, table, city, max_date=max_date)
 
 
 def fetch_demographics_table(engine, table: str, city: str | None = None) -> pd.DataFrame:
-    """Fetch district-level demographic data from PostgreSQL.
-
-    The project keeps external reference IDs directly in ref/demographic id columns, so
-    city_id/county_id/district_id are used as stable join keys.
-    """
-    table = validate_table_name(table)
-    city_filter = "WHERE lower(coalesce(city_name, '')) = lower(:city)" if city else ""
-    params = {"city": city} if city else {}
-    sql = text(
-        f"""
-        SELECT *
-        FROM {table}
-        {city_filter}
-        """
-    )
+    """Fetch neighborhood demographics (canonical IDs/names aliased to legacy join keys)."""
     try:
-        return pd.read_sql(sql, engine, params=params)
-    except Exception as exc:
-        warnings.warn(f"Demographics table could not be fetched; continuing without demographics. Error: {exc}")
-        return pd.DataFrame()
+        from canonical_db import fetch_demographics_table as _fetch_demographics_table
+    except ImportError:
+        import sys
+        from pathlib import Path as _Path
+        _here = _Path(__file__).resolve()
+        for _p in [_here.parent, *_here.parents]:
+            _cand = _p / "shared_scripts"
+            if (_cand / "canonical_db.py").is_file():
+                if str(_cand) not in sys.path:
+                    sys.path.insert(0, str(_cand))
+                break
+        from canonical_db import fetch_demographics_table as _fetch_demographics_table
+    return _fetch_demographics_table(engine, table, city=city)
 
 
 def safe_divide_series(num: pd.Series, den: pd.Series) -> pd.Series:
@@ -5277,7 +5275,7 @@ def parse_args() -> argparse.Namespace:
     ap.add_argument("--county-experts", dest="county_experts", action=argparse.BooleanOptionalAction, default=False, help="Train and validate county-specific expert blend layer.")
     ap.add_argument("--county-expert-min-rows", type=int, default=180, help="Minimum rows needed to train a county expert model.")
     ap.add_argument("--anomaly-reports", action=argparse.BooleanOptionalAction, default=True, help="Create listing anomaly score reports without adding app-unavailable features.")
-    ap.add_argument("--demographics-table", default="district_demographics", help="PostgreSQL table containing district-level demographic features.")
+    ap.add_argument("--demographics-table", default="geo.neighborhood_demographics", help="PostgreSQL table containing district-level demographic features.")
     ap.add_argument("--demographics-mode", choices=["none", "safe", "full"], default="safe", help="Demographic feature mode for final training run.")
     ap.add_argument("--exclude-anomalies-threshold", type=float, default=25.0, help="Exclude rows with anomaly_score >= threshold before training. Set 0 to disable.")
     ap.add_argument("--attribute-mode", choices=["none", "basic", "full"], default="full", help="Attribute feature mode: none/basic/full.")

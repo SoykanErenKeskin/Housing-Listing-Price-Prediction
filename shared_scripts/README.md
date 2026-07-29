@@ -4,7 +4,13 @@ Root-level **shared analysis / maintenance** utilities.
 
 - **Not** a model-generation package (`v1` / `v2` / `v3` / `v4` are the model eras).
 - Does **not** train price models; it pulls listings from the DB and writes data-health / audit reports.
-- Requires repo-root `.env` with `DATABASE_URL`. The loader never logs secret values.
+- Requires repo-root `.env` with password-less `DATABASE_URL` (user `ml_pipeline`)
+  and separate `DB_ROLE_PASSWORD`. The loader / resolver never logs secret values.
+- Connection strings are built by `shared_scripts/db_url.py` (URL parse + password inject).
+- Canonical Neon relations + legacy DF aliases: `shared_scripts/canonical_db.py`
+  (`market.sale_listings`, `market.rental_listings`, `market.price_observations`,
+  `geo.neighborhood_demographics`). Training pipelines still see legacy
+  `city` / `county` / `district` column names after fetch for artifact compatibility.
 
 Active model checkpoints live under `v3/` (best Kocaeli global = V24.1; best refreshed
 Başiskele-only = V23). Visual/satellite work is under `v4/`.
@@ -60,7 +66,13 @@ Also in this folder (analysis only; not training):
 |---|---|
 | `analyze_listing_inventory.py` | Main inventory analysis entrypoint |
 | `db_utils.py` | DB engine + column-safe fetch helpers |
+| `db_url.py` | Central `DATABASE_URL` + `DB_ROLE_PASSWORD` resolver |
+| `canonical_db.py` | Canonical schema allowlist, fetch helpers, DF aliases |
+| `smoke_ml_pipeline_db.py` | Read-only role/table smoke |
+| `smoke_canonical_fetch_parity.py` | Bounded fetch + alias contract smoke |
 | `env_loader.py` | Walk-to-root `.env` loader |
+| `smoke_ml_pipeline_db.py` | Safe connectivity / permission smoke checks |
+| `test_db_url.py` | Unit tests for URL resolver / redaction |
 
 ---
 

@@ -148,9 +148,11 @@ See also: [`MODEL_WORKSPACE_INDEX.md`](MODEL_WORKSPACE_INDEX.md) and [`MANIFEST.
 
 ## Security & secrets
 
-- **Single secrets file:** repo-root `.env` with `DATABASE_URL`.
+- **Single secrets file:** repo-root `.env` with password-less `DATABASE_URL`
+  (username `ml_pipeline`) and separate `DB_ROLE_PASSWORD`.
 - Copy from [`.env.example`](.env.example). Do not commit real credentials.
-- Training loaders walk parents to find root `.env` (`shared_scripts/env_loader.py`, `v3/shared_scripts/env_loader.py`).
+- Connection strings are resolved by `shared_scripts/db_url.py` (URL parse + password inject).
+- Training loaders walk parents to find root `.env` (`shared_scripts/env_loader.py`).
 - `.gitignore` blocks `.env`, credential JSON, private keys, model binaries, and multi-GB `outputs/` / `artifacts/` trees.
 
 ---

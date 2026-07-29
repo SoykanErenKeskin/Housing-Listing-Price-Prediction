@@ -34,7 +34,6 @@ from db_utils import (  # noqa: E402
     SALE_UNIT_PRICE_CANDIDATES,
     create_engine,
     fetch_listings,
-    get_database_url,
     resolve_first_present_column,
 )
 from env_loader import find_project_root, load_root_env  # noqa: E402
@@ -974,18 +973,18 @@ def parse_args() -> argparse.Namespace:
     ap.add_argument("--purpose", choices=["sale", "rental", "both"], default="both")
     ap.add_argument(
         "--sale-table",
-        default=os.getenv("SALE_TABLE", "sale_listings"),
-        help="Sale listings table (default: SALE_TABLE env or sale_listings)",
+        default=os.getenv("SALE_TABLE", "market.sale_listings"),
+        help="Sale listings table (default: SALE_TABLE env or market.sale_listings)",
     )
     ap.add_argument(
         "--rental-table",
-        default=os.getenv("RENTAL_TABLE", "rental_listings"),
-        help="Rental listings table (default: RENTAL_TABLE env or rental_listings)",
+        default=os.getenv("RENTAL_TABLE", "market.rental_listings"),
+        help="Rental listings table (default: RENTAL_TABLE env or market.rental_listings)",
     )
     ap.add_argument(
         "--source-site",
         default=os.getenv("SOURCE_SITE", "listing_portal"),
-        help="source_site filter (default: SOURCE_SITE env or listing_portal)",
+        help="source_site filter (default: SOURCE_SITE env, else pipeline default)",
     )
     ap.add_argument("--out", default=None, help="Output directory (default: analysis_outputs/listing_inventory/<ts>)")
     ap.add_argument("--export-samples", action="store_true")
@@ -1016,14 +1015,25 @@ def main() -> int:
     _ensure_dir(out_dir)
 
     try:
-        engine = create_engine(get_database_url())
+        from db_url import safe_database_label, sanitize_db_error
+
+        engine = create_engine()
         # light connectivity check
         with engine.connect() as conn:
             conn.exec_driver_sql("SELECT 1")
-        print("DB connected")
+        print(f"DB connected ({safe_database_label()})")
     except Exception as exc:
-        print(f"ERROR: DB connection failed — {exc}")
-        print("Hint: set DATABASE_URL in project-root .env (value not printed).")
+        try:
+            from db_url import sanitize_db_error as _sanitize
+
+            msg = _sanitize(exc)
+        except Exception:
+            msg = "connection failed (details redacted)"
+        print(f"ERROR: DB connection failed — {msg}")
+        print(
+            "Hint: set password-less DATABASE_URL (user ml_pipeline) and "
+            "DB_ROLE_PASSWORD in project-root .env (values not printed)."
+        )
         return 3
 
     sale_raw = pd.DataFrame()

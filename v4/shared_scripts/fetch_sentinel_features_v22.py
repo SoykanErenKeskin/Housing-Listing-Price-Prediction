@@ -169,29 +169,58 @@ def _load_listing_coords(
     source_site: str | None = None,
 ) -> pd.DataFrame:
     """Load sale listing coordinates from DB (root .env). Matches V21 table defaults."""
+    shared = ROOT / "shared_scripts"
+    if str(shared) not in sys.path:
+        sys.path.insert(0, str(shared))
     try:
-        from shared_scripts.env_loader import load_root_env
-        load_root_env()
-    except Exception:
+        from env_loader import load_root_env
+        from db_url import create_sqlalchemy_engine, sanitize_db_error
+
+        load_root_env(start=ROOT)
+    except Exception as exc:
         try:
-            from dotenv import load_dotenv
-            env = ROOT / ".env"
-            if env.exists():
-                load_dotenv(env)
-        except Exception:
-            pass
+            from db_url import sanitize_db_error as _sanitize
 
-    db_url = os.getenv("DATABASE_URL") or os.getenv("DB_URL")
-    if not db_url:
-        raise RuntimeError("DATABASE_URL not set; cannot fetch listing coordinates.")
+            raise RuntimeError(
+                f"Failed to load DB config for listing coordinates: {_sanitize(exc)}"
+            ) from None
+        except ImportError:
+            raise RuntimeError(
+                "Failed to load DB config for listing coordinates "
+                "(DATABASE_URL + DB_ROLE_PASSWORD required)."
+            ) from None
 
-    from sqlalchemy import create_engine, text
+    from sqlalchemy import text
 
-    engine = create_engine(db_url)
-    default_table = sale_table or os.getenv("SALE_TABLE", "sale_listings")
+    try:
+        from canonical_db import (
+            CANONICAL_SALE_LISTINGS,
+            alias_listing_frame,
+            resolve_relation,
+            sql_relation,
+        )
+    except ImportError:
+        shared = Path(__file__).resolve().parents[2] / "shared_scripts"
+        if str(shared) not in sys.path:
+            sys.path.insert(0, str(shared))
+        from canonical_db import (
+            CANONICAL_SALE_LISTINGS,
+            alias_listing_frame,
+            resolve_relation,
+            sql_relation,
+        )
+
+    try:
+        engine = create_sqlalchemy_engine()
+    except Exception as exc:
+        raise RuntimeError(
+            f"Cannot create DB engine for listing coordinates: {sanitize_db_error(exc)}"
+        ) from None
+
+    default_table = sale_table or os.getenv("SALE_TABLE", CANONICAL_SALE_LISTINGS)
     source = source_site or os.getenv("SOURCE_SITE", "listing_portal")
     candidates = []
-    for t in [default_table, "sale_listings", "sale_listings"]:
+    for t in [default_table, CANONICAL_SALE_LISTINGS, "sale_listings", "sale_listings"]:
         if t and t not in candidates:
             candidates.append(t)
 
@@ -206,8 +235,10 @@ def _load_listing_coords(
     df = pd.DataFrame()
 
     for table in candidates:
-        if not str(table).replace("_", "").isalnum():
-            errors.append(f"{table}: invalid table name")
+        try:
+            rel = sql_relation(table)
+        except Exception as exc:
+            errors.append(f"{table}: {exc}")
             continue
         sql = text(
             f"""
@@ -215,18 +246,16 @@ def _load_listing_coords(
                 classified_id,
                 latitude,
                 longitude,
-                lat,
-                lon,
                 location_precision,
                 location_source,
-                county,
+                province,
                 district,
-                city,
+                neighborhood,
                 listing_purpose
-            FROM {table}
-            WHERE lower(coalesce(city, '')) = lower(:city)
+            FROM {rel}
+            WHERE lower(coalesce(province, '')) = lower(:city)
               AND lower(coalesce(listing_purpose, '')) = lower(:purpose)
-              AND county = :county
+              AND district = :county
               AND lower(coalesce(source_site, :source_site)) = lower(:source_site)
             ORDER BY saved_at DESC NULLS LAST, updated_at DESC NULLS LAST
             {limit_clause}
@@ -235,16 +264,16 @@ def _load_listing_coords(
         try:
             with engine.connect() as conn:
                 df = pd.read_sql(sql, conn, params=params)
-            print(f"Loaded listing coords from table={table} rows={len(df)}")
+            print(f"Loaded listing coords from table={resolve_relation(table)} rows={len(df)}")
             break
         except Exception:
             sql_min = text(
                 f"""
                 SELECT *
-                FROM {table}
-                WHERE lower(coalesce(city, '')) = lower(:city)
+                FROM {rel}
+                WHERE lower(coalesce(province, '')) = lower(:city)
                   AND lower(coalesce(listing_purpose, '')) = lower(:purpose)
-                  AND county = :county
+                  AND district = :county
                   AND lower(coalesce(source_site, :source_site)) = lower(:source_site)
                 ORDER BY saved_at DESC NULLS LAST, updated_at DESC NULLS LAST
                 {limit_clause}
@@ -253,10 +282,13 @@ def _load_listing_coords(
             try:
                 with engine.connect() as conn:
                     df = pd.read_sql(sql_min, conn, params=params)
-                print(f"Loaded listing coords from table={table} (SELECT *) rows={len(df)}")
+                print(
+                    f"Loaded listing coords from table={resolve_relation(table)} "
+                    f"(SELECT *) rows={len(df)}"
+                )
                 break
             except Exception as exc2:
-                errors.append(f"{table}: {exc2}")
+                errors.append(f"{table}: {sanitize_db_error(exc2)}")
                 df = pd.DataFrame()
 
     if df.empty and errors:
@@ -272,6 +304,7 @@ def _load_listing_coords(
     if "classified_id" not in df.columns:
         raise RuntimeError("Sale table missing classified_id")
 
+    df = alias_listing_frame(df)
     df = df.copy()
     df["classified_id"] = df["classified_id"].astype(str).str.strip()
     if "latitude" not in df.columns and "lat" in df.columns:
@@ -641,12 +674,12 @@ def main() -> int:
     ap.add_argument(
         "--sale-table",
         default=None,
-        help="Sale listings table (default: SALE_TABLE env or sale_listings).",
+        help="Sale listings table (default: SALE_TABLE env or market.sale_listings).",
     )
     ap.add_argument(
         "--source-site",
         default=None,
-        help="source_site filter (default: SOURCE_SITE env or listing_portal).",
+        help="source_site filter (default: SOURCE_SITE env, else pipeline default).",
     )
     ap.add_argument(
         "--gee-project",

@@ -26,7 +26,10 @@ def find_project_root(start: Optional[Path] = None) -> Optional[Path]:
 def load_root_env(*, start: Optional[Path] = None, override: bool = False) -> Path:
     """Load the nearest project-root ``.env`` via python-dotenv.
 
-    Returns the path that was loaded. Never prints ``.env`` contents.
+    Requires ``DATABASE_URL`` (password-less ``ml_pipeline`` URL) and
+    ``DB_ROLE_PASSWORD``. Never prints ``.env`` contents or secrets.
+
+    Returns the path that was loaded.
     """
     try:
         from dotenv import load_dotenv
@@ -48,15 +51,22 @@ def load_root_env(*, start: Optional[Path] = None, override: bool = False) -> Pa
 
     if env_path is None:
         raise FileNotFoundError(
-            "DATABASE_URL missing. Put .env in project root "
-            "(same folder as MANIFEST.json / data/)."
+            "Project-root .env not found (expected next to MANIFEST.json / data/)."
         )
 
     load_dotenv(env_path, override=override)
-    if not (os.getenv("DATABASE_URL") or os.getenv("DB_URL")):
+
+    has_url = bool((os.getenv("DATABASE_URL") or os.getenv("DB_URL") or "").strip())
+    has_password = bool((os.getenv("DB_ROLE_PASSWORD") or "").strip())
+    if not has_url:
         raise RuntimeError(
-            "DATABASE_URL missing. Put .env in project root "
-            f"(looked at {env_path.name} under project root)."
+            "DATABASE_URL missing. Put a password-less ml_pipeline URL in the "
+            f"project-root .env (looked at {env_path.name})."
+        )
+    if not has_password:
+        raise RuntimeError(
+            "DB_ROLE_PASSWORD missing. Set the ml_pipeline role password in the "
+            f"project-root .env (looked at {env_path.name})."
         )
     return env_path
 
@@ -65,3 +75,10 @@ if __name__ == "__main__":
     path = load_root_env()
     print(f"loaded_env_name={path.name}")
     print(f"DATABASE_URL_set={bool(os.getenv('DATABASE_URL') or os.getenv('DB_URL'))}")
+    print(f"DB_ROLE_PASSWORD_set={bool(os.getenv('DB_ROLE_PASSWORD'))}")
+    try:
+        from db_url import safe_database_label
+
+        print(f"database_target={safe_database_label()}")
+    except Exception as exc:
+        print(f"database_target_error={exc}")

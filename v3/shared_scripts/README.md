@@ -17,11 +17,14 @@ load_root_env()
 Requirements:
 
 - `python-dotenv` installed
-- Root `.env` present with `DATABASE_URL`
+- Root `.env` present with password-less `DATABASE_URL` (user `ml_pipeline`)
+  and `DB_ROLE_PASSWORD`
 
-Raises a clear error if `.env` or `DATABASE_URL` is missing. Never prints the secret value.
+Raises a clear error if `.env`, `DATABASE_URL`, or `DB_ROLE_PASSWORD` is missing.
+Never prints secret values.
 
-Also available at repo root: `shared_scripts/env_loader.py` (same idea for analysis tools).
+Also available at repo root: `shared_scripts/env_loader.py` and
+`shared_scripts/db_url.py` (central connection resolver).
 
 ---
 
