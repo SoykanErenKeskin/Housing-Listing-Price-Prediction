@@ -6,14 +6,15 @@ Index of generation eras in this repository.
 |---|---|---|---|
 | v1 | Thesis / classic model archive | `./v1/` | Archived |
 | v2 | Location + Başiskele (pre comparable/calibration close-out) | `./v2/` | Archived reference |
-| v3 | **Tabular Premium Signals** | `./v3/` | Best Kocaeli global = **V24.1**; best refreshed Başiskele-only = **V23** |
+| v3 | **Tabular Premium Signals** | `./v3/` | Deployed Kocaeli global = **V24.1**; research refresh = **V25**; Başiskele-only = **V23** |
 | v4 | Visual / Satellite / Image-based experiments | `./v4/` | Active; V22 = diagnostic/no-lift |
 
 ### Current checkpoint hierarchy
 
 | Scope | Best checkpoint | Path |
 |---|---|---|
-| **Kocaeli global** | **V24.1 `full_v24`** | `v3/outputs/v24_1_kocaeli_site_merge_repair/` |
+| **Kocaeli global (deployed / app)** | **V24.1 `full_v24`** | `v3/outputs/v24_1_kocaeli_site_merge_repair/` |
+| **Kocaeli global (research, not promoted)** | **V25 `full_v25_core_good_ok`** | `v3/outputs/v25_kocaeli_full_refresh_core_good_ok_full/` |
 | **Başiskele-only (refreshed data)** | **V23 `duplex_interactions`** | `v3/outputs/v23_basiskele_duplex_largehome_refresh_full/` |
 | Visual / satellite | V22 | diagnostic no-lift (do not promote) |
 
@@ -80,7 +81,7 @@ Site/project extraction is now validated globally after merge repair (`severe_ba
 **Short name:** `v3_tabular_premium_signals` (folder remains `./v3/`)
 
 **Scope:**  
-Tabular premium feature experiments — Başiskele-only through V23, then Kocaeli global site-aware (V24 / V24.1).
+Tabular premium feature experiments — Başiskele-only through V23, then Kocaeli global site-aware (V24 / V24.1), then full-inventory refresh research (V25).
 
 **Includes:**
 
@@ -89,9 +90,10 @@ Tabular premium feature experiments — Başiskele-only through V23, then Kocael
 - V21 improved site/project extraction (older Başiskele distribution)
 - V23 duplex / large-home refresh (refreshed Başiskele-only)
 - V24 Kocaeli site-aware global refresh
-- **V24.1** Kocaeli site merge repair → **best Kocaeli global checkpoint**
+- **V24.1** Kocaeli site merge repair → **current deployed / app Kocaeli global checkpoint**
+- **V25** Kocaeli full refresh `core_good_ok` → **research checkpoint (not promoted)**
 
-### Best Kocaeli global checkpoint — V24.1 `full_v24`
+### Best Kocaeli global checkpoint (deployed) — V24.1 `full_v24`
 
 | Field | Value |
 |---|---|
@@ -122,7 +124,35 @@ Tabular premium feature experiments — Başiskele-only through V23, then Kocael
 | Karamürsel | 0.578453 | 0.158589 |
 | Kartepe | 0.550115 | 0.101380 |
 
-**Decision:** Promote V24.1 as the best Kocaeli global checkpoint. Site/project extraction is now validated globally after merge repair. Keep `possible_bad_merge=12` as non-blocking manual review candidates. Document `severe_bad_merge=0`.
+**Decision:** V24.1 remains the **deployed / app** Kocaeli global checkpoint. Site/project extraction is validated globally after merge repair. Keep `possible_bad_merge=12` as non-blocking manual review candidates. Document `severe_bad_merge=0`.
+
+### Research checkpoint (not promoted) — V25 `full_v25_core_good_ok`
+
+| Field | Value |
+|---|---|
+| Output | `v3/outputs/v25_kocaeli_full_refresh_core_good_ok_full/` |
+| Package | `v3/source_versions/v25_kocaeli_full_refresh_core_good_ok/` |
+| Summary | `README_v25_core_good_ok_final_summary.md` |
+| Model card | `model_card_v25_core_good_ok.json` |
+| selected_experiment | `full_v25_core_good_ok` |
+| county_policy | `core_good_ok` (excl. Karamürsel / Kandıra / Dilovası) |
+| site_extraction_mode | `full` |
+| site_project_encoding | `foldsafe_target` |
+| duplex_feature_mode | `full` |
+| R² | 0.730769 |
+| MAPE | 0.108255 |
+| median APE | 0.082262 |
+| variance_ratio | 0.693997 |
+| rows | 14363 |
+| leakage_pass | true |
+| severe_bad_merge | **0** |
+| possible_bad_merge | **17** (non-blocking) |
+| feature_guard | **PASS** |
+| best_checkpoint (same-data) | **true** |
+| promote_over_v24_1 | **false** |
+| promotion_status | `research_checkpoint_not_deployed` |
+
+**Decision:** V25 is selected within the same-data core_good_ok run. **Do not promote over V24.1 yet.** Do not touch app/EDER artifacts. Old V24.1 numeric comparison is reference only (distribution changed). Control and full_v25 matched under identical modes on refreshed inventory.
 
 ### Best refreshed Başiskele-only checkpoint — V23 `duplex_interactions`
 
@@ -156,8 +186,10 @@ V21 remains the older-distribution Başiskele reference; refreshed-data Başiske
 
 | Package / output | Role |
 |---|---|
-| `v3/source_versions/v24_1_kocaeli_site_merge_repair/` | **Best Kocaeli global package** |
-| `v3/outputs/v24_1_kocaeli_site_merge_repair/` | **Best Kocaeli global run output** |
+| `v3/source_versions/v24_1_kocaeli_site_merge_repair/` | **Deployed Kocaeli global package** |
+| `v3/outputs/v24_1_kocaeli_site_merge_repair/` | **Deployed Kocaeli global run output** |
+| `v3/source_versions/v25_kocaeli_full_refresh_core_good_ok/` | V25 research package (not promoted) |
+| `v3/outputs/v25_kocaeli_full_refresh_core_good_ok_full/` | V25 research run + final summary |
 | `v3/source_versions/v23_basiskele_duplex_largehome_refresh/` | Best refreshed Başiskele-only package |
 | `v3/outputs/v23_basiskele_duplex_largehome_refresh_full/` | Best refreshed Başiskele-only run |
 | `v3/source_versions/v21_basiskele_site_project_extraction/` | Older Başiskele tabular package |
@@ -175,7 +207,8 @@ V21 remains the older-distribution Başiskele reference; refreshed-data Başiske
 
 **Base / best tabular Başiskele (older distribution):** V21 — `v3/outputs/v21_basiskele_site_extraction_full/`  
 **Refreshed Başiskele-only best:** V23 — `v3/outputs/v23_basiskele_duplex_largehome_refresh_full/`  
-**Best Kocaeli global:** V24.1 — `v3/outputs/v24_1_kocaeli_site_merge_repair/`
+**Best Kocaeli global (deployed):** V24.1 — `v3/outputs/v24_1_kocaeli_site_merge_repair/`  
+**Kocaeli research (not promoted):** V25 — `v3/outputs/v25_kocaeli_full_refresh_core_good_ok_full/`
 
 **Goal:** test satellite/static-map visual features and image embeddings as additional premium/micro-location signals
 
@@ -226,11 +259,17 @@ Root-level `outputs/` and `scripts/` were removed; content lives under `v1/`, `v
 python shared_scripts/analyze_listing_inventory.py --city Kocaeli
 ```
 
-### Start from best Kocaeli global checkpoint (V24.1)
+### Start from deployed Kocaeli global checkpoint (V24.1)
 
 1. Configure root `.env` from `.env.example`
 2. Use `v3/source_versions/v24_1_kocaeli_site_merge_repair/`
 3. Reference metrics / ablation under `v3/outputs/v24_1_kocaeli_site_merge_repair/`
 4. Keep `severe_bad_merge=0`; treat `possible_bad_merge=12` as manual review only
+
+### V25 research checkpoint (not deployed)
+
+1. Outputs + summary: `v3/outputs/v25_kocaeli_full_refresh_core_good_ok_full/`
+2. Read `README_v25_core_good_ok_final_summary.md` and `model_card_v25_core_good_ok.json`
+3. Do **not** promote over V24.1 or copy artifacts to app/EDER until an explicit promote decision
 5. For refreshed Başiskele-only work, use V23 — do not replace V24.1 with V23 (different scope)
 6. Put visual/satellite work under `v4/` — V22 remains diagnostic no-lift

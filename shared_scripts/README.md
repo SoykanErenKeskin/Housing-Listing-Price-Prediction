@@ -40,7 +40,7 @@ Example artifacts:
 - `inventory_summary.json`, `summary.md`
 - `county_distribution.csv`, `district_distribution.csv`
 - `sale_price_distribution.csv` / `rental_price_distribution.csv`
-- `feature_missingness.csv`, `categorical_cardinality.csv`
+- `feature_missingness.csv`, `categorical_cardinality.csv`, `categorical_value_counts.csv`
 - `location_quality_report.csv`, `model_readiness_report.csv`
 - `basiskele_special_report.csv` (when scoped to Kocaeli / Başiskele)
 - `duplicates_report.csv`, `suspicious_rows.csv`
@@ -55,8 +55,17 @@ Also in this folder (analysis only; not training):
 
 | File | Role |
 |---|---|
+| `audit_feature_reactivation.py` | Feature reactivation vs V24.1 + EDER app input coverage |
 | `audit_basiskele_premium_residuals.py` | Başiskele premium residual / site-candidate audit |
 | `audit_demographics_income_ses_features.py` | External SES / income feature audit helper |
+
+Feature reactivation example:
+
+```powershell
+python shared_scripts/audit_feature_reactivation.py --city Kocaeli --source-site sahibinden
+```
+
+Default output: `analysis_outputs/feature_reactivation_audit_<YYYY-MM-DD_HHMM>/`.
 
 ---
 
@@ -65,6 +74,7 @@ Also in this folder (analysis only; not training):
 | File | Role |
 |---|---|
 | `analyze_listing_inventory.py` | Main inventory analysis entrypoint |
+| `audit_feature_reactivation.py` | V25 prep: DB vs model vs app feature gap audit |
 | `db_utils.py` | DB engine + column-safe fetch helpers |
 | `db_url.py` | Central `DATABASE_URL` + `DB_ROLE_PASSWORD` resolver |
 | `canonical_db.py` | Canonical schema allowlist, fetch helpers, DF aliases |

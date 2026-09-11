@@ -14,6 +14,7 @@ import argparse
 import json
 import math
 import os
+import re
 import sys
 import warnings
 from datetime import datetime
@@ -39,6 +40,40 @@ from db_utils import (  # noqa: E402
 from env_loader import find_project_root, load_root_env  # noqa: E402
 
 LARGE_HOME_M2 = 180.0
+
+# Light inventory-only signals (not the full V23/V24 feature extractors).
+_EMPTY_SITE_NAME = {
+    "",
+    "nan",
+    "none",
+    "null",
+    "<na>",
+    "yok",
+    "belirtilmemis",
+    "belirtilmemiş",
+    "-",
+    "--",
+}
+_DUPLEX_RE = re.compile(
+    r"(dubleks|dubleksi|dublex|duplex|bah[cç]e\s*dubleks|[cç]at[iı]\s*dubleks|teras\s*dubleks|penthouse)",
+    re.IGNORECASE,
+)
+_SITE_TEXT_RE = re.compile(
+    r"(\bsite\b|sitelerde|site\s*i[cç]inde|\bproje\b|konut\s*projesi|yeni\s*proje|marka\s*proje)",
+    re.IGNORECASE,
+)
+_SITE_INSIDE_TRUE = {
+    "1",
+    "true",
+    "yes",
+    "evet",
+    "var",
+    "site içinde",
+    "site icinde",
+    "içinde",
+    "icinde",
+}
+
 CATEGORICAL_COLS = [
     "county",
     "district",
@@ -58,6 +93,41 @@ CATEGORICAL_COLS = [
     "location_source",
     "location_backfill_status",
 ]
+
+
+def _truthy_site_inside(series: pd.Series) -> pd.Series:
+    s = series.astype("string").str.strip().str.lower().fillna("")
+    return s.isin(_SITE_INSIDE_TRUE) | (s == "true")
+
+
+def _meaningful_site_name(series: pd.Series) -> pd.Series:
+    s = series.astype("string").str.strip().str.lower().fillna("")
+    return ~s.isin(_EMPTY_SITE_NAME) & (s.str.len() >= 2)
+
+
+def _text_match(series: pd.Series, pattern: re.Pattern[str]) -> pd.Series:
+    s = series.astype("string").fillna("")
+    return s.str.contains(pattern.pattern, case=False, regex=True, na=False)
+
+
+def attach_inventory_signals(df: pd.DataFrame) -> pd.DataFrame:
+    """Add light site_project / duplex inventory flags used in county coverage reports."""
+    out = df.copy()
+    title = out["title"] if "title" in out.columns else pd.Series("", index=out.index, dtype="string")
+    site_name = out["site_name"] if "site_name" in out.columns else pd.Series("", index=out.index, dtype="string")
+    site_inside = out["site_inside"] if "site_inside" in out.columns else pd.Series("", index=out.index, dtype="string")
+
+    out["has_site_name"] = _meaningful_site_name(site_name)
+    out["site_inside_flag"] = _truthy_site_inside(site_inside)
+    out["text_site_project_signal"] = _text_match(title, _SITE_TEXT_RE) | _text_match(site_name, _SITE_TEXT_RE)
+    out["has_site_project_signal"] = (
+        out["has_site_name"] | out["site_inside_flag"] | out["text_site_project_signal"]
+    )
+    out["is_duplex_text"] = _text_match(title, _DUPLEX_RE) | _text_match(site_name, _DUPLEX_RE)
+    if "is_large_home" not in out.columns:
+        out["is_large_home"] = (pd.to_numeric(out.get("gross_m2"), errors="coerce") >= LARGE_HOME_M2).fillna(False)
+    out["is_duplex_or_large_home"] = out["is_duplex_text"] | out["is_large_home"].fillna(False)
+    return out
 
 
 # ---------------------------------------------------------------------------
@@ -189,6 +259,12 @@ def _normalize_frame(df: pd.DataFrame, purpose: str) -> tuple[pd.DataFrame, dict
         out["location_source"] = pd.NA
     if "location_backfill_status" not in out.columns:
         out["location_backfill_status"] = pd.NA
+    if "title" not in out.columns:
+        out["title"] = pd.NA
+    if "site_name" not in out.columns:
+        out["site_name"] = pd.NA
+    if "site_inside" not in out.columns:
+        out["site_inside"] = pd.NA
 
     # exact map heuristic
     prec = out["location_precision"].astype("string").str.lower()
@@ -199,6 +275,7 @@ def _normalize_frame(df: pd.DataFrame, purpose: str) -> tuple[pd.DataFrame, dict
     out.loc[prec.isin(["district_only", "district", "missing", "approx", "approximate"]), "is_exact_map"] = False
     out.loc[~out["has_lat_lon"], "is_exact_map"] = False
 
+    out = attach_inventory_signals(out)
     return out, price_meta
 
 
@@ -528,6 +605,62 @@ def build_categorical_cardinality(df: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+def build_categorical_value_counts(
+    sale: pd.DataFrame,
+    rental: pd.DataFrame,
+) -> pd.DataFrame:
+    """Full value frequency table: e.g. heating=Yerden Isıtma → count/share."""
+    frames: list[tuple[str, pd.DataFrame]] = []
+    if len(sale):
+        frames.append(("sale", sale))
+    if len(rental):
+        frames.append(("rental", rental))
+    both = pd.concat([sale, rental], ignore_index=True) if frames else pd.DataFrame()
+    if len(both):
+        frames.append(("both", both))
+
+    rows: list[dict[str, Any]] = []
+    for purpose, df in frames:
+        n = max(len(df), 1)
+        for col in CATEGORICAL_COLS:
+            if col not in df.columns:
+                continue
+            s = df[col].astype("string")
+            missing = int(s.isna().sum() + (s == "<NA>").sum())
+            vc = s.value_counts(dropna=True)
+            for value, count in vc.items():
+                c = int(count)
+                rows.append(
+                    {
+                        "purpose": purpose,
+                        "column": col,
+                        "value": str(value),
+                        "count": c,
+                        "share": float(c / n),
+                        "missing_count": missing,
+                        "unique_count": int(vc.shape[0]),
+                    }
+                )
+            if vc.empty:
+                rows.append(
+                    {
+                        "purpose": purpose,
+                        "column": col,
+                        "value": "",
+                        "count": 0,
+                        "share": 0.0,
+                        "missing_count": missing,
+                        "unique_count": 0,
+                    }
+                )
+    if not rows:
+        return pd.DataFrame(
+            columns=["purpose", "column", "value", "count", "share", "missing_count", "unique_count"]
+        )
+    out = pd.DataFrame(rows)
+    return out.sort_values(["purpose", "column", "count"], ascending=[True, True, False]).reset_index(drop=True)
+
+
 def build_location_quality(sale: pd.DataFrame, rental: pd.DataFrame) -> pd.DataFrame:
     rows = []
     for purpose, df in (("sale", sale), ("rental", rental)):
@@ -617,7 +750,104 @@ def build_model_readiness(
                 "reason": "|".join(reasons),
             }
         )
+    if not rows:
+        return pd.DataFrame(
+            columns=[
+                "county",
+                "sale_count",
+                "rental_count",
+                "coord_coverage",
+                "district_count",
+                "min_district_sale_count",
+                "median_district_sale_count",
+                "large_home_count",
+                "large_home_share",
+                "sale_price_iqr",
+                "readiness_status",
+                "reason",
+            ]
+        )
     return pd.DataFrame(rows).sort_values(["readiness_status", "sale_count"])
+
+
+def build_site_duplex_coverage(sale: pd.DataFrame, rental: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    """County-level site_project, duplex/large-home, and rental-vs-sale coverage."""
+    counties = sorted(
+        set(sale["county"].dropna().astype(str)) | set(rental["county"].dropna().astype(str))
+    )
+    site_rows = []
+    duplex_rows = []
+    rental_rows = []
+    for county in counties:
+        s = sale[sale["county"].astype(str) == county]
+        r = rental[rental["county"].astype(str) == county]
+        n_s = len(s)
+        n_r = len(r)
+        site_rows.append(
+            {
+                "county": county,
+                "sale_count": int(n_s),
+                "site_name_count": int(s["has_site_name"].sum()) if n_s else 0,
+                "site_name_share": float(s["has_site_name"].mean()) if n_s else np.nan,
+                "site_inside_count": int(s["site_inside_flag"].sum()) if n_s else 0,
+                "site_inside_share": float(s["site_inside_flag"].mean()) if n_s else np.nan,
+                "text_site_project_count": int(s["text_site_project_signal"].sum()) if n_s else 0,
+                "text_site_project_share": float(s["text_site_project_signal"].mean()) if n_s else np.nan,
+                "any_site_project_signal_count": int(s["has_site_project_signal"].sum()) if n_s else 0,
+                "any_site_project_signal_share": float(s["has_site_project_signal"].mean()) if n_s else np.nan,
+                "rental_any_site_project_signal_share": float(r["has_site_project_signal"].mean()) if n_r else np.nan,
+            }
+        )
+        duplex_rows.append(
+            {
+                "county": county,
+                "sale_count": int(n_s),
+                "duplex_text_count": int(s["is_duplex_text"].sum()) if n_s else 0,
+                "duplex_text_share": float(s["is_duplex_text"].mean()) if n_s else np.nan,
+                "large_home_count": int(s["is_large_home"].sum()) if n_s else 0,
+                "large_home_share": float(s["is_large_home"].mean()) if n_s else np.nan,
+                "duplex_or_large_home_count": int(s["is_duplex_or_large_home"].sum()) if n_s else 0,
+                "duplex_or_large_home_share": float(s["is_duplex_or_large_home"].mean()) if n_s else np.nan,
+                "median_gross_m2_sale": float(s["gross_m2"].median()) if n_s else np.nan,
+                "rental_duplex_text_share": float(r["is_duplex_text"].mean()) if n_r else np.nan,
+                "rental_large_home_share": float(r["is_large_home"].mean()) if n_r else np.nan,
+            }
+        )
+        rental_rows.append(
+            {
+                "county": county,
+                "sale_count": int(n_s),
+                "rental_count": int(n_r),
+                "rental_to_sale_ratio": float(n_r / n_s) if n_s else np.nan,
+                "rental_share_of_total": float(n_r / (n_s + n_r)) if (n_s + n_r) else np.nan,
+                "sale_coord_coverage": _coverage(s["has_lat_lon"]) if n_s else np.nan,
+                "rental_coord_coverage": _coverage(r["has_lat_lon"]) if n_r else np.nan,
+                "warning": "low_rental" if n_r < 150 else ("low_sale" if n_s < 400 else ""),
+            }
+        )
+    site_df = pd.DataFrame(site_rows).sort_values("sale_count", ascending=False) if site_rows else pd.DataFrame()
+    duplex_df = pd.DataFrame(duplex_rows).sort_values("sale_count", ascending=False) if duplex_rows else pd.DataFrame()
+    rental_cov = pd.DataFrame(rental_rows).sort_values("sale_count", ascending=False) if rental_rows else pd.DataFrame()
+    return site_df, duplex_df, rental_cov
+
+
+def build_training_inclusion_policy(readiness: pd.DataFrame) -> list[str]:
+    """Recommended inclusion rules from readiness labels (no training)."""
+    if readiness.empty:
+        return ["No county readiness available — re-check DB fetch."]
+    good = readiness[readiness["readiness_status"] == "GOOD"]["county"].astype(str).tolist()
+    ok = readiness[readiness["readiness_status"] == "OK"]["county"].astype(str).tolist()
+    weak = readiness[readiness["readiness_status"] == "WEAK"]["county"].astype(str).tolist()
+    lines = [
+        "Do not train yet on this audit alone; use readiness to scope the next train set.",
+        f"Include fully (core train set): {', '.join(good) if good else '(none)'}.",
+        f"Include with caution / monitor holdout: {', '.join(ok) if ok else '(none)'}.",
+        f"Exclude from primary global train for now (or satellite/diagnostic only): {', '.join(weak) if weak else '(none)'}.",
+        "Policy: train global Kocaeli on GOOD + OK counties; keep WEAK counties out of primary scoring until coord/rental/volume recover.",
+        "New post-Kartepe counties that land WEAK should stay out of the primary global objective until inventory densifies.",
+        "Re-run this audit after scrape backfills before expanding county inclusion.",
+    ]
+    return lines
 
 
 def build_basiskele_special(sale: pd.DataFrame, rental: pd.DataFrame) -> pd.DataFrame:
@@ -784,6 +1014,9 @@ def write_summary_md(
     readiness: pd.DataFrame,
     basiskele: pd.DataFrame,
     warnings_list: list[str],
+    site_cov: pd.DataFrame | None = None,
+    duplex_cov: pd.DataFrame | None = None,
+    inclusion_policy: list[str] | None = None,
 ) -> None:
     lines = [
         "# Listing Inventory Summary",
@@ -816,7 +1049,7 @@ def write_summary_md(
     if county_df.empty:
         lines.append("- (empty)")
     else:
-        for _, r in county_df.head(12).iterrows():
+        for _, r in county_df.head(15).iterrows():
             lines.append(
                 f"- {r['county']}: sale={int(r['sale_count'])}, rental={int(r['rental_count'])}, "
                 f"sale_coord={r['sale_coord_coverage']}"
@@ -830,6 +1063,20 @@ def write_summary_md(
                 f"- **{r['county']}**: `{r['readiness_status']}` "
                 f"(sale={int(r['sale_count'])}, rental={int(r['rental_count'])}, "
                 f"coord={r['coord_coverage']}, reason={r['reason']})"
+            )
+    if site_cov is not None and not site_cov.empty:
+        lines += ["", "## Site / project signal coverage (sale)"]
+        for _, r in site_cov.iterrows():
+            lines.append(
+                f"- {r['county']}: any_signal={r['any_site_project_signal_share']}, "
+                f"site_name={r['site_name_share']}, site_inside={r['site_inside_share']}"
+            )
+    if duplex_cov is not None and not duplex_cov.empty:
+        lines += ["", "## Duplex / large-home coverage (sale)"]
+        for _, r in duplex_cov.iterrows():
+            lines.append(
+                f"- {r['county']}: duplex_text={r['duplex_text_share']}, "
+                f"large_home={r['large_home_share']}, either={r['duplex_or_large_home_share']}"
             )
     lines += ["", "## Başiskele special"]
     if basiskele.empty:
@@ -849,6 +1096,12 @@ def write_summary_md(
     else:
         for w in warnings_list[:15]:
             lines.append(f"- {w}")
+    lines += ["", "## Recommended training inclusion policy"]
+    for p in (inclusion_policy or [
+        "Focus modeling on counties with readiness GOOD/OK.",
+        "Investigate WEAK counties: location backfill, sparse districts, outliers.",
+    ]):
+        lines.append(f"- {p}")
     lines += [
         "",
         "## Suggested next actions",
@@ -858,6 +1111,104 @@ def write_summary_md(
         "- Re-run this script after each major scrape to track inventory drift.",
         "",
     ]
+    path.write_text("\n".join(lines), encoding="utf-8")
+
+
+def write_kocaeli_full_refresh_summary(
+    path: Path,
+    *,
+    summary: dict[str, Any],
+    county_df: pd.DataFrame,
+    readiness: pd.DataFrame,
+    site_cov: pd.DataFrame,
+    duplex_cov: pd.DataFrame,
+    rental_cov: pd.DataFrame,
+    suspicious: pd.DataFrame,
+    inclusion_policy: list[str],
+    warnings_list: list[str],
+) -> None:
+    """Short human summary for the post-Kartepe Kocaeli full refresh."""
+    existing = {"İzmit", "Başiskele", "Gölcük", "Karamürsel", "Kartepe"}
+    newly = {"Kandıra", "Gebze", "Körfez", "Derince", "Dilovası", "Darıca", "Çayırova"}
+    lines = [
+        "# Kocaeli full refresh inventory summary",
+        "",
+        "Data-health / model-readiness audit only — **no training**.",
+        "",
+        f"- run_timestamp: `{summary.get('run_timestamp')}`",
+        f"- output_dir: `{summary.get('output_dir')}`",
+        f"- total raw listings: **{summary.get('total_rows_raw', 0)}** "
+        f"(sale={summary.get('sale_rows_raw', 0)}, rental={summary.get('rental_rows_raw', 0)})",
+        f"- counties observed: **{summary.get('county_count', 0)}**",
+        f"- neighborhoods/districts observed: **{summary.get('district_count', 0)}**",
+        f"- sale coord coverage: `{summary.get('coordinate_coverage_sale')}`",
+        f"- rental coord coverage: `{summary.get('coordinate_coverage_rental')}`",
+        f"- suspicious/outlier rows flagged: **{len(suspicious)}**",
+        f"- missing critical fields: location={summary.get('missing_location_count')}, "
+        f"price={summary.get('missing_price_count')}, gross_m2={summary.get('missing_gross_m2_count')}, "
+        f"unit_price={summary.get('missing_unit_price_count')}, "
+        f"county={summary.get('missing_county_count')}, district={summary.get('missing_district_count')}",
+        "",
+        "## Counts by county",
+    ]
+    if county_df.empty:
+        lines.append("- (empty)")
+    else:
+        for _, r in county_df.iterrows():
+            tag = "existing" if str(r["county"]) in existing else ("newly_added" if str(r["county"]) in newly else "other")
+            lines.append(
+                f"- **{r['county']}** [{tag}]: sale={int(r['sale_count'])}, "
+                f"rental={int(r['rental_count'])}, total={int(r['total_count'])}, "
+                f"coord_sale={r['sale_coord_coverage']}, median_sale_m2={r['median_sale_unit_price']}"
+            )
+    lines += ["", "## Model readiness"]
+    if readiness.empty:
+        lines.append("- (empty)")
+    else:
+        for _, r in readiness.sort_values(["readiness_status", "sale_count"], ascending=[True, False]).iterrows():
+            lines.append(
+                f"- **{r['county']}**: `{r['readiness_status']}` — "
+                f"sale={int(r['sale_count'])}, rental={int(r['rental_count'])}, "
+                f"coord={r['coord_coverage']}, reason=`{r['reason'] or 'ok'}`"
+            )
+    if not site_cov.empty:
+        lines += ["", "## Site / project coverage (sale)"]
+        for _, r in site_cov.iterrows():
+            lines.append(
+                f"- {r['county']}: any={r['any_site_project_signal_share']:.1%} "
+                f"(site_name={r['site_name_share']:.1%}, inside={r['site_inside_share']:.1%})"
+                if pd.notna(r["any_site_project_signal_share"])
+                else f"- {r['county']}: (no sale rows)"
+            )
+    if not duplex_cov.empty:
+        lines += ["", "## Duplex / large-home coverage (sale)"]
+        for _, r in duplex_cov.iterrows():
+            if pd.isna(r["duplex_or_large_home_share"]):
+                lines.append(f"- {r['county']}: (no sale rows)")
+            else:
+                lines.append(
+                    f"- {r['county']}: duplex={r['duplex_text_share']:.1%}, "
+                    f"large_home={r['large_home_share']:.1%}, either={r['duplex_or_large_home_share']:.1%}"
+                )
+    if not rental_cov.empty:
+        lines += ["", "## Rental coverage by county"]
+        for _, r in rental_cov.iterrows():
+            ratio = r["rental_to_sale_ratio"]
+            ratio_s = f"{ratio:.2f}" if pd.notna(ratio) else "n/a"
+            lines.append(
+                f"- {r['county']}: rental={int(r['rental_count'])}, "
+                f"rent/sale={ratio_s}, warn=`{r['warning'] or 'ok'}`"
+            )
+    lines += ["", "## Recommended training inclusion policy"]
+    for p in inclusion_policy:
+        lines.append(f"- {p}")
+    lines += ["", "## Top warnings"]
+    if not warnings_list:
+        lines.append("- none")
+    else:
+        for w in warnings_list[:20]:
+            lines.append(f"- {w}")
+    lines.append("")
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
@@ -1270,8 +1621,11 @@ def main() -> int:
         )
     missingness = build_feature_missingness(sale, rental)
     cardinality = build_categorical_cardinality(both)
+    value_counts = build_categorical_value_counts(sale, rental)
     location_q = build_location_quality(sale, rental)
     readiness = build_model_readiness(sale, rental, location_coverage_min=args.location_coverage_min)
+    site_cov, duplex_cov, rental_cov = build_site_duplex_coverage(sale, rental)
+    inclusion_policy = build_training_inclusion_policy(readiness)
     basiskele = pd.DataFrame()
     if str(args.city).lower() == "kocaeli" or (args.county and "başiskele" in str(args.county).lower()):
         basiskele = build_basiskele_special(sale, rental)
@@ -1293,6 +1647,7 @@ def main() -> int:
     if not sale_price_ok:
         warns.insert(0, "sale_price_column_missing")
     summary["top_warnings"] = warns
+    summary["training_inclusion_policy"] = inclusion_policy
 
     # write reports
     (out_dir / "inventory_summary.json").write_text(
@@ -1305,8 +1660,25 @@ def main() -> int:
     _write_csv(rental_price, out_dir / "rental_price_distribution.csv")
     _write_csv(missingness, out_dir / "feature_missingness.csv")
     _write_csv(cardinality, out_dir / "categorical_cardinality.csv")
+    _write_csv(value_counts, out_dir / "categorical_value_counts.csv")
     _write_csv(location_q, out_dir / "location_quality_report.csv")
     _write_csv(readiness, out_dir / "model_readiness_report.csv")
+    _write_csv(site_cov, out_dir / "site_project_coverage_by_county.csv")
+    _write_csv(duplex_cov, out_dir / "duplex_largehome_coverage_by_county.csv")
+    _write_csv(rental_cov, out_dir / "rental_coverage_by_county.csv")
+    if not county_df.empty:
+        coord_by_county = county_df[
+            [
+                "county",
+                "sale_count",
+                "rental_count",
+                "sale_coord_coverage",
+                "rental_coord_coverage",
+                "sale_exact_map_coverage",
+                "rental_exact_map_coverage",
+            ]
+        ].copy()
+        _write_csv(coord_by_county, out_dir / "coordinate_coverage_by_county.csv")
     if not basiskele.empty:
         _write_csv(basiskele, out_dir / "basiskele_special_report.csv")
     _write_csv(duplicates, out_dir / "duplicates_report.csv")
@@ -1318,7 +1690,24 @@ def main() -> int:
         readiness=readiness,
         basiskele=basiskele,
         warnings_list=warns,
+        site_cov=site_cov,
+        duplex_cov=duplex_cov,
+        inclusion_policy=inclusion_policy,
     )
+    # Dedicated short markdown for full Kocaeli refresh audit runs
+    if str(args.city).lower() == "kocaeli" and not args.county:
+        write_kocaeli_full_refresh_summary(
+            out_dir / "kocaeli_full_refresh_inventory_summary.md",
+            summary=summary,
+            county_df=county_df,
+            readiness=readiness,
+            site_cov=site_cov,
+            duplex_cov=duplex_cov,
+            rental_cov=rental_cov,
+            suspicious=suspicious,
+            inclusion_policy=inclusion_policy,
+            warnings_list=warns,
+        )
 
     if args.export_samples:
         export_samples(out_dir, sale, rental, suspicious, args.sample_size)

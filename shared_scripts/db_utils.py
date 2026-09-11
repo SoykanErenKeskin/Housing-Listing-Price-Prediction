@@ -26,6 +26,7 @@ PREFERRED_COLUMNS: tuple[str, ...] = (
     "province",
     "neighborhood",
     "title",
+    "site_name",
     # sale price candidates
     "price",
     "sale_price",

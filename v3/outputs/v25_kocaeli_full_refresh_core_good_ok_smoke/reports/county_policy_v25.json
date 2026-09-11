@@ -1,0 +1,130 @@
+{
+  "county_policy": "core_good_ok",
+  "included_counties": [
+    "Darıca",
+    "İzmit",
+    "Gebze",
+    "Başiskele",
+    "Çayırova",
+    "Gölcük",
+    "Kartepe",
+    "Körfez",
+    "Derince"
+  ],
+  "excluded_counties": [
+    "Karamürsel",
+    "Kandıra",
+    "Dilovası"
+  ],
+  "exclusion_reason": "WEAK inventory readiness on full-refresh audit: low sale/rental volume and/or sparse districts. Deferred from first V25 primary run.",
+  "model_version": "v25-kocaeli-full-refresh-core-good-ok",
+  "model_scope": "kocaeli_global",
+  "rows_before": {
+    "sale": 3150,
+    "rental": 1800,
+    "total": 4950
+  },
+  "rows_after": {
+    "sale": 3120,
+    "rental": 1773,
+    "total": 4893
+  },
+  "sale_by_county_after": [
+    {
+      "purpose": "sale",
+      "county": "Gölcük",
+      "rows": 349
+    },
+    {
+      "purpose": "sale",
+      "county": "Derince",
+      "rows": 349
+    },
+    {
+      "purpose": "sale",
+      "county": "Darıca",
+      "rows": 349
+    },
+    {
+      "purpose": "sale",
+      "county": "İzmit",
+      "rows": 348
+    },
+    {
+      "purpose": "sale",
+      "county": "Körfez",
+      "rows": 348
+    },
+    {
+      "purpose": "sale",
+      "county": "Gebze",
+      "rows": 348
+    },
+    {
+      "purpose": "sale",
+      "county": "Çayırova",
+      "rows": 347
+    },
+    {
+      "purpose": "sale",
+      "county": "Başiskele",
+      "rows": 341
+    },
+    {
+      "purpose": "sale",
+      "county": "Kartepe",
+      "rows": 341
+    }
+  ],
+  "rental_by_county_after": [
+    {
+      "purpose": "rental",
+      "county": "İzmit",
+      "rows": 200
+    },
+    {
+      "purpose": "rental",
+      "county": "Gölcük",
+      "rows": 199
+    },
+    {
+      "purpose": "rental",
+      "county": "Kartepe",
+      "rows": 199
+    },
+    {
+      "purpose": "rental",
+      "county": "Gebze",
+      "rows": 199
+    },
+    {
+      "purpose": "rental",
+      "county": "Derince",
+      "rows": 198
+    },
+    {
+      "purpose": "rental",
+      "county": "Çayırova",
+      "rows": 198
+    },
+    {
+      "purpose": "rental",
+      "county": "Darıca",
+      "rows": 196
+    },
+    {
+      "purpose": "rental",
+      "county": "Körfez",
+      "rows": 195
+    },
+    {
+      "purpose": "rental",
+      "county": "Başiskele",
+      "rows": 189
+    }
+  ],
+  "silent_drop_guard": {
+    "unexpected_counties_in_after": [],
+    "missing_included_counties_in_sale": []
+  }
+}

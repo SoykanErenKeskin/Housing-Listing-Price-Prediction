@@ -1,0 +1,15 @@
+﻿heating,sale_count,rental_count,county_count,median_sale_unit_price,lift_vs_city_median,encoded_feature_present,candidate_for_model
+Kombi (Doğalgaz),4307,1901,12,32684.62,-0.11062258503401368,False,True
+Merkezi (Pay Ölçer),702,562,12,62046.130000000005,0.6883300680272111,False,True
+Yerden Isıtma,654,275,12,60201.615000000005,0.6381391836734696,False,True
+Merkezi,207,181,11,52710.84,0.43430857142857127,False,True
+Soba,14,3,5,12854.165,-0.6502268027210885,False,False
+Yok,13,0,8,35353.98,-0.03798693877551007,False,False
+Kombi (Elektrik),10,10,9,39458.33,0.07369605442176885,False,False
+Kat Kaloriferi,9,11,7,33125.0,-0.09863945578231292,False,False
+Doğalgaz Sobası,6,5,6,36473.729999999996,-0.007517551020408297,False,False
+Klima,1,3,1,77800.0,1.1170068027210887,False,False
+Fancoil Ünitesi,1,1,1,81666.67,1.2222223129251701,False,False
+VRV,1,0,1,120192.31,2.2705390476190477,False,False
+Güneş Enerjisi,0,1,0,,,False,False
+Elektrikli Radyatör,0,1,0,,,False,False

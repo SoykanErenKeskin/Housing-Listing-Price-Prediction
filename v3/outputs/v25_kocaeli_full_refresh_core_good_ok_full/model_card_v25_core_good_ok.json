@@ -1,0 +1,125 @@
+{
+  "model_version": "v25-kocaeli-full-refresh-core-good-ok",
+  "model_scope": "kocaeli_global",
+  "experiment": "full_v25_core_good_ok",
+  "selected_within_same_data_run": true,
+  "promotion_status": "research_checkpoint_not_deployed",
+  "promote_over_v24_1": false,
+  "deployed_app_reference": {
+    "model": "V24.1",
+    "experiment": "full_v24",
+    "path": "v3/outputs/v24_1_kocaeli_site_merge_repair/"
+  },
+  "output_root": "v3/outputs/v25_kocaeli_full_refresh_core_good_ok_full/",
+  "source_package": "v3/source_versions/v25_kocaeli_full_refresh_core_good_ok/",
+  "county_policy": "core_good_ok",
+  "included_counties": [
+    "Darıca",
+    "İzmit",
+    "Gebze",
+    "Başiskele",
+    "Çayırova",
+    "Gölcük",
+    "Kartepe",
+    "Körfez",
+    "Derince"
+  ],
+  "excluded_counties": [
+    "Karamürsel",
+    "Kandıra",
+    "Dilovası"
+  ],
+  "exclusion_reason": "WEAK inventory readiness on full-refresh audit",
+  "feature_modes": {
+    "site_extraction_mode": "full",
+    "site_project_encoding": "foldsafe_target",
+    "duplex_feature_mode": "full",
+    "attribute_mode": "full",
+    "detail_effect_mode": "group",
+    "location_scope": "global",
+    "comparable_mode": "none",
+    "target_mode": "residual"
+  },
+  "global_metrics": {
+    "rows": 14363,
+    "r2": 0.7307693679783922,
+    "log_r2": 0.739967849064656,
+    "mape": 0.10825506411428192,
+    "median_ape": 0.08226246187950342,
+    "variance_ratio": 0.6939968143558138,
+    "large_home_r2": 0.6156634027664492,
+    "large_home_mape": 0.1270052783708725,
+    "expensive_decile_bias": -8210.54284451147,
+    "mae_tl_per_m2": 4416.9483032872795,
+    "median_ae_tl_per_m2": 3262.867947502549
+  },
+  "county_metrics": [
+    {"county": "Darıca", "rows": 3318, "r2": 0.7177358624517334, "mape": 0.0845952761004279, "median_ape": 0.05905532643243533},
+    {"county": "Körfez", "rows": 786, "r2": 0.7248049317632078, "mape": 0.11827613304499716, "median_ape": 0.09448247616797613},
+    {"county": "Çayırova", "rows": 1234, "r2": 0.6988171181916958, "mape": 0.09686814272428333, "median_ape": 0.07370595832188771},
+    {"county": "Derince", "rows": 685, "r2": 0.6925370049004791, "mape": 0.10909147884423735, "median_ape": 0.08611460907923092},
+    {"county": "İzmit", "rows": 2597, "r2": 0.6842797344339983, "mape": 0.13035910608915194, "median_ape": 0.10379377135701566},
+    {"county": "Gölcük", "rows": 1179, "r2": 0.6619995645598276, "mape": 0.12013979567028348, "median_ape": 0.0924714997782716},
+    {"county": "Gebze", "rows": 1803, "r2": 0.5775631476493595, "mape": 0.12481748638622218, "median_ape": 0.09793002868209648},
+    {"county": "Kartepe", "rows": 1008, "r2": 0.53586706129643, "mape": 0.10198148117651902, "median_ape": 0.08267160059469789},
+    {"county": "Başiskele", "rows": 1753, "r2": 0.5068484438290648, "mape": 0.10206599513958572, "median_ape": 0.07991985906301717}
+  ],
+  "feature_guard": {
+    "status": "PASS",
+    "critical_missing_features": [],
+    "heating_yerden_leaf": true,
+    "v24_1_feature_count": 4807,
+    "v25_feature_count": 6877,
+    "heating_raw_yerden_count_sale": 4461
+  },
+  "heating": {
+    "yerden_oof_rows": 4417,
+    "yerden_oof_mape": 0.08447010999878823,
+    "yerden_oof_median_ape": 0.06300923415039307,
+    "sale_yerden_share_all_included": 0.3014189189189189
+  },
+  "site_coverage": {
+    "canonical_non_missing_rate": 0.21666782705562904,
+    "n_canonical_sites": 1367,
+    "foldsafe_encoded_site_count": 293,
+    "top_expensive_underpredicted_site_missing_rate": 0.6760904684975767
+  },
+  "leakage_status": {
+    "site_foldsafe_leakage_pass": true,
+    "comparable_leakage_pass": true,
+    "leakage_pass": true
+  },
+  "merge_audit": {
+    "severe_bad_merge": 0,
+    "possible_bad_merge": 17,
+    "blocking": false
+  },
+  "same_data_control": {
+    "experiment": "control_v24_1_replay_on_core_good_ok",
+    "r2": 0.7307693679783922,
+    "mape": 0.1082550641142819,
+    "note": "Matched full_v25 under identical feature modes on refreshed inventory."
+  },
+  "v24_1_old_reference": {
+    "experiment": "full_v24",
+    "path": "v3/outputs/v24_1_kocaeli_site_merge_repair/",
+    "rows": 6667,
+    "r2": 0.6523243261980677,
+    "mape": 0.11762822096027113,
+    "variance_ratio": 0.6315725457911608,
+    "note": "Old-data reference only; distribution changed. Do not promote solely against this."
+  },
+  "app_eder_artifacts_updated": false,
+  "next_experiments": [
+    "V25 residual calibration for market bands",
+    "Gebze segment diagnostics",
+    "Başiskele/Kartepe premium spread diagnostics",
+    "site-missing expensive underprediction repair",
+    "all-counties diagnostic including Karamürsel/Kandıra/Dilovası"
+  ],
+  "notes": [
+    "Research checkpoint selected within same-data core_good_ok run.",
+    "Not promoted to production over V24.1.",
+    "V24.1 remains current deployed/app reference."
+  ]
+}

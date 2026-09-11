@@ -1,0 +1,42 @@
+{
+  "status": "selected_checkpoint_v24_1",
+  "selected_experiment": "full_v24",
+  "best_checkpoint": true,
+  "model_scope": "kocaeli_global",
+  "output": "v3/outputs/v24_1_kocaeli_site_merge_repair/",
+  "primary_comparison": "duplex_largehome_global",
+  "metrics": {
+    "r2": 0.6523243261980677,
+    "mape": 0.11762822096027113,
+    "variance_ratio": 0.6315725457911608,
+    "rows": 6667,
+    "leakage_pass": true,
+    "merge_audit_severe_warnings": 0,
+    "possible_bad_merge": 12,
+    "large_home_r2": 0.5498665456711831,
+    "expensive_decile_bias": -8595.524608059715
+  },
+  "county_metrics": {
+    "İzmit": { "r2": 0.682681285386731, "mape": 0.129376 },
+    "Gölcük": { "r2": 0.6700273654078172, "mape": 0.118001 },
+    "Başiskele": { "r2": 0.5117323345940774, "mape": 0.10298299704781315 },
+    "Karamürsel": { "r2": 0.5784530820679485, "mape": 0.158589 },
+    "Kartepe": { "r2": 0.5501146066225185, "mape": 0.101380 }
+  },
+  "safe_duplex_reference": {
+    "experiment": "duplex_largehome_global",
+    "r2": 0.6358656162289547,
+    "mape": 0.12003687930512741,
+    "variance_ratio": 0.6184810005227498
+  },
+  "lift_vs_safe_duplex": {
+    "r2": 0.016458709969113,
+    "mape": -0.00240865834485628,
+    "variance_ratio_improved": true
+  },
+  "notes": [
+    "Reconstructed from readiness manifest v24_1_kocaeli_site_aware_global.json + reports/metrics_kocaeli_site_ablation_v24_1.csv (selected=full_v24).",
+    "County MAPE for non-Başiskele counties taken from dashboard readiness manifest (CSV only ships basiskele_mape)."
+  ],
+  "decided_at": "2026-07-29T15:12:00.000Z"
+}

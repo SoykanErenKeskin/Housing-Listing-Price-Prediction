@@ -1,0 +1,12 @@
+{
+  "smoke_status": "PASS",
+  "feature_schema_diff_status": "PASS",
+  "yerden_sale_count": 831,
+  "rows_note": "sale capped 350/county",
+  "excluded_weak": [
+    "Karamürsel",
+    "Kandıra",
+    "Dilovası"
+  ],
+  "model_version": "v25-kocaeli-full-refresh-core-good-ok"
+}

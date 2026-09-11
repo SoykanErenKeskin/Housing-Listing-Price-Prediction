@@ -1,0 +1,39 @@
+{
+  "model_version": "v25-kocaeli-full-refresh-core-good-ok",
+  "model_scope": "kocaeli_global",
+  "county_policy": "core_good_ok",
+  "clean_report": {
+    "sales_raw_rows": 3150,
+    "sales_after_base_clean_rows": 3150,
+    "sales_after_basic_filter_rows": 3137,
+    "sales_final_rows": 3120,
+    "sales_removed_basic_rows": 13,
+    "sales_removed_iqr_rows": 17,
+    "rentals_raw_rows": 1800,
+    "rentals_after_base_clean_rows": 1800,
+    "rentals_after_basic_filter_rows": 1787,
+    "rentals_final_rows": 1773,
+    "rentals_removed_basic_rows": 13,
+    "rentals_removed_iqr_rows": 14
+  },
+  "sale_removal_reason_flags_on_raw": {
+    "gross_m2_le_20_or_missing": 11,
+    "gross_m2_ge_600": 1,
+    "price_le_0": 11,
+    "unit_price_outside_8k_200k": 11,
+    "missing_target": 11,
+    "missing_gross_m2": 0
+  },
+  "rental_removal_reason_flags_on_raw": {
+    "gross_m2_le_20_or_missing": 10,
+    "gross_m2_ge_600": 1,
+    "rent_le_0": 8,
+    "rent_m2_outside_50_2500": 11,
+    "missing_target": 8,
+    "missing_gross_m2": 0
+  },
+  "notes": [
+    "basic filters mirror V24.1 (gross_m2 typically 25-500 in apply_basic_filters).",
+    "reason flags are not mutually exclusive."
+  ]
+}

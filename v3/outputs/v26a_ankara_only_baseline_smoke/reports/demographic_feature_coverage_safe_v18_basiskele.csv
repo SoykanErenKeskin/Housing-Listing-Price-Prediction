@@ -1,0 +1,358 @@
+﻿county,district,rows,matched_demo_rows,matched_county_demo_rows,avg_demo_coverage_score,match_rate,county_match_rate
+Akyurt,Atatürk Mh.,18,18,18,0.875,1.0,1.0
+Akyurt,Balıkhisar Mh.,47,47,47,0.875,1.0,1.0
+Akyurt,Beyazıt Mh.,31,31,31,0.875,1.0,1.0
+Akyurt,Saracalar Mah.,13,13,13,0.875,1.0,1.0
+Akyurt,Timurhan Mah.,6,6,6,0.875,1.0,1.0
+Akyurt,Yeşiltepe Mh.,98,98,98,0.875,1.0,1.0
+Akyurt,Yıldırım Mh.,266,266,266,0.875,1.0,1.0
+Altındağ,Aydınlıkevler Mh.,17,17,17,0.875,1.0,1.0
+Altındağ,Baraj Mah.,23,23,23,0.875,1.0,1.0
+Altındağ,Battalgazi Mh.,40,40,40,0.875,1.0,1.0
+Altındağ,Başpınar Mh.,50,50,50,0.875,1.0,1.0
+Altındağ,Beşikkaya Mh.,66,66,66,0.875,1.0,1.0
+Altındağ,Doğantepe Mh.,12,12,12,0.875,1.0,1.0
+Altındağ,Feridun Çelik Mh.,49,49,49,0.875,1.0,1.0
+Altındağ,Gültepe Mh.,19,19,19,0.875,1.0,1.0
+Altındağ,Güneşevler Mh.,43,43,43,0.875,1.0,1.0
+Altındağ,Hacettepe Mah.,8,8,8,0.875,1.0,1.0
+Altındağ,Kale Mah.,1,1,1,0.875,1.0,1.0
+Altındağ,Karacaören Mh.,6,6,6,0.875,1.0,1.0
+Altındağ,Karapürçek Mh.,101,101,101,0.875,1.0,1.0
+Altındağ,Ulubey Mah.,5,5,5,0.875,1.0,1.0
+Altındağ,Yıldıztepe Mh.,22,22,22,0.875,1.0,1.0
+Altındağ,Zübeyde Hanım Mh.,6,6,6,0.875,1.0,1.0
+Altındağ,Önder Mh.,4,4,4,0.875,1.0,1.0
+Altındağ,Örnek Mh.,10,10,10,0.875,1.0,1.0
+Etimesgut,30 Ağustos Mh.,19,19,19,0.875,1.0,1.0
+Etimesgut,Ahi Mesut Mah.,18,18,18,0.875,1.0,1.0
+Etimesgut,Alsancak Mah.,30,30,30,0.875,1.0,1.0
+Etimesgut,Altay Mah.,7,7,7,0.875,1.0,1.0
+Etimesgut,Atakent Mah.,10,10,10,0.875,1.0,1.0
+Etimesgut,Atayurt Mh.,31,31,31,0.875,1.0,1.0
+Etimesgut,Ayyıldız Mh.,17,17,17,0.875,1.0,1.0
+Etimesgut,Aşağıyurtçu Mh.,4,4,4,0.875,1.0,1.0
+Etimesgut,Balıkuyumcu Mh.,1,1,1,0.875,1.0,1.0
+Etimesgut,Bağlıca Mh.,31,31,31,0.875,1.0,1.0
+Etimesgut,Devlet Mh.,7,7,7,0.875,1.0,1.0
+Etimesgut,Elvan Mah.,17,17,17,0.875,1.0,1.0
+Etimesgut,Eryaman Mah.,15,15,15,0.875,1.0,1.0
+Etimesgut,Etiler Mah.,2,2,2,0.875,1.0,1.0
+Etimesgut,Fatih Sultan Mah.,4,4,4,0.875,1.0,1.0
+Etimesgut,Göksu Mh.,22,22,22,0.875,1.0,1.0
+Etimesgut,Güzelkent Mh.,5,5,5,0.875,1.0,1.0
+Etimesgut,Kazım Karabekir Mh.,17,17,17,0.875,1.0,1.0
+Etimesgut,Oğuzlar Mh.,2,2,2,0.875,1.0,1.0
+Etimesgut,Piyade Mah.,30,30,30,0.875,1.0,1.0
+Etimesgut,Süvari Mh.,24,24,24,0.875,1.0,1.0
+Etimesgut,Topçu Mh.,27,27,27,0.875,1.0,1.0
+Etimesgut,Tunahan Mah.,17,17,17,0.875,1.0,1.0
+Etimesgut,Turkuaz Mh.,12,12,12,0.875,1.0,1.0
+Etimesgut,Yapracık Mh.,9,9,9,0.875,1.0,1.0
+Etimesgut,Yavuz Selim Mah.,3,3,3,0.875,1.0,1.0
+Etimesgut,Yeni Bağlıca Mh.,12,12,12,0.875,1.0,1.0
+Etimesgut,Yeşilova Mh.,18,18,18,0.875,1.0,1.0
+Etimesgut,Yukarıyurtçu Mh.,8,8,8,0.875,1.0,1.0
+Etimesgut,İstasyon Mh.,19,19,19,0.875,1.0,1.0
+Etimesgut,Şehit Osman Avcı Mh.,23,23,23,0.875,1.0,1.0
+Etimesgut,Şeker Mh.,13,13,13,0.875,1.0,1.0
+Etimesgut,Şeyh Şamil Mh.,9,9,9,0.875,1.0,1.0
+Gölbaşı,Bahçelievler Mh.,34,34,34,0.875,1.0,1.0
+Gölbaşı,Eymir Mah.,21,21,21,0.875,1.0,1.0
+Gölbaşı,Gaziosmanpaşa Mh.,10,10,10,0.875,1.0,1.0
+Gölbaşı,Hacılar Mh.,19,19,19,0.875,1.0,1.0
+Gölbaşı,Karşıyaka Mh.,29,29,29,0.875,1.0,1.0
+Gölbaşı,Kızılcaşar Mh.,35,35,35,0.875,1.0,1.0
+Gölbaşı,Seğmenler Mh.,34,34,34,0.875,1.0,1.0
+Gölbaşı,Taşpınar Mh.,119,119,119,0.875,1.0,1.0
+Gölbaşı,Tulumtaş Mh.,3,3,3,0.875,1.0,1.0
+Gölbaşı,Örencik Mh.,19,19,19,0.875,1.0,1.0
+Gölbaşı,İncek Mh.,151,151,151,0.875,1.0,1.0
+Gölbaşı,Şafak Mh.,20,20,20,0.875,1.0,1.0
+Keçiören,23 Nisan Mah.,5,5,5,0.875,1.0,1.0
+Keçiören,Adnan Menderes Mah.,9,9,9,0.875,1.0,1.0
+Keçiören,Aktepe Mah.,5,5,5,0.875,1.0,1.0
+Keçiören,Atapark Mah.,45,45,45,0.875,1.0,1.0
+Keçiören,Ayvalı Mh.,33,33,33,0.875,1.0,1.0
+Keçiören,Aşağı Eğlence Mh.,10,10,10,0.875,1.0,1.0
+Keçiören,Bademlik Mah.,12,12,12,0.875,1.0,1.0
+Keçiören,Basınevleri Mh.,4,4,4,0.875,1.0,1.0
+Keçiören,Bağlarbaşı Mh.,23,23,23,0.875,1.0,1.0
+Keçiören,Emrah Mah.,2,2,2,0.875,1.0,1.0
+Keçiören,Esertepe Mah.,19,19,19,0.875,1.0,1.0
+Keçiören,Etlik Mah.,38,38,38,0.875,1.0,1.0
+Keçiören,Güzelyurt Mh.,3,3,3,0.875,1.0,1.0
+Keçiören,Hasköy Mh.,1,1,1,0.875,1.0,1.0
+Keçiören,Hisar Mah.,8,8,8,0.875,1.0,1.0
+Keçiören,Kafkas Mah.,7,7,7,0.875,1.0,1.0
+Keçiören,Kalaba Mah.,9,9,9,0.875,1.0,1.0
+Keçiören,Kamil Ocak Mah.,2,2,2,0.875,1.0,1.0
+Keçiören,Kanuni Mah.,35,35,35,0.875,1.0,1.0
+Keçiören,Karakaya Mah.,8,8,8,0.875,1.0,1.0
+Keçiören,Karargahtepe Mah.,3,3,3,0.875,1.0,1.0
+Keçiören,Karşıyaka Mh.,4,4,4,0.875,1.0,1.0
+Keçiören,Kavacık Subayevleri Mh.,4,4,4,0.875,1.0,1.0
+Keçiören,Kuşcağız Mh.,22,22,22,0.875,1.0,1.0
+Keçiören,Köşk Mh.,10,10,10,0.875,1.0,1.0
+Keçiören,Osmangazi Mah.,22,22,22,0.875,1.0,1.0
+Keçiören,Pınarbaşı Mh.,11,11,11,0.875,1.0,1.0
+Keçiören,Sancaktepe Mah.,11,11,11,0.875,1.0,1.0
+Keçiören,Ufuktepe Mah.,12,12,12,0.875,1.0,1.0
+Keçiören,Uyanış Mh.,13,13,13,0.875,1.0,1.0
+Keçiören,Yakacık Mh.,6,6,6,0.875,1.0,1.0
+Keçiören,Yayla Mah.,22,22,22,0.875,1.0,1.0
+Keçiören,Yeşiltepe Mh.,3,3,3,0.875,1.0,1.0
+Keçiören,Yükseltepe Mh.,17,17,17,0.875,1.0,1.0
+Keçiören,Çaldıran Mh.,4,4,4,0.875,1.0,1.0
+Keçiören,Çiçekli Mh.,7,7,7,0.875,1.0,1.0
+Keçiören,İncirli Mh.,14,14,14,0.875,1.0,1.0
+Keçiören,Şefkat Mh.,2,2,2,0.875,1.0,1.0
+Keçiören,Şehit Kubilay Mh.,13,13,13,0.875,1.0,1.0
+Keçiören,Şenlik Mh.,4,4,4,0.875,1.0,1.0
+Keçiören,Şenyuva Mh.,5,5,5,0.875,1.0,1.0
+Mamak,Abidinpaşa Mh.,6,6,6,0.875,1.0,1.0
+Mamak,Akdere Mah.,3,3,3,0.875,1.0,1.0
+Mamak,Akşemsettin Mh.,34,34,34,0.875,1.0,1.0
+Mamak,Altıağaç Mh.,4,4,4,0.875,1.0,1.0
+Mamak,Altınevler Mh.,6,6,6,0.875,1.0,1.0
+Mamak,Aşık Veysel Mh.,2,2,2,0.875,1.0,1.0
+Mamak,Bahçeleriçi Mh.,4,4,4,0.875,1.0,1.0
+Mamak,Bahçelerüstü Mh.,8,8,8,0.875,1.0,1.0
+Mamak,Başak Mh.,14,14,14,0.875,1.0,1.0
+Mamak,Bostancık Mh.,3,3,3,0.875,1.0,1.0
+Mamak,Boğaziçi Mh.,3,3,3,0.875,1.0,1.0
+Mamak,Cengizhan Mah.,21,21,21,0.875,1.0,1.0
+Mamak,Demirlibahçe Mh.,9,9,9,0.875,1.0,1.0
+Mamak,Derbent Mah.,1,1,1,0.875,1.0,1.0
+Mamak,Diriliş Mh.,1,1,1,0.875,1.0,1.0
+Mamak,Durali Alıç Mh.,55,55,55,0.875,1.0,1.0
+Mamak,Dutluk Mah.,1,1,1,0.875,1.0,1.0
+Mamak,Ege Mah.,13,13,13,0.875,1.0,1.0
+Mamak,Ekin Mah.,8,8,8,0.875,1.0,1.0
+Mamak,Fahri Korutürk Mh.,17,17,17,0.875,1.0,1.0
+Mamak,General Zeki Doğan Mh.,18,18,18,0.875,1.0,1.0
+Mamak,Gülveren Mh.,7,7,7,0.875,1.0,1.0
+Mamak,Harman Mah.,3,3,3,0.875,1.0,1.0
+Mamak,Hürel Mh.,4,4,4,0.875,1.0,1.0
+Mamak,Hüseyingazi Mh.,3,3,3,0.875,1.0,1.0
+Mamak,Karaağaç Mh.,4,4,4,0.875,1.0,1.0
+Mamak,Kartaltepe Mah.,1,1,1,0.875,1.0,1.0
+Mamak,Kayaş Mh.,6,6,6,0.875,1.0,1.0
+Mamak,Kazım Orbay Mh.,8,8,8,0.875,1.0,1.0
+Mamak,Kutlu Mah.,9,9,9,0.875,1.0,1.0
+Mamak,Küçük Kayaş Mh.,31,31,31,0.875,1.0,1.0
+Mamak,Kıbrısköy Mh.,14,14,14,0.875,1.0,1.0
+Mamak,Lalahan Mah.,1,1,1,0.875,1.0,1.0
+Mamak,Mehtap Mah.,2,2,2,0.875,1.0,1.0
+Mamak,Misket Mah.,7,7,7,0.875,1.0,1.0
+Mamak,Mutlu Mah.,18,18,18,0.875,1.0,1.0
+Mamak,Peyami Safa Mh.,14,14,14,0.875,1.0,1.0
+Mamak,Saimekadın Mh.,4,4,4,0.875,1.0,1.0
+Mamak,Tuzluçayır Mh.,14,14,14,0.875,1.0,1.0
+Mamak,Türközü Mh.,5,5,5,0.875,1.0,1.0
+Mamak,Yeni Bayındır Mh.,12,12,12,0.875,1.0,1.0
+Mamak,Yeşilbayır Mh.,37,37,37,0.875,1.0,1.0
+Mamak,Zirvekent Mh.,8,8,8,0.875,1.0,1.0
+Mamak,Çağlayan Mh.,6,6,6,0.875,1.0,1.0
+Mamak,Üreğil Mh.,2,2,2,0.875,1.0,1.0
+Mamak,Şafaktepe Mh.,6,6,6,0.875,1.0,1.0
+Mamak,Şahap Gürler Mh.,12,12,12,0.875,1.0,1.0
+Mamak,Şahintepe Mh.,17,17,17,0.875,1.0,1.0
+Mamak,Şehit Cengiz Topel Mh.,2,2,2,0.875,1.0,1.0
+Mamak,Şirintepe Mh.,7,7,7,0.875,1.0,1.0
+Polatlı,Basrı Mh.,6,6,6,0.875,1.0,1.0
+Polatlı,Cumhuriyet Mah.,52,52,52,0.875,1.0,1.0
+Polatlı,Esentepe Mah.,1,1,1,0.875,1.0,1.0
+Polatlı,Fatih Mah.,40,40,40,0.875,1.0,1.0
+Polatlı,Gazi Mah.,25,25,25,0.875,1.0,1.0
+Polatlı,Gülveren Mh.,3,3,3,0.875,1.0,1.0
+Polatlı,Kurtuluş Mh.,28,28,28,0.875,1.0,1.0
+Polatlı,Mehmet Akif Mah.,27,0,0,0.0,0.0,0.0
+Polatlı,Yeni Mah.,5,5,5,0.875,1.0,1.0
+Polatlı,Zafer Mah.,49,49,49,0.875,1.0,1.0
+Polatlı,Çamlıca Mh.,1,1,1,0.875,1.0,1.0
+Polatlı,Üçpınar Mh.,1,1,1,0.75,1.0,1.0
+Polatlı,İstiklal Mh.,38,38,38,0.875,1.0,1.0
+Polatlı,Şehitlik Mh.,118,118,118,0.875,1.0,1.0
+Polatlı,Şentepe Mh.,81,81,81,0.875,1.0,1.0
+Pursaklar,Altınova Mh.,5,5,5,0.875,1.0,1.0
+Pursaklar,Ayyıldız Mh.,2,2,2,0.875,1.0,1.0
+Pursaklar,Fatih Mah.,99,99,99,0.875,1.0,1.0
+Pursaklar,Karaköy Mh.,1,1,1,0.75,1.0,1.0
+Pursaklar,Merkez Mah.,77,77,77,0.875,1.0,1.0
+Pursaklar,Mimar Sinan,97,97,97,0.875,1.0,1.0
+Pursaklar,Saray Cumhuriyet Mah.,50,50,50,0.875,1.0,1.0
+Pursaklar,Saray Fatih Mah.,66,66,66,0.875,1.0,1.0
+Pursaklar,Saray Gümüşoluk Mh.,2,2,2,0.875,1.0,1.0
+Pursaklar,Saray Osmangazi Mah.,16,16,16,0.875,1.0,1.0
+Pursaklar,Sirkeli Yeşilova Mh.,1,1,1,0.875,1.0,1.0
+Pursaklar,Tevfik İleri Mh.,24,24,24,0.875,1.0,1.0
+Pursaklar,Yunus Emre Mah.,47,47,47,0.875,1.0,1.0
+Sincan,29 Ekim Mah.,27,27,27,0.875,1.0,1.0
+Sincan,Ahi Evran Mah.,6,6,6,0.875,1.0,1.0
+Sincan,Akşemsettin Mh.,10,10,10,0.875,1.0,1.0
+Sincan,Alcı Mh.,17,17,17,0.875,1.0,1.0
+Sincan,Andiçen Mh.,18,18,18,0.875,1.0,1.0
+Sincan,Atatürk Mh.,9,9,9,0.875,1.0,1.0
+Sincan,Cumhuriyet Mah.,2,2,2,0.875,1.0,1.0
+Sincan,Ertuğrulgazi Mh.,10,10,10,0.875,1.0,1.0
+Sincan,Fatih Mah.,3,3,3,0.875,1.0,1.0
+Sincan,Fevzi Çakmak Mh.,63,63,63,0.875,1.0,1.0
+Sincan,Gazi Osmanpaşa Mh.,4,4,4,0.875,1.0,1.0
+Sincan,Gökçek Mh.,7,7,7,0.875,1.0,1.0
+Sincan,Hürriyet Mh.,1,1,1,0.875,1.0,1.0
+Sincan,Malazgirt Mah.,23,23,23,0.875,1.0,1.0
+Sincan,Malıköy Mh.,1,1,1,0.875,1.0,1.0
+Sincan,Mareşal Çakmak Mh.,20,0,0,0.0,0.0,0.0
+Sincan,Menderes Mah.,46,46,46,0.875,1.0,1.0
+Sincan,Mevlana Mah.,5,5,5,0.875,1.0,1.0
+Sincan,Mustafa Kemal Mah.,63,63,63,0.875,1.0,1.0
+Sincan,Osmanlı Mh.,7,7,7,0.875,1.0,1.0
+Sincan,Plevne Mah.,17,17,17,0.875,1.0,1.0
+Sincan,Pınarbaşı Mh.,18,18,18,0.875,1.0,1.0
+Sincan,Saraycık Mh.,33,33,33,0.875,1.0,1.0
+Sincan,Selçuklu Mh.,16,16,16,0.875,1.0,1.0
+Sincan,Tandoğan Mh.,21,21,21,0.875,1.0,1.0
+Sincan,Törekent Mh.,11,11,11,0.875,1.0,1.0
+Sincan,Ulubatlı Hasan Mh.,2,2,2,0.875,1.0,1.0
+Sincan,Yeniçimşit Mh.,5,5,5,0.875,1.0,1.0
+Sincan,Yunus Emre Mah.,5,5,5,0.875,1.0,1.0
+Sincan,Çoğlu Mh.,1,1,1,0.875,1.0,1.0
+Sincan,İstasyon Mh.,11,11,11,0.875,1.0,1.0
+Yenimahalle,Anadolu Mah.,1,1,1,0.875,1.0,1.0
+Yenimahalle,Avcılar Mh.,5,5,5,0.875,1.0,1.0
+Yenimahalle,Barıştepe Mh.,13,13,13,0.875,1.0,1.0
+Yenimahalle,Batı Sitesi Mh.,14,14,14,0.875,1.0,1.0
+Yenimahalle,Burç Mh.,6,6,6,0.875,1.0,1.0
+Yenimahalle,Cumhuriyet Mh.,57,57,57,0.875,1.0,1.0
+Yenimahalle,Demetevler Mah.,15,15,15,0.875,1.0,1.0
+Yenimahalle,Demetgül Mh.,16,16,16,0.875,1.0,1.0
+Yenimahalle,Demetlale Mah.,10,10,10,0.875,1.0,1.0
+Yenimahalle,Emniyet Mah.,14,14,14,0.875,1.0,1.0
+Yenimahalle,Ergazi Mah.,12,12,12,0.875,1.0,1.0
+Yenimahalle,Gazi Mah.,5,5,5,0.875,1.0,1.0
+Yenimahalle,Güventepe Mh.,17,17,17,0.875,1.0,1.0
+Yenimahalle,Güzelyaka Mh.,5,5,5,0.875,1.0,1.0
+Yenimahalle,Kaletepe Mah.,7,7,7,0.875,1.0,1.0
+Yenimahalle,Kardelen Mah.,18,18,18,0.875,1.0,1.0
+Yenimahalle,Karşıyaka Mh.,9,9,9,0.875,1.0,1.0
+Yenimahalle,Kayalar Mah.,6,6,6,0.875,1.0,1.0
+Yenimahalle,Kentkoop Mah.,9,9,9,0.875,1.0,1.0
+Yenimahalle,Mehmet Akif Ersoy Mah.,16,16,16,0.875,1.0,1.0
+Yenimahalle,Ostim Mah.,1,1,1,0.875,1.0,1.0
+Yenimahalle,Pamuklar Mah.,23,23,23,0.875,1.0,1.0
+Yenimahalle,Serhat,13,13,13,0.875,1.0,1.0
+Yenimahalle,Susuz Mah.,32,32,32,0.875,1.0,1.0
+Yenimahalle,Turgut Özal Mh.,37,37,37,0.875,1.0,1.0
+Yenimahalle,Uğur Mumcu Mh.,8,8,8,0.875,1.0,1.0
+Yenimahalle,Varlık Mh.,3,3,3,0.875,1.0,1.0
+Yenimahalle,Yeni Batı Mh.,6,6,6,0.875,1.0,1.0
+Yenimahalle,Yeşilevler Mh.,9,9,9,0.875,1.0,1.0
+Yenimahalle,Yuvaköy Mh.,24,24,24,0.875,1.0,1.0
+Yenimahalle,Çakırlar Mh.,18,18,18,0.875,1.0,1.0
+Yenimahalle,Çamlıca Mh.,8,8,8,0.875,1.0,1.0
+Yenimahalle,Çiğdemtepe Mh.,10,10,10,0.875,1.0,1.0
+Yenimahalle,Özevler Mh.,6,6,6,0.875,1.0,1.0
+Yenimahalle,İlkyerleşim Mh.,9,9,9,0.875,1.0,1.0
+Yenimahalle,İnönü Mh.,23,23,23,0.875,1.0,1.0
+Çankaya,100. Yıl Mh.,1,1,1,0.875,1.0,1.0
+Çankaya,Akpınar Mh.,13,13,13,0.875,1.0,1.0
+Çankaya,Alacaatlı Mh.,32,32,32,0.875,1.0,1.0
+Çankaya,Anıttepe Mh.,2,2,2,0.875,1.0,1.0
+Çankaya,Ata Mah.,6,6,6,0.875,1.0,1.0
+Çankaya,Aydınlar Mh.,6,6,6,0.875,1.0,1.0
+Çankaya,Ayrancı Mh.,9,9,9,0.875,1.0,1.0
+Çankaya,Aziziye Mah.,4,4,4,0.875,1.0,1.0
+Çankaya,Aşağı Öveçler Mh.,8,8,8,0.875,1.0,1.0
+Çankaya,Aşıkpaşa Mh.,1,1,1,0.875,1.0,1.0
+Çankaya,Bademlidere Mah.,1,1,1,0.875,1.0,1.0
+Çankaya,Bahçelievler Mh.,14,14,14,0.875,1.0,1.0
+Çankaya,Balgat Mah.,1,1,1,0.875,1.0,1.0
+Çankaya,Barbaros Mah.,1,1,1,0.875,1.0,1.0
+Çankaya,Bayraktar Mah.,2,2,2,0.875,1.0,1.0
+Çankaya,Bağcılar Mh.,2,2,2,0.875,1.0,1.0
+Çankaya,Beytepe Mah.,17,17,17,0.875,1.0,1.0
+Çankaya,Birlik Mah.,3,3,3,0.875,1.0,1.0
+Çankaya,Büyükesat Mh.,10,10,10,0.875,1.0,1.0
+Çankaya,Cebeci Mah.,3,3,3,0.875,1.0,1.0
+Çankaya,Cevizlidere Mah.,8,8,8,0.875,1.0,1.0
+Çankaya,Cumhuriyet Mah.,1,1,1,0.75,1.0,1.0
+Çankaya,Dilekler Mah.,1,1,1,0.75,1.0,1.0
+Çankaya,Dodurga Mah.,2,2,2,0.875,1.0,1.0
+Çankaya,Doğuş Mh.,4,4,4,0.875,1.0,1.0
+Çankaya,Ehlibeyt Mah.,2,2,2,0.875,1.0,1.0
+Çankaya,Emek Mah.,18,18,18,0.875,1.0,1.0
+Çankaya,Ertuğrulgazi Mh.,2,2,2,0.875,1.0,1.0
+Çankaya,Esatoğlu Mh.,2,2,2,0.875,1.0,1.0
+Çankaya,Fakülteler Mh.,3,3,3,0.875,1.0,1.0
+Çankaya,Fidanlık Mh.,1,1,1,0.875,1.0,1.0
+Çankaya,Gaziosmanpaşa Mh.,5,5,5,0.875,1.0,1.0
+Çankaya,Gökkuşağı Mh.,1,1,1,0.875,1.0,1.0
+Çankaya,Güvenevler Mh.,6,6,6,0.875,1.0,1.0
+Çankaya,Güzeltepe Mh.,2,2,2,0.875,1.0,1.0
+Çankaya,Harbiye Mah.,17,17,17,0.875,1.0,1.0
+Çankaya,Hilal Mah.,2,2,2,0.875,1.0,1.0
+Çankaya,Huzur Mah.,4,4,4,0.875,1.0,1.0
+Çankaya,Karapınar Mh.,4,4,4,0.875,1.0,1.0
+Çankaya,Kavaklıdere Mh.,5,5,5,0.875,1.0,1.0
+Çankaya,Kazım Özalp Mh.,5,5,5,0.875,1.0,1.0
+Çankaya,Keklik Pınarı Mh.,12,12,12,0.875,1.0,1.0
+Çankaya,Konutkent Mah.,7,7,7,0.875,1.0,1.0
+Çankaya,Korkutreis Mah.,2,2,2,0.875,1.0,1.0
+Çankaya,Koru Mah.,2,2,2,0.875,1.0,1.0
+Çankaya,Kültür Mh.,3,3,3,0.875,1.0,1.0
+Çankaya,Kırkkonaklar Mh.,14,14,14,0.875,1.0,1.0
+Çankaya,Kızılay Mh.,3,3,3,0.875,1.0,1.0
+Çankaya,Kızılırmak Mh.,2,2,2,0.875,1.0,1.0
+Çankaya,Malazgirt Mah.,5,5,5,0.875,1.0,1.0
+Çankaya,Maltepe Mah.,5,5,5,0.875,1.0,1.0
+Çankaya,Metin Akkuş Mh.,4,4,4,0.875,1.0,1.0
+Çankaya,Metin Oktay Mah.,4,4,4,0.875,1.0,1.0
+Çankaya,Mimar Sinan Mah.,3,3,3,0.875,1.0,1.0
+Çankaya,Murat Mah.,2,2,2,0.875,1.0,1.0
+Çankaya,Mustafa Kemal Mah.,2,2,2,0.875,1.0,1.0
+Çankaya,Mutlukent Mah.,3,3,3,0.875,1.0,1.0
+Çankaya,Mürsel Uluç Mh.,8,8,8,0.875,1.0,1.0
+Çankaya,Naci Çakır Mh.,7,7,7,0.875,1.0,1.0
+Çankaya,Nasuh Akar Mah.,1,1,1,0.875,1.0,1.0
+Çankaya,Oran Mah.,6,6,6,0.875,1.0,1.0
+Çankaya,Osman Temiz Mah.,9,9,9,0.875,1.0,1.0
+Çankaya,Oğuzlar Mh.,3,3,3,0.875,1.0,1.0
+Çankaya,Prof. Dr. Ahmet Taner Kışlalı Mh.,2,2,2,0.875,1.0,1.0
+Çankaya,Remzi Oğuz Arık Mh.,1,1,1,0.875,1.0,1.0
+Çankaya,Sancak Mah.,2,2,2,0.875,1.0,1.0
+Çankaya,Seyranbağları Mh.,3,3,3,0.875,1.0,1.0
+Çankaya,Sokullu Mehmet Paşa Mh.,8,8,8,0.875,1.0,1.0
+Çankaya,Söğütözü Mh.,1,1,1,0.875,1.0,1.0
+Çankaya,Tınaztepe Mh.,5,5,5,0.875,1.0,1.0
+Çankaya,Umut Mah.,3,3,3,0.875,1.0,1.0
+Çankaya,Yaşamkent Mh.,12,12,12,0.875,1.0,1.0
+Çankaya,Yukarı Bahçelievler Mh.,5,5,5,0.875,1.0,1.0
+Çankaya,Yukarı Dikmen Mh.,14,14,14,0.875,1.0,1.0
+Çankaya,Yukarı Öveçler Mh.,1,1,1,0.875,1.0,1.0
+Çankaya,Yücetepe Mh.,4,4,4,0.875,1.0,1.0
+Çankaya,Yıldızevler Mh.,4,4,4,0.875,1.0,1.0
+Çankaya,Çamlıtepe Mh.,3,3,3,0.875,1.0,1.0
+Çankaya,Çankaya Mh.,2,2,2,0.875,1.0,1.0
+Çankaya,Çiğdem Mh.,4,4,4,0.875,1.0,1.0
+Çankaya,Çukurambar Mh.,5,5,5,0.875,1.0,1.0
+Çankaya,Öveçler Mh.,2,2,2,0.875,1.0,1.0
+Çankaya,Ümit Mh.,5,5,5,0.875,1.0,1.0
+Çankaya,Üniversiteler Mh.,2,2,2,0.875,1.0,1.0
+Çankaya,İleri Mh.,2,2,2,0.875,1.0,1.0
+Çankaya,İlkadım Mh.,13,13,13,0.875,1.0,1.0
+Çankaya,İlkbahar Mh.,3,3,3,0.875,1.0,1.0
+Çankaya,İlker Mh.,8,8,8,0.875,1.0,1.0
+Çankaya,İşçi Blokları Mh.,4,4,4,0.875,1.0,1.0
+Çankaya,Şehit Cengiz Karaca Mh.,5,5,5,0.875,1.0,1.0
+Çankaya,Şehit Cevdet Özdemir Mh.,5,5,5,0.875,1.0,1.0
+Çubuk,Atatürk Mh.,33,33,33,0.875,1.0,1.0
+Çubuk,Barbaros Mah.,10,10,10,0.875,1.0,1.0
+Çubuk,Cumhuriyet Mah.,78,78,78,0.875,1.0,1.0
+Çubuk,Dumlupınar Mh.,31,31,31,0.875,1.0,1.0
+Çubuk,Esenboğa Merkez Mh.,102,102,102,0.875,1.0,1.0
+Çubuk,Fatih Mah.,1,1,1,0.875,1.0,1.0
+Çubuk,Muhsin Yazıcıoğlu Mh.,1,1,1,0.875,1.0,1.0
+Çubuk,Yavuzselim Mh.,59,59,59,0.875,1.0,1.0
+Çubuk,Yenice Mah.,13,13,13,0.875,1.0,1.0
+Çubuk,Yıldırım Beyazıt Mh.,143,143,143,0.875,1.0,1.0

@@ -1,0 +1,215 @@
+{
+  "model_version": "v26a-ankara-only-core-good-ok",
+  "bounds_used": {
+    "lat_min": 38.5,
+    "lat_max": 40.9,
+    "lon_min": 31.0,
+    "lon_max": 34.2
+  },
+  "total_rows": 8891,
+  "coordinate_coverage": 1.0,
+  "duplicate_coordinate_rate": 0.0037116184906084804,
+  "top_repeated_coordinates": [
+    {
+      "lat": 40.11299,
+      "lon": 33.09552,
+      "count": 3
+    },
+    {
+      "lat": 39.57741,
+      "lon": 32.181,
+      "count": 2
+    },
+    {
+      "lat": 39.81706,
+      "lon": 32.76348,
+      "count": 2
+    },
+    {
+      "lat": 39.60068,
+      "lon": 32.14487,
+      "count": 2
+    },
+    {
+      "lat": 39.85846,
+      "lon": 32.83521,
+      "count": 2
+    },
+    {
+      "lat": 39.94884,
+      "lon": 32.88415,
+      "count": 2
+    },
+    {
+      "lat": 39.94646,
+      "lon": 32.73689,
+      "count": 2
+    },
+    {
+      "lat": 39.96749,
+      "lon": 32.8579,
+      "count": 2
+    },
+    {
+      "lat": 39.58096,
+      "lon": 32.13738,
+      "count": 2
+    },
+    {
+      "lat": 39.81718,
+      "lon": 32.76358,
+      "count": 2
+    },
+    {
+      "lat": 39.96778,
+      "lon": 32.92156,
+      "count": 2
+    },
+    {
+      "lat": 39.96661,
+      "lon": 32.77386,
+      "count": 2
+    },
+    {
+      "lat": 39.97858,
+      "lon": 32.6595,
+      "count": 2
+    },
+    {
+      "lat": 39.98156,
+      "lon": 32.95238,
+      "count": 2
+    },
+    {
+      "lat": 40.00494,
+      "lon": 32.73095,
+      "count": 2
+    }
+  ],
+  "out_of_bounds_rate": 0.0,
+  "centroid_like_counties_warning": [],
+  "by_county": [
+    {
+      "county": "Akyurt",
+      "rows": 713,
+      "coverage": 1.0,
+      "lat_min": 40.06981281992687,
+      "lat_max": 40.1469208341766,
+      "lon_min": 32.95562718123546,
+      "lon_max": 33.108987134042025,
+      "out_of_ankara_bounds_count": 0
+    },
+    {
+      "county": "Altındağ",
+      "rows": 741,
+      "coverage": 1.0,
+      "lat_min": 39.92932841319794,
+      "lat_max": 40.03822030721037,
+      "lon_min": 32.839629855096625,
+      "lon_max": 32.986709603991734,
+      "out_of_ankara_bounds_count": 0
+    },
+    {
+      "county": "Etimesgut",
+      "rows": 744,
+      "coverage": 1.0,
+      "lat_min": 39.787189744536754,
+      "lat_max": 40.00449418005758,
+      "lon_min": 32.52162364291605,
+      "lon_max": 32.7007057895456,
+      "out_of_ankara_bounds_count": 0
+    },
+    {
+      "county": "Gölbaşı",
+      "rows": 749,
+      "coverage": 1.0,
+      "lat_min": 39.74422868555673,
+      "lat_max": 39.837024815543565,
+      "lon_min": 32.65827973076172,
+      "lon_max": 32.85609569838867,
+      "out_of_ankara_bounds_count": 0
+    },
+    {
+      "county": "Keçiören",
+      "rows": 739,
+      "coverage": 1.0,
+      "lat_min": 39.960380578665905,
+      "lat_max": 40.059044376735315,
+      "lon_min": 32.7972281350759,
+      "lon_max": 32.89537117475586,
+      "out_of_ankara_bounds_count": 0
+    },
+    {
+      "county": "Mamak",
+      "rows": 746,
+      "coverage": 1.0,
+      "lat_min": 39.82993095203439,
+      "lat_max": 39.98179151191406,
+      "lon_min": 32.878335043787956,
+      "lon_max": 33.12342095366211,
+      "out_of_ankara_bounds_count": 0
+    },
+    {
+      "county": "Polatlı",
+      "rows": 747,
+      "coverage": 1.0,
+      "lat_min": 39.524340170441086,
+      "lat_max": 39.607055558357665,
+      "lon_min": 32.08438952380373,
+      "lon_max": 32.18745806672158,
+      "out_of_ankara_bounds_count": 0
+    },
+    {
+      "county": "Pursaklar",
+      "rows": 745,
+      "coverage": 1.0,
+      "lat_min": 40.023731230956386,
+      "lat_max": 40.15179898317386,
+      "lon_min": 32.8461939670407,
+      "lon_max": 32.9774772090568,
+      "out_of_ankara_bounds_count": 0
+    },
+    {
+      "county": "Sincan",
+      "rows": 747,
+      "coverage": 1.0,
+      "lat_min": 39.70023486544097,
+      "lat_max": 40.02800345168331,
+      "lon_min": 32.33905361271677,
+      "lon_max": 32.604161056006205,
+      "out_of_ankara_bounds_count": 0
+    },
+    {
+      "county": "Yenimahalle",
+      "rows": 745,
+      "coverage": 1.0,
+      "lat_min": 39.92224765372619,
+      "lat_max": 40.039727555131435,
+      "lon_min": 32.59304039570313,
+      "lon_max": 32.838605332177735,
+      "out_of_ankara_bounds_count": 0
+    },
+    {
+      "county": "Çankaya",
+      "rows": 729,
+      "coverage": 1.0,
+      "lat_min": 39.82328040219726,
+      "lat_max": 39.93373963056007,
+      "lon_min": 32.63352331899414,
+      "lon_max": 32.890996859201664,
+      "out_of_ankara_bounds_count": 0
+    },
+    {
+      "county": "Çubuk",
+      "rows": 746,
+      "coverage": 1.0,
+      "lat_min": 40.106639165475045,
+      "lat_max": 40.27689800390625,
+      "lon_min": 32.89851933717728,
+      "lon_max": 33.054815009236336,
+      "out_of_ankara_bounds_count": 0
+    }
+  ],
+  "coordinateQualityStatus": "PASS",
+  "reasons": []
+}

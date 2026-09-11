@@ -1,0 +1,172 @@
+{
+  "county_policy": "core_good_ok",
+  "included_counties": [
+    "Çankaya",
+    "Keçiören",
+    "Mamak",
+    "Sincan",
+    "Etimesgut",
+    "Yenimahalle",
+    "Altındağ",
+    "Pursaklar",
+    "Gölbaşı",
+    "Çubuk",
+    "Akyurt",
+    "Polatlı"
+  ],
+  "excluded_counties": [
+    "Kahramankazan",
+    "Beypazarı",
+    "Elmadağ",
+    "Şereflikoçhisar",
+    "Kızılcahamam",
+    "Nallıhan",
+    "Haymana",
+    "Kalecik",
+    "Ayaş",
+    "Bala",
+    "Çamlıdere",
+    "Güdül"
+  ],
+  "exclusion_reason": "WEAK inventory readiness on the 2026-09-11 Ankara full audit (analysis_outputs/ankara_inventory_statistical_audit_2026-09-11_full/): low sale/rental volume and/or sparse neighborhoods. Deferred from first V26A run.",
+  "model_version": "v26a-ankara-only-core-good-ok",
+  "model_scope": "ankara_only",
+  "rows_before": {
+    "sale": 6000,
+    "rental": 2974,
+    "total": 8974
+  },
+  "rows_after": {
+    "sale": 5937,
+    "rental": 2954,
+    "total": 8891
+  },
+  "sale_by_county_after": [
+    {
+      "purpose": "sale",
+      "county": "Sincan",
+      "rows": 500
+    },
+    {
+      "purpose": "sale",
+      "county": "Gölbaşı",
+      "rows": 500
+    },
+    {
+      "purpose": "sale",
+      "county": "Mamak",
+      "rows": 499
+    },
+    {
+      "purpose": "sale",
+      "county": "Çubuk",
+      "rows": 498
+    },
+    {
+      "purpose": "sale",
+      "county": "Polatlı",
+      "rows": 497
+    },
+    {
+      "purpose": "sale",
+      "county": "Yenimahalle",
+      "rows": 496
+    },
+    {
+      "purpose": "sale",
+      "county": "Pursaklar",
+      "rows": 496
+    },
+    {
+      "purpose": "sale",
+      "county": "Etimesgut",
+      "rows": 495
+    },
+    {
+      "purpose": "sale",
+      "county": "Altındağ",
+      "rows": 494
+    },
+    {
+      "purpose": "sale",
+      "county": "Keçiören",
+      "rows": 492
+    },
+    {
+      "purpose": "sale",
+      "county": "Akyurt",
+      "rows": 489
+    },
+    {
+      "purpose": "sale",
+      "county": "Çankaya",
+      "rows": 481
+    }
+  ],
+  "rental_by_county_after": [
+    {
+      "purpose": "rental",
+      "county": "Polatlı",
+      "rows": 250
+    },
+    {
+      "purpose": "rental",
+      "county": "Gölbaşı",
+      "rows": 249
+    },
+    {
+      "purpose": "rental",
+      "county": "Pursaklar",
+      "rows": 249
+    },
+    {
+      "purpose": "rental",
+      "county": "Yenimahalle",
+      "rows": 249
+    },
+    {
+      "purpose": "rental",
+      "county": "Etimesgut",
+      "rows": 249
+    },
+    {
+      "purpose": "rental",
+      "county": "Çankaya",
+      "rows": 248
+    },
+    {
+      "purpose": "rental",
+      "county": "Çubuk",
+      "rows": 248
+    },
+    {
+      "purpose": "rental",
+      "county": "Altındağ",
+      "rows": 247
+    },
+    {
+      "purpose": "rental",
+      "county": "Keçiören",
+      "rows": 247
+    },
+    {
+      "purpose": "rental",
+      "county": "Mamak",
+      "rows": 247
+    },
+    {
+      "purpose": "rental",
+      "county": "Sincan",
+      "rows": 247
+    },
+    {
+      "purpose": "rental",
+      "county": "Akyurt",
+      "rows": 224
+    }
+  ],
+  "silent_drop_guard": {
+    "unexpected_counties_in_after": [],
+    "missing_included_counties_in_sale": []
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "model_version": "v26a-ankara-only-core-good-ok",
+  "model_scope": "ankara_only",
+  "county_policy": "core_good_ok",
+  "clean_report": {
+    "sales_raw_rows": 6000,
+    "sales_after_base_clean_rows": 6000,
+    "sales_after_basic_filter_rows": 5990,
+    "sales_final_rows": 5937,
+    "sales_removed_basic_rows": 10,
+    "sales_removed_iqr_rows": 53,
+    "rentals_raw_rows": 2974,
+    "rentals_after_base_clean_rows": 2974,
+    "rentals_after_basic_filter_rows": 2969,
+    "rentals_final_rows": 2954,
+    "rentals_removed_basic_rows": 5,
+    "rentals_removed_iqr_rows": 15
+  },
+  "sale_removal_reason_flags_on_raw": {
+    "gross_m2_le_20_or_missing": 0,
+    "gross_m2_ge_600": 4,
+    "price_le_0": 0,
+    "unit_price_outside_8k_200k": 5,
+    "missing_target": 0,
+    "missing_gross_m2": 0
+  },
+  "rental_removal_reason_flags_on_raw": {
+    "gross_m2_le_20_or_missing": 0,
+    "gross_m2_ge_600": 3,
+    "rent_le_0": 0,
+    "rent_m2_outside_50_2500": 3,
+    "missing_target": 0,
+    "missing_gross_m2": 0
+  },
+  "notes": [
+    "basic filters mirror V24.1/V25 (gross_m2 typically 25-500 in apply_basic_filters).",
+    "reason flags are not mutually exclusive."
+  ]
+}
